@@ -1,4 +1,4 @@
-### Installing a copy of the ADL Sandbox server on your own machine.
+# Installing a copy of the ADL Sandbox server on your own machine.
 
 The ADL Sandbox server runs under NodeJS, a cross platform server technology. 
 
