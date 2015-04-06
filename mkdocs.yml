@@ -1,0 +1,5 @@
+site_name: Sandbox Docs
+repo_url: https://github.com/adlnet/SandboxDocs
+site_favicon: favicon.ico
+docs_dir : .
+theme: readthedocs
