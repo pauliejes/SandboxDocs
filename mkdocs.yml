@@ -3,3 +3,4 @@ repo_url: https://github.com/adlnet/SandboxDocs
 site_favicon: favicon.ico
 docs_dir : ./docs
 theme: readthedocs
+use_directory_urls: true
