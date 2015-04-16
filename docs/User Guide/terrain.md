@@ -1,6 +1,6 @@
 
 
-![](/terrain/terrain.htmlcd_Image0.png)
+![](terrain/terrain.htmlcd_Image0.png)
 
 ## Introduction
 
