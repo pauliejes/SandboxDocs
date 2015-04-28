@@ -4,3 +4,21 @@ site_favicon: favicon.ico
 docs_dir : ./docs
 theme: readthedocs
 use_directory_urls: true
+markdown_extensions: [admonition]
+pages:
+- ['index.md', 'About']
+- ['Home.md', 'Home']
+- ['developer guide/Developer-Guide.md', 'For Developers']
+- ['user guide/Basic-Workflow.md', 'For Users']
+- ['developer guide/Installation.md', 'Developer Guide','Installation']
+- ['developer guide/Configuration.md', 'Developer Guide','Configuration']
+- ['developer guide/configure 3DR.md', 'Developer Guide','Asset Server']
+- ['developer guide/Architecture-Overview.md', 'Developer Guide','Architecture Overview']
+- ['developer guide/Data-Organization.md', 'Developer Guide','Data Organization']
+- ['developer guide/File-Organization.md', 'Developer Guide','File Organization']
+- ['developer guide/Development-Plans.md', 'Developer Guide','Development Plans']
+- ['developer guide/_3rd-Party-Libraries.md', 'Developer Guide','3rd Party Libraries']
+- ['developer guide/drivers/drivers.md', 'Developer Guide','Driver Reference']
+
+
+
