@@ -10,42 +10,42 @@ First things first, we’ll need to get step before we can start building. This 
 1.	First, browse to [http://vwf.adlnet.gov](http://vwf.adlnet.gov) . You should see a website that looks something like the following.
 
 
-	![](./building-a-game/testexport.html_Image0.png)
+	![](./images/building-a-game/testexport.html_Image0.png)
 
 2.	Before we can create an application, we’ll need to sign in. I assume here that you do not have an account. If you have already signed up for an account, go ahead and skip a few steps. Otherwise, You’ll need to click the “Sign Up” button.
 
 
-	![](./building-a-game/testexport.html_Image1.png)
+	![](./images/building-a-game/testexport.html_Image1.png)
 
 3.	You should now see a screen where you can choose a username and a password. Be sure the password is something you can remember! You’re username can be anything, so long as it is not currently used by another user. I recommend using an email address.
 
 
-	![](./building-a-game/testexport.html_Image2.png)
+	![](./images/building-a-game/testexport.html_Image2.png)
 
 4.	Now that you have created a user account, you’ll be automatically logged into the website. You’ll know you’re logged in because you’ll see your user name in the top right corner.
 
 
-	![](./building-a-game/testexport.html_Image3.png)
+	![](./images/building-a-game/testexport.html_Image3.png)
 
 5.	Next, we’ll need to create a new world to work in. To do this, click the ‘Create’ button on the home page.
 
 
-	![](./building-a-game/testexport.html_Image4.png)
+	![](./images/building-a-game/testexport.html_Image4.png)
 
 6.	You’ll see the following page. This page allows you to create a new world based on an existing ‘template’ world. In this case, we’re going to just create a blank world. You should see the words “Create a world based on an empty world.” When you click on one of the template world images, you’ll select this template, and the text “Create a world based on …” will change to show the name of the selected world. The template we need, the blank world, is the default. If you do click on one of the other templates, just scroll to the right end of the list, and click the template “an empty world”. Give your new world a title and a description.
 
 
-	![](./building-a-game/testexport.html_Image5.png)
+	![](./images/building-a-game/testexport.html_Image5.png)
 
 7.	Click the Create button.
 
 
-	![](./building-a-game/testexport.html_Image6.png)
+	![](./images/building-a-game/testexport.html_Image6.png)
 
 8.	Great! If everything went according to plan, you should see the new world begin to load. Because this world is in editing mode, you’ll see a lot of buttons and graphics appear in bars on the top, bottom, and sides of your browser. These are the tools that we’ll be using in the next section. You’ll also see the default avatar and a white grid in the center of the screen. This avatar is you! We won’t be going into any details about how the avatar works today, so just ignore it for now.
 
 
-	![](./building-a-game/testexport.html_Image7.png)
+	![](./images/building-a-game/testexport.html_Image7.png)
 
 	**Note: **The VWS website uses a lot of cutting edge HTML5 features. If your browser window does not look like the image above, check that you are using the most recent version of Chrome, Firefox, Safari or Internet Explorer. Many mobile versions of these browsers may not be supported. 
 
@@ -61,7 +61,7 @@ Now that we have a world to work in, we need to create all the objects that will
 1.	First, rotate your camera so you are looking down at the grid. This will help you stay oriented, and makes selecting object and moving them around easier. Zoom out a bit too.
 
 
-	![](./building-a-game/testexport.html_Image8.png)
+	![](./images/building-a-game/testexport.html_Image8.png)
 
 	**Remember: **Zoom by rolling the mouse wheel, rotate the camera by clicking and dragging with the right mouse button 
 
@@ -70,27 +70,27 @@ Now that we have a world to work in, we need to create all the objects that will
 2.	Now, we need to activate a tool that will let us draw the level. Find the ‘Tools’ menu on the top menubar. Click the ‘Block Painter’ menu item.
 
 
-	![](./building-a-game/testexport.html_Image9.png)
+	![](./images/building-a-game/testexport.html_Image9.png)
 
 3.	When the Block Painter tool opens, you’ll see it slide out on the right, in an area we call the “side panel”. The block painter is a quick and easy way to create a lot of geometry quickly. There are other ways you could lay out the level, but this is fun! Let’s pick a different texture for our walls by clicking right on the “Pick Texture” button.
 
 
-	![](./building-a-game/testexport.html_Image10.png)
+	![](./images/building-a-game/testexport.html_Image10.png)
 
 4.	The Map Browser will appear. This is the tool that is used in many parts of the software whenever you need to choose a texture map. Clicking on the folder icons will show the textures inside that folder, and clicking on an image will select that file as the texture. You can also use the plus icon to enter a texture via URL. For now, let’s keep it simple and choose the brick texture. Just click right on the small image of bricks.
 
 
-	![](./building-a-game/testexport.html_Image11.png)
+	![](./images/building-a-game/testexport.html_Image11.png)
 
 5.	The Painter tool will now show the selected texture, and the Map Browser window will disappear. We now need to activate the tool, and set it to ‘Build’ mode. Click the “Active” button inside the tool’s panel, then click ‘Build’. The “Active” button should remain lit up.
 
 
-	![](./building-a-game/testexport.html_Image12.png)
+	![](./images/building-a-game/testexport.html_Image12.png)
 
 6.	When you hold your mouse within the 3D window, over the grid, you’ll see a faint transparent brick box. The tool is previewing where the next box will be placed. Click and hold with the left mouse button to make a stroke. Boxes will line up along the path of your stroke!
 
 
-	![](./building-a-game/testexport.html_Image13.png)
+	![](./images/building-a-game/testexport.html_Image13.png)
 
 	**Info: **You can also delete blocks with the painter tool. Just click the ‘delete’ button to put the tool into delete mode. Now, when you click and drag, boxes will be destroyed instead of created. Click ‘Build’ to start building again. 
 
@@ -99,43 +99,43 @@ Now that we have a world to work in, we need to create all the objects that will
 7.	Build a maze! Be sure that each path within the maze is just one block thick. This won’t be all that important, but it will make the game work better. Take some time to build something simple like the image below.
 
 
-	![](./building-a-game/testexport.html_Image14.png)
+	![](./images/building-a-game/testexport.html_Image14.png)
 
 8.	Great! We now have our game board. Now that we’re done with the painter tool, we need to deactivate it so that we can go about the rest of our project. Click the ‘Active’ button in the tool again, so that it is no longer lit up. Now, click the ‘X’ button in the tool’s title bar to close the tool. It’s very important that you deactivate the tool before you close it – otherwise it can be active, just hidden!
 
 9.	Now that we have our game board, we need to create our first actor! This actor will become the Player later, when we add scripts. We’ll use a sphere for the player. Click the Sphere icon on the main toolbar.
 
 
-	![](./building-a-game/testexport.html_Image15.png)
+	![](./images/building-a-game/testexport.html_Image15.png)
 
 10.	You should see a sphere object appear right in the center of the viewport. By default, that sphere is checkered. We’ll change this in a moment. First, we need to select the sphere so we can edit it. To do so, we first need to put the software into selection mode. Click the ‘Select by clicking’ button on the toolbar. You’ll know select mode is active when the button turns blue.
 
 
-	![](./building-a-game/testexport.html_Image16.png)
+	![](./images/building-a-game/testexport.html_Image16.png)
 
 	**Info: **You can also enter selection mode with the hotkey ‘Q’ on the keyboard 
 
 11.	Now, click on the sphere in the main 3D window once with the left mouse button. You should see a white outline appear around the sphere, as well as a brightly colored axis graphic. It should look something like this:
 
 
-	![](./building-a-game/testexport.html_Image17.png)
+	![](./images/building-a-game/testexport.html_Image17.png)
 
 	**Remember: **IT’s very important that the Painter Tool is deactivated. If you are still seeing a faint box following under your cursor, the tools it active but hidden. Open is as we did in step 2, deactivate it by clicking the Active button. Verify that the button is not lit, then close the tool. 
 
 12.	Because we don’t know exactly where the sphere was created (it’s created at the center of your view) let’s go ahead and reset its position, rotation, and scale. Find the ‘Edit’ menu on the menu bar, then open the sub menu ‘Transforms’ and finally, choose ‘Reset Transforms’. This will zero out the position, rotation and scale of the sphere.
 
 
-	![](./building-a-game/testexport.html_Image18.png)
+	![](./images/building-a-game/testexport.html_Image18.png)
 
 13.	Now, we need to go ahead and name the sphere so that we can find it later. All objects have a set of properties you can edit in a window called the Property Editor. We need to open the property editor, and change the Display Name property of the sphere to something nice, like ‘Player’. First, while the sphere is still selected, open the Property Editor by finding the ‘Properties’ tab on the right side of the screen.
 
 
-	![](./building-a-game/testexport.html_Image19.png)
+	![](./images/building-a-game/testexport.html_Image19.png)
 
 14.	Click it to open the **Property Editor**. It will appear in the side panel just like the painter tool did. Find the **Display Name **property, which is the first textbox on the page, and change the value to ‘**Player’ **by clicking in the box and typing.
 
 
-	![](./building-a-game/testexport.html_Image20.png)
+	![](./images/building-a-game/testexport.html_Image20.png)
 
 	**Info: **The active text field, where the text from the keyboard is input, will be outlined in blue. 
 
@@ -144,76 +144,76 @@ Now that we have a world to work in, we need to create all the objects that will
 
 	**Note: **Don’t be confused that the tab says ‘Primitive: Sphere1′ even though we just changed the object’s name to Player. The UI will update the next time it’s loaded. 
 
-	![](./building-a-game/testexport.html_Image21.png)
+	![](./images/building-a-game/testexport.html_Image21.png)
 
 16.	Now, since the sphere was centered at (0, 0, 0). So that the object is not intersecting the ground, let’s move it up. We’ll do so precisely by typing in the Z value. Still in the Property Editor, Open the **Transform Tab**, and find the 3rD text box from the left under the Translation label. This value is the Z coordinate of the spheres position. Enter **“.6″. **You’ll see the sphere move slightly.
 
 
-	![](./building-a-game/testexport.html_Image22.png)
+	![](./images/building-a-game/testexport.html_Image22.png)
 
 17.	Next, let’s go ahead and make the sphere yellow, just for kicks. Find the **Material **tab. Its right below the Properties tab on the right of the screen. When you click this tab, the **Material **Editor will load into the side panel.
 
 
-	![](./building-a-game/testexport.html_Image23.png)
+	![](./images/building-a-game/testexport.html_Image23.png)
 
 18.	So, we want to do two things. First, click the little white square next to **“Diffuse Color.” **This will let you change the color of the object. Click and drag in the color preview to set the diffuse color to yellow.
 
 
-	![](./building-a-game/testexport.html_Image24.png)
+	![](./images/building-a-game/testexport.html_Image24.png)
 
 19.	Let’s also remove the default texture layer. The material editor allows you to link several different images to different properties of the surface, like a color map or a bump map. The default material has a checker texture for the diffuse map. Each texture gets a small tab at the bottom of the Material Editor. Click the “**Texture Layer 0**” tab to open the settings for the layer, then find the ‘**Delete Layer’ **button. The sphere should now be a solid yellow. I’ve deselected it so you can see it better in the image below, but you should still see the selection outline and the brightly colored axis graphic.
 
 
-	![](./building-a-game/testexport.html_Image25.png)
+	![](./images/building-a-game/testexport.html_Image25.png)
 
 20.	Now, I’ve got a challenge for you. We need to create a cube with a **width length and height **of .25\. I’d also like you to color it blue, and remove its default checker texture as well. Finally, I want you to position it so that it’s in the center of a path, with its Z coordinate at .6\. Look over the instructions above, and I’m sure you can figure it out. Also, go ahead and name it ‘**Food1′**. When you’re done, you should have something that looks like this:
 
 
-	![](./building-a-game/testexport.html_Image26.png)
+	![](./images/building-a-game/testexport.html_Image26.png)
 
 21.	The next step is vital. We need to mark this object so that we can identify it from within the code later. Because there are going to be a lot of food objects, remembering all their names is going to be hard. Instead, we’ll assign a custom property to the object called ‘**gametype’**. We’ll make the value of this property ‘**food’**. While the first food object is selected, click the ‘**Scripts’ **tab on the right of the screen to open the Script Editor. When the Script Editor opens, find and click the **Property **tab.
 
 
-	![](./building-a-game/testexport.html_Image27.png)
+	![](./images/building-a-game/testexport.html_Image27.png)
 
 	**Note: **We’ll take much more about the Script Editor in part 3\. For now, let’s just add the property and not worry about the rest. 
 
 22.	Now, find the button in the bottom right that says **‘New Property’. **Click it.
 
 
-	![](./building-a-game/testexport.html_Image28.png)
+	![](./images/building-a-game/testexport.html_Image28.png)
 
 23.	When the prompt opens, type ‘**gametype’**. This will be the name of the new property. Click **OK**
 
 
-	![](./building-a-game/testexport.html_Image29.png)
+	![](./images/building-a-game/testexport.html_Image29.png)
 
 24.	On the next prompt, enter ‘**food’**. This will be the value of the new property. Click **OK**
 
 
-	![](./building-a-game/testexport.html_Image30.png)
+	![](./images/building-a-game/testexport.html_Image30.png)
 
 25.	You can now close the Script Editor. Use the **down arrow **on the right at the top of the panel.
 
 
-	![](./building-a-game/testexport.html_Image31.png)
+	![](./images/building-a-game/testexport.html_Image31.png)
 
 	**Note: **It’s very important that this step is successful. You can verify that the property was created by finding it in the list of properties on the left of the Properties Tab. If you see a button labeled ‘gametype’, we’re good to go. 
 
 26.	We also need to mark the food object as ‘passable’. This will allow the player to move through the food without colliding with it later in part 3\. In the Properties Editor for the Food object, find and select the ‘**passable’ **checkbox.
 
 
-	![](./building-a-game/testexport.html_Image32.png)
+	![](./images/building-a-game/testexport.html_Image32.png)
 
 27.	We now have to copy the Food0 object to each point on the game along the paths. While keyboard focus is on the main 3D view, you can hit **CTRL+D **duplicate the selected object. Duplicate the object, the click and drag along the RED or GREEN axis of the brightly colored axis graphic. You should see a new box move under the cursor.
 
 
-	![](./building-a-game/testexport.html_Image33.png)
+	![](./images/building-a-game/testexport.html_Image33.png)
 
 28.	Take some time and fill the game board with food objects as necessary. The editor tools have many options to make this faster. With some practice, you can do this in just a few minutes.
 
 
-	![](./building-a-game/testexport.html_Image34.png)
+	![](./images/building-a-game/testexport.html_Image34.png)
 
 	**Info: **You can select more than one object at a time, and move or duplicate whole rows of food! Click and drag with the left mouse button to draw a rectangle on the screen. All objects in the rectangle will be selected. You can hold CTRL or ALT to add or subtract from the selection as well. 
 
@@ -222,12 +222,12 @@ Now that we have a world to work in, we need to create all the objects that will
 29.	Using the same technique you’ve now mastered, duplicate the player object. Change its color to red, move it to the corner of the board, and name it Ghost.
 
 
-	![](./building-a-game/testexport.html_Image35.png)
+	![](./images/building-a-game/testexport.html_Image35.png)
 
 30.	Now, let’s just remove that black and white grid. The texture of the default ground grid can be changed by editing the material of the Scene object. To select the scene, use the dropdown menu. Find **Edit->Select->Select Scene.**
 
 
-	![](./building-a-game/testexport.html_Image36.png)
+	![](./images/building-a-game/testexport.html_Image36.png)
 
 31.	Not much will appear to change, but the material editor will now control the texture of the background grid. Use the material editor just like before to create a solid white background.
 
@@ -239,12 +239,12 @@ Alright! Now we are cooking with fire. The whole scene is set up, and we just ne
 1.	First, let’s do the player code. Select the Player object, and open up the script editor. Make sure you’re on the Methods tab, and scroll down the list on the left until you see the word ‘tick’. It should appear grayed out. Click it.
 
 
-	![](./building-a-game/testexport.html_Image37.png)
+	![](./images/building-a-game/testexport.html_Image37.png)
 
 2.	The system will ask you if you want to create a new method called ‘tick’. Click ok. ‘Tick’ is the method that the engine will call at every frame of animation to update your objects.
 
 
-	![](./building-a-game/testexport.html_Image38.png)
+	![](./images/building-a-game/testexport.html_Image38.png)
 
 3.	Now, paste the below code in the script window.
 
@@ -274,7 +274,7 @@ Alright! Now we are cooking with fire. The whole scene is set up, and we just ne
 4.	Click ‘Save Method’ to save this code on the object as the Tick method.
 
 
-	![](./building-a-game/testexport.html_Image39.png)
+	![](./images/building-a-game/testexport.html_Image39.png)
 
 5.	Now, move over to the ‘Events’ tab, and click the ‘**keyDown’ **suggestion on the left. This process is very similar to the process to create the ‘Tick’ method. Enter the code below into the ‘**KeyDown’ **event, and save it.
 ```
@@ -378,7 +378,7 @@ function tick(){
 10.	We still need a way to reset the game. Go to the '**Events' **tab of the script editor, and find the '**New Event' **button. Click it, and when prompted, type '**reset'**.
 
 
-	![](./building-a-game/testexport.html_Image40.png)
+	![](./images/building-a-game/testexport.html_Image40.png)
 
 11.	When prompted for the number of parameters, just leave the value at 0 and click **OK. **Paste the code below into the script window for the reset event.
 ```
@@ -393,7 +393,7 @@ function reset(){
 
 	**Remember: **You can find the proper values for your level by selecting the Ghost or the player, and reading the translation out of the property editor. 
 
-	![](./building-a-game/testexport.html_Image41.png)
+	![](./images/building-a-game/testexport.html_Image41.png)
 
 13.	Finally, we just need to add the code to make the Ghost work. Use the code below, but notice where I've added a note. This value should be the same value you used above - the default position for the player. Select the Ghost object, open the script editor, create a tick method, and paste in the code below.
 ```
@@ -474,27 +474,27 @@ Great! At this point, our game basically works. The last thing we need to do is 
 1.	First, let's create a camera object, so that the user of our game does not have to mess with positioning the camera. Use the drop down menu, and find **Create->Cameras->Perspective**
 
 
-	![](./building-a-game/testexport.html_Image42.png)
+	![](./images/building-a-game/testexport.html_Image42.png)
 
 2.	When you click this, a camera object will be created at the center of your view. You should see a camera icon appear. If you don't, zoom closer, and make sure you are in selection mode. The icon should look like this:
 
 
-	![](./building-a-game/testexport.html_Image43.png)
+	![](./images/building-a-game/testexport.html_Image43.png)
 
 3.	This icon helps you select and place the camera. Click on the camera to select it. You'll see a preview appear in the lower left of the main window that shows you what the camera sees. Move the camera so that it points down at the game board. You'll also see a helpful graphic that shows you in the main view where the camera is pointing. Aim for something like this:
 
 
-	![](./building-a-game/testexport.html_Image44.png)
+	![](./images/building-a-game/testexport.html_Image44.png)
 
 4.	Let's enter the camera to see exactly what it sees. Find the **Camera->Activate Camera **item on the dropdown list.
 
 
-	![](./building-a-game/testexport.html_Image45.png)
+	![](./images/building-a-game/testexport.html_Image45.png)
 
 5.	When you click it, you'll see this prompt. Choose Camera1, and click ok.
 
 
-	![](./building-a-game/testexport.html_Image46.png)
+	![](./images/building-a-game/testexport.html_Image46.png)
 
 6.	You are now looking exactly out of the camera. Use the arrow keys to move the player. Does it seem to go in the right direction? If not, you might need to go back to the Editor Camera, and reposition the camera object. If you're happy with the camera's view, then we're all done inside the editor, and we can move on to publish our game.
 
@@ -504,29 +504,29 @@ Great! At this point, our game basically works. The last thing we need to do is 
 7.	Finally, before we leave the game, let's set the thumbnail that users will see on the main page. While looking out of your camera, use the dropdown menu item **File->Set World Thumbnail**. You should see a slight flicker in the main window. The exact image you see will now be the thumbnail for this world on the world's page.
 
 
-	![](./building-a-game/testexport.html_Image47.png)
+	![](./images/building-a-game/testexport.html_Image47.png)
 
 8.	Since we're done editing the game, let's leave this world. Use the Log out button in the upper left of the screen. Your game will be saved automatically.
 
 
-	![](./building-a-game/testexport.html_Image48.png)
+	![](./images/building-a-game/testexport.html_Image48.png)
 
 9.	Now, we need to find your world so we can publish it. Go to the Worlds page. Use the search box to search for your world. Since I named the world Tutorial Demo, I'll search 'Tut'
 
 
-	![](./building-a-game/testexport.html_Image49.png)
+	![](./images/building-a-game/testexport.html_Image49.png)
 
 10.	When you find your world, click the title or the thumbnail to get to the worlds landing page. If you are logged in, you should see an option to publish the world. Click the **Publish **button.
 
 
-	![](./building-a-game/testexport.html_Image50.png)
+	![](./images/building-a-game/testexport.html_Image50.png)
 
 	**Note: **You can change the publish settings in the future. If you need to keep editing, come back to the publish page, uncheck the publish button, then click publish. The world is now editable again. 
 
 11.	Now, we just have to set a few settings. First, check the '**Publish World' **checkbox. Since this is a single player game, check the '**Single Player' **checkbox as well. Be sure that "**Create and Avatar for each user**", "**Allow Editor Tools**", and "****Use Default Camera****" are unchecked. In the box that appears under "****Use Default Camera****" choose the name of your camera. You should have an option called '**Camera1'**.
 
 
-	![](./building-a-game/testexport.html_Image51.png)
+	![](./images/building-a-game/testexport.html_Image51.png)
 
 12.	Click the publish button! You're done! You now have a completely working game published on the VWS website. To play the game, just click on the world's title from the World's page to load it.
 

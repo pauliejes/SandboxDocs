@@ -11,7 +11,7 @@ First, a brief disclaimer. By default, new Sandbox scenes are very brightly illu
 
 Lights in the VW Sandbox behave close to what you’d expect from a light in the real world: they illuminate the scene in specific ways, depending on the type of light. The specifics will be covered in the following sections, but all lights are created in the same way. From the _Create_ menu, select _Lights_, and choose the type of light you are looking for. It will spawn at the center of your screen.
 
-![Creating Lights](./lighting-and-materials/add_light_menu.png)
+![Creating Lights](./images/lighting-and-materials/add_light_menu.png)
 
 **Note:** Lighting nodes cannot be selected by the rubber band selector (drag-clicking). You must either click on the light bulb icon in the scene or select the light from the Hierarchy tab to select.
 
@@ -23,11 +23,11 @@ There are three types of lighting in the Sandbox: point lights, directional ligh
 
 Before you begin customizing the lighting in your world, I recommend you turn down the global lighting a bit. You can do this by selecting the scene:
 
-![Select scene](./lighting-and-materials/select_scene.png)
+![Select scene](./images/lighting-and-materials/select_scene.png)
 
 And opening the Properties panel by either clicking the button on the top or the tab on the side:
 
-![Scene properties](./lighting-and-materials/finding_properties_panel.png)
+![Scene properties](./images/lighting-and-materials/finding_properties_panel.png)
 
 Click on the “scene” section at the bottom of that tab. There are some nice cosmetic scene properties here. In particular, notice the Sun Color, Sun Intensity, and Sun Direction properties. Together they describe a directional light (more on this later). Feel free to play with these settings until you like the result. Note that these settings only affect the light as it falls on objects and creates shadows, and do not change the apparent position of the sun in the sky.
 
@@ -35,11 +35,11 @@ You cannot change the position of the sun in the sky _per se_, but you can chang
 
 **Note:** As of this writing, there is no way to upload your own custom sky texture. However, this will likely be added in the future.
 
-![Scene lighting settings](./lighting-and-materials/scene_lighting.png)
+![Scene lighting settings](./images/lighting-and-materials/scene_lighting.png)
 
 One final important property on this tab is the Ambient property. This sets the minimum amount of illumination an object can receive. Note that this is not really a color, but a magnitude. Keeping this greyscale is recommended for convenience and clarity. The below image shows a side-by-side of a low-ambient and high-ambient scene.
 
-![Scene ambient](./lighting-and-materials/ambient_intensity.png)
+![Scene ambient](./images/lighting-and-materials/ambient_intensity.png)
 
 With all this in mind, you are now ready to actually begin lighting your scene.
 
@@ -47,7 +47,7 @@ With all this in mind, you are now ready to actually begin lighting your scene.
 
 This is a basic type of light that originates at a particular point in the scene and radiates out spherically from that point. You would use this type of light to model something like a light bulb or a torch. For example, the below scene uses point lights for the torches.
 
-![Point scene](./lighting-and-materials/point_scene.png)
+![Point scene](./images/lighting-and-materials/point_scene.png)
 
 Notice that the parts closer to the torches are more brightly lit than the parts farther away.
 
@@ -61,13 +61,13 @@ Point lights have a couple key properties in the Sandbox that you can adjust: th
 
 *   The _intensity_ of a light determines how strongly the light influences the color of the relevant objects.
 
-    ![Point Intensity](./lighting-and-materials/point_intensity.png)
+    ![Point Intensity](./images/lighting-and-materials/point_intensity.png)
 
     The left light has an intensity of 1, and the right light has an intensity of 3\. You can see how the more intense light has more influence on its surroundings than the less intense light.
 
 *   The _distance_ of the light affects how quickly the light’s intensity drops off.
 
-    ![Point light distance](./lighting-and-materials/point_radius.png)
+    ![Point light distance](./images/lighting-and-materials/point_radius.png)
 
     Both of these lights have the same intensity, but the light on the right has a distance of 3 versus the other light’s 1\. You can see how the light on the right extends farther out than the other as a result.
 
@@ -81,7 +81,7 @@ It is important to note that directional lights are not scoped like point lights
 
 An example of a directional light:
 
-![Directional light](./lighting-and-materials/dir-light.gif)
+![Directional light](./images/lighting-and-materials/dir-light.gif)
 
 Directional lights have three properties: the direction, the intensity, and the color.
 
@@ -95,7 +95,7 @@ Directional lights have three properties: the direction, the intensity, and the 
 
 Spot lights in the Sandbox behave just as they do in real life: they originate at a point and radiate out in a cone shape in a particular direction. The rest is almost identical to the types of lights we’ve already discussed. An example scene that uses a spotlight:
 
-![Spot scene](./lighting-and-materials/spot_scene.png)
+![Spot scene](./images/lighting-and-materials/spot_scene.png)
 
 Notice that the objects in and around the stage are more brightly lit than the objects near the sides. This is because the spotlight is aimed just above the stage.
 
@@ -119,9 +119,9 @@ What exactly distinguishes a snow globe from a trophy baseball? They’re roughl
 
 If you are familiar with node-based material systems such as those in Blender or Unreal, then you will find the Sandbox a little underwhelming. The Sandbox is not a platform for photorealistic renders, nor an advanced game engine. Rather, the graphics are merely another tool to enable the creativity, collaboration, and education of its users.
 
-To access an object’s material properties, just select the object and click the _Material_ button (![](./lighting-and-materials/material.png)) in the top toolbar. Alternatively, you can click on the _Material_ tab on the right. Either will bring up the object’s material editor:
+To access an object’s material properties, just select the object and click the _Material_ button (![](./images/lighting-and-materials/material.png)) in the top toolbar. Alternatively, you can click on the _Material_ tab on the right. Either will bring up the object’s material editor:
 
-![Material editor](./lighting-and-materials/material_editor.png)
+![Material editor](./images/lighting-and-materials/material_editor.png)
 
 **Note:** This image has all the material properties at default. The following screenshots however will have all but the demonstrated property zeroed out to produce a pure effect.
 
@@ -131,11 +131,11 @@ In the following sections we will be examining what each of the widgets here do,
 
 A lot of different things go into the color of individual pixels of an object, such as light color, viewing angle, and shadowing. However, the base color of an object is not complicated. Clicking on the _Diffuse Color_ palette icon brings up a color chooser:
 
-![Color picker](./lighting-and-materials/color_picker.png)
+![Color picker](./images/lighting-and-materials/color_picker.png)
 
 Moving this color around should produce obvious and immediate results. Below is a sphere with a pure red diffuse color:
 
-![Red ball](./lighting-and-materials/diffuse_red_ball.png)
+![Red ball](./images/lighting-and-materials/diffuse_red_ball.png)
 
 Notice that changing the diffuse color does not make the ball solid red; it still has a light side towards the light and a dark side away from the light.
 
@@ -143,11 +143,11 @@ Notice that changing the diffuse color does not make the ball solid red; it stil
 
 Emission color behaves very differently from diffuse color. Emission generates a pure color, unaffected by shadows or lights. You can see this in the image below:
 
-![Red ball](./lighting-and-materials/emissive_red_ball.png)
+![Red ball](./images/lighting-and-materials/emissive_red_ball.png)
 
 This ball has only a pure red color with no light or dark sides like with diffuse color. One generally does not use emission by itself though, but rather in conjunction with other colors to provide a highlight effect, or to emulate ambient reflections:
 
-![White ball](./lighting-and-materials/emission_scene.png)
+![White ball](./images/lighting-and-materials/emission_scene.png)
 
 This ball has a pure white diffuse color, but the slight blue emission color makes it look like the blue backdrop is reflecting onto it. Subtle use of this technique can make a scene look much more realistic.
 
@@ -157,25 +157,25 @@ So we’ve learned how to make a flat shaded object. But what if you wanted to m
 
 This one is a little more complicated. Specular reflections are the dots of brightness that you see on objects, like a fuzzy reflection. For example, this sphere:
 
-![Reflective ball](./lighting-and-materials/specular_example.png)
+![Reflective ball](./images/lighting-and-materials/specular_example.png)
 
 This sphere has a solid black diffuse color, but a white specular color. This causes the white spot, called a _frustrum_, in the direction of the light source. These frustra (plural of frustrum) are caused by several different material properties:
 
 *   The _shininess_ of an object controls how focused the frustra are. The shinier the object is, the smaller and more focused and intense the frustra are. A shininess of 0 is the same as diffuse lighting. You can see this in the images below:
 
-    ![Dull sphere](./lighting-and-materials/specular_dull.png) ![Shiny sphere](./lighting-and-materials/specular_shiny.png)
+    ![Dull sphere](./images/lighting-and-materials/specular_dull.png) ![Shiny sphere](./images/lighting-and-materials/specular_shiny.png)
 
     The sphere on the left has a low shininess value, and as a result the frustrum is loosely focused, in direct contrast with the sphere on the right (high shininess, tight frustrum).
 
 *   The _specular level_ indicates how strongly the object reflects the light. A value less than 1 will cause a reduction of incoming light, and a value greater than 1 will strengthen it.
 
-    ![Low intensity](./lighting-and-materials/specular_low_intensity.png) ![Mid intensity](./lighting-and-materials/specular_shiny.png) ![High intensity](./lighting-and-materials/specular_high_intensity.png)
+    ![Low intensity](./images/lighting-and-materials/specular_low_intensity.png) ![Mid intensity](./images/lighting-and-materials/specular_shiny.png) ![High intensity](./images/lighting-and-materials/specular_high_intensity.png)
 
     Seen here from left to right, low intensity (0.5), medium intensity (1.0), and high intensity (2.0) specular reflections.
 
 *   The _specular color_ is fairly self-explanatory: it sets the color of the frustra. Though it’s probably more accurate to describe it as a mask; the light color is multiplied by the object’s specular color to produce the frustrum color. So a red light with a white specular will produce a red frustrum, but the same light with a blue specular will produce black. Feel free to fiddle with this until it looks right.
 
-    ![Cyan specular](./lighting-and-materials/specular_color.png)
+    ![Cyan specular](./images/lighting-and-materials/specular_color.png)
 
     A sphere with a cyan specular reflection color.
 
@@ -185,7 +185,7 @@ We have already covered the most common material properties, but there are a cou
 
 *   An object’s _alpha_ value sets how transparent it is. Use this for anything that should be seen through, like glass or a hologram.
 
-    ![Transparent cube](./lighting-and-materials/alpha.png)
+    ![Transparent cube](./images/lighting-and-materials/alpha.png)
 
 **Note:** By default, the back faces of an object will not be visible through the transparency, and there is no reliable way to make them appear. Unfortunately this is a limitation of the rendering engine, and there are no plans to implement it.
 
@@ -193,17 +193,17 @@ We have already covered the most common material properties, but there are a cou
 
     Using the _side_ property, you can tell the renderer to draw only the front faces (default 0), only the back faces (1), or all faces (2). This is useful for the aforementioned open geometry, such as this half-pipe:
 
-    ![Back culled](./lighting-and-materials/cull_0.png) ![Front culled](./lighting-and-materials/cull_1.png) ![No cull](./lighting-and-materials/cull_2.png)
+    ![Back culled](./images/lighting-and-materials/cull_0.png) ![Front culled](./images/lighting-and-materials/cull_1.png) ![No cull](./images/lighting-and-materials/cull_2.png)
 
     From left to right, back-culled (front-facing only), front-culled (back-facing only), no culling (all faces).
 
     While fixing the culling would seem to be the obvious solution to the back-facing transparency issue mentioned previously, it does not work reliably and can produce some fairly bizarre effects. See the below image, and notice that some back faces are only partially drawn, and others are missing entirely:
 
-    ![Alpha culling](./lighting-and-materials/alpha_cull.png)
+    ![Alpha culling](./images/lighting-and-materials/alpha_cull.png)
 
 *   The _reflect_ property is a bit of a misnomer. One would expect it to make the object like a mirror and reflect its surroundings. However, it is actually closer to an environmental factor. The higher the _reflect_ property is set, the more of the sky will appear in the surface of the object. This is a great effect for outdoor scenes, but for indoor scenes I recommend using the [emission](#Emission-color) trick I showed you earlier.
 
-    ![Reflective cube](./lighting-and-materials/reflect.png)
+    ![Reflective cube](./images/lighting-and-materials/reflect.png)
 
     A highly reflective cube.
 
@@ -213,7 +213,7 @@ We have covered all the major innate properties of an object’s material. Howev
 
 At its core, texturing is how one maps a two-dimensional image onto a three-dimensional surface. This can be used for all the same effects that you can get with the materials in the previous section, but with infinitely greater detail and a little extra complexity. In the following sections, we will see how the addition of textures improves the blank model below:
 
-![Shelter](./lighting-and-materials/texture_none.png)
+![Shelter](./images/lighting-and-materials/texture_none.png)
 
 Before we dive right into texturing though, it is important to talk about what makes texturing possible: UV coordinates.
 
@@ -221,7 +221,7 @@ Before we dive right into texturing though, it is important to talk about what m
 
 This is a complicated topic with a lot of room for nuance, but I shall attempt to cover the basics. Put simply, textures can be applied because during the creation of the model, all of the faces of the 3D geometry were flattened out (_unwrapped_) and mapped to some region on the texture. This 2D mapping is called “UV” because, since X, Y, and Z are already used for the 3D space, one needs a different way to specify texture coordinates, and the community settled on U for the horizontal and V for the vertical, thus UV coordinates. You can see this mapping in the following graphic:
 
-[![Unwrapping](http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Cube_Representative_UV_Unwrapping.png/320px-Cube_Representative_UV_Unwrapping.png)](http://en.wikipedia.org/wiki/File:Cube_Representative_UV_Unwrapping.png) ![UV Map](./lighting-and-materials/uv_map.png)
+[![Unwrapping](http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Cube_Representative_UV_Unwrapping.png/320px-Cube_Representative_UV_Unwrapping.png)](http://en.wikipedia.org/wiki/File:Cube_Representative_UV_Unwrapping.png) ![UV Map](./images/lighting-and-materials/uv_map.png)
 
 In this example, the cube was unwrapped to this classic cross shape with the bottom of the cube at the intersection, though it could have been done any way the author chose. In fact, the Sandbox uses a simpler mapping: all the faces completely overlap, so the whole texture is displayed on every face. However, neither of these methods are valid for non-box geometries, like a cylinder or sphere, which is why this topic can get so complicated. This is not a UV mapping tutorial so I won’t get into this, but there are plenty of other good tutorials on the topic.
 
@@ -233,7 +233,7 @@ With that said, let’s get started with textures!
 
 There are several different types of textures that can be applied in the Sandbox which we will cover shortly, but they all have properties in common. To edit these properties, open the Materials panel for your object, and click on the section on the very bottom labeled “Texture Layer _x_” where _x_ is a number. If there is not a texture layer already on your object you can click the “Add Layer” button to create one. Clicking the texture layer will bring up a window similar to this one:
 
-![Texture properties](./lighting-and-materials/texture_properties.png)
+![Texture properties](./images/lighting-and-materials/texture_properties.png)
 
 *   The _image_ property contains the URL to the texture. You can access this by clicking on the image at the top. This brings up a texture library browser from which you can choose a texture, or you can click the **+** to specify your own URL (for Dropbox- or Imgur-hosted textures)
 
@@ -251,7 +251,7 @@ That last property, the _Map To_, is the most important property here, and the t
 
 Diffuse textures are the basic type of texture. All it does is paint the image onto the object according to the UV coordinates. Here is the model above, with just a diffuse texture applied:
 
-![Plain shelter](./lighting-and-materials/texture_none.png) ![Diffuse shelter](./lighting-and-materials/texture_diffuse.png)
+![Plain shelter](./images/lighting-and-materials/texture_none.png) ![Diffuse shelter](./images/lighting-and-materials/texture_diffuse.png)
 
 Much better, right? Just this is probably good enough for most applications, but it can be further improved by adding normal and specular maps.
 
@@ -259,13 +259,13 @@ Much better, right? Just this is probably good enough for most applications, but
 
 Mathematically speaking, a normal vector, usually just called a _normal_, is the vector perpendicular to a surface at a point. Normally these are built into the geometry, calculated from the angles of the vertices, but by using a normal map, you can manually specify the normal at every point rather than just at the vertices.
 
-![Normal diagram](./lighting-and-materials/normals.png)
+![Normal diagram](./images/lighting-and-materials/normals.png)
 
 Just like a diffuse texture sets the color for every point, a normal map sets the normal for every point. The RGB channels of the texture map directly to the _xyz_ coordinates of the normal vector in the space tangent to the surface, which is why normal maps tend to look mostly blue (the _z_ coordinate, i.e. straight out from the surface). As a result, the lighting can be calculated at a higher granularity, causing apparent pits and bumps in the surface.
 
 This is a very complicated description, but as they say, a picture is worth a thousand words. Compare the model from earlier with the same model with a normal map applied.
 
-![Normal comparison](./lighting-and-materials/normal_comparison.png)
+![Normal comparison](./images/lighting-and-materials/normal_comparison.png)
 
 You see what a huge difference that makes? The normal affects the lighting, and the lighting affects our perception, creating apparent bumps and pits. This is a great way to add extra realism to a scene. The downside is that normal maps are much harder to author than its predecessor, the bump map.
 
@@ -275,7 +275,7 @@ Bump maps also modify the normals of the surface, but instead of mapping _xyz_ v
 
 Since the bump mapping only uses intensity (light/dark), creating a bump map by hand is quite easy compared to a normal map which uses very specific calculated RGB values. The downside is that it produces somewhat fuzzier relief in the surface. This is visible in the image below:
 
-![Bump vs Normal mapping](./lighting-and-materials/bump_vs_normal.png)
+![Bump vs Normal mapping](./images/lighting-and-materials/bump_vs_normal.png)
 
 The left half of this cube is bump mapped, and the right half is normal mapped. You can see at the edges how the bump map produces more rounded relief vs the normal map, which has sharper edges.
 
@@ -289,13 +289,13 @@ Just like diffuse maps set the color and normal maps set the normal, specular ma
 
 The best example to help visualize this type of map is a rusty metal object. You want the unrusted parts to be highly shiny but the rust to be dull. Or perhaps for a brick wall you want shiny bricks with dull mortar. Or a dirty glass window. These types of effects can be accomplished with a specular map. This effect is visible in the following image:
 
-![Specular map](./lighting-and-materials/texture_specular.png)
+![Specular map](./images/lighting-and-materials/texture_specular.png)
 
 Notice how the mottled reflection gives our house a dirty or dilapidated appearance. This can be highly effective when combined with a normal map to produce a realistic-looking complicated surface.
 
 So by combining all these techniques, our house now looks quite good! What a difference a couple textures make!
 
-![Plain house](./lighting-and-materials/texture_none.png) ![Fancy house](./lighting-and-materials/texture_sum.png)
+![Plain house](./images/lighting-and-materials/texture_none.png) ![Fancy house](./images/lighting-and-materials/texture_sum.png)
 
 ## <span id="Conclusion">Conclusion</span>
 
@@ -305,6 +305,6 @@ We did not go into a ton of detail on any of these topics, so if you’re lookin
 
 I hope you have found this article interesting and informative. If you have any questions or comments, feel free to post them in the comments section below, or email me at steve.vergenz.ctr (at) adlnet (dot) gov. Happy worldbuilding!
 
-![Signoff](./lighting-and-materials/signoff.png)
+![Signoff](./images/lighting-and-materials/signoff.png)
 
 </div>

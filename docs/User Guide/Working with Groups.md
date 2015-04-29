@@ -7,15 +7,15 @@ The Sandbox allows you to group objects together to make them easier to use and 
 
 To make a group, select several objects. Here, I’ve selected 5 objects that I wish to group.
 
-![](./working-with-groups/selections.html_Image0.png)
+![](./images/working-with-groups/selections.html_Image0.png)
 
 Next, choose **Hierarchy->Grouping->Group **from the drop down menu.
 
-![](./working-with-groups/selections.html_Image1.png)
+![](./images/working-with-groups/selections.html_Image1.png)
 
 Once you have clicked this, you’ll see the selection rectangle will change to green, and a selection glyph will appear. The objects are now grouped.
 
-![](./working-with-groups/selections.html_Image2.png)
+![](./images/working-with-groups/selections.html_Image2.png)
 
 **Note: **You cannot group objects that already have hierarchal relationships. For instance, you cannot group a child to its parent. 
 
@@ -29,11 +29,11 @@ Groups can be either ‘Open’ or ‘Closed’. This setting only affects the s
 
 Closed groups have a bright green bounding box,
 
-![](./working-with-groups/selections.html_Image3.png)
+![](./images/working-with-groups/selections.html_Image3.png)
 
 while open groups have a pale green bounding box.
 
-![](./working-with-groups/selections.html_Image4.png)
+![](./images/working-with-groups/selections.html_Image4.png)
 
 You can open or close a group by using the dropdown menu. Hierarchy->Grouping->Open Group.
 
@@ -43,15 +43,15 @@ You can open or close a group by using the dropdown menu. Hierarchy->Grouping->O
 
 Because groups are just a special kind if hierarchy, you can use the link tool to add an object to a group. Select the object you wish to add.
 
-![](./working-with-groups/selections.html_Image5.png)
+![](./images/working-with-groups/selections.html_Image5.png)
 
 Next, select the Link button from the toolbar.
 
-![](./working-with-groups/selections.html_Image6.png)
+![](./images/working-with-groups/selections.html_Image6.png)
 
 Now, select the group root of the group you wish to attach to. Because this group is closed, I can click anywhere on the table or a chair. If the group were open, I would have to click carefully on the selection glyph. Now, the lamp is attached to the group.
 
-![](./working-with-groups/selections.html_Image7.png)
+![](./images/working-with-groups/selections.html_Image7.png)
 
 ## Removing from a group
 
@@ -59,11 +59,11 @@ Again, since the group is just a special kind if hierarchy, you can just use the
 
 **Info: **it’s easier to do this if you open the group first 
 
-![](./working-with-groups/selections.html_Image8.png)
+![](./images/working-with-groups/selections.html_Image8.png)
 
 Now, choose the break link button from the toolbar.
 
-![](./working-with-groups/selections.html_Image9.png)
+![](./images/working-with-groups/selections.html_Image9.png)
 
 The objects will flash for a moment. When you select the group, you will now see it contains only the table and the lamp.
 
