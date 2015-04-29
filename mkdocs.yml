@@ -11,6 +11,7 @@ pages:
 - ['Developer Guide/Developer-Guide.md', 'For Developers']
 - ['User Guide/Basic-Workflow.md', 'For Users', 'Basic Workflow']
 - ['User Guide/Lights and Materials.md', 'For Users', 'Lights and Materials']
+- ['User Guide/Lights and Materials.md', 'For Users', 'Terrain']
 - ['Developer Guide/Installation.md', 'Developer Guide','Installation']
 - ['Developer Guide/Configuration.md', 'Developer Guide','Configuration']
 - ['Developer Guide/configure 3DR.md', 'Developer Guide','Asset Server']
