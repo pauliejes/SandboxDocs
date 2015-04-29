@@ -7,7 +7,7 @@ Edit mode has a few special features - you can pause and play the entire simulat
 
 While in Edit mode, the server will keep backups of the world every few minutes.
 
-### Playing
+### Playing 
 When you are happy with the world (or game, or simulation....), you can 'publish' it. Publishing the world allows you some special options, like whether or not the system should generate avatars for each user, what camera the users should be assigned, and whether or not the users can see the editing tools.
 
 Published worlds do not get saved - when the last user logs out, the world resets to the state it was in when it was published. 
