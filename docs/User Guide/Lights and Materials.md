@@ -1,4 +1,3 @@
-
 ## <span id="Introduction">Introduction</span>
 
 Whether taking a photo in real life or rendering a virtual scene, lighting has a big part in the aesthetics of the final image. In this tutorial, I will show you the basics of lighting and materials in the Virtual World Sandbox.
@@ -297,6 +296,19 @@ So by combining all these techniques, our house now looks quite good! What a dif
 
 ![Plain house](./images/lighting-and-materials/texture_none.png) ![Fancy house](./images/lighting-and-materials/texture_sum.png)
 
+
+## Video Textures
+
+The sandbox can support any video files that HTML5 naively supports. 
+
+If you desire to load a video in a popup window or overlayed on the screen, you should look into standard HTML5 APIs for the 'Video' tag. Simply code up your video to play as you normally would in any web page, and attach that code to an object so that the sandbox will execute it. 
+
+We've recently added support for using video files as textures. Currently, when a video is applied to a surface as a texture, it has no material settings. For instance, you cannot use a video in place of an image in a normal map. This may or may not become possible in the future. However, you can play still use a video texture to display a movie file on an object in the world, such as a monitor or projector screen.
+
+Select the object you want to modify, and open the material editor. On the first tab, under 'Basic Material Settings' find the button that says 'Material Type: '. The default material type is the [Phong Material](Phong Material), but we will need to change this. Click the button, and choose 'Video'. The GUI in the material editor will change, and a button labeled 'Choose Video URL' will appear. Click this button, and enter a URL to a video file. 
+
+Your video file should appear on the object, mapped as per the object UV coordinates.
+
 ## <span id="Conclusion">Conclusion</span>
 
 Whew, what a journey! You have been introduced to a lot of material, but let’s review. You learned about the different types of lights: spot light, point light, and directional light. You learned a little bit about how the lights interact with objects in the Materials section. Finally you learned about the subtle art of the texture.
@@ -304,6 +316,8 @@ Whew, what a journey! You have been introduced to a lot of material, but let’s
 We did not go into a ton of detail on any of these topics, so if you’re looking for more information you are welcome to google anything mentioned in this article. However remember that that information will not be Sandbox-specific.
 
 I hope you have found this article interesting and informative. If you have any questions or comments, feel free to post them in the comments section below, or email me at steve.vergenz.ctr (at) adlnet (dot) gov. Happy worldbuilding!
+
+
 
 ![Signoff](./images/lighting-and-materials/signoff.png)
 
