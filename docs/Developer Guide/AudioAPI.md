@@ -84,7 +84,7 @@ Get the position of the source object. **Note:** The 3D driver keeps track of th
 
 **Arguments:**
 
-*(none)*
+*(None)*
 
 **Returns:**
 
@@ -101,7 +101,7 @@ HTML can't actually play it louder, however we can make it 'carry' farther by us
 
 **Returns**
 
-*(nothing)*
+*(Nothing)*
 
 <a id='driverMethods'></a>
 ###Driver Methods
@@ -113,11 +113,11 @@ start it up
 
 **Arguments:**
 
-*(none)*
+*(None)*
 
 **Returns:**
 
-*(nothing)*
+*(Nothing)*
 
 <a id='playSound'></a>
 ####playSound(url, volume)
@@ -134,7 +134,7 @@ How loud.
 
 **Returns:**
 
-*(nothing)*
+*(Nothing)*
 
 <a id='calledMethod'></a>
 ####calledMethod(id, name, params)
@@ -174,11 +174,11 @@ Update the sound volume based on the position of the camera and the position of 
 
 **Arguments:**
 
-`(None)`
+*(None)*
 
 **Returns:**
 
-`(Nothing)`
+*(Nothing)*
 
 ####deletedNode(id)
 
@@ -191,4 +191,4 @@ The String identifier of the node deleted.
 
 **Returns:**
 
-`(Nothing)`
+*(Nothing)*
