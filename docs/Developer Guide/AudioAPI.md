@@ -126,10 +126,10 @@ Lets GUI elements play sounds.
 
 **Arguments:**
 
-`url` `(String)`  
+`url` (`String`)  
 String specifying the URL.
 
-`volume` `(number)`  
+`volume` (`number`)  
 How loud.
 
 **Returns:**
@@ -143,10 +143,10 @@ This is a good place to explain.
 
 **Arguments:**
 
-`id` `(String)`  
+`id` (`String`)  
 The identification String.
 
-`name` `(String)`  
+`name` (`String`)  
 The name of the command:
 
 * `playSound`
@@ -161,7 +161,7 @@ The name of the command:
 
 	**Note:** only delete sound if you are sure the sound will not play again any time soon
 
-`params` `(Array)`  
+`params` (`Array`)  
 Array of additional parameters
 
 **Returns**
@@ -186,7 +186,7 @@ Deletes the specified sound source node.
 
 **Arguments:**
 
-`id` `(String)`  
+`id` (`String`)  
 The String identifier of the node deleted.
 
 **Returns:**

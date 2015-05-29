@@ -16,12 +16,12 @@ Talk more about that.
 
 **Arguments:**
 
-`id` `(String)`  
+`id` (`String`)  
 String unique to each user.
 
 **Returns:**
 
-`name` `(String)`  
+`name` (`String`)  
 The user's name.
 
 <a id='getConnectionIDForUserName'></a>
@@ -31,12 +31,12 @@ Discuss the various ins and outs.
 
 **Arguments:**
 
-`name` `(String)`  
+`name` (`String`)  
 The user's name.
 
 **Returns:**
 
-`id` `(String)`  
+`id` (`String`)  
 String unique to each user.
 
 <a id='getAvatarForUserName'></a>
@@ -46,12 +46,12 @@ What's in a name?
 
 **Arguments**
 
-`name` `(String)`  
+`name` (`String`)  
 The user's name.
 
 **Returns**
 
-`avatar` `(node)`  
+`avatar` (`node`)  
 The user's 3D avatar. 
 
 <a id='focus'></a>
@@ -61,10 +61,10 @@ Focus.
 
 **Arguments:**
 
-`cid` `(String)`  
+`cid` (`String`)  
 The client's unique identification string.
 
-`nodeID` `()`  
+`nodeID` (`String`)  
 The node's unique identification string.
 
 **Returns:**
@@ -78,12 +78,12 @@ Give me that thingamajig, so I can take a picture.
 
 **Arguments:**
 
-`id` `(String)`  
+`id` (`String`)  
 The client's unique identification string.
 
 **Returns:**
 
-`cameraID` `()`  
+`cameraID` (`String`)  
 The camera's unique identification string.
 
 <a id='getCameraForClient'></a>
@@ -93,10 +93,10 @@ Now that we've got the camera, we are out of here!
 
 **Arguments:**
 
-`id` `(String)`  
+`id` (`String`)  
 The client's unique identification string.
 
 **Returns:**
 
-`camera` `(node)`  
+`camera` (`node`)  
 The first person camera for the user.
