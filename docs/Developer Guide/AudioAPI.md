@@ -1,45 +1,194 @@
-# Audio API
+#Sandbox Audio API Reference
 
-Read carefully, this is going to be hard to hear.
+Defining options and controls with the audio of the Sandbox.
 
-Includes values...
+##Audio API class
 
-1. id - the name to identify the sound
-2. sound - the file of the sound
-3. position - where the sound can be found
-4. volume - how loud
-5. end range - ??
-6. start range - ??
-7. looping - boolean indicator whether or not the sound is to loop/repeat
-8. playing - boolean indicator whether or not the sound is currently in use  
+<a id='properties'></a>
+###Properties
 
-#### **Play, Pause, and Stop**
+<a id='id'></a>
+#### id
+Type: `String`
+The name to identify the sound
 
-Standard features of Play, Pause, and Stop, respectively.
+<a id='sound'></a>
+#### sound
+Type: `String` `filename`
+The file of the sound
 
-#### **Loop/Unloop**
+<a id='position'></a>
+#### position
+Type: `number`
+Where the sound can be found
 
-Sets the boolean looping variable.
+<a id='volume'></a>
+#### volume
+Type: `number`
+How loud
 
-#### **Update Source Position**
+<a id='end_range'></a>
+####end range
+Type: `number`
+some number for the end
 
-Get the position of your source object.
+<a id='start_range'></a>
+####start range
+Type: `number`
+some number for the start
 
-Note: the 3D driver keeps track of the postion.
+<a id='looping'></a>
+####looping
+Type: `boolean`
+Indicates whether or not the sound is to loop/repeat
 
-#### **Update Volume**
+<a id='playing'></a>
+####playing
+Type: `boolean`
+Indicates whether or not the sound is currently in use  
+
+<a id='behaviors'></a>
+###Behaviors
+
+<a id='play'></a>
+####play
+
+
+Plays sound.
+
+<a id='pause'></a>
+####pause
+
+Halts playback of sound, holding position along track to resume where left off.
+
+<a id='stop'></a>
+####stop
+
+Ends playback of sound, resets position.
+
+<a id='prototypeBehvaiors'></a>
+###Prototype Behaviors
+
+<a id='loop'></a>
+####loop
+Sets the `boolean` looping variable.
+
+<a id='unloop'></a>
+####unloop
+Sets the `boolean` looping variable.
+
+<a id='updateSourcePosition'></a>
+####updateSourcePosition
+
+Get the position of the source object. **Note:** The 3D driver keeps track of the position.
+
+**Arguments:**
+
+*(none)*
+
+**Returns:**
+
+World position of the source object `Type`
+
+<a id='updateVolume'></a>
+####updateVolume
 
 HTML can't actually play it louder, however we can make it 'carry' farther by using the inverse and adjusting the range parameters of the falloff curve.
 
-## **The Driver**
+**Arguments**
 
-1. Initialize - start it up
-2. Play sound - lets GUI elements play sounds
-3. Called Method - takes id, name, and params
-	1. if the scene played the sound, it has no position and just plays at full volume
-	2. nodes that are not the scene use their position to adjust the volume
-	3. pause sound
-	4. stop sound
-	5. delete sound - **note** only use this if you are sure the sound will not play again any time soon
-4. Ticked - update the sound volume based on the position of the camera and the position of the object
-5. Deleted Node
+`camerapos` `(Type)`
+
+**Returns**
+
+*(nothing)*
+
+<a id='driverMethods'></a>
+###Driver Methods
+
+<a id='initialize'></a>
+####Initialize()
+
+start it up
+
+**Arguments:**
+
+*(none)*
+
+**Returns:**
+
+*(nothing)*
+
+<a id='playSound'></a>
+####playSound(url, volume)
+
+Lets GUI elements play sounds.
+
+**Arguments:**
+
+`url` `(String)`  
+String specifying the URL.
+
+`volume` `(number)`  
+How loud.
+
+**Returns:**
+
+*(nothing)*
+
+<a id='calledMethod'></a>
+####calledMethod(id, name, params)
+
+This is a good place to explain.
+
+**Arguments:**
+
+`id` `(String)`  
+The identification String.
+
+`name` `(String)`  
+The name of the command:
+
+* `playSound`
+
+	If the scene played the sound, it has no position and just plays at full volume. Nodes that are not the scene use their position to adjust the volume.
+
+* `pauseSound`
+
+* `stopSound`
+
+* `deleteSound`
+
+	**Note:** only delete sound if you are sure the sound will not play again any time soon
+
+`params` `(Array)`  
+Array of additional parameters
+
+**Returns**
+
+*(Nothing)*
+
+####ticked()
+
+Update the sound volume based on the position of the camera and the position of the object
+
+**Arguments:**
+
+`(None)`
+
+**Returns:**
+
+`(Nothing)`
+
+####deletedNode(id)
+
+Deletes the specified sound source node.
+
+**Arguments:**
+
+`id` `(String)`  
+The String identifier of the node deleted.
+
+**Returns:**
+
+`(Nothing)`
