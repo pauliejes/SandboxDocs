@@ -1,70 +1,400 @@
 # Transform API
 
-What does the transform function do for you?
+Facilitates manipulation of nodes by allowing manipulation of their properties such as position, and  rotation.
 
-#### **Get Position**
+## Transform API class
 
-#### **Get World Position**
+Facilitates movement, rotation, and more of nodes.
 
-#### **Local to Global**
+<a id='methods'></a>
+### Methods
 
-Accepts X, Y, and Z
+<a id='move'></a>
+#### move(x, y, z, coordinateSystem)
 
-#### **Local to Global Rotation**
+Moves a node
 
-Accepts X, Y, and Z
+**Arguments:**
 
+`x` (`number`)  
+Movement along the x-axis in meters.
+
+`y` (`number`)  
+Movement along the y-axis in meters.
+
+`z` (`number`)  
+Movement along the z-axis in meters.
+
+`coordinateSystem` (`String`)  
+Specify either 'global' or local coordinate system.
+
+**Returns:**
+
+*(Nothing)*
+
+<a id='getPosition'></a>
+#### getPosition()
+
+Return a node's local position?
+
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+`localPosition` (`Array of numbers`)  
+Array containing local x, y, and z coordinates.
+
+<a id='getWorldPosition'></a>
+#### getWorldPosition()
+
+Return a node's global position.
+
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+`globalPosition` (`Array of numbers`)  
+Array containing global x, y, and z coordinates.
+
+<a id='localToGlobal'></a>
+#### localToGlobal(x, y, z)
+
+Exchanges local x, y, and z coordinates for global x, y, and z coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Movement along the x-axis in meters.
+
+`y` (`number`)  
+Movement along the y-axis in meters.
+
+`z` (`number`)  
+Movement along the z-axis in meters.
+
+**Returns:**
+
+`vector` (`Array of numbers`)  
+Array containing global x, y, and z coordinates.
+
+<a id='localToGlobalRotation'></a>
+#### localToGlobalRotation(x, y, z)
+
+Converts local values of rotation to global values of rotation.
+
+**Arguments:**
+
+`x` (`number`)  
+Movement around the x-axis in meters.
+
+`y` (`number`)  
+Movement around the y-axis in meters.
+
+`z` (`number`)  
+Movement around the z-axis in meters.
+
+**Returns:**
+
+`vector` (`Array of numbers`)  
+Array containing global x, y and z values of rotation.
+
+<a id='globalToLocal'></a>
 #### **Global to Local**
 
-Accepts X, Y, and Z
+Exchanges global x, y, and z coordinates for local x, y, and z coordinates.
 
-#### **Global to Local Rotation**
+**Arguments:**
 
-Accepts X, Y, and Z
+`x` (`number`)  
+Position along the x-axis.
 
+`y` (`number`)  
+Position along the y-axis.
+
+`z` (`number`)  
+Position along the z-axis.
+
+**Returns:**
+
+`vector` (`Array[x coordinate, y coordinate, z coordinate]`)  
+Array containing local x, y, and z coordinates.
+
+<a id='globalToLocalRotation'></a>
+#### globalToLocalRotation(x, y, z)
+
+Converts local values of rotation to global values of rotation.
+
+**Arguments:**
+
+`x` (`number`)  
+Movement around the x-axis in meters.
+
+`y` (`number`)  
+Movement around the y-axis in meters.
+
+`z` (`number`)  
+Movement around the z-axis in meters.
+
+**Returns:**
+
+`vector` (`Array[x coordinate, y coordinate, z coordinate]`)  
+Array containing global x, y and z values of rotation.
+
+<a id='globalRotationToLocalRotation'></a>
 #### **Global Rotation to Local Rotation**
 
-Accepts X, Y, and Z
+Converts global rotation values to local rotation values.
 
-#### **Set Position**
+`x` (`number`)  
+Movement around the x-axis in meters.
 
-Accepts X, Y, and Z
+`y` (`number`)  
+Movement around the y-axis in meters.
 
-#### **Rotate**
+`z` (`number`)  
+Movement around the z-axis in meters.
 
-Accepts X, Y, Z and Coordinate System
+**Returns:**
 
-	1. Rotate X
-	2. Rotate Y
-	3. Rotate Z
-	4. Coordinates
+`vector` (`Array[x coordinate, y coordinate, z coordinate]`)  
+Array containing local x, y and z values of rotation.
 
-#### **Rotate around Axis**
+<a id='setPosition'></a>
+#### setPosition(x, y, z)
 
-Accepts Angle, Axis, and Coordinate System
+Accepts X, Y, and Z coordinates to establish a new position.
 
-#### **Get Rotation**
+**Arguments:**
+
+`x` (`number`)  
+Position along the x-axis.
+
+`y` (`number`)  
+Position along the y-axis.
+
+`z` (`number`)  
+Position along the z-axis.
+
+**Returns:**
+
+*(Nothing)*
+
+<a id='rotate'></a>
+#### rotate(x, y, z, coordinateSystem)
+
+Accepts X, Y, Z and Coordinate System and rotates.
+
+**Arguments:**
+
+`x` (`number`)  
+Angle of movement around the x-axis.
+
+`y` (`number`)  
+Angle of movement around the y-axis.
+
+`z` (`number`)  
+Angle of movement around the z-axis.
+
+**Returns:**
+
+*(Nothing)*
+
+<a id='rotateX'></a>
+#### rotateX(angle, coordinateSystem)
+
+Rotates the node around the x-axis.
+
+**Arguments:**
+
+`angle` (`number`)  
+Angle of movement around the x-axis.
+
+`coordinateSystem` (`String`)
+Designates whether local, global, or parent coordinates are given.
+
+**Returns:**
+
+*(Nothing)*
+
+<a id='rotateY'></a>
+#### rotateY(angle, coordinateSystem)
+
+Rotates the node around the y-axis.
+
+**Arguments:**
+
+`angle` (`number`)  
+Angle of movement around the y-axis.
+
+`coordinateSystem` (`String`)
+Designates whether local, global, or parent coordinates are given.
+
+**Returns:**
+
+*(Nothing)*
+
+<a id='rotateZ'></a>
+#### rotateZ(angle, coordinateSystem)
+
+Rotates the node around the z-axis.
+
+**Arguments:**
+
+`angle` (`number`)  
+Angle of movement around the z-axis.
+
+`coordinateSystem` (`String`)
+Designates whether local, global, or parent coordinates are given.
+
+**Returns:**
+
+*(Nothing)*
+
+
+Coordinates:
+	Local
+	Global
+	Parent
+
+
+<a id='rotateAroundAxis'></a>
+#### rotateAroundAxis(angle, axis, coordinateSystem)
+
+Accepts Angle, Axis, and Coordinate System and rotates node around given axis.
+
+**Arguments:**
+
+`angle` (`number`)  
+The angle for rotation.
+
+`axis` (`Array of numbers`)
+Designates which axis for rotation.
+
+`coordinateSystem` (`String`)
+Designates which coordinate system is given (Local, global, or parent).
+
+**Returns:**
+
+*(Nothing)*
+
+<a id='getRotation'></a>
+#### getRotation()
 
 By some form of magic, returns a number representing the rotation
 
-#### **Set Rotation**
+**Arguments:**
 
-Accepts X, Y, and Z.  Good thinking let someone else do all the heavy lifting.
+*(None)*
 
-#### **Get Scale**
+**Returns:**
 
-Can you tell me how much this weighs??  No, that's not right.
+`euler` (`Array of numbers`)  
+Angles of rotation around x, y and z axes.
 
-#### **Set Scale**
+<a id='setRotation'></a>
+#### setRotation(x, y, z)
 
-Accepts X, Y, and Z
+Sets the rotation of a node given specified angles.
 
-#### **Scale Matrix**
+**Arguments:**
 
-Accepts X, Y, Z, and Matrix
+`x` (`number`)  
+Angle of rotation around the x-axis.
 
-#### **Look At**
+`y` (`number`)  
+Angle of rotation around the y-axis.
 
-Accepts t, clamp, axis, up, and fromOffset
+`z` (`number`)  
+Angle of rotation around the z-axis.
 
-**If you made it through all of this without your head exploding, you get a gold star**
+**Returns:**
+
+*(Nothing)*
+
+<a id='getScale'></a>
+#### getScale()
+
+Returns the magnitude of the node.
+
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+`vector` (`Array of numbers`)  
+Array of x, y, and z vectors.
+
+<a id='setScale'></a>
+#### setScale(x, y, z)
+
+Accepts X, Y, and Z to set the scale of a node.
+
+**Arguments:**
+
+`x` (`number`)  
+Scale of the x-axis.
+
+`y` (`number`)  
+Scale of the y-axis.
+
+`z` (`number`)  
+Scale of the z-axis.
+
+**Returns:**
+
+*(Nothing)*
+
+<a id='scaleMatrix'></a>
+#### scaleMatrix(x, y, z, mat)
+
+Accepts X, Y, Z, and Matrix.
+
+**Arguments:**
+
+`x` (`number`)  
+Scale of the x-axis.
+
+`y` (`number`)  
+Scale of the y-axis.
+
+`z` (`number`)  
+Scale of the z-axis.
+
+`mat` (`Array of numbers`)  
+Current matrix of the node.
+
+**Returns:**
+
+`matrix` (`Array of numbers`)  
+Updated matrix of the node being scaled.
+
+<a id='lookAt'></a>
+#### lookAt(t, clamp, axis, up, fromOffset)
+
+Facilitates examination of a node.
+
+**Arguments:**
+
+`t` (`String`)  
+Identification string of the target being looked at.
+
+`clamp` (`String`)  
+Axis held steady while examining the node.
+
+`axis` (`String`)  
+Designates the axis. More needed. Default value is 'Y'.
+
+`up` (`String`)  
+I'm really not sure.
+
+`fromOffset` (`number`)  
+Value of the offset of the node.
+
+**Returns:**
+
+*(Nothing)*

@@ -44,12 +44,12 @@ String unique to each user.
 
 What's in a name?
 
-**Arguments**
+**Arguments:**
 
 `name` (`String`)  
 The user's name.
 
-**Returns**
+**Returns:**
 
 `avatar` (`node`)  
 The user's 3D avatar. 

@@ -9,73 +9,111 @@ Defining options and controls with the audio of the Sandbox.
 
 <a id='id'></a>
 #### id
-Type: `String`
+Type: `String`  
 The name to identify the sound
 
 <a id='sound'></a>
 #### sound
-Type: `String` `filename`
+Type: `String` `filename`  
 The file of the sound
 
 <a id='position'></a>
 #### position
-Type: `number`
+Type: `number`  
 Where the sound can be found
 
 <a id='volume'></a>
 #### volume
-Type: `number`
+Type: `number`  
 How loud
 
 <a id='end_range'></a>
 ####end range
-Type: `number`
+Type: `number`  
 some number for the end
 
 <a id='start_range'></a>
 ####start range
-Type: `number`
+Type: `number`  
 some number for the start
 
 <a id='looping'></a>
 ####looping
-Type: `boolean`
+Type: `boolean`  
 Indicates whether or not the sound is to loop/repeat
 
 <a id='playing'></a>
 ####playing
-Type: `boolean`
+Type: `boolean`  
 Indicates whether or not the sound is currently in use  
 
-<a id='behaviors'></a>
-###Behaviors
+<a id='methods'></a>
+###Methods
 
 <a id='play'></a>
-####play
-
+####play()
 
 Plays sound.
 
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+*(Nothing)*
+
 <a id='pause'></a>
-####pause
+####pause()
 
 Halts playback of sound, holding position along track to resume where left off.
 
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+*(Nothing)*
+
 <a id='stop'></a>
-####stop
+####stop()
 
 Ends playback of sound, resets position.
 
-<a id='prototypeBehvaiors'></a>
-###Prototype Behaviors
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+*(Nothing)*
 
 <a id='loop'></a>
-####loop
+####loop()(
+
 Sets the `boolean` looping variable.
 
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+*(Nothing)*
+
 <a id='unloop'></a>
-####unloop
+####unloop()
+
 Sets the `boolean` looping variable.
+
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+*(Nothing)*
 
 <a id='updateSourcePosition'></a>
 ####updateSourcePosition
@@ -88,7 +126,7 @@ Get the position of the source object. **Note:** The 3D driver keeps track of th
 
 **Returns:**
 
-World position of the source object `Type`
+*(Nothing)*
 
 <a id='updateVolume'></a>
 ####updateVolume
@@ -97,14 +135,12 @@ HTML can't actually play it louder, however we can make it 'carry' farther by us
 
 **Arguments**
 
-`camerapos` `(Type)`
+`camerapos` (`number`)  
+Location of camera.
 
 **Returns**
 
 *(Nothing)*
-
-<a id='driverMethods'></a>
-###Driver Methods
 
 <a id='initialize'></a>
 ####Initialize()
