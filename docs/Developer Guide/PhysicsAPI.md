@@ -12,7 +12,7 @@ Where the rubber meets the road.
 <a id='addForceAtCenter'></a>
 #### addForceAtCenter(x, y, z, coords)
 
-Applies force at center of node. Accepts X, Y, Z, and Coordinates
+Applies force at center of node. Accepts X, Y, Z, and Coordinates.
 
 **Arguments:**
 
@@ -35,7 +35,7 @@ Coordinates where force is to be applied.
 <a id='addForceImpulse'></a>
 #### addForceImpulse(x, y, z, coords)
 
-Accepts X, Y, Z, and Coordinates
+Accepts X, Y, Z, and Coordinates.
 
 **Arguments:**
 
@@ -58,7 +58,7 @@ Coordinates where force is to be applied.
 <a id='addTorqueImpulse'></a>
 #### addTorqueImpulse(x, y, z, coords)
 
-Accepts X, Y, Z, and Coordinates
+Accepts X, Y, Z, and Coordinates.
 
 **Arguments:**
 
@@ -81,7 +81,7 @@ Coordinates where torque is to be applied.
 <a id='addTorque'></a>
 #### addTorque(x, y, z, coords)
 
-Accepts X, Y, Z, and Coordinates
+Accepts X, Y, Z, and Coordinates.
 
 **Arguments:**
 
@@ -104,7 +104,7 @@ Coordinates where torque is to be applied.
 <a id='addForceOffset'></a>
 #### addForceOffset(x, y, z, x1, y1, z1, coords)
 
-Accepts X, Y, Z, X1, Y1, Z1 and Coordinates
+Accepts X, Y, Z, X1, Y1, Z1 and Coordinates.
 
 **Arguments:**
 
@@ -136,7 +136,7 @@ Coordinates where force is to be applied.
 <a id='setLinearVelocity'></a>
 #### setLinearVelocity(x, y, z, coords)
 
-Sets the linear velocity. Accepts X, Y, Z, and Coordinates
+Sets the linear velocity. Accepts X, Y, Z, and Coordinates.
 
 **Arguments:**
 
@@ -159,7 +159,7 @@ Origin coordinates of linear velocity.
 <a id='setAngularvelocity'></a>
 #### setAngularVelocity(x, y, z, coords)
 
-Sets the angular velocity. Accepts X, Y, Z, and Coordinates
+Sets the angular velocity. Accepts X, Y, Z, and Coordinates.
 
 **Arguments:**
 
