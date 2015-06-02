@@ -136,6 +136,7 @@ Brief description of returned value. Or if there is no returned value:
 #### generatePoint()
 
 Generate a new point in space based on the emitter type and size.
+
 **Arguments:**
 
 *(None)*
