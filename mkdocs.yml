@@ -41,7 +41,7 @@ pages:
 - ['Developer Guide/Extending.md', 'Developer Guide','Extending Sandbox']
 - ['Developer Guide/Assets.md', 'Developer Guide','Asset Pipeline']
 - ['Developer Guide/Prims-and-Modifiers.md', 'Developer Guide','Prim and Modifier Pipeline']
-- ['Developer Guide/Asset-Server_Integration.md', 'Developer Guide','Asset and Server Integration']
+- ['Developer Guide/Asset-Server-Integration.md', 'Developer Guide','Asset and Server Integration']
 - ['Developer Guide/Development.md', 'Developer Guide','Development']
 - ['Developer Guide/particleSystem.md', 'Developer Guide','Particle Systems']
 
