@@ -15,13 +15,9 @@ pages:
 - ['User Guide/Lights and Materials.md', 'For Users', 'Lights and Materials']
 - ['User Guide/terrain.md', 'For Users', 'Terrain']
 - ['User Guide/Cameras.md', 'For Users', 'Cameras']
-- ['User Guide/GUINodes.md', 'For Users', 'GUI Nodes']
-- ['User Guide/Physics.md', 'For Users', 'Physics']
-- ['User Guide/Particles.md', 'For Users', 'Particles']
 - ['User Guide/Assets.md', 'For Users', 'Assets and Models']
 - ['Developer Guide/Installation.md', 'Developer Guide','Installation']
 - ['Developer Guide/Configuration.md', 'Developer Guide','Configuration']
-- ['Developer Guide/configure 3DR.md', 'Developer Guide','Asset Server']
 - ['Developer Guide/Architecture-Overview.md', 'Developer Guide','Architecture Overview']
 - ['Developer Guide/Data-Organization.md', 'Developer Guide','Data Organization']
 - ['Developer Guide/File-Organization.md', 'Developer Guide','File Organization']
@@ -30,14 +26,7 @@ pages:
 - ['Developer Guide/_3rd-Party-Libraries.md', 'Developer Guide','3rd Party Libraries']
 - ['Developer Guide/drivers/Drivers.md', 'Developer Guide','Driver Reference']
 - ['Developer Guide/Extending.md', 'Developer Guide','Extending Sandbox']
-- ['Developer Guide/Assets.md', 'Developer Guide','Asset Pipeline']
-- ['Developer Guide/Prims-and-Modifiers.md', 'Developer Guide','Prim and Modifier Pipeline']
-- ['Scripting/scripting/ScriptingIntro.md', 'Scripting','Scripting Intro']
-- ['Scripting/scripting/SystemAPIs.md', 'Scripting','System APIs']
-- ['Scripting/scripting/Events.md', 'Scripting','Events']
-- ['Scripting/scripting/Events.md', 'Scripting','Behaviors']
-- ['Scripting/scripting/Nodes.md', 'Scripting','Working with Entities']
-- ['Scripting/scripting/Nodes.md', 'Scripting','Entity Property Reference']
+
 
 
 
