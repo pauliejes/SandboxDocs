@@ -52,7 +52,7 @@ pages:
 - ['Scripting/scripting/Entity Property Reference.md', 'Scripting','Entity Property Reference']
 - ['Scripting/scripting/Nodes.md', 'Scripting','Nodes']
 
-- ['SystemAPI/SystemAPI.md', 'System APIs','System API']
+- ['SystemAPI/SystemAPIs.md', 'System APIs','System API']
 - ['SystemAPI/AudioAPI.md', 'System APIs','Audio API']
 - ['SystemAPI/ClientAPI.md', 'System APIs','Client API']
 - ['SystemAPI/CommsAPI.md', 'System APIs','Communications API']
