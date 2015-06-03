@@ -10,6 +10,7 @@ pages:
 - ['Home.md', 'Home']
 - ['Developer Guide/Developer-Guide.md', 'For Developers']
 - ['FAQ.md', 'For Users', 'FAQ']
+
 - ['User Guide/Using-The-Editor.md', 'For Users', 'Using The Editor']
 - ['User Guide/Selecting-Objects.md', 'For Users', 'Selecting Objects']
 - ['User Guide/Lights and Materials.md', 'For Users', 'Lights and Materials']
@@ -19,6 +20,14 @@ pages:
 - ['User Guide/Physics.md', 'For Users', 'Physics']
 - ['User Guide/Particles.md', 'For Users', 'Particles']
 - ['User Guide/Assets.md', 'For Users', 'Assets and Models']
+- ['User Guide/Phong-Material.md', 'For Users', 'Phong Material']
+- ['User Guide/Sharing-the-camera-view.md', 'For Users', 'Sharing the Camera View']
+- ['User Guide/User-Guide.md', 'For Users', 'User Guide']
+- ['User Guide/Using-the-Editor.md', 'For Users', 'Using the Editor']
+- ['User Guide/Working with Groups.md', 'For Users', 'Working with Groups']
+- ['User Guide/Working with Terrain.md', 'For Users', 'Working with Terrain']
+- ['User Guide/build a game.md', 'For Users', 'Build a Game']
+
 - ['Developer Guide/Installation.md', 'Developer Guide','Installation']
 - ['Developer Guide/Configuration.md', 'Developer Guide','Configuration']
 - ['Developer Guide/configure 3DR.md', 'Developer Guide','Asset Server']
@@ -32,14 +41,20 @@ pages:
 - ['Developer Guide/Extending.md', 'Developer Guide','Extending Sandbox']
 - ['Developer Guide/Assets.md', 'Developer Guide','Asset Pipeline']
 - ['Developer Guide/Prims-and-Modifiers.md', 'Developer Guide','Prim and Modifier Pipeline']
+- ['Developer Guide/Asset-Server_Integration.md', 'Developer Guide','Asset and Server Integration']
+- ['Developer Guide/Development.md', 'Developer Guide','Development']
+- ['Developer Guide/particleSystem.md', 'Developer Guide','Particle Systems']
+
 - ['Scripting/scripting/ScriptingIntro.md', 'Scripting','Introduction to Scripting']
-- ['Scripting/scripting/SystemAPIs.md', 'Scripting','System APIs']
 - ['Scripting/scripting/Events.md', 'Scripting','Events']
 - ['Scripting/scripting/Behaviors.md', 'Scripting','Behaviors']
 - ['Scripting/scripting/Working with Entities.md', 'Scripting','Working with Entities']
 - ['Scripting/scripting/Entity Property Reference.md', 'Scripting','Entity Property Reference']
 - ['Scripting/scripting/Nodes.md', 'Scripting','Nodes']
 
-
-
-
+- ['SystemAPI/SystemAPI.md', 'System APIs','System API']
+- ['SystemAPI/AudioAPI.md', 'System APIs','Audio API']
+- ['SystemAPI/ClientAPI.md', 'System APIs','Client API']
+- ['SystemAPI/CommsAPI.md', 'System APIs','Communications API']
+- ['SystemAPI/PhysicsAPI.md', 'System APIs','Physics API']
+- ['SystemAPI/TransformAPI.md', 'System APIs','Transform API']
