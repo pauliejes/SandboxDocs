@@ -32,6 +32,6 @@ Textures are loaded through the SceneManager, which caches and manages lifetimes
 
 A)  Both the **MaterialDef** system and the 3D asset type parsers will request a texture object from SceneManager. This is done in a synchronous way, so SceneManager immediatly returns a THREE.Texture object.
 
-B) If the object is already loaded ( or loaded but pending), a new THREE.js texture is create by cloning the existing object. These clones are kept in an array on the first texture requests for a given URL. At this point, the texture may contain the solid blue placeholder data. 
+B) If the object is already loaded ( or loaded but pending), a new THREE.js texture is created by cloning the existing object. These clones are kept in an array on the first texture requested for a given URL. At this point, the texture may contain the solid blue placeholder data. 
 
-C) Later, when the browser has finisied downloading and parsing the data, the texture and all clones will have their internal data updated to the new image. Users will see the blue textures replaced over time with the proper images.
+C) Later, when the browser has finished downloading and parsing the data, the texture and all clones will have their internal data updated to the new image. Users will see the blue textures replaced over time with the proper images.
