@@ -1,6 +1,6 @@
 # Asset Pipeline
 
-This discussion details the loading algorithm for 3D model and texture assets in the engine. It does not discuss delivery of raw HTML assets like GUI images, fonts, or sounds. Specifically, this deal with the loading pipline for VWF entities. Other 3D assets (like the previews in the EntityLibrary) may use a simpler system
+This discussion details the loading algorithm for 3D model and texture assets in the engine. It does not discuss delivery of raw HTML assets like GUI images, fonts, or sounds. Specifically, this deals with the loading pipline for VWF entities. Other 3D assets (like the previews in the EntityLibrary) may use a simpler system
 
 ## 3D Models
 
