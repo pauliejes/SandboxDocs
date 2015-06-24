@@ -1,16 +1,13 @@
 # Client API
 
 Enter meaningful text here.
-
-## Client API Class
-
 Short summary of `ClientAPI`
 
 <a id='methods'></a>
-###Methods
+##Methods
 
 <a id='getUserNameForConnectionID'></a>
-#### getUserNameForConnectionID(id)
+### getUserNameForConnectionID(id)
 
 Talk more about that.
 
@@ -25,7 +22,7 @@ String unique to each user.
 The user's name.
 
 <a id='getConnectionIDForUserName'></a>
-#### getConnectionIDForUserName(name)
+### getConnectionIDForUserName(name)
 
 Discuss the various ins and outs.
 
@@ -40,7 +37,7 @@ The user's name.
 String unique to each user.
 
 <a id='getAvatarForUserName'></a>
-#### getAvatarForUserName(name)
+### getAvatarForUserName(name)
 
 What's in a name?
 
@@ -55,7 +52,7 @@ The user's name.
 The user's 3D avatar. 
 
 <a id='focus'></a>
-#### focus(cid, nodeID)
+### focus(cid, nodeID)
 
 Focus.
 
@@ -72,7 +69,7 @@ The node's unique identification string.
 *(Nothing)*
 
 <a id='getCameraIDForClient'></a>
-#### getCameraIDForClient(id)
+### getCameraIDForClient(id)
 
 Give me that thingamajig, so I can take a picture.
 
@@ -87,7 +84,7 @@ The client's unique identification string.
 The camera's unique identification string.
 
 <a id='getCameraForClient'></a>
-#### getCameraForClient(id)
+### getCameraForClient(id)
 
 Now that we've got the camera, we are out of here!
 

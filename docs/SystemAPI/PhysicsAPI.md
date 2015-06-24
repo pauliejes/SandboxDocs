@@ -2,15 +2,13 @@
 
 Welcome to the more touchy feely side of the docs.
 
-## Physics API class
-
 Where the rubber meets the road.
 
 <a id='Methods'></a>
-### Methods
+## Methods
 
 <a id='addForceAtCenter'></a>
-#### addForceAtCenter(x, y, z, coords)
+### addForceAtCenter(x, y, z, coords)
 
 Applies force at center of node. Accepts X, Y, Z, and Coordinates.
 
@@ -33,7 +31,7 @@ Coordinates where force is to be applied.
 *(Nothing)*
 
 <a id='addForceImpulse'></a>
-#### addForceImpulse(x, y, z, coords)
+### addForceImpulse(x, y, z, coords)
 
 Accepts X, Y, Z, and Coordinates.
 
@@ -56,7 +54,7 @@ Coordinates where force is to be applied.
 *(Nothing)*
 
 <a id='addTorqueImpulse'></a>
-#### addTorqueImpulse(x, y, z, coords)
+### addTorqueImpulse(x, y, z, coords)
 
 Accepts X, Y, Z, and Coordinates.
 
@@ -79,7 +77,7 @@ Coordinates where torque is to be applied.
 *(Nothing)*
 
 <a id='addTorque'></a>
-#### addTorque(x, y, z, coords)
+### addTorque(x, y, z, coords)
 
 Accepts X, Y, Z, and Coordinates.
 
@@ -102,7 +100,7 @@ Coordinates where torque is to be applied.
 *(Nothing)*
 
 <a id='addForceOffset'></a>
-#### addForceOffset(x, y, z, x1, y1, z1, coords)
+### addForceOffset(x, y, z, x1, y1, z1, coords)
 
 Accepts X, Y, Z, X1, Y1, Z1 and Coordinates.
 
@@ -134,7 +132,7 @@ Coordinates where force is to be applied.
 *(Nothing)*
 
 <a id='setLinearVelocity'></a>
-#### setLinearVelocity(x, y, z, coords)
+### setLinearVelocity(x, y, z, coords)
 
 Sets the linear velocity. Accepts X, Y, Z, and Coordinates.
 
@@ -157,7 +155,7 @@ Origin coordinates of linear velocity.
 *(Nothing)*
 
 <a id='setAngularvelocity'></a>
-#### setAngularVelocity(x, y, z, coords)
+### setAngularVelocity(x, y, z, coords)
 
 Sets the angular velocity. Accepts X, Y, Z, and Coordinates.
 
@@ -180,7 +178,7 @@ Coordinates where angular velocity is to be applied.
 *(Nothing)*
 
 <a id='getLinearvelocity'></a>
-#### getLinearVelocity()
+### getLinearVelocity()
 
 Returns the current internal Linear Velocity value.
 
@@ -194,7 +192,7 @@ Returns the current internal Linear Velocity value.
 Current internal linear velocity value.
 
 <a id='getAngularVelocity'></a>
-#### getAngularVelocity()
+### getAngularVelocity()
 
 Returns the current internal Angular Velocity value.
 

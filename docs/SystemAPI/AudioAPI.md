@@ -88,7 +88,7 @@ Ends playback of sound, resets position.
 *(Nothing)*
 
 <a id='loop'></a>
-###loop()(
+###loop()
 
 Sets the `boolean` looping variable.
 
@@ -127,7 +127,7 @@ Get the position of the source object. **Note:** The 3D driver keeps track of th
 *(Nothing)*
 
 <a id='updateVolume'></a>
-###updateVolume
+###updateVolume(camerapos)
 
 HTML can't actually play it louder, however we can make it 'carry' farther by using the inverse and adjusting the range parameters of the falloff curve.
 

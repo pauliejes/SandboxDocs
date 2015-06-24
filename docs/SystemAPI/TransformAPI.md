@@ -2,15 +2,13 @@
 
 Facilitates manipulation of nodes by allowing manipulation of their properties such as position, and  rotation.
 
-## Transform API class
-
 Facilitates movement, rotation, and more of nodes.
 
 <a id='methods'></a>
-### Methods
+## Methods
 
 <a id='move'></a>
-#### move(x, y, z, coordinateSystem)
+### move(x, y, z, coordinateSystem)
 
 Moves a node
 
@@ -33,7 +31,7 @@ Specify either 'global' or local coordinate system.
 *(Nothing)*
 
 <a id='getPosition'></a>
-#### getPosition()
+### getPosition()
 
 Return a node's local position?
 
@@ -47,7 +45,7 @@ Return a node's local position?
 Array containing local x, y, and z coordinates.
 
 <a id='getWorldPosition'></a>
-#### getWorldPosition()
+### getWorldPosition()
 
 Return a node's global position.
 
@@ -61,7 +59,7 @@ Return a node's global position.
 Array containing global x, y, and z coordinates.
 
 <a id='localToGlobal'></a>
-#### localToGlobal(x, y, z)
+### localToGlobal(x, y, z)
 
 Exchanges local x, y, and z coordinates for global x, y, and z coordinates.
 
@@ -82,7 +80,7 @@ Movement along the z-axis in meters.
 Array containing global x, y, and z coordinates.
 
 <a id='localToGlobalRotation'></a>
-#### localToGlobalRotation(x, y, z)
+### localToGlobalRotation(x, y, z)
 
 Converts local values of rotation to global values of rotation.
 
@@ -103,7 +101,7 @@ Movement around the z-axis in meters.
 Array containing global x, y and z values of rotation.
 
 <a id='globalToLocal'></a>
-#### **Global to Local**
+### **Global to Local**
 
 Exchanges global x, y, and z coordinates for local x, y, and z coordinates.
 
@@ -124,7 +122,7 @@ Position along the z-axis.
 Array containing local x, y, and z coordinates.
 
 <a id='globalToLocalRotation'></a>
-#### globalToLocalRotation(x, y, z)
+### globalToLocalRotation(x, y, z)
 
 Converts local values of rotation to global values of rotation.
 
@@ -145,7 +143,7 @@ Movement around the z-axis in meters.
 Array containing global x, y and z values of rotation.
 
 <a id='globalRotationToLocalRotation'></a>
-#### **Global Rotation to Local Rotation**
+### **Global Rotation to Local Rotation**
 
 Converts global rotation values to local rotation values.
 
@@ -164,7 +162,7 @@ Movement around the z-axis in meters.
 Array containing local x, y and z values of rotation.
 
 <a id='setPosition'></a>
-#### setPosition(x, y, z)
+### setPosition(x, y, z)
 
 Accepts X, Y, and Z coordinates to establish a new position.
 
@@ -184,7 +182,7 @@ Position along the z-axis.
 *(Nothing)*
 
 <a id='rotate'></a>
-#### rotate(x, y, z, coordinateSystem)
+### rotate(x, y, z, coordinateSystem)
 
 Accepts X, Y, Z and Coordinate System and rotates.
 
@@ -204,7 +202,7 @@ Angle of movement around the z-axis.
 *(Nothing)*
 
 <a id='rotateX'></a>
-#### rotateX(angle, coordinateSystem)
+### rotateX(angle, coordinateSystem)
 
 Rotates the node around the x-axis.
 
@@ -221,7 +219,7 @@ Designates whether local, global, or parent coordinates are given.
 *(Nothing)*
 
 <a id='rotateY'></a>
-#### rotateY(angle, coordinateSystem)
+### rotateY(angle, coordinateSystem)
 
 Rotates the node around the y-axis.
 
@@ -238,7 +236,7 @@ Designates whether local, global, or parent coordinates are given.
 *(Nothing)*
 
 <a id='rotateZ'></a>
-#### rotateZ(angle, coordinateSystem)
+### rotateZ(angle, coordinateSystem)
 
 Rotates the node around the z-axis.
 
@@ -262,7 +260,7 @@ Coordinates:
 
 
 <a id='rotateAroundAxis'></a>
-#### rotateAroundAxis(angle, axis, coordinateSystem)
+### rotateAroundAxis(angle, axis, coordinateSystem)
 
 Accepts Angle, Axis, and Coordinate System and rotates node around given axis.
 
@@ -282,7 +280,7 @@ Designates which coordinate system is given (Local, global, or parent).
 *(Nothing)*
 
 <a id='getRotation'></a>
-#### getRotation()
+### getRotation()
 
 By some form of magic, returns a number representing the rotation
 
@@ -296,7 +294,7 @@ By some form of magic, returns a number representing the rotation
 Angles of rotation around x, y and z axes.
 
 <a id='setRotation'></a>
-#### setRotation(x, y, z)
+### setRotation(x, y, z)
 
 Sets the rotation of a node given specified angles.
 
@@ -316,7 +314,7 @@ Angle of rotation around the z-axis.
 *(Nothing)*
 
 <a id='getScale'></a>
-#### getScale()
+### getScale()
 
 Returns the magnitude of the node.
 
@@ -330,7 +328,7 @@ Returns the magnitude of the node.
 Array of x, y, and z vectors.
 
 <a id='setScale'></a>
-#### setScale(x, y, z)
+### setScale(x, y, z)
 
 Accepts X, Y, and Z to set the scale of a node.
 
@@ -350,7 +348,7 @@ Scale of the z-axis.
 *(Nothing)*
 
 <a id='scaleMatrix'></a>
-#### scaleMatrix(x, y, z, mat)
+### scaleMatrix(x, y, z, mat)
 
 Accepts X, Y, Z, and Matrix.
 
@@ -374,7 +372,7 @@ Current matrix of the node.
 Updated matrix of the node being scaled.
 
 <a id='lookAt'></a>
-#### lookAt(t, clamp, axis, up, fromOffset)
+### lookAt(t, clamp, axis, up, fromOffset)
 
 Facilitates examination of a node.
 

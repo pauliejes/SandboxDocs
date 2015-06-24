@@ -8,7 +8,7 @@ The Virtual World Sandbox is an application based on the Virtual World Framework
 More about scripting here.  One hash and two hashes are listed under the side bar when the heading is selected, and clicking on a subheading jumps to that position in the doc. I don't know that the anchors help, but they don't seem to hurt.
 
 <a id='finerDetails'></a>
-### Finer Details (Property/Method names) (`type as applicable`)
+### Finer Details (Property/Method names) (arguments, as, applicable)
 
 Getting more into the finer details of what to do and how to do it.  Shows up in blue on the Read the Docs page and stands out. Description...   
 
