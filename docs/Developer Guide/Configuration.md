@@ -1,3 +1,5 @@
+#Configuration
+
 The server side application can be configured by editing the **config.json** file in the root directory of the application. You should also find a sample configuration file that contains some useful information:
 
 

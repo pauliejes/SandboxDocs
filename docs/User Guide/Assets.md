@@ -1,4 +1,6 @@
-# Upload a 3D Model
+# Assets
+
+## Upload a 3D Model
 With the Sandbox, you can upload 3D asset file from your own computer into a world. This article explains how.
 
 Supported Formats:
@@ -22,14 +24,14 @@ Either drag and drop your file, or click 'Browse'. Once you've selected a file, 
 Click upload, and wait. If the upload is successful and conversion works, the model should appear in the scene.
 
 
-# Import a 3D model from a URL
+## Import a 3D model from a URL
 Common mesh importation is done form the ADL 3D Repository however, the online site Dropbox is also an excellent place to store and retrieve COLLADA models and textures.
 
 NOTE: there are a few ways to import meshes. The 3DR integration service is the easiest and best way to import models, but it is also possible to supply a URL to a COLLADA file. The server that hosts the file must implement CORS, and have no authentication requirements. 
 
 NOTE: Also, when directly adding a file URL, you are at the mercy of the importers and exporters - our system is completely bypassed.
 
-# Animation
+## Animation
 The ADL 3D Repository strips out animation on COLLADA files.  Dropbox will retain the animation with your .dae file.
 
 When an object is imported via a direct URL, if the model contains an animation sequence, you will find a tab in the [PrimitiveEditor](PrimitiveEditor) that controls that animation frame. 

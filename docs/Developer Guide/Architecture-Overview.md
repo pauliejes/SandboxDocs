@@ -1,3 +1,5 @@
+# Architecture Overview
+
 The Sandbox is composed of two major components - the server side and the client application. 
 
 ## Server Side

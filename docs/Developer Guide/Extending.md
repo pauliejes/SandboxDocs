@@ -1,3 +1,5 @@
+# Extending
+
 ## Add a new menu item
 
 The menu items in the dropdown menus are defined in `support\client\lib\vwf\view\editorview\menus.html`. You can simply add new divs to this HTML file to create new dropdowns or submenus. Styles will be applied automatically. 

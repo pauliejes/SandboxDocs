@@ -1,345 +1,334 @@
-# GET Operations
+# Sandbox API
 
-## 3drdownload
+## GET Operations
+
+### 3drdownload
 **GET {serverRoot}/vwfdatamanager.svc/3drdownload**
 
 Returns:
 ```javascript
 ```
-## 3drmetadata
+### 3drmetadata
 **GET {serverRoot}/vwfdatamanager.svc/3drmetadata**
 
 Returns:
 ```javascript
 ```
-## 3drpermission
+### 3drpermission
 **GET {serverRoot}/vwfdatamanager.svc/3drpermission**
 
 Returns:
 ```javascript
 ```
-## 3drsearch
+### 3drsearch
 **GET {serverRoot}/vwfdatamanager.svc/3drsearch**
 
 Returns:
 ```javascript
 ```
-## 3drtexture
+### 3drtexture
 **GET {serverRoot}/vwfdatamanager.svc/3drtexture**
 
 Returns:
 ```javascript
 ```
-## 3drthumbnail
+### 3drthumbnail
 **GET {serverRoot}/vwfdatamanager.svc/3drthumbnail**
 
 Returns:
 ```javascript
 ```
-## apppath
+### apppath
 **GET {serverRoot}/vwfdatamanager.svc/apppath**
 
 Returns:
 ```javascript
 ```
-## cameras
+### cameras
 **GET {serverRoot}/vwfdatamanager.svc/cameras**
 
 Returns:
 ```javascript
 ```
-## copyinstance
+### copyinstance
 **GET {serverRoot}/vwfdatamanager.svc/copyinstance**
 
 Returns:
 ```javascript
 ```
-## datafile
+### datafile
 **GET {serverRoot}/vwfdatamanager.svc/datafile**
 
 Returns:
 ```javascript
 ```
-## docdir
+### docdir
 **GET {serverRoot}/vwfdatamanager.svc/docdir**
 
 Returns:
 ```javascript
 ```
-## forgotpassword
+### forgotpassword
 **GET {serverRoot}/vwfdatamanager.svc/forgotpassword**
 
 Returns:
 ```javascript
 ```
-## getanalytics.js
+### getanalytics.js
 **GET {serverRoot}/vwfdatamanager.svc/getanalytics.js**
 
 Returns:
 ```javascript
 ```
-## getassets
+### getassets
 **GET {serverRoot}/vwfdatamanager.svc/getassets**
 
 Returns:
 ```javascript
 ```
-## globalassetassetdata
+### globalassetassetdata
 **GET {serverRoot}/vwfdatamanager.svc/globalassetassetdata**
 
 Returns:
 ```javascript
 ```
-## globalassetmetadata
+### globalassetmetadata
 **GET {serverRoot}/vwfdatamanager.svc/globalassetmetadata**
 
 Returns:
 ```javascript
 ```
-## globalassets
+### globalassets
 **GET {serverRoot}/vwfdatamanager.svc/globalassets**
 
 Returns:
 ```javascript
 ```
-## inventory
+### inventory
 **GET {serverRoot}/vwfdatamanager.svc/inventory**
 
 Returns:
 ```javascript
 ```
-## inventoryitemassetdata
+### inventoryitemassetdata
 **GET {serverRoot}/vwfdatamanager.svc/inventoryitemassetdata**
 
 Returns:
 ```javascript
 ```
-## inventoryitemmetadata
+### inventoryitemmetadata
 **GET {serverRoot}/vwfdatamanager.svc/inventoryitemmetadata**
 
 Returns:
 ```javascript
 ```
-## login
+### login
 **GET {serverRoot}/vwfdatamanager.svc/login**
 
 Returns:
 ```javascript
 ```
-## logindata
+### logindata
 **GET {serverRoot}/vwfdatamanager.svc/logindata**
 
 Returns:
 ```javascript
 ```
-## logout
+### logout
 **GET {serverRoot}/vwfdatamanager.svc/logout**
 
 Returns:
 ```javascript
 ```
-## profile
+### profile
 **GET {serverRoot}/vwfdatamanager.svc/profile**
 
 Returns:
 ```javascript
 ```
-## profiles
+### profiles
 **GET {serverRoot}/vwfdatamanager.svc/profiles**
 
 Returns:
 ```javascript
 ```
-## restorebackup
+### restorebackup
 **GET {serverRoot}/vwfdatamanager.svc/restorebackup**
 
 Returns:
 ```javascript
 ```
-## salt
+### salt
 **GET {serverRoot}/vwfdatamanager.svc/salt**
 
 Returns:
 ```javascript
 ```
-## sitelogin
+### sitelogin
 **GET {serverRoot}/vwfdatamanager.svc/sitelogin**
 
 Returns:
 ```javascript
 ```
-## sitelogout
+### sitelogout
 **GET {serverRoot}/vwfdatamanager.svc/sitelogout**
 
 Returns:
 ```javascript
 ```
-## state
+### state
 **GET {serverRoot}/vwfdatamanager.svc/state**
 
 Returns:
 ```javascript
 ```
-## statedata
+### statedata
 **GET {serverRoot}/vwfdatamanager.svc/statedata**
 
 Returns:
 ```javascript
 ```
-## statehistory
+### statehistory
 **GET {serverRoot}/vwfdatamanager.svc/statehistory**
 
 Returns:
 ```javascript
 ```
-## states
+### states
 **GET {serverRoot}/vwfdatamanager.svc/states**
 
 Returns:
 ```javascript
 ```
-## stateslist
+### stateslist
 **GET {serverRoot}/vwfdatamanager.svc/stateslist**
 
 Returns:
 ```javascript
 ```
-## texture
+### texture
 **GET {serverRoot}/vwfdatamanager.svc/texture**
 
 Returns:
 ```javascript
 ```
-## textures
+### textures
 **GET {serverRoot}/vwfdatamanager.svc/textures**
 
 Returns:
 ```javascript
 ```
-## texturethumbnail
+### texturethumbnail
 **GET {serverRoot}/vwfdatamanager.svc/texturethumbnail**
 
 Returns:
 ```javascript
 ```
-## thumbnail
+### thumbnail
 **GET {serverRoot}/vwfdatamanager.svc/thumbnail**
 
 Returns:
 ```javascript
 ```
-## updatepassword
+### updatepassword
 **GET {serverRoot}/vwfdatamanager.svc/updatepassword**
 
 Returns:
 ```javascript
 ```
 
-# POST Operations
+## POST Operations
 
-## 3drupload
+### 3drupload
 **POST {serverRoot}/vwfdatamanager.svc/3drupload**
 
 Returns:
 ```javascript
 ```
-## createprofile
+### createprofile
 **POST {serverRoot}/vwfdatamanager.svc/createprofile**
 
 Returns:
 ```javascript
 ```
-## createstate
+### createstate
 **POST {serverRoot}/vwfdatamanager.svc/createstate**
 
 Returns:
 ```javascript
 ```
-## error
+### error
 **POST {serverRoot}/vwfdatamanager.svc/error**
 
 Returns:
 ```javascript
 ```
-## globalasset
+### globalasset
 **POST {serverRoot}/vwfdatamanager.svc/globalasset**
 
 Returns:
 ```javascript
 ```
-## inventoryitem
+### inventoryitem
 **POST {serverRoot}/vwfdatamanager.svc/inventoryitem**
 
 Returns:
 ```javascript
 ```
-## inventoryitemmetadata
+### inventoryitemmetadata
 **POST {serverRoot}/vwfdatamanager.svc/inventoryitemmetadata**
 
 Returns:
 ```javascript
 ```
-## profile
+### profile
 **POST {serverRoot}/vwfdatamanager.svc/profile**
 
 Returns:
 ```javascript
 ```
-## publish
+### publish
 **POST {serverRoot}/vwfdatamanager.svc/publish**
 
 Returns:
 ```javascript
 ```
-## statedata
+### statedata
 **POST {serverRoot}/vwfdatamanager.svc/statedata**
 
 Returns:
 ```javascript
 ```
-## thumbnail
+### thumbnail
 **POST {serverRoot}/vwfdatamanager.svc/thumbnail**
 
 Returns:
 ```javascript
 ```
 
-# DELETE Operations
+## DELETE Operations
 
-## globalasset
+### globalasset
 **DELETE {serverRoot}/vwfdatamanager.svc/globalasset**
 
 Returns:
 ```javascript
 ```
-## inventoryitem
+### inventoryitem
 **DELETE {serverRoot}/vwfdatamanager.svc/inventoryitem**
 
 Returns:
 ```javascript
 ```
-## profile
+### profile
 **DELETE {serverRoot}/vwfdatamanager.svc/profile**
 
 Returns:
 ```javascript
 ```
-## state
+### state
 **DELETE {serverRoot}/vwfdatamanager.svc/state**
 
 Returns:
 ```javascript
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-

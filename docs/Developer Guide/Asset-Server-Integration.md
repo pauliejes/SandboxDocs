@@ -1,3 +1,5 @@
+# Asset Server Integration
+
 We use a separate system called the ADL 3D Repository for our asset hosting. You can find the running instance of this system at https://3DR.adlnet.gov, or visit its repo at https://github.com/adlnet/3D-Repository. 
 
 Because we can't currently align the permissions between the Sandbox and the 3DR servers, all requests for assets should be proxied through the Sandbox server. The address of the 3DR server to use can be found in the configuration file. See [Configuration](Configuration) or [Asset Server Config](http://vwf.adlnet.gov/r/documentation/tutorials/configuring-the-3dr-integration-feature/)

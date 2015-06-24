@@ -1,3 +1,5 @@
+# Cameras
+
 There are 2 major things to understand about cameras in the VWF. First, the camera you are looking through by default in the editor is a special camera that is not shared with other users. Each user has his or her own viewpoint when editing that is not shared between users. There is a function for temporarily broadcasting the position of your camera to other users - see [Camera Modes](Camera Modes) for more info. 
 
 Second, you can also create camera objects within the scene. These cameras are full VWF entities, and can be scripted, copied, or deleted. They can even have behaviors applied, just as any other object. 

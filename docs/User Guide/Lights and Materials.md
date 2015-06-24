@@ -1,3 +1,5 @@
+# Lights and Materials
+
 ## <span id="Introduction">Introduction</span>
 
 Whether taking a photo in real life or rendering a virtual scene, lighting has a big part in the aesthetics of the final image. In this tutorial, I will show you the basics of lighting and materials in the Virtual World Sandbox.

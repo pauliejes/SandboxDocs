@@ -1,4 +1,6 @@
-# Basic Workflow
+# Using the Editor
+
+## Basic Workflow
 
 The Sandbox supports 2 main modes of operation - play and edit. 
 
@@ -54,6 +56,7 @@ The camera will move forward at a set speed. Right click and drag to turn, and r
 
 # Hotkeys
 When in the editing mode:
+
 * q - select object
 * w - move
 * e - rotate

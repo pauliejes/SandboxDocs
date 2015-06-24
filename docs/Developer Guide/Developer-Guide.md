@@ -1,3 +1,5 @@
+# Developer Guide
+
 The Sandbox is a JavsScript application based on the Virtual World Framework (VWF). You can find more information about the VWF at https://virtual.wf
 
 **If you've done this sort of thing before, here's the 1 minute install:**

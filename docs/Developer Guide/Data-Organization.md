@@ -1,3 +1,5 @@
+# Data Organization
+
 This page describes the layout of data in the data directory created by the DAL. For files of the application itself, see [File Organization](File Organization). 
 
 ```

@@ -1,3 +1,5 @@
+# Phong Material
+
 This is the default material type for all sandbox objects. It corresponds directly to a THREE.js MeshPhongMaterial. 
 
 ![](http://i.imgur.com/KaAx2xE.png)

@@ -1,3 +1,5 @@
+# Sharing the Camera View
+
 Sometimes, it may be useful to allow other users to see the same view that you see, even if you are in the default editor camera. Normally, the editor camera is independent, and not replicated by the system to other users. This allow each user to work in a different part of the scene. 
 
 When you share your camera view, other users will have their editor camera updated to see exactly the view you see. 

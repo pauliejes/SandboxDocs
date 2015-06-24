@@ -1,3 +1,4 @@
+# Configure 3DR
 
 The ADL Sandbox application allows users to load 3D assets from an ADL 3D Repository instance. Out of the box (and on the hosted copy at [http:// vwf.adlnet.gov](http://vwf.adlnet.gov)), the server is configured to connect to the main ADL 3D repository, at [http://3dr.adlnet.gov](http://3dr.adlnet.gov). However, as of version 0.4.11, this can be configured to use any 3DR installation. The VWS server now proxies traffic to and from the connected 3DR instance, so you don’t even necessarily need to make your 3DR publicly visible, so long as the VWF server can connect to it.
 
