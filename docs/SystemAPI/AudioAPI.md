@@ -2,56 +2,54 @@
 
 Defining options and controls with the audio of the Sandbox.
 
-##Audio API class
-
 <a id='properties'></a>
-###Properties
+##Properties
 
 <a id='id'></a>
-#### id
+### id
 Type: `String`  
 The name to identify the sound
 
 <a id='sound'></a>
-#### sound
+### sound
 Type: `String` `filename`  
 The file of the sound
 
 <a id='position'></a>
-#### position
+### position
 Type: `number`  
 Where the sound can be found
 
 <a id='volume'></a>
-#### volume
+### volume
 Type: `number`  
 How loud
 
 <a id='end_range'></a>
-####end range
+###end range
 Type: `number`  
 some number for the end
 
 <a id='start_range'></a>
-####start range
+###start range
 Type: `number`  
 some number for the start
 
 <a id='looping'></a>
-####looping
+###looping
 Type: `boolean`  
 Indicates whether or not the sound is to loop/repeat
 
 <a id='playing'></a>
-####playing
+###playing
 Type: `boolean`  
 Indicates whether or not the sound is currently in use  
 
 <a id='methods'></a>
-###Methods
+##Methods
 
 <a id='play'></a>
-####play()
+###play()
 
 Plays sound.
 
@@ -64,7 +62,7 @@ Plays sound.
 *(Nothing)*
 
 <a id='pause'></a>
-####pause()
+###pause()
 
 Halts playback of sound, holding position along track to resume where left off.
 
@@ -77,7 +75,7 @@ Halts playback of sound, holding position along track to resume where left off.
 *(Nothing)*
 
 <a id='stop'></a>
-####stop()
+###stop()
 
 Ends playback of sound, resets position.
 
@@ -90,7 +88,7 @@ Ends playback of sound, resets position.
 *(Nothing)*
 
 <a id='loop'></a>
-####loop()(
+###loop()(
 
 Sets the `boolean` looping variable.
 
@@ -103,7 +101,7 @@ Sets the `boolean` looping variable.
 *(Nothing)*
 
 <a id='unloop'></a>
-####unloop()
+###unloop()
 
 Sets the `boolean` looping variable.
 
@@ -116,7 +114,7 @@ Sets the `boolean` looping variable.
 *(Nothing)*
 
 <a id='updateSourcePosition'></a>
-####updateSourcePosition
+###updateSourcePosition
 
 Get the position of the source object. **Note:** The 3D driver keeps track of the position.
 
@@ -129,7 +127,7 @@ Get the position of the source object. **Note:** The 3D driver keeps track of th
 *(Nothing)*
 
 <a id='updateVolume'></a>
-####updateVolume
+###updateVolume
 
 HTML can't actually play it louder, however we can make it 'carry' farther by using the inverse and adjusting the range parameters of the falloff curve.
 
@@ -143,7 +141,7 @@ Location of camera.
 *(Nothing)*
 
 <a id='initialize'></a>
-####Initialize()
+###Initialize()
 
 start it up
 
@@ -156,7 +154,7 @@ start it up
 *(Nothing)*
 
 <a id='playSound'></a>
-####playSound(url, volume)
+###playSound(url, volume)
 
 Lets GUI elements play sounds.
 
@@ -173,7 +171,7 @@ How loud.
 *(Nothing)*
 
 <a id='calledMethod'></a>
-####calledMethod(id, name, params)
+###calledMethod(id, name, params)
 
 This is a good place to explain.
 
@@ -204,7 +202,7 @@ Array of additional parameters
 
 *(Nothing)*
 
-####ticked()
+###ticked()
 
 Update the sound volume based on the position of the camera and the position of the object
 
@@ -216,7 +214,7 @@ Update the sound volume based on the position of the camera and the position of 
 
 *(Nothing)*
 
-####deletedNode(id)
+###deletedNode(id)
 
 Deletes the specified sound source node.
 
