@@ -6,66 +6,66 @@ theme: readthedocs
 use_directory_urls: true
 markdown_extensions: [admonition]
 pages:
-- ['index.md', 'About']
-- ['Home.md', 'Home']
-- ['Developer Guide/Developer-Guide.md', 'For Developers']
-- ['FAQ.md', 'For Users', 'FAQ']
-
-- ['User Guide/Using-The-Editor.md', 'For Users', 'Using The Editor']
-- ['User Guide/Selecting-Objects.md', 'For Users', 'Selecting Objects']
-- ['User Guide/Lights and Materials.md', 'For Users', 'Lights and Materials']
-- ['User Guide/terrain.md', 'For Users', 'Terrain']
-- ['User Guide/Cameras.md', 'For Users', 'Cameras']
-- ['User Guide/GUINodes.md', 'For Users', 'GUI Nodes']
-- ['User Guide/Physics.md', 'For Users', 'Physics']
-- ['User Guide/Particles.md', 'For Users', 'Particles']
-- ['User Guide/Assets.md', 'For Users', 'Assets and Models']
-- ['User Guide/Phong-Material.md', 'For Users', 'Phong Material']
-- ['User Guide/Sharing-the-camera-view.md', 'For Users', 'Sharing the Camera View']
-- ['User Guide/User-Guide.md', 'For Users', 'User Guide']
-- ['User Guide/Working with Groups.md', 'For Users', 'Working with Groups']
-- ['User Guide/Working with Terrain.md', 'For Users', 'Working with Terrain']
-- ['User Guide/build a game.md', 'For Users', 'Build a Game']
-
-- ['Developer Guide/Installation.md', 'Developer Guide','Installation']
-- ['Developer Guide/Configuration.md', 'Developer Guide','Configuration']
-- ['Developer Guide/configure 3DR.md', 'Developer Guide','Asset Server']
-- ['Developer Guide/Architecture-Overview.md', 'Developer Guide','Architecture Overview']
-- ['Developer Guide/Data-Organization.md', 'Developer Guide','Data Organization']
-- ['Developer Guide/File-Organization.md', 'Developer Guide','File Organization']
-- ['Developer Guide/Development-Plans.md', 'Developer Guide','Development Plans']
-- ['Developer Guide/SandboxAPI.md', 'Developer Guide','Sandbox API']
-- ['Developer Guide/_3rd-Party-Libraries.md', 'Developer Guide','3rd Party Libraries']
-- ['Developer Guide/drivers/Drivers.md', 'Developer Guide','Driver Reference']
-- ['Developer Guide/drivers/Threejsmodel.md', 'Developer Guide','Three.js Model']
-- ['Developer Guide/drivers/Threejs-view.md', 'Developer Guide','Three.js View Driver']
-- ['Developer Guide/drivers/Editor-view.md', 'Developer Guide','Editor View']
-- ['Developer Guide/editors/InventoryManager.md', 'Developer Guide','Inventory Manager']
-- ['Developer Guide/editors/PrimitiveEditor.md', 'Developer Guide','Primitive Editor']
-- ['Developer Guide/editors/Publisher.md', 'Developer Guide','Publisher']
-- ['Developer Guide/editors/ScriptEditor.md', 'Developer Guide','Script Editor']
-- ['Developer Guide/editors/SelectionEditor.md', 'Developer Guide','Selection Editor']
-- ['Developer Guide/editors/UndoManager.md', 'Developer Guide','Undo Manager']
-- ['Developer Guide/Extending.md', 'Developer Guide','Extending Sandbox']
-- ['Developer Guide/extending/Add-a-new-camera-mode.md', 'Developer Guide','Add a New Camera Mode']
-- ['Developer Guide/extending/Add-a-new-menu-item.md', 'Developer Guide','Add a New Menu Item']
-- ['Developer Guide/extending/Main-toolbar-buttons.md', 'Developer Guide','Main Toolbar Button']
-- ['Developer Guide/Assets.md', 'Developer Guide','Asset Pipeline']
-- ['Developer Guide/Prims-and-Modifiers.md', 'Developer Guide','Prim and Modifier Pipeline']
-- ['Developer Guide/Asset-Server-Integration.md', 'Developer Guide','Asset and Server Integration']
-- ['Developer Guide/Development.md', 'Developer Guide','Development']
-- ['Developer Guide/particleSystem.md', 'Developer Guide','Particle Systems']
-
-- ['Scripting/scripting/ScriptingIntro.md', 'Scripting','Introduction to Scripting']
-- ['Scripting/scripting/Events.md', 'Scripting','Events']
-- ['Scripting/scripting/Behaviors.md', 'Scripting','Behaviors']
-- ['Scripting/scripting/Working with Entities.md', 'Scripting','Working with Entities']
-- ['Scripting/scripting/Entity Property Reference.md', 'Scripting','Entity Property Reference']
-- ['Scripting/scripting/Nodes.md', 'Scripting','Nodes']
-
-- ['SystemAPI/SystemAPIs.md', 'System APIs','System API']
-- ['SystemAPI/AudioAPI.md', 'System APIs','Audio API']
-- ['SystemAPI/ClientAPI.md', 'System APIs','Client API']
-- ['SystemAPI/CommsAPI.md', 'System APIs','Communications API']
-- ['SystemAPI/PhysicsAPI.md', 'System APIs','Physics API']
-- ['SystemAPI/TransformAPI.md', 'System APIs','Transform API']
+- About: index.md
+- Home: Home.md
+- For Developers: Developer Guide/Developer-Guide.md
+- For Users:
+  - FAQ: FAQ.md
+  - Using The Editor: User Guide/Using-The-Editor.md
+  - Selecting Objects: User Guide/Selecting-Objects.md
+  - Lights and Materials: User Guide/Lights and Materials.md
+  - Terrain: User Guide/terrain.md
+  - Cameras: User Guide/Cameras.md
+  - GUI Nodes: User Guide/GUINodes.md
+  - Physics: User Guide/Physics.md
+  - Particles: User Guide/Particles.md
+  - Assets and Models: User Guide/Assets.md
+  - Phong Material: User Guide/Phong-Material.md
+  - Sharing the Camera View: User Guide/Sharing-the-camera-view.md
+  - User Guide: User Guide/User-Guide.md
+  - Working with Groups: User Guide/Working with Groups.md
+  - Working with Terrain: User Guide/Working with Terrain.md
+  - Build a Game: User Guide/build a game.md
+- Developer Guide:
+  - Installation: Developer Guide/Installation.md
+  - Configuration: Developer Guide/Configuration.md
+  - Asset Server: Developer Guide/configure 3DR.md
+  - Architecture Overview: Developer Guide/Architecture-Overview.md
+  - Data Organization: Developer Guide/Data-Organization.md
+  - File Organization: Developer Guide/File-Organization.md
+  - Development Plans: Developer Guide/Development-Plans.md
+  - Sandbox API: Developer Guide/SandboxAPI.md
+  - 3rd Party Libraries: Developer Guide/_3rd-Party-Libraries.md
+  - Driver Reference: Developer Guide/drivers/Drivers.md
+  - Three.js Model: Developer Guide/drivers/Threejsmodel.md
+  - Three.js View Driver: Developer Guide/drivers/Threejs-view.md
+  - Editor View: Developer Guide/drivers/Editor-view.md
+  - Inventory Manager: Developer Guide/editors/InventoryManager.md
+  - Primitive Editor: Developer Guide/editors/PrimitiveEditor.md
+  - Publisher: Developer Guide/editors/Publisher.md
+  - Script Editor: Developer Guide/editors/ScriptEditor.md
+  - Selection Editor: Developer Guide/editors/SelectionEditor.md
+  - Undo Manager: Developer Guide/editors/UndoManager.md
+  - Extending Sandbox: Developer Guide/Extending.md
+  - Add a New Camera Mode: Developer Guide/extending/Add-a-new-camera-mode.md
+  - Add a New Menu Item: Developer Guide/extending/Add-a-new-menu-item.md
+  - Main Toolbar Button: Developer Guide/extending/Main-toolbar-buttons.md
+  - Asset Pipeline: Developer Guide/Assets.md
+  - Prim and Modifier Pipeline: Developer Guide/Prims-and-Modifiers.md
+  - Asset and Server Integration: Developer Guide/Asset-Server-Integration.md
+  - Development: Developer Guide/Development.md
+  - Particle Systems: Developer Guide/particleSystem.md
+- Scripting:
+  - Introduction to Scripting: Scripting/scripting/ScriptingIntro.md
+  - Events: Scripting/scripting/Events.md
+  - Behaviors: Scripting/scripting/Behaviors.md
+  - Working with Entities: Scripting/scripting/Working with Entities.md
+  - Entity Property Reference: Scripting/scripting/Entity Property Reference.md
+  - Nodes: Scripting/scripting/Nodes.md
+- System APIs:
+  - System API: SystemAPI/SystemAPIs.md
+  - Audio API: SystemAPI/AudioAPI.md
+  - Client API: SystemAPI/ClientAPI.md
+  - Communications API: SystemAPI/CommsAPI.md
+  - Physics API: SystemAPI/PhysicsAPI.md
+  - Transform API: SystemAPI/TransformAPI.md
