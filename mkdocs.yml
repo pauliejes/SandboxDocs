@@ -8,6 +8,7 @@ markdown_extensions: [admonition]
 pages:
 - About: index.md
 - Home: Home.md
+- Getting Started: GettingStarted.md
 - For Developers: Developer Guide/Developer-Guide.md
 - For Users:
   - FAQ: FAQ.md

@@ -1,4 +1,4 @@
-# Extending
+# Extending Sandbox
 
 ## Add a new menu item
 
@@ -145,14 +145,14 @@ Each referenced url for an entity library file should resolve to a JSON object. 
 		"type":"environment"
 	}, ...
 ```	
-These objects have several available keys, at minimum you should provide the url,preview,and type. 'url' is the location of the resource JSON data. This data need not be on the same server as the library file itself. 'preivew' is simply an image that will be displayed. 'type' effects the behavior of the EntityLibrary, and also the interpretation of the data in 'url'. 'type' can be
+These objects have several available keys, at minimum you should provide the url,preview,and type. 'url' is the location of the resource JSON data. This data need not be on the same server as the library file itself. 'preview' is simply an image that will be displayed. 'type' effects the behavior of the EntityLibrary, and also the interpretation of the data in 'url'. 'type' can be
 
 1. asset         - use this for any 3D entity. The data at the url should be a VWF node definition
-1. child         - use this for behaviors. The library will only all this object to be dropped onto another object. url should be a VWF node 
-1. enviornment   - this is a package of scene settings. 
+1. child         - use this for behaviors. The library will only allow this object to be dropped onto another object. url should be a VWF node 
+1. environment   - this is a package of scene settings. 
 1. material      - this is a MaterialDef value
 
-There are a few other properites that can be added to the library object definition that control the drag and drop 3D preview
+There are a few other properties that can be added to the library object definition that control the drag and drop 3D preview
 
 ```
 	   "dropPreview":
