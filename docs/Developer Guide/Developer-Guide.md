@@ -13,18 +13,18 @@ The Sandbox is a JavsScript application based on the Virtual World Framework (VW
 
 **Overview**
 
-- [Installation](/Developer Guide/Installation/)
-- [Configuration](/Developer Guide/Configuration/)
-- [Architecture Overview](/Developer Guide/Architecture-Overview/)
-- [3rd Party Libraries](/Developer Guide/_3rd-Party-Libraries/)
-- [Major Features](/Developer Guide/Major-Features/)
+- [Installation](/Installation/ "Installation")
+- [Configuration](/Configuration/ "Configuration")
+- [Architecture Overview](/Architecture-Overview/ "Architectural Overview")
+- [3rd Party Libraries](/_3rd-Party-Libraries/ "3rd Party Libraries")
+- [Major Features](/MajorFeatures/ "Major Features")
 
 **Other developer topics**
 
-- [Avatars](Avatars)
-- [Synchronization](Synchronization)
-- [Publish Settings](Publish Settings)
-- [Asset Management](Asset Management)
-- [Picking and Tracing](Picking and Tracing)
-- [Terrain](Terrain)
-- [VWF Entity types](VWF Entity types)
+- [Avatars](Avatars "Avatars")
+- [Synchronization](Synchronization "Synchronization")
+- [Publish Settings](PublishSettings "Publish Settings")
+- [Asset Management](AssetManagement "Asset and Server Integration")
+- [Picking and Tracing](PickingAndTracing "Picking and Tracing")
+- [Terrain](http://sandboxdocs.readthedocs.org/en/latest/User%20Guide/terrain/ "Terrain")
+- [VWF Entity types](Extending "VWF Entity Types")

@@ -8,7 +8,7 @@ This document will walk you through the entire process of building a simple game
 
 First things first, we’ll need to get step before we can start building. This section will walk you through the steps necessary to get a user account and create a world.
 
-1.	First, browse to [http://vwf.adlnet.gov](http://vwf.adlnet.gov) . You should see a website that looks something like the following.
+1.	First, browse to the [VW Sandbox website](https://sandbox.adlnet.gov/967/adl/sandbox/ "https://sandbox.adlnet.gov/967/adl/sandbox/"). You should see a website that looks something like the following.
 
 
 	![](./images/building-a-game/testexport.html_Image0.png)
@@ -534,7 +534,7 @@ Great! At this point, our game basically works. The last thing we need to do is 
 
 ## Conclusion
 
-You can share this game with others by copying and emailing the direct link or your friends can search for it on the worlds page. By the end of this tutorial, you should have a firm foundation for building more complex games in the future. Hopefully, you'll also get comfortable with the user interface of the VWS software, and start thinking of other things to create! Here are a few challenges that build on this lesson. Make 3 Ghosts. Make a bigger level. Make the food come back after a certain time. If you're feeling really ambitious, make the Ghost behave with more intelligence. There is literally an infinite amount of ideas for expanding this simple tutorial. Check out the appendix below for more info on how the code works, if you're interested in making a more complex game. You can play the finished (with a few improvements) game here: [http://vwf.adlnet.gov/472/adl/sandbox/yU4EixCOyfp6RQaW/](http://vwf.adlnet.gov/472/adl/sandbox/yU4EixCOyfp6RQaW/)
+You can share this game with others by copying and emailing the direct link or your friends can search for it on the worlds page. By the end of this tutorial, you should have a firm foundation for building more complex games in the future. Hopefully, you'll also get comfortable with the user interface of the VWS software, and start thinking of other things to create! Here are a few challenges that build on this lesson. Make 3 Ghosts. Make a bigger level. Make the food come back after a certain time. If you're feeling really ambitious, make the Ghost behave with more intelligence. There is literally an infinite amount of ideas for expanding this simple tutorial. Check out the appendix below for more info on how the code works, if you're interested in making a more complex game. You can play the finished (with a few improvements) game here: [http://vwf.adlnet.gov/472/adl/sandbox/yU4EixCOyfp6RQaW/](http://vwf.adlnet.gov/472/adl/sandbox/yU4EixCOyfp6RQaW/) Don't try that it doesn't work.  Instead view some demos here: https://sandbox.adlnet.gov/967/adl/sandbox/demos[https://sandbox.adlnet.gov/967/adl/sandbox/demos](https://sandbox.adlnet.gov/967/adl/sandbox/demos "VW Sandbox Demos").
 
 ## Appendix 1: Code explanation
 
@@ -791,5 +791,5 @@ In the **reset **function, we just place the ghost and player back at their star
 
 ## Appendix 2: About the VWS
 
-The Virtual World Sandbox is a project from Advanced Distributed Learning to bring game based training and scenario design to more people by building a completely HTML5, web based, multiuser simulation engine. The VWS application is built on top of the Virtual World Framework, a next generation simulation foundation. The VWS website is a demonstration site, and should be used for exploration and entertainment only. To setup your own server, check out the installation documents on GitHub. You can learn more about the Virtual World Framework at [http://www.virtualworldframework.com.](http://www.virtualworldframework.com.) Contribute to the VWS project at [https://github.com/adlnet/Sandbox.](https://github.com/adlnet/Sandbox.) Send questions and comments to: Robert.chadwick.ctr@adlnet.gov. This tutorial was built with VWS version 0.4.7.2 on November 18, 2013.
+The Virtual World Sandbox is a project from Advanced Distributed Learning to bring game based training and scenario design to more people by building a completely HTML5, web based, multiuser simulation engine. The VWS application is built on top of the Virtual World Framework, a next generation simulation foundation. The VWS website is a demonstration site, and should be used for exploration and entertainment only. To setup your own server, check out the installation documents on GitHub. You can learn more about the Virtual World Framework at [http://www.virtualworldframework.com.](http://www.virtualworldframework.com.) Contribute to the VWS project at [https://github.com/adlnet/Sandbox](https://github.com/adlnet/Sandbox "https://github.com/adlnet/Sandbox") Send questions and comments to: Robert.chadwick.ctr@adlnet.gov. This tutorial was built with VWS version 0.4.7.2 on November 18, 2013.
 

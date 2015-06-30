@@ -30,7 +30,7 @@ pages:
 - Developer Guide:
   - Installation: Developer Guide/Installation.md
   - Configuration: Developer Guide/Configuration.md
-  - Asset Server: Developer Guide/configure 3DR.md
+  - Configure 3DR: Developer Guide/configure 3DR.md
   - Architecture Overview: Developer Guide/Architecture-Overview.md
   - Data Organization: Developer Guide/Data-Organization.md
   - File Organization: Developer Guide/File-Organization.md
