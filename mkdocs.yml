@@ -55,6 +55,7 @@ pages:
   - Asset and Server Integration: Developer Guide/Asset-Server-Integration.md
   - Development: Developer Guide/Development.md
   - Particle Systems: Developer Guide/particleSystem.md
+  - Cluster Server: Developer Guide/Cluster.md
 - Scripting:
   - Introduction to Scripting: Scripting/scripting/ScriptingIntro.md
   - Events: Scripting/scripting/Events.md

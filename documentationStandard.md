@@ -2,14 +2,12 @@
 
 Sandbox API Documentation Standardized. More warm and friendly description of what this portion of the program does.
 
-## Heading for the class
-
 More technical and specific description of what this part of the program does.
 
 <a id='constructor'></a>
-### Constructor
+## Constructor
 
-#### new constructor(arguments)
+### new constructor(arguments)
 
 Brief description of constructor.
 
@@ -22,27 +20,27 @@ Brief insight into argument. If the argument is optional add that in parentheses
 If there are no arguments explicitly state and italicize. In such a case there is no need for a description.
 
 <a id='properties'></a>
-### Properties
+## Properties
 
 <a id=''></a>
-#### property1
+### property1
 
 Type: `type`
 
 Brief description goes here.
 
 <a id=''></a>
-#### propertyTwo
+### propertyTwo
 
 Type: `number`
 
 Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
 
 <a id='methods'></a>
-###Methods
+##Methods
 
 <a id=''></a>
-####method(arguments)
+###method(arguments)
 
 Brief description of method.
 
