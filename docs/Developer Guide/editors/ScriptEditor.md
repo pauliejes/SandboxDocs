@@ -1,6 +1,8 @@
+# Script Editor
+
 ![](http://i.imgur.com/Q7vXG9s.png)
 
-The Script Editor it the only GUI interface that lets you directly write code. This code is injected into the VWF as either a new method or event for the selected object. See [Scripting Guide](Scripting Guide). 
+The Script Editor it the only GUI interface that lets you directly write code. This code is injected into the VWF as either a new method or event for the selected object. See [Scripting Guide](../../Scripting/scripting/ScriptingIntro). 
 
 This editor has 3 tabs - methods, events, and properties. 
 

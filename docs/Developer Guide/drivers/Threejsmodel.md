@@ -8,7 +8,7 @@ In order to make our code more modular, graphics engine functions are divided in
 1. [Transformable SubDriver](Transformable SubDriver) - manages setting and getting the position / orientation / scale of objects
 1. [Asset SubDriver](Asset SubDriver) - is an entity in the simulation that loads a resource file, like a 3D model
 1. [MaterialDef SubDriver](MaterialDef SubDriver) - manages materials
-1. [Terrain](Terrain) - implements the terrain system
+1. [Terrain](Working with Terrain) - implements the terrain system
 1. [ParticleSystem SubDriver](ParticleSystem SubDriver) - implements particle systems
 1. [Prim SubDriver](Prim SubDriver) - master class for all primitive objects. Implements the modifier stack.
 1. [Modifier SubDriver](Modifier SubDriver) - allow for transformation of parent geometry
@@ -17,15 +17,15 @@ In order to make our code more modular, graphics engine functions are divided in
 ###Other SubDrivers
 1. *Visible* - hides or shows objects
 1. All modifiers and prims have their own, like `sphere.js` or `bend.js`
-1. *Selectable* - enables/disables raycast functionality for an object. See [SceneManager](SceneManager)
-1. *Static* - set objects as static or dynamic. See [SceneManager](SceneManager)
+1. *Selectable* - enables/disables raycast functionality for an object. See [SceneManager](../SceneManager)
+1. *Static* - set objects as static or dynamic. See [SceneManager](../SceneManager)
 
 ###Custom Subdrivers
-Nodes may request that they be associated with a subdriver via the `source` field of their [VWF](VWF) definition. 
+Nodes may request that they be associated with a subdriver via the `source` field of their [VWF](../VWF) definition. 
     extends:"node3.vwf.yaml",
     type: "subDriver/threejs"
     source: "url to driver code"
-A subdriver should implement the [VWF](VWF) model driver API, and additionally expose a `getRoot` method that returns a three.js object. They may inherit the properties of other subdrivers by specifying an `inherit` property.
+A subdriver should implement the [VWF](../VWF) model driver API, and additionally expose a `getRoot` method that returns a three.js object. They may inherit the properties of other subdrivers by specifying an `inherit` property.
 
 The format of a subdriver file should be a function that return a new function, which when called returns an object which implements the above described interface. The function returned by the SubDriver file is the SubDriverFactory for the given subdriver type. SetProperty, callMethod, and other VWF API calls are passed to this driver, and all the associated functions in the drivers it inherits. The inheritance is accomplished by merging together the JavaScript objects of the entire inheritance tree of subdriver. 
 ```

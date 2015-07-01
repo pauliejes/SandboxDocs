@@ -34,4 +34,4 @@ NOTE: Also, when directly adding a file URL, you are at the mercy of the importe
 ## Animation
 The ADL 3D Repository strips out animation on COLLADA files.  Dropbox will retain the animation with your .dae file.
 
-When an object is imported via a direct URL, if the model contains an animation sequence, you will find a tab in the [PrimitiveEditor](PrimitiveEditor) that controls that animation frame. 
+When an object is imported via a direct URL, if the model contains an animation sequence, you will find a tab in the [Primitive Editor](http://sandboxdocs.readthedocs.org/en/latest/Developer%20Guide/editors/PrimitiveEditor/ "Primitive Editor") that controls that animation frame. 

@@ -52,6 +52,8 @@ pages:
   - Transformable SubDriver: Developer Guide/drivers/Transformable SubDriver.md
   - Inventory Manager: Developer Guide/editors/InventoryManager.md
   - Primitive Editor: Developer Guide/editors/PrimitiveEditor.md
+  - Object Flags: Developer Guide/editors/Object Flags.md
+  - Transform Property: Developer Guide/editors/Transform Property.md
   - Publisher: Developer Guide/editors/Publisher.md
   - Script Editor: Developer Guide/editors/ScriptEditor.md
   - Selection Editor: Developer Guide/editors/SelectionEditor.md
