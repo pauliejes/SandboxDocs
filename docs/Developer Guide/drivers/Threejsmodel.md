@@ -8,7 +8,7 @@ In order to make our code more modular, graphics engine functions are divided in
 1. [Transformable SubDriver](Transformable SubDriver) - manages setting and getting the position / orientation / scale of objects
 1. [Asset SubDriver](Asset SubDriver) - is an entity in the simulation that loads a resource file, like a 3D model
 1. [MaterialDef SubDriver](MaterialDef SubDriver) - manages materials
-1. [Terrain](Working with Terrain) - implements the terrain system
+1. [Terrain](http://sandboxdocs.readthedocs.org/en/latest/User%20Guide/Working%20with%20Terrain/ "Terrain") - implements the terrain system
 1. [ParticleSystem SubDriver](ParticleSystem SubDriver) - implements particle systems
 1. [Prim SubDriver](Prim SubDriver) - master class for all primitive objects. Implements the modifier stack.
 1. [Modifier SubDriver](Modifier SubDriver) - allow for transformation of parent geometry
@@ -17,8 +17,8 @@ In order to make our code more modular, graphics engine functions are divided in
 ###Other SubDrivers
 1. *Visible* - hides or shows objects
 1. All modifiers and prims have their own, like `sphere.js` or `bend.js`
-1. *Selectable* - enables/disables raycast functionality for an object. See [SceneManager](../SceneManager)
-1. *Static* - set objects as static or dynamic. See [SceneManager](../SceneManager)
+1. *Selectable* - enables/disables raycast functionality for an object. See [Scene Manager](../SceneManager)
+1. *Static* - set objects as static or dynamic. See [Scene Manager](../SceneManager)
 
 ###Custom Subdrivers
 Nodes may request that they be associated with a subdriver via the `source` field of their [VWF](../VWF) definition. 

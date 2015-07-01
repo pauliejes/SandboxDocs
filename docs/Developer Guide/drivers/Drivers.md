@@ -83,7 +83,7 @@ The modules loaded by the EditorView to provide functionality are either Manager
 1. [InventoryManager](../editors/InventoryManager/)
 1. [_3DRIntegration](http://sandboxdocs.readthedocs.org/en/latest/Developer%20Guide/configure%203DR/)
 1. [Mapbrowser](http://sandboxdocs.readthedocs.org/en/latest/Developer%20Guide/editors/Mapbrowser/)
-1. [Publisher](../editor/Publisher/)
+1. [Publisher](../editors/Publisher/)
 1. [UserManager](../editors/UserManager)
 1. [DataManager](../Data-Organization)
 1. [PhysicsEditor](http://sandboxdocs.readthedocs.org/en/latest/SystemAPI/PhysicsAPI/)
