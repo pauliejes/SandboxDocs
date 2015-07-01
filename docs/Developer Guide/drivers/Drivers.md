@@ -12,7 +12,7 @@ In order to make our code more modular, graphics engine functions are divided in
 1. [Transformable SubDriver](Transformable SubDriver) - manages setting and getting the position / orientation / scale of objects
 1. [Asset SubDriver](Asset SubDriver) - is an entity in the simulation that loads a resource file, like a 3D model
 1. [MaterialDef SubDriver](MaterialDef SubDriver) - manages materials
-1. [Terrain](../Terrain/) - implements the terrain system
+1. [Terrain](http://sandboxdocs.readthedocs.org/en/latest/User%20Guide/Working%20with%20Terrain/ "Terrain") - implements the terrain system
 1. [ParticleSystem SubDriver](ParticleSystem SubDriver) - implements particle systems
 1. [Prim SubDriver](Prim SubDriver) - master class for all primitive objects. Implements the modifier stack.
 1. [Modifier SubDriver](Modifier SubDriver) - allow for transformation of parent geometry

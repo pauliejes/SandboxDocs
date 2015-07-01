@@ -1,3 +1,5 @@
+# Add a New Menu Item
+
 To add a new item to the menus:
 
 1. Add the item to the menus.html file under `support/client/lib/vwf/views/editorview/`

@@ -47,7 +47,7 @@ Not to be confused with the textures that are available through the API and are 
 Just some example assets
 
 ### /data
-This is where all the data that is specific to a given install lives (by default. Can be overridden by the config file) See [Data Organization](Data Organization)
+This is where all the data that is specific to a given install lives (by default. Can be overridden by the config file) See [Data Organization](Data-Organization)
 
 ### /support/client/lib
 This is where libraries required by the client side application live. Most of the system lives under /vwf/

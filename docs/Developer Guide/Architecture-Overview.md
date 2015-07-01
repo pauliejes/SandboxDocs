@@ -59,13 +59,13 @@ This driver created JQueryUI objects to track the changing state of UI VWF nodes
 This is the main entrypoint for the entire suite of editing tools. See [EditorView Driver](drivers/Drivers/#editorview-driver)
 
 **Audio**
-This driver wraps up the Buzz audio library. (http://buzz.jaysalvat.com/). It responds to method calls on nodes and creates sounds.
+This driver wraps up the [Buzz audio library. (http://buzz.jaysalvat.com/).](http://buzz.jaysalvat.com/ "Buzz audio library") It responds to method calls on nodes and creates sounds.
 
 **ThreeJS**
 This is the graphics engine view component. It does the actual render, and is responsible for non-stateful UI bits like selection rectangles, highlights, and camera previews. See [ThreeJS View Driver](drivers/Drivers/#threejs-view-driver).
 
 **xapi**
-This module creates the interaction with the ExperienceAPI (http://www.adlnet.gov/tla/experience-api/).
+This module creates the interaction with the [ExperienceAPI (http://www.adlnet.gov/tla/experience-api/)](http://www.adlnet.gov/capabilities/tla/experience-api.html "XAPI - Experience API").
 
 **webRTC**
 Provides the hookups for the Video chat function.

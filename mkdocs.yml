@@ -9,25 +9,28 @@ pages:
 - About: index.md
 - Home: Home.md
 - Getting Started: GettingStarted.md
-- For Developers: Developer Guide/Developer-Guide.md
+
 - For Users:
-  - FAQ: FAQ.md
+  - User Guide: User Guide/User-Guide.md
+  - Working with Groups: User Guide/Working with Groups.md
+  - Working with Terrain: User Guide/Working with Terrain.md
+  - Build a Game: User Guide/build a game.md
   - Using The Editor: User Guide/Using-The-Editor.md
   - Selecting Objects: User Guide/Selecting-Objects.md
   - Lights and Materials: User Guide/Lights and Materials.md
-  - Terrain: User Guide/terrain.md
   - Cameras: User Guide/Cameras.md
+  - Camera Modes: User Guide/CameraModes.md
+  - Sharing the Camera View: User Guide/Sharing-the-camera-view.md
   - GUI Nodes: User Guide/GUINodes.md
   - Physics: User Guide/Physics.md
   - Particles: User Guide/Particles.md
   - Assets and Models: User Guide/Assets.md
   - Phong Material: User Guide/Phong-Material.md
-  - Sharing the Camera View: User Guide/Sharing-the-camera-view.md
-  - User Guide: User Guide/User-Guide.md
-  - Working with Groups: User Guide/Working with Groups.md
-  - Working with Terrain: User Guide/Working with Terrain.md
-  - Build a Game: User Guide/build a game.md
+
+  - FAQ: FAQ.md
+
 - Developer Guide:
+  - For Developers: Developer Guide/Developer-Guide.md
   - Installation: Developer Guide/Installation.md
   - Configuration: Developer Guide/Configuration.md
   - Configure 3DR: Developer Guide/configure 3DR.md
@@ -74,6 +77,7 @@ pages:
   - Scene Manager: Developer Guide/SceneManager.md
   - Synchronization: Developer Guide/Synchronization.md
   - VWF: Developer Guide/VWF.md
+
 - Scripting:
   - Introduction to Scripting: Scripting/scripting/ScriptingIntro.md
   - Events: Scripting/scripting/Events.md
@@ -81,6 +85,7 @@ pages:
   - Working with Entities: Scripting/scripting/Working with Entities.md
   - Entity Property Reference: Scripting/scripting/Entity Property Reference.md
   - Nodes: Scripting/scripting/Nodes.md
+
 - System APIs:
   - System API: SystemAPI/SystemAPIs.md
   - Audio API: SystemAPI/AudioAPI.md
