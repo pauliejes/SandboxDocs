@@ -100,7 +100,7 @@ Noise refers to a computer-generated pseudo-random texture to better simulate re
 Simplex noise is a method for constructing an n-dimensional noise function comparable to Perlin noise ("classic" noise) but with fewer directional artifacts and, in higher dimensions, a lower computational overhead.
 
 You can think of Simplex noise a bit like a wave - a 2D or 3D wave - the noise scale is the frequency, and the different amounts are the amplitude. Instead of a smooth sine wave, it's all "noisy" because it's actually made of the interference of many sine waves. The "size" of the noise is just the base wavelength.
-![Simplex Noise Demonstration](/images/SimplexNoiseDemo.png)
+![Simplex Noise Demonstration](./images/SimplexNoiseDemo.png)
 Simplex noise has a slightly different look than Perlin noise, and is much simpler computationally, so Simplex noise is preferred.
 
 [Simplex noise - Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Simplex_noise "Wikipedia - Simplex Noise")
