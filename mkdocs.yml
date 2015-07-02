@@ -26,7 +26,6 @@ pages:
   - Particles: User Guide/Particles.md
   - Assets and Models: User Guide/Assets.md
   - Phong Material: User Guide/Phong-Material.md
-
   - FAQ: FAQ.md
 
 - Developer Guide:
@@ -79,6 +78,8 @@ pages:
   - Scene Manager: Developer Guide/SceneManager.md
   - Synchronization: Developer Guide/Synchronization.md
   - VWF: Developer Guide/VWF.md
+  - Primitives: Developer Guide/Primitives.md
+  - Modifiers: Developer Guide/Modifiers.md
 
 - Scripting:
   - Introduction to Scripting: Scripting/scripting/ScriptingIntro.md
