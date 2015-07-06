@@ -6,27 +6,27 @@ theme: readthedocs
 use_directory_urls: true
 markdown_extensions: [admonition]
 pages:
-- About: index.md
 - Home: Home.md
+- About: index.md
 - Getting Started: GettingStarted.md
+- FAQ: FAQ.md
 
-- For Users:
-  - User Guide: User Guide/User-Guide.md
+- Users Guide:
+  - For Users: User Guide/User-Guide.md
+  - Using The Editor: User Guide/Using-The-Editor.md
+  - Assets and Models: User Guide/Assets.md
+  - Build a Game: User Guide/build a game.md
+  - Lights and Materials: User Guide/Lights and Materials.md
+  - Selecting Objects: User Guide/Selecting-Objects.md
   - Working with Groups: User Guide/Working with Groups.md
   - Working with Terrain: User Guide/Working with Terrain.md
-  - Build a Game: User Guide/build a game.md
-  - Using The Editor: User Guide/Using-The-Editor.md
-  - Selecting Objects: User Guide/Selecting-Objects.md
-  - Lights and Materials: User Guide/Lights and Materials.md
   - Cameras: User Guide/Cameras.md
   - Camera Modes: User Guide/CameraModes.md
   - Sharing the Camera View: User Guide/Sharing-the-camera-view.md
   - GUI Nodes: User Guide/GUINodes.md
   - Physics: User Guide/Physics.md
   - Particles: User Guide/Particles.md
-  - Assets and Models: User Guide/Assets.md
   - Phong Material: User Guide/Phong-Material.md
-  - FAQ: FAQ.md
 
 - Developer Guide:
   - For Developers: Developer Guide/Developer-Guide.md

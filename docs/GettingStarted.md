@@ -1,8 +1,6 @@
 # Getting Started
 
-Welcome to the Sandbox, a virtual world framework where you can design, share, and play your own world all from the comfort of your own browser with nothing additional to download. Sound too good to be true?!  Well now for only 9.95 for 95 months you can have this amazing tool...
-
-That's not where this is going.  You want to know how to get started.  How to build your own world.  How to design a game or training.  How to find and use models or create or add your own.
+Welcome to the Sandbox, a virtual world framework where you can design, share, and play your own world all from the comfort of your own browser with nothing additional to download. You want to know how to get started?  How to build your own world?  How to design a game or training?  How to find and use models or create or add your own?
 
 Here are our suggestions to help you [learn](http://sandboxdocs.readthedocs.org/en/latest/Home/ "Sandbox Docs"), [edit and play](https://sandbox.adlnet.gov/967/adl/sandbox/ "Sandbox Website").  Also there are some great tutorials as part of this documentation.
 
