@@ -6,51 +6,50 @@ This document will walk you through the entire process of building a simple game
 
 ## Part 1: Getting started
 
-First things first, we’ll need to get step before we can start building. This section will walk you through the steps necessary to get a user account and create a world.
+First things first, we’ll need to get setup before we can start building. This section will walk you through the steps necessary to get a user account and create a world.
 
-1.	First, browse to the [VW Sandbox website](https://sandbox.adlnet.gov/967/adl/sandbox/ "https://sandbox.adlnet.gov/967/adl/sandbox/"). You should see a website that looks something like the following.
+1.	First, browse to the [VW Sandbox website](https://sandbox.adlnet.gov/100/adl/sandbox/ "https://sandbox.adlnet.gov/100/adl/sandbox/"). You should see a website that looks something like the following.
+	![VW Sandbox Website](./images/building-a-game/testexport.html_Image0.png)
 
+2.	Before we can create an application, we’ll need to sign in. If you have already signed up for an account, go ahead log in and meet at [Step 7: Create a New World](#newWorld "Step 7: Create a New World"). Otherwise, we'll walk through the steps to create an account. You’ll need to click the “Try it!” button.
+	![Try it! Button](./images/building-a-game/testexport.html_Image1.png)
+3.	You will see a screen informing you that you are not signed in. It's okay, we were expecting that and we are going to sign up and fix that.
+	![Not Signed In Screen](./images/building-a-game/testexport.html_Image1.1.png)
+4.	Look up in the right hand corner. In the middle of the line of choices it says "Sign up". Click that.
+	![Sign up](./images/building-a-game/testexport.html_Image1.2.png)
 
-	![](./images/building-a-game/testexport.html_Image0.png)
+5.	You should now see a screen where you can choose a username, password, and email. You’re username can be anything, so long as it is not currently used by another user. Be sure the password is something you can remember! And provide a valid email address.
+	![Sign Up Screen](./images/building-a-game/testexport.html_Image2.png)
+6.	Now that you have created a user account, you’ll be automatically logged into the website. You’ll know you’re logged in because you’ll see your user name on the right side underneath the buttons.
+	![User Name](./images/building-a-game/testexport.html_Image3.png)
 
-2.	Before we can create an application, we’ll need to sign in. I assume here that you do not have an account. If you have already signed up for an account, go ahead and skip a few steps. Otherwise, You’ll need to click the “Sign Up” button.
-
-
-	![](./images/building-a-game/testexport.html_Image1.png)
-
-3.	You should now see a screen where you can choose a username and a password. Be sure the password is something you can remember! You’re username can be anything, so long as it is not currently used by another user. I recommend using an email address.
-
-
-	![](./images/building-a-game/testexport.html_Image2.png)
-
-4.	Now that you have created a user account, you’ll be automatically logged into the website. You’ll know you’re logged in because you’ll see your user name in the top right corner.
-
-
-	![](./images/building-a-game/testexport.html_Image3.png)
-
-5.	Next, we’ll need to create a new world to work in. To do this, click the ‘Create’ button on the home page.
+7.	Next, we’ll click the "Try it!" button again to create a new world to work in.	![Try it! Button](./images/building-a-game/testexport.html_Image1.png)
 
 
-	![](./images/building-a-game/testexport.html_Image4.png)
+8.	Enter a title and description of your world. And click the Create button.
 
-6.	You’ll see the following page. This page allows you to create a new world based on an existing ‘template’ world. In this case, we’re going to just create a blank world. You should see the words “Create a world based on an empty world.” When you click on one of the template world images, you’ll select this template, and the text “Create a world based on …” will change to show the name of the selected world. The template we need, the blank world, is the default. If you do click on one of the other templates, just scroll to the right end of the list, and click the template “an empty world”. Give your new world a title and a description.
+	![Create World](./images/building-a-game/testexport.html_Image4.png)
 
+9.	You’ll see the following page. This page allows you many options to inspect or manipulate your world. In this case, we’re going to launch our blank world. Click on the word "Launch" at the bottom left.
 
 	![](./images/building-a-game/testexport.html_Image5.png)
 
-7.	Click the Create button.
+	**Note:** If you have not opened a world before in the VW Sandbox, the program will automatically test your browser for compatibility.
 
+	An alert will pop up to ask your permission to conduct the compatability test. Click okay to run the test.
 
-	![](./images/building-a-game/testexport.html_Image6.png)
+	If your browser is compatible with running the VW Sandbox, another alert will tell you. Click okay to continue to your world.
 
-8.	Great! If everything went according to plan, you should see the new world begin to load. Because this world is in editing mode, you’ll see a lot of buttons and graphics appear in bars on the top, bottom, and sides of your browser. These are the tools that we’ll be using in the next section. You’ll also see the default avatar and a white grid in the center of the screen. This avatar is you! We won’t be going into any details about how the avatar works today, so just ignore it for now.
+	If your browser does not pass the compatibility test, please check your computer's settings or contact someone for technical assistance. **Note: **The VWS website uses a lot of cutting edge HTML5 features. If your browser window does not look like the image above, check that you are using the most recent version of Chrome, Firefox, Safari or Internet Explorer. Many mobile versions of these browsers may not be supported. 
+
+10.	Great! If everything went according to plan, you should see the new world begin to load. Because this world is in editing mode, you’ll see a lot of buttons and graphics appear in bars on the top, bottom, and sides of your browser. These are the tools that we’ll be using in the next section. You’ll also see the default avatar and a white grid in the center of the screen. This avatar is you! We won’t be going into any details about how the avatar works today, so just ignore it for now.
 
 
 	![](./images/building-a-game/testexport.html_Image7.png)
 
 	**Note: **The VWS website uses a lot of cutting edge HTML5 features. If your browser window does not look like the image above, check that you are using the most recent version of Chrome, Firefox, Safari or Internet Explorer. Many mobile versions of these browsers may not be supported. 
 
-9.	**Congratulations! **You’ve made it to the end of part one! Now is a good time to get used to moving around in this world. Click and hold with the right mouse button, and drag your mouse. Notice how the view rotates? This is the primary camera mode we’ll use when authoring, so it pays to practice a little bit. You can also roll the mouse wheel to zoom in and out, or press and drag with the center mouse button (sometimes the wheel itself is the button, can be pressed in addition to being rolled) to pan the view. Don’t worry too much about the left mouse button. It’s used for selection, which you’ll get plenty of practice within the next section.
+11.	**Congratulations! **You’ve made it to the end of part one! Now is a good time to get used to moving around in this world. Click and hold with the right mouse button, and drag your mouse. Notice how the view rotates? This is the primary camera mode we’ll use when authoring, so it pays to practice a little bit. You can also roll the mouse wheel to zoom in and out, or press and drag with the center mouse button (sometimes the wheel itself is the button, can be pressed in addition to being rolled) to pan the view. Don’t worry too much about the left mouse button. It’s used for selection, which you’ll get plenty of practice within the next section.
 
 
 	**Note: **Don’t be afraid to play around. At this point, the worst thing that can happen is that you create some junk in the world that will mess up our tutorial. You can always create another world to start the tutorial again. 
