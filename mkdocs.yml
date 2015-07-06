@@ -6,8 +6,7 @@ theme: readthedocs
 use_directory_urls: true
 markdown_extensions: [admonition]
 pages:
-- Home: Home.md
-- About: index.md
+- Home: index.md
 - Getting Started: GettingStarted.md
 - FAQ: FAQ.md
 
@@ -39,31 +38,6 @@ pages:
   - Development Plans: Developer Guide/Development-Plans.md
   - Sandbox API: Developer Guide/SandboxAPI.md
   - 3rd Party Libraries: Developer Guide/_3rd-Party-Libraries.md
-  - Driver Reference: Developer Guide/drivers/Drivers.md
-  - Three.js Model: Developer Guide/drivers/Threejsmodel.md
-  - Three.js View Driver: Developer Guide/drivers/Threejs-view.md
-  - Asset SubDriver: Developer Guide/drivers/Asset SubDriver.md
-  - MaterialDef SubDriver: Developer Guide/drivers/MaterialDef SubDriver.md
-  - Modifier SubDriver: Developer Guide/drivers/Modifier SubDriver.md
-  - Particle System SubDriver: Developer Guide/drivers/ParticleSystem SubDriver.md
-  - Prim SubDriver: Developer Guide/drivers/Prim SubDriver.md
-  - Spline SubDriver: Developer Guide/drivers/Spline SubDriver.md
-  - Transformable SubDriver: Developer Guide/drivers/Transformable SubDriver.md
-  - Inventory Manager: Developer Guide/editors/InventoryManager.md
-  - Primitive Editor: Developer Guide/editors/PrimitiveEditor.md
-  - Object Flags: Developer Guide/editors/Object Flags.md
-  - Transform Property: Developer Guide/editors/Transform Property.md
-  - Publisher: Developer Guide/editors/Publisher.md
-  - Script Editor: Developer Guide/editors/ScriptEditor.md
-  - Selection Editor: Developer Guide/editors/SelectionEditor.md
-  - Undo Manager: Developer Guide/editors/UndoManager.md
-  - Material Editor: Developer Guide/editors/MaterialEditor.md
-  - Map Browser: Developer Guide/editors/Mapbrowser.md
-  - User Manager: Developer Guide/editors/UserManager.md
-  - Extending Sandbox: Developer Guide/Extending.md
-  - Add a New Camera Mode: Developer Guide/extending/Add-a-new-camera-mode.md
-  - Add a New Menu Item: Developer Guide/extending/Add-a-new-menu-item.md
-  - Main Toolbar Button: Developer Guide/extending/Main-toolbar-buttons.md
   - Asset Pipeline: Developer Guide/Assets.md
   - Prim and Modifier Pipeline: Developer Guide/Prims-and-Modifiers.md
   - Asset and Server Integration: Developer Guide/Asset-Server-Integration.md
@@ -80,6 +54,37 @@ pages:
   - VWF: Developer Guide/VWF.md
   - Primitives: Developer Guide/Primitives.md
   - Modifiers: Developer Guide/Modifiers.md
+
+- Driver Reference:
+  - Drivers: Developer Guide/drivers/Drivers.md
+  - Three.js Model: Developer Guide/drivers/Threejsmodel.md
+  - Three.js View Driver: Developer Guide/drivers/Threejs-view.md
+  - Asset SubDriver: Developer Guide/drivers/Asset SubDriver.md
+  - MaterialDef SubDriver: Developer Guide/drivers/MaterialDef SubDriver.md
+  - Modifier SubDriver: Developer Guide/drivers/Modifier SubDriver.md
+  - Particle System SubDriver: Developer Guide/drivers/ParticleSystem SubDriver.md
+  - Prim SubDriver: Developer Guide/drivers/Prim SubDriver.md
+  - Spline SubDriver: Developer Guide/drivers/Spline SubDriver.md
+  - Transformable SubDriver: Developer Guide/drivers/Transformable SubDriver.md
+
+- Editors:
+  - Inventory Manager: Developer Guide/editors/InventoryManager.md
+  - Primitive Editor: Developer Guide/editors/PrimitiveEditor.md
+  - Object Flags: Developer Guide/editors/Object Flags.md
+  - Transform Property: Developer Guide/editors/Transform Property.md
+  - Publisher: Developer Guide/editors/Publisher.md
+  - Script Editor: Developer Guide/editors/ScriptEditor.md
+  - Selection Editor: Developer Guide/editors/SelectionEditor.md
+  - Undo Manager: Developer Guide/editors/UndoManager.md
+  - Material Editor: Developer Guide/editors/MaterialEditor.md
+  - Map Browser: Developer Guide/editors/Mapbrowser.md
+  - User Manager: Developer Guide/editors/UserManager.md
+
+- Extending Sandbox:
+  - Extending: Developer Guide/Extending.md
+  - Add a New Camera Mode: Developer Guide/extending/Add-a-new-camera-mode.md
+  - Add a New Menu Item: Developer Guide/extending/Add-a-new-menu-item.md
+  - Main Toolbar Button: Developer Guide/extending/Main-toolbar-buttons.md
 
 - Scripting:
   - Introduction to Scripting: Scripting/scripting/ScriptingIntro.md
