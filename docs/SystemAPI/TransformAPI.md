@@ -24,7 +24,7 @@ Movement along the y-axis in meters.
 Movement along the z-axis in meters.
 
 `coordinateSystem` (`String`)  
-Specify either 'global' or local coordinate system.
+Specify either 'global' or 'local' coordinate system.
 
 **Returns:**
 
@@ -101,7 +101,7 @@ Movement around the z-axis in meters.
 Array containing global x, y and z values of rotation.
 
 <a id='globalToLocal'></a>
-### **Global to Local**
+### globalToLocal(x, y, z)
 
 Exchanges global x, y, and z coordinates for local x, y, and z coordinates.
 
@@ -143,7 +143,7 @@ Movement around the z-axis in meters.
 Array containing global x, y and z values of rotation.
 
 <a id='globalRotationToLocalRotation'></a>
-### **Global Rotation to Local Rotation**
+### globalRotationToLocalRotation(x, y, z)
 
 Converts global rotation values to local rotation values.
 

@@ -126,8 +126,6 @@ The HeightMap terrain generator uses a technique called ‘Texture Splatting’ 
 
 Each of the buttons above will allow you to select a texture. Let’s look at an example Mix Map
 
-./
-
 ![](./images/terrain/terrain.htmlcd_Image21.png)
 
 This image is used to place other textures. Where this image is blue, the texture selected by the ‘Blue Channel Texture’ button will be used. Likewise for green and red. When there is no color for an area (where the MixMap is black) the Black Channel Texture is used. The MixMap will stretch exactly once over the heightmap.

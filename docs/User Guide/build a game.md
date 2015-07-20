@@ -240,7 +240,7 @@ Now that we have a world to work in, we need to create all the objects that will
 
 ## Part 3: Scripting
 
-Alright! Now we are cooking with fire. The whole scene is set up, and we just need to make the game work. To do so, we need to add some behaviors to the objects. This means we’ll have to write some code. This isn’t a programming course, and I’m not going to discuss every line of text. Instead, I’ll give you the code, and you can apply it to the objects. For anyone familiar with JavaScript, you’ll immediately see hundreds of way to make this game more interesting, but let’s stick with the basics for now.
+Alright! Now we are cooking with fire. The whole scene is set up, and we just need to make the game work. To do so, we need to add some behaviors to the objects. This means we’ll have to write some code. This isn’t a programming course, and I’m not going to discuss every line of text here. Instead, I’ll give you the code, and you can apply it to the objects. For anyone familiar with JavaScript, you’ll immediately see hundreds of way to make this game more interesting, but let’s stick with the basics for now. (Apendix 1 on the sidebar for those that want a discussion of every line of code)
 
 1.	First, let’s do the player code. Select the Player object, and open up the script editor. Make sure you’re on the Methods tab, and scroll down the list on the left until you see the word ‘**tick**’. Click it.
 
@@ -250,97 +250,130 @@ Alright! Now we are cooking with fire. The whole scene is set up, and we just ne
 
 	![tick popup](./images/building-a-game/part3Image2.png)
 
-3.	Now, paste the below code in the script window.
+3.	Now, paste the below code in the script window between the opening and closing brackets { ... }.
 
 ```
-function tick(){
-	if (this.motionVec)
+	function tick()
 	{
-		var oldpos = this.transformAPI.getPosition();
-		this.transformAPI.move(this.motionVec, 'parent');
-		var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), 0.35,
-		{
-			ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],
-			filter: function(n)
-			{
-				if (n.passable) return false;
-				return true;
-			}
-		});
-		if (hit && hit.length)
-		{
-			this.transformAPI.setPosition(oldpos);
-		}
+	
+	    //This function was created for you by the system. 
+	    //The tick function is called 20 times every second. 
+	    // Write code here to animate over time
+	 
+	    "use strict";
+	 
+	     if (this.motionVec)
+	    {
+	        var oldpos = this.transformAPI.getPosition();
+	        this.transformAPI.move(this.motionVec, 'parent');
+	        var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), 0.35,
+	        {
+	            ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],
+	            filter: function(n)
+	            {
+	                if (n.passable) return false;
+	                return true;
+	            }
+	        });
+	        if (hit && hit.length)
+	        {
+	            this.transformAPI.setPosition(oldpos);
+	        }
+	    }
+	
 	}
-}
 ```
 
 4.	Click ‘**Save Method**’ to save this code on the object as the Tick method.
 
 	![save method button](./images/building-a-game/part3Image3.png)
 
-5.	<a id="newWorld"></a>Now, move over and click the ‘**Events**’ tab. Then find and click the ‘**New Event**’ button along the bottom right.
+5.	<a id="newWorld"></a>Now, look above the tick method and click ‘**ready**’.
 
 	![new event button](./images/building-a-game/part3Image4.png)
 
-6.	A pop up will appear on the screen prompting you for the name of the new event. Enter '**keyDown**' in the textbox and click the '**OK**' button.
+6.	A pop up will appear on the screen asking you if you want to create a new method called ‘ready’. Click '**OK**'.
+
 	![Enter the event name](./images/building-a-game/part3Image5.png)
 
-7.	 That brings up another prompt asking for the number of parameters. In our case the answer is two.  Enter '**2**' onto the textbox and click '**OK**'.
-
-	![Enter parameters](./images/building-a-game/part3Image6.png)
-
-8.	 Next pops up another prompt asking for the name of parameter 0. This is asking for the name of our first parameter. Our first parameter is called 'eventData'.  So, enter '**eventData**' into the textbox and click '**OK**'.  This will bring up another box asking for our next, or second, parameter. It will call it parameter (I don't want to explain now, but computers and programmers have a tendency to count starting with zero, instead of one. There is some reason to it, but the simplest explanation for now is they're wierd like that.) Now we can enter '**nodeData**' into the textbox, click '**OK**' and we are done with popups for a minute.
-
-	![Enter parameter](./images/building-a-game/part3Image7.png)
-
-9.	 Now the Script Editor stubs out the function for you. This process is very similar to the process to create the ‘Tick’ method. Enter the code below into the ‘**keyDown**’ event minus what the editor has already provided (Skip the very first and very last line of code, since the editor has provided that for you.), and save it.
+9.	 Now the Script Editor stubs out the function for you. This process is very similar to the process to create the ‘Tick’ method. Enter the code below into the ‘**ready**’ method, copying over the what the editor has already provided (or skip the very first and very last line of code, since the editor has provided that for you.), and save it.
 
 ```
-function keyDown(eventData, nodeData){
-	if (eventData.keysDown.rightarrow)
-	{
-		this.motionVec = [0, -0.5, 0];
-		this.movestate = 'up';
-	}
-	if (eventData.keysDown.leftarrow)
-	{
-		this.motionVec = [0, 0.5, 0];
-		this.movestate = 'down';
-	}
-	if (eventData.keysDown.uparrow)
-	{
-		this.motionVec = [0.5, 0, 0];
-		this.movestate = 'left';
-	}
-	if (eventData.keysDown.downarrow)
-	{
-		this.motionVec = [-0.5, 0, 0];
-		this.movestate = 'right';
-	}
-}
-```
+function ready()
+{
 
-10.	Finally, follow the same process ([steps 5](#step5) through 9) to insert the following code in the ‘**keyUp**’ event, and save it.
+    "use strict";
 
-```
-function keyUp(eventData, nodeData){
-	if (eventData.keysUp.rightarrow && this.movestate == 'up')
-	{
-		this.motionVec = null;
-	}
-	if (eventData.keysUp.leftarrow && this.movestate == 'down')
-	{
-		this.motionVec = null;
-	}
-	if (eventData.keysUp.uparrow && this.movestate == 'left')
-	{
-		this.motionVec = null;
-	}
-	if (eventData.keysUp.downarrow && this.movestate == 'right')
-	{
-		this.motionVec = null;
-	}
+    //The scene is now completely loaded. This will fire on each client when the client joins, so it`s not a great place to create objects
+
+    //this is called when the object is setup, so event though the VWF state does not contain this info, it's ok - this gets called on each client, even late joiners
+
+    //here, we bind a function to the scenes keydown method.
+    //since we might be calling the function several time during development, lets unbind so we dont' get confused
+    //by several copies of the function existing
+    this.Scene.unbind("keyDown", this.keydown);
+    this.Scene.unbind("keyUp", this.keyup);
+
+    var self = this;
+    console.log("this is ready");
+    //we use a stack of keys so that the user gets the motion of the most recent key down
+    //if we used just the last key, the motion would be strange when several were held
+    this.keydown = function(eventData)
+    {
+        console.log("got keyDown");
+
+        if (eventData.keysDown.uparrow)
+        {
+            self.motionVec = [0, -0.5, 0];
+            self.movestate = 'up';
+        }
+        if (eventData.keysDown.downarrow)
+        {
+            self.motionVec = [0, 0.5, 0];
+            self.movestate = 'down';
+        }
+        if (eventData.keysDown.leftarrow)
+        {
+            self.motionVec = [0.5, 0, 0];
+            self.movestate = 'left';
+        }
+        if (eventData.keysDown.rightarrow)
+        {
+            self.motionVec = [-0.5, 0, 0];
+            self.movestate = 'right';
+        }
+        console.log(self.movestate);
+    }
+
+    this.keyup = function(eventData)
+    {
+        //self.keyUp(event);
+
+        console.log("got keyUp");
+
+        if (eventData.keysUp.uparrow && this.movestate == 'up')
+        {
+            self.motionVec = null;
+        }
+        if (eventData.keysUp.downarrow && this.movestate == 'down')
+        {
+            self.motionVec = null;
+        }
+        if (eventData.keysUp.leftarrow && this.movestate == 'left')
+        {
+            self.motionVec = null;
+        }
+        if (eventData.keysUp.rightarrow && this.movestate == 'right')
+        {
+            self.motionVec = null;
+        }
+
+    }
+
+    //ok, now we unbound any existing functions, and bound new ones.
+    this.Scene.bind("keyDown", this.keydown);
+    this.Scene.bind("keyUp", this.keyup);
+
 }
 ```
 
@@ -390,7 +423,7 @@ function tick(){
 			activecount--;
 		}
 	}
-	if (activecount == 0)
+	if (activecount == 30)
 	{
 		alertify.alert('You win!');
 		this.reset();
@@ -398,29 +431,37 @@ function tick(){
 }
 ```
 
-13.	Now, when you move across a food object, it will disappear. Move around and collect all the food!
+13.	Now, when you move across a food object, it will disappear. Move around and collect the food!
 
-14.	We still need a way to reset the game. Go to the '**Events**' tab of the script editor, and find the '**New Event**' button. Click it, and when prompted, type '**reset**'.
+14.	We still need a way to reset the game. Go to the '**Events**' tab of the script editor, and find the '**New Event**' button in the bottom right corner. Click it, and when prompted, type '**reset**'.
+
+	![New Event tab](./images/building-a-game/part3Image7.png)
+
+	![New Event tab](./images/building-a-game/part3Image7.5.png)
 
 	![New Event reset](./images/building-a-game/part3Image9.png)
 
 15.	When prompted for the number of parameters, leave the value at 0 and click '**OK.**' Paste the code below into the script window for the reset event.
 
+	![New Event tab](./images/building-a-game/part3Image6.png)
+
 ```
 function reset(){
-	deletethis.piplist;
-	this.Scene.children_by_name.Ghost.transformAPI.setPosition(4, -17, 0.5);
-	this.Scene.children_by_name.Player.transformAPI.setPosition(-2, -10, 0.5);
+    delete this.piplist;
+    activecount = -10; //any value other than zero
+    this.Scene.children_by_name.Ghost.transformAPI.setPosition(7, 5, 0.6);
+    this.pacman.transformAPI.setPosition(0, 0, 0.6);
+    console.log("reset Ghost and Player");
 }
 ```
 
-16.	Save the event code with the button labeled '**Save Event**'. Now, clicking the 'Trigger Event' button will reset the game. **Note:** The exact values used above depend on the exact setup of your level.
+16.	Save the event code with the button labeled '**Save Event**'. **Note:** The exact values used depend on the exact setup of your level.
 
 	![trigger event button](./images/building-a-game/part3Image10.png)
 
 	**Remember: **You can find the proper values for your level by selecting the Ghost or the Player, and reading the translation out of the property editor. 
 
-17.	Finally, we just need to add the code to make the Ghost work. Use the code below, but notice where I've added a note. This value should be the same value you used above - the default position for the player. Select the **Ghost** object, open the **script editor**, create a **tick** method, and paste in the code below.
+17.	Finally, we just need to add the code to make the Ghost work. Use the code below, but notice after the `alertify.log('Got you!');` line, the `...setPosition` arguments (the values in the parentheses) should be the same values you used above - the default position for the player. Select the **Ghost** object, open the **Script Editor**, create a **tick** method, and paste in the code below.
 
 ```
 function tick(){
@@ -452,7 +493,7 @@ function tick(){
 	if (Vec3.distance(oldpos, this.pacman.transformAPI.getPosition()) < 1.3)
 	{
 		alertify.log('Got you!');
-		this.pacman.transformAPI.setPosition(-2, -10, 0.6);
+		this.pacman.transformAPI.setPosition(0, 0, 0.6);
 	}
 	if (this.motionVec)
 	{
@@ -491,7 +532,7 @@ function tick(){
 }
 ```
 
-18.	Congratulations! That's it! The game now works, and just needs a bit of polish to be completely finished!
+18.	**Congratulations!** That's it! The game now works, and just needs a bit of polish to be completely finished!
 
 
 ## Part 4: Finishing touches
@@ -586,25 +627,33 @@ It's not absolutely necessary for you to understand what the code is doing in or
 The code for the **tick** method on the player object.
 
 ```
-function tick(){
-	if (this.motionVec)
-	{
-		var oldpos = this.transformAPI.getPosition();
-		this.transformAPI.move(this.motionVec, 'parent');
-		var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), 0.35,
-		{
-			ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],
-			filter: function(n)
-			{
-				if (n.passable) returnfalse;
-				returntrue;
-			}
-		});
-		if (hit && hit.length)
-		{
-			this.transformAPI.setPosition(oldpos);
-		}
-	}
+function tick()
+{
+
+    "use strict";
+
+    //This function was created for you by the system. 
+    //The tick function is called 20 times every second. 
+    // Write code here to animate over time
+    if (this.motionVec)
+    {
+        var oldpos = this.transformAPI.getPosition();
+        this.transformAPI.move(this.motionVec, 'parent');
+        var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), 0.35,
+        {
+            ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],
+            filter: function(n)
+            {
+                if (n.passable) return false;
+                return true;
+            }
+        });
+        if (hit && hit.length)
+        {
+            this.transformAPI.setPosition(oldpos);
+        }
+    }
+
 }
 ```
 
@@ -623,7 +672,7 @@ If **this** object (the *Player*), has a **motionVec** variable, then get and st
 ...if(this.motionVec)
 	{
 		var oldpos = this.transformAPI.getPosition();
-		this.transformAPI.move(this.motionVec, 'parent');......
+		this.transformAPI.move(this.motionVec, 'parent');...
 ```
 
 This is a much more interesting bit of code. It's what prevents the character from intersecting the walls. **_SceneManager.SphereCast** is a function that allows you to query the geometry of the world, to decide if any of the objects in the world intersect a sphere. The first parameter is the center of the sphere you would like to use to check for intersections. The second parameter, in this case **0.35**, is the radius of the sphere. Notice how we are basically saying "Now that we've moved the player, does a sphere at his new position with a radius of **0.35** intersect any of the world geometry?". **_SceneManager.SphereCast** also takes an options object as the final parameter. This object here contains a list of graphics objects to ignore - namely, the sphere itself, and the Axis control you've been using to move objects around. This is sort of a leaky abstraction - from game code, your objects should have no knowledge of the Axis "gizmo" that you use to move objects. We'll fix this in time. Also, eventually you'll be able to ignore objects by the names you give them, rather than the ugly **_Editor.findviewnode(this.id)...**. Because the **SphereCast** function operates over the graphic objects, it currently expects you to provide the actual 3D sphere object from the graphics engine. **_Editor.findviewnode(this.id)** is how you access this (for now).
@@ -649,34 +698,87 @@ This last bit is much easier. It just says "Well, if we did hit something, put t
 	}
 ```
 
-#### keyDown event
+#### ready method
 
-The code for **keyDown**
+The code for **ready**
 
 ```
-	function keyDown(eventData, nodeData)
-	{
-		if (eventData.keysDown.rightarrow)
-		{
-			this.motionVec = [0, -0.5, 0];
-			this.movestate = 'up';
-		}
-		if (eventData.keysDown.leftarrow)
-		{
-			this.motionVec = [0, 0.5, 0];
-			this.movestate = 'down';
-		}
-		if (eventData.keysDown.uparrow)
-		{
-			this.motionVec = [0.5, 0, 0];
-			this.movestate = 'left';
-		}
-		if (eventData.keysDown.downarrow)
-		{
-			this.motionVec = [-0.5, 0, 0];
-			this.movestate = 'right';
-		}
-	}
+function ready()
+{
+
+    "use strict";
+
+    //The scene is now completely loaded. This will fire on each client when the client joins, so it`s not a great place to create objects
+
+    //this is called when the object is setup, so event though the VWF state does not contain this info, it's ok - this gets called on each client, even late joiners
+
+    //here, we bind a function to the scenes keydown method.
+    //since we might be calling the function several time during development, lets unbind so we dont' get confused
+    //by several copies of the function existing
+    this.Scene.unbind("keyDown", this.keydown);
+    this.Scene.unbind("keyUp", this.keyup);
+
+    var self = this;
+    console.log("this is ready");
+    //we use a stack of keys so that the user gets the motion of the most recent key down
+    //if we used just the last key, the motion would be strange when several were held
+    this.keydown = function(eventData)
+    {
+        console.log("got keyDown");
+
+        if (eventData.keysDown.uparrow)
+        {
+            self.motionVec = [0, -0.5, 0];
+            self.movestate = 'up';
+        }
+        if (eventData.keysDown.downarrow)
+        {
+            self.motionVec = [0, 0.5, 0];
+            self.movestate = 'down';
+        }
+        if (eventData.keysDown.leftarrow)
+        {
+            self.motionVec = [0.5, 0, 0];
+            self.movestate = 'left';
+        }
+        if (eventData.keysDown.rightarrow)
+        {
+            self.motionVec = [-0.5, 0, 0];
+            self.movestate = 'right';
+        }
+        console.log(self.movestate);
+    }
+
+    this.keyup = function(eventData)
+    {
+        //self.keyUp(event);
+
+        console.log("got keyUp");
+
+        if (eventData.keysUp.uparrow && this.movestate == 'up')
+        {
+            self.motionVec = null;
+        }
+        if (eventData.keysUp.downarrow && this.movestate == 'down')
+        {
+            self.motionVec = null;
+        }
+        if (eventData.keysUp.leftarrow && this.movestate == 'left')
+        {
+            self.motionVec = null;
+        }
+        if (eventData.keysUp.rightarrow && this.movestate == 'right')
+        {
+            self.motionVec = null;
+        }
+
+    }
+
+    //ok, now we unbound any existing functions, and bound new ones.
+    this.Scene.bind("keyDown", this.keydown);
+    this.Scene.bind("keyUp", this.keyup);
+
+}
 ```
 
 This one is much simpler, and I won't spend too much time on it. The engine notifies your objects about user input events by calling the Event code you inserted in the Script Editor panel. Because we had the **Player** selected when we created the code above, '**this**' means the player. So, think about the code above in the **tick** section. You can see how the value of the player motion depends on the **motionVec**, and the value of **motionVec** is controlled by the **keyDown** events. We also track **this.movestate** just to make it easier to figure out what key is currently pressed. This information is also contained in the **motionVec** variable, but I've done it this way just for readability. I won't go into any detail on the keyUp code. It should be self explanatory.
@@ -684,6 +786,75 @@ This one is much simpler, and I won't spend too much time on it. The engine noti
 ### Ghost Code
 
 The Ghost object is a very simple example of AI. It just randomly moves around the scene, and detects when it gets close to the player. Here is the total code for the Ghost. It's all located inside the objects tick method.
+
+```
+function tick(){
+	if (window.paused) return;
+	if (!this.pacman) this.pacman = this.Scene.children_by_name.Player;
+	if (!this.pacman) return;
+	var random = Math.random() * 2000;
+	if (random > 0 && random < 10)
+	{
+		this.motionVec = [0, 0.5, 0];
+	}
+	if (random > 10 && random < 20)
+	{
+		this.motionVec = [0, -0.5, 0];
+	}
+	if (random > 20 && random < 30)
+	{
+		this.motionVec = [0.5, 0, 0];
+	}
+	if (random > 30 && random < 40)
+	{
+		this.motionVec = [-0.5, 0, 0];
+	}
+	var oldpos = this.transformAPI.getPosition();
+	oldpos[0] = Math.floor(oldpos[0] * 2) / 2;
+	oldpos[1] = Math.floor(oldpos[1] * 2) / 2;
+	oldpos[2] = Math.floor(oldpos[2] * 2) / 2;
+	this.transformAPI.setPosition(oldpos);
+	if (Vec3.distance(oldpos, this.pacman.transformAPI.getPosition()) < 1.3)
+	{
+		alertify.log('Got you!');
+		this.pacman.transformAPI.setPosition(0, 0, 0.6);
+	}
+	if (this.motionVec)
+	{
+		this.transformAPI.move(this.motionVec, 'parent');
+		var hit = _SceneManager.SphereCast(this.transformAPI.getPosition(), 0.35,
+		{
+			ignore: [_Editor.findviewnode(this.id).children[0].children[0], _Editor.GetMoveGizmo()],
+			filter: function(n)
+			{
+				if (n.passable) return false;
+				return true;
+			}
+		});
+		if (hit && hit.length)
+		{
+			this.transformAPI.setPosition(oldpos);
+			var random = Math.random() * 40;
+			if (random > 0 && random < 10)
+			{
+				this.motionVec = [0, 0.5, 0];
+			}
+			if (random > 10 && random < 20)
+			{
+				this.motionVec = [0, -0.5, 0];
+			}
+			if (random > 20 && random < 30)
+			{
+				this.motionVec = [0.5, 0, 0];
+			}
+			if (random > 30 && random < 40)
+			{
+				this.motionVec = [-0.5, 0, 0];
+			}
+		}
+	}
+}
+```
 
 #### tick method
 
@@ -695,7 +866,7 @@ In this first section, we just try to get a reference to the **player** object. 
 	if (!this.pacman) return;...
 ```
 
-The Ghost code will work a lot like the player code. Every frame, we move the object by some value. Because the Ghost does not accept keyboard inputs, it instead uses a random number. Here, we randomly choose a direction to move.
+The Ghost code will work a lot like the player code. Every frame, we move the object by some value. Because the Ghost does not accept keyboard inputs, it instead uses a random number. Here, we randomly choose a direction to move. Using 2000 possible random numbers, but only changing direction for 40 of them gives us less than 2% chance of changing directions while nothing hinders the Ghost.
 
 ```
 	var random = Math.random() * 2000;
@@ -733,7 +904,7 @@ This simple block of code is the code that checks if the player got too near the
 	if (Vec3.distance(oldpos, this.pacman.transformAPI.getPosition()) < 1.3)
 	{
 		alertify.log('Got you!');
-		this.pacman.transformAPI.setPosition(-2, -10, 0.6);
+		this.pacman.transformAPI.setPosition(0, 0, 0.6);
 	}
 ```
 
@@ -781,7 +952,7 @@ This final bit of code is very similar to the first block that randomly changed 
 
 ### GameManager Code
 
-Like the Ghost, the GameManager has only a tick method. However, unlike the Ghost, the GameManager is not all that interested in its own location or movement. Instead, we use the GameManager object to hold some global code that implements the game logic. The GameManager also has the necessary code to reset the game implemented in an event call 'reset'
+Like the Ghost, the GameManager has only a tick method. However, unlike the Ghost, the GameManager is not all that interested in its own location or movement. Instead, we use the GameManager object to hold some global code that implements the game logic. The GameManager also has the necessary code to reset the game implemented in an event called 'reset'.
 
 #### tick method
 
@@ -849,6 +1020,8 @@ It's as simple as that. If there is not more active food (food which is visible,
 		this.reset();
 	}
 ```
+
+#### reset event
 
 In the **reset** function, we just place the ghost and player back at their staring positions, and delete the list of food. Remember that, at the next tick, if the GameManager does not have a list of food, it will create that list, and make all the food visible.
 
