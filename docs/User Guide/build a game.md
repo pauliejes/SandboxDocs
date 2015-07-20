@@ -304,12 +304,15 @@ function ready()
 
     "use strict";
 
-    //The scene is now completely loaded. This will fire on each client when the client joins, so it`s not a great place to create objects
+    //The scene is now completely loaded. This will fire on each client when the client
+	//joins, so it`s not a great place to create objects
 
-    //this is called when the object is setup, so event though the VWF state does not contain this info, it's ok - this gets called on each client, even late joiners
+    //this is called when the object is setup, so event though the VWF state does not
+	//contain this info, it's ok - this gets called on each client, even late joiners
 
     //here, we bind a function to the scenes keydown method.
-    //since we might be calling the function several time during development, lets unbind so we dont' get confused
+    //since we might be calling the function several time during development,
+	//let's unbind so we dont' get confused
     //by several copies of the function existing
     this.Scene.unbind("keyDown", this.keydown);
     this.Scene.unbind("keyUp", this.keyup);
@@ -708,12 +711,15 @@ function ready()
 
     "use strict";
 
-    //The scene is now completely loaded. This will fire on each client when the client joins, so it`s not a great place to create objects
+    //The scene is now completely loaded. This will fire on each client when the client 
+	//joins, so it`s not a great place to create objects
 
-    //this is called when the object is setup, so event though the VWF state does not contain this info, it's ok - this gets called on each client, even late joiners
+    //this is called when the object is setup, so event though the VWF state does not 
+	//contain this info, it's ok - this gets called on each client, even late joiners
 
     //here, we bind a function to the scenes keydown method.
-    //since we might be calling the function several time during development, lets unbind so we dont' get confused
+    //since we might be calling the function several time during development, 
+	//let's unbind so we dont' get confused
     //by several copies of the function existing
     this.Scene.unbind("keyDown", this.keydown);
     this.Scene.unbind("keyUp", this.keyup);
