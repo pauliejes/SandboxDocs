@@ -132,7 +132,7 @@ Asset identifier.
 
 Returns:
 ```javascript
-Array of not quite sure.
+Asset object.
 ```
 
 ### globalassetmetadata
@@ -145,18 +145,24 @@ Asset identifier.
 
 Returns:
 ```javascript
-Array of not quite sure.
+Asset meta data object.
+Includes:
+uploader - UID
+title - String
+uploaded - date time stamp
+description - string
+type - type of asset (Primitive, ...)
 ```
 
 ### globalassets
 **GET {serverRoot}/vwfdatamanager.svc/globalassets**
 
-`AID` (`String`)
-Not really.
+Accepts:
+(*None*)
 
 Returns:
 ```javascript
-Should be an array of asset objects.
+Array of asset objects.
 ```
 
 ### inventory
