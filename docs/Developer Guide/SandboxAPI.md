@@ -385,7 +385,7 @@ Path and texture filename.
 Returns:
 ```javascript
 Image.
-````
+```
 
 ### thumbnail
 **GET {serverRoot}/vwfdatamanager.svc/thumbnail**
