@@ -146,7 +146,7 @@ Now that we have a world to work in, we need to create all the objects that will
 
 	![Transform Panel](./images/building-a-game/part2Image15.png)
 
-17.	Next, let’s go ahead and make the sphere yellow, just for kicks. Find the "Material Editor". Its right below the Properties Editor on the right of the screen. When you click the heading, the '**Material**' Editor will open in the side panel.
+17.	Next, let’s go ahead and make the sphere yellow, just for kicks. Find the "Material Editor". Its right above the Properties Editor on the right of the screen. When you click the heading, the '**Material**' Editor will open in the side panel.
 
 
 	![Material Editor panel](./images/building-a-game/part2Image16.png)
@@ -156,7 +156,7 @@ Now that we have a world to work in, we need to create all the objects that will
 
 	![choosing yellow](./images/building-a-game/part2Image17.png)
 
-19.	Let’s also remove the default texture layer. The material editor allows you to link several different images to different properties of the surface, like a color map or a bump map. The default material has a checker texture for the diffuse map. Each texture gets a small tab at the bottom of the Material Editor. Click the '**Texture Layer 0**' tab to open the settings for the layer, then find the ‘**Delete Layer**’ button. The sphere should now be a solid yellow. You should still see the selection outline and the brightly colored axis graphic.
+19.	Let’s also remove the default texture layer. The material editor allows you to link several different images to different properties of the surface, like a color map or a bump map. The default material has a checker texture for the diffuse map. Each texture gets a small tab at the bottom of the Material Editor. Click the '**Texture Layer 0**' tab to open the settings for the layer, then find the ‘**Remove Layer**’ button. The sphere should now be a solid yellow. You should still see the selection outline and the brightly colored axis graphic.
 
 
 	![Texture Layer 0 panel](./images/building-a-game/part2Image18.png)
@@ -189,10 +189,7 @@ Now that we have a world to work in, we need to create all the objects that will
 
 	![new property = gametype](./images/building-a-game/part2Image24.png)
 
-25.	On the next prompt, enter ‘**food**’. This will be the value of the new property. Click '**OK**'.
-
-
-	![gametype value = food](./images/building-a-game/part2Image25.png)
+25.	The editor will automatically create a property with the name 'gametype' and open the file for you.  You should see a pair of double quotes.  Enter **food** inside of the double quotes.
 
 26.	You can now close the Script Editor. Use the '**down arrow**' on the right at the top of the panel.
 
@@ -288,7 +285,7 @@ Alright! Now we are cooking with fire. The whole scene is set up, and we just ne
 
 	![save method button](./images/building-a-game/part3Image3.png)
 
-5.	<a id="newWorld"></a>Now, look above the tick method and click ‘**ready**’.
+5.	<a id="newWorld"></a>Now, find the ready method and click ‘**ready**’.
 
 	![new event button](./images/building-a-game/part3Image4.png)
 
@@ -436,7 +433,7 @@ function tick(){
 
 13.	Now, when you move across a food object, it will disappear. Move around and collect the food!
 
-14.	We still need a way to reset the game. Go to the '**Events**' tab of the script editor, and find the '**New Event**' button in the bottom right corner. Click it, and when prompted, type '**reset**'.
+14.	We still need a way to reset the game. With the GameManager selected go to the '**Events**' tab of the script editor, and find the '**New Event**' button in the bottom right corner. Click it, and when prompted, type '**reset**'.
 
 	![New Event tab](./images/building-a-game/part3Image7.png)
 
@@ -444,7 +441,7 @@ function tick(){
 
 	![New Event reset](./images/building-a-game/part3Image9.png)
 
-15.	When prompted for the number of parameters, leave the value at 0 and click '**OK.**' Paste the code below into the script window for the reset event.
+15.	Delete the parameters. Paste the code below into the script window for the reset event.
 
 	![New Event tab](./images/building-a-game/part3Image6.png)
 
@@ -595,7 +592,7 @@ Great! At this point, our game basically works. The last thing we need to do is 
 
 	![Leave page](./images/building-a-game/part4Image9.png)
 
-11.	Now, we need to find your world so we update the settings. First double check whether your name is still in the upper right corner, or if you need to log in again. Next, go to the Worlds page. Use the search box to search for your world (i.e. Since I named the world Joe's, I'll search 'Joe') or click the '**My Worlds**' option.
+11.	Now, we need to find your world so we can update the settings. First double check whether your name is still in the upper right corner, or if you need to log in again. Next, go to the Worlds page. Use the search box to search for your world (i.e. Since I named the world Joe's, I'll search 'Joe') or click the '**My Worlds**' option.
 
 
 	![Worlds page](./images/building-a-game/part4Image10.png)
