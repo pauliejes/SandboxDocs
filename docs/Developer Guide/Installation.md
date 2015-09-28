@@ -1,8 +1,6 @@
-# Installing a copy of the ADL Sandbox server on your own machine.
+# Installing a copy of the VW Sandbox server on your own machine.
 
-The ADL Sandbox server runs under NodeJS, a cross platform server technology. 
-
-For your convenience, we've included in the source repository the necessary binary executable to run the server under Windows.   If you are using a Mac or Linux, you'll need to download and install NodeJS for your platform from http://nodejs.org/download/ 
+The VW Sandbox server runs under [Node.js](https://nodejs.org/en/) ([v0.12.x](http://nodejs.org/dist/latest-v0.12.x/)), an open-source, cross-platform JavaScript runtime for developing server-side web applications.
 
 #### **FOR WINDOWS**
 To start, download the entire repository as a ZIP file (be sure to get the node_threejs branch). Unzip this file onto a directory on your local computer. Lets say, for example, c:\SandboxServer\. 
