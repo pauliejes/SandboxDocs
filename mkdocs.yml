@@ -10,7 +10,7 @@ pages:
 - Getting Started: GettingStarted.md
 - FAQ: FAQ.md
 
-- Users Guide:
+- User Guide:
   - For Users: User Guide/User-Guide.md
   - Using The Editor: User Guide/Using-The-Editor.md
   - Assets and Models: User Guide/Assets.md
@@ -95,9 +95,10 @@ pages:
   - Nodes: Scripting/scripting/Nodes.md
 
 - System APIs:
-  - System API: SystemAPI/SystemAPIs.md
-  - Audio API: SystemAPI/AudioAPI.md
-  - Client API: SystemAPI/ClientAPI.md
-  - Communications API: SystemAPI/CommsAPI.md
-  - Physics API: SystemAPI/PhysicsAPI.md
-  - Transform API: SystemAPI/TransformAPI.md
+  - Overvew: SystemAPIs/Overview.md
+  - Node API: SystemAPIs/NodeAPI.md
+  - Transform API: SystemAPIs/TransformAPI.md
+  - Physics API: SystemAPIs/PhysicsAPI.md
+  - Audio API: SystemAPIs/AudioAPI.md
+ # - Client API: SystemAPI/ClientAPI.md
+ # - Communications API: SystemAPI/CommsAPI.md
