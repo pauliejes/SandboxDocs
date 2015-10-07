@@ -1,6 +1,6 @@
 # Creating Cameras
 
-There are 2 major things to understand about cameras in the VWF. First, the camera you are looking through by default in the editor is a special camera that is not shared with other users. Each user has his or her own viewpoint when editing that is not shared between users. There is a function for temporarily broadcasting the position of your camera to other users - see [Camera Modes](http://sandboxdocs.readthedocs.org/en/latest/User%20Guide/CameraModes/ "Camera Modes") for more info. 
+There are 2 major things to understand about cameras in the VWF. First, the camera you are looking through by default in the editor is a special camera that is not shared with other users. Each user has his or her own viewpoint when editing that is not shared between users. There is a function for temporarily broadcasting the position of your camera to other users - see [Camera Modes](camera-modes.md "Camera Modes") for more info. 
 
 Second, you can also create camera objects within the scene. These cameras are full VWF entities, and can be scripted, copied, or deleted. They can even have behaviors applied, just as any other object. 
 
@@ -8,7 +8,7 @@ To create a camera, use the drop down menu. Choose Create->Camera->Perspective. 
 
 When you have a camera selected in the editor, you will see a preview of the selected camera's view. This view will update in real time as you use the editor tools to move around the camera. You will also see in the main view a helper graphic to show you where the camera is pointing. This helper may show a camera viewpoint that is slightly behind the camera's position. This is normal. We actually use the near clip plane of the camera as the cameras 'position'. 
 
-If you see the camera icon, you can double click it to activate the selected camera as the main camera. You can also activate different cameras by choosing Camera->Activate Camera from the drop down menu. Note: All the existing camera modes, such as 'Fly', or 'Orbit', apply only to the default editor camera. Selecting one of these modes will active the default camera.
+If you see the camera icon, you can double click it to activate the selected camera as the main camera. You can also activate different cameras by choosing `Camera` > `Activate Camera` from the drop down menu. Note: All the existing camera modes, such as 'Fly', or 'Orbit', apply only to the default editor camera. Selecting one of these modes will active the default camera.
 
 When a camera is selected, you may edit some of it's properties in the Properties panel.
 
