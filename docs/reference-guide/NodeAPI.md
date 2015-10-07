@@ -1,6 +1,10 @@
 # Node API
 
-The Node API provides properties and methods to manipulate a simulation object, which is a node in the replicated computation model.  The Node API is the primary API for manipulating simulation objects and is accessible through the Script Editor by selecting an object and typing `this.`, which will result in an autocomplete list of available properties and methods.  The autocomplete list should include any properties and methods the object defines as well as access to the Transform, Physics, and Audio APIs.
+The Node API provides properties and methods to manipulate a simulation object, which is a node in the replicated computation model.  The Node API is the primary API for manipulating simulation objects and is accessible through the Script Editor by selecting an object and typing `this.`, which will result in an autocomplete list of available properties and methods.  
+
+![Autocomplete](images/autocomplete.png)
+
+The autocomplete list should include any properties and methods the object defines as well as access to the Transform, Physics, and Audio APIs.
 
 ## Properties
 
