@@ -57,7 +57,7 @@ This is just a quick list of things we've discussed doing in the future. If anyo
 1.  Should avatar system use physics for collision? Currently uses the graphics engine, which required enormous work to make fast enough. It's a shame to loose this (though the work already done has other benefits), but with physics world, would be much much faster. Downside is that avatars won't automatically collide with just any 3D graphic asset
 
 ###Code Quality
-1.  Move editor camera code into view/threejs.js. Editor camera interactions are not part of the model state and should not be in index.vwf.yaml
+1.  Move Editor Camera code into view/threejs.js. Editor Camera interactions are not part of the model state and should not be in index.vwf.yaml
 1.  JSFormat any code that is still not formatted.
 1.  Add license headers
 1.  Add sourceURL tags for debugging.

@@ -1,12 +1,12 @@
 # Camera Modes
 
-This documentation refers to the various interaction modes for the editor camera. This information is not relevant to cameras with are entities within a scene.
+This documentation refers to the various interaction modes for the Editor Camera. This information is not relevant to cameras with are entities within a scene.
 
 !!! note "Note:"
     The current camera controls assume you have a standard three button mouse.
 
 !!! note "Note:"
-	These camera controls apply to the default editor camera only. Selecting one will activate the default camera.
+	These camera controls apply to the default Editor Camera only. Selecting one will activate the default camera.
 
 <a id='mode1'></a>
 ## Orbit

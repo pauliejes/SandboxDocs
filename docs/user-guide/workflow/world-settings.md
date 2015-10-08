@@ -14,6 +14,6 @@ If you would like the world to function as a simulation or game, deselect option
 Independent of the kind of simulation, choices for who can access the simulation and what users will see when they login are provided.  Anonymous users can be allowed or not allowed to join.  Owners can make simulations into more published forms by not showing the editor tools and choosing a specific camera for users (e.g., a chase camera).
 
 !!! note "Note:"
-    If you want to choose a camera other than the default editor camera for users to use, you must create the camera.  See the  [Creating Cameras](../cameras/creating-cameras.md) section for more information.
+    If you want to choose a camera other than the default Editor Camera for users to use, you must create the camera.  See the  [Creating Cameras](../cameras/creating-cameras.md) section for more information.
 
 

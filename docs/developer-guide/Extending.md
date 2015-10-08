@@ -82,13 +82,13 @@ this.addManager(window._YourEditor)
 ```
 The EditorView will route VWF API notification calls to your editor, similar to a VWF View Driver.
 
-## Add a new editor camera mode
+## Add a new Editor Camera mode
 
-Camera modes used during editing are fundementally different than cameras used during gameplay. You really should try to avoid using the editor camera as part of a published simulation. 
+Camera modes used during editing are fundementally different than cameras used during gameplay. You really should try to avoid using the Editor Camera as part of a published simulation. 
 
 There is only one editorCamera. This camera is controlled with several different algorithms as defined in the various camera controller modules. Adding a new camera object independant of the existing editorCamera is beyond the scope of this discussion.
 
-You can add new editor camera modes by creating a new file in `support/client/lib/vwf/view/threejs/`. This file should be a require.js define call that returns an object. This object should implement
+You can add new Editor Camera modes by creating a new file in `support/client/lib/vwf/view/threejs/`. This file should be a require.js define call that returns an object. This object should implement
 ```
    this.initialize = function(camera){...}  //store the incoming camera
    this.activate = function(){...}          //this controller has been activated
