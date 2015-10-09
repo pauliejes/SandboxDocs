@@ -1,11 +1,8 @@
 <h1>Contributing</h1>
 
-Contributions of code, issues, questions, and discussion are encouraged.
-
-<h2>Contents</h2>
 [TOC]
 
-# Documentation
+# Contribute to Documentation
 
 Please contribute to the documentation.  The following style guide should help ensure a consistent reading experience.
 
@@ -37,3 +34,18 @@ Use `<h2>` HTML header tags for the title of document table of contents.  Use th
 [TOC]
 ```
 
+# Contribute 3D Models
+
+Contact `sandbox@adlnet.gov` to find the easiest way to share game ready openly licensed 3D models with the community.
+
+# Contribute Simulation Objects
+
+Contact `sandbox@adlnet.gov` to find the easist way to share your well constructed simulation objects with the community.
+
+# Contribute to Core Development
+
+Please send pull requests through [https://github.com/adlnet/Sandbox](https://github.com/adlnet/Sandbox).
+
+# Contribute Issues
+
+Found a bug or have a feature recommendation?  Please share it through GitHub Issues at [https://github.com/adlnet/Sandbox/issues/](https://github.com/adlnet/Sandbox/issues).

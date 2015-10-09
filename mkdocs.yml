@@ -6,21 +6,34 @@ theme: readthedocs
 use_directory_urls: true
 markdown_extensions: [admonition]
 pages:
-- Home: index.md
-
-- User Guide: user-guide.md
-- Tutorials:
-  - Selecting Objects: tutorials/selecting-objects.md
-  - Build a Game: tutorials/build-a-game.md
-  - Lights and Materials: tutorials/Lights and Materials.md
-  - Working with Groups: tutorials/Working with Groups.md
-  - Working with Terrain: tutorials/working-with-terrain.md
-- Developer Guide: developer-guide.md
-- Reference Guide: 
-  - Client API: reference-guide/client-api.md
-  - Server API: reference-guide/server-api.md  
-  - Scripting: reference-guide/scripting.md
+- About: index.md
+- Creating Simulations: creating-simulations.md
+- Support: support.md
+- Graphics: graphics.md
+- Physics: physics.md
+- Scripting: scripting.md
+- Multiplayer: multiplayer.md
+- Audio: audio.md
+- Animation: animation.md
+- User Interface: user-interface.md
+- Server Installation: server-installation.md
+- Architecture: architecture.md
 - Contributing: contributing.md
+
+#- Home: index.md
+#- User Guide: user-guide.md
+#- Tutorials:
+#  - Selecting Objects: tutorials/selecting-objects.md
+#  - Build a Game: tutorials/build-a-game.md
+#  - Lights and Materials: tutorials/Lights and Materials.md
+#  - Working with Groups: tutorials/Working with Groups.md
+#  - Working with Terrain: tutorials/working-with-terrain.md
+#- Developer Guide: developer-guide.md
+#- Reference Guide: 
+#  - Client API: reference-guide/client-api.md
+#  - Server API: reference-guide/server-api.md  
+#  - Scripting: reference-guide/scripting.md
+#- Contributing: contributing.md
 
 # Prior User Guide Pages
 #
