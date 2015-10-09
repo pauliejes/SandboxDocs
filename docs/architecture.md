@@ -22,7 +22,7 @@ source: custom_sphere.js
 
 Where `extends: custom_sphere.vwf` is the engine's node interface (not implementation) defining its properties and methods.  `source: custom_sphere.js` is a JavaScript file that implements the interface.
 
-Learn more by going through the [Custom Graphic Tutorial]().
+Learn more by going through the [Custom Graphic Tutorial](tutorials/writing-custom-graphic-type.md).
 
 # Architecture Overview
 
@@ -30,9 +30,7 @@ The VW Sandbox is a system composed of a node.js server-side JavaScript applicat
 
 ## Server-Side JavaScript
 
-The Server-Side JavaScript manages user and simulation data, exchanges messages between simulation clients, provides a web server and a Web Service API, and delivers the client-side JavaScript.  The 
-
-The VW Sandbox server is a Node.js application that makes heavy use of Express. It's composed of several sub systems:
+The Server-Side JavaScript manages user and simulation data, exchanges messages between simulation clients, provides a web server and a Web Service API, and delivers the client-side JavaScript.  The Node.js application makes heavy use of Express. It's composed of several sub systems:
 
 1. [Reflector](#reflector)
 1. [File Server](#file-server)

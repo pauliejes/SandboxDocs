@@ -19,6 +19,13 @@ pages:
 - Server Installation: server-installation.md
 - Architecture: architecture.md
 - Contributing: contributing.md
+- Tutorials:
+  - Selecting Objects: tutorials/selecting-objects.md
+  - Build a Game: tutorials/build-a-game.md
+  - Lights and Materials: tutorials/Lights and Materials.md
+  - Working with Groups: tutorials/Working with Groups.md
+  - Working with Terrain: tutorials/working-with-terrain.md
+  - Writing a Custom Graphic Type: tutorials/writing-custom-graphic-type.md
 
 #- Home: index.md
 #- User Guide: user-guide.md
