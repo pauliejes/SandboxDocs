@@ -4,15 +4,13 @@ A guide to understand the VW Sandbox architecture.
 
 [TOC]
 
-# Architecture Overview
+This architecture guide will provide information on the server, editor, engine, and drivers.  However, one powerful way to extend the VW Sandbox without knowing too much about or changing the architecture is to write custom graphics.
 
-The VW Sandbox is composed of two major components: 1) the server side and 2) the client application.  The VW Sandbox can also be viewed by its [File Organization](#file-organization). 
+# Writing Custom Graphics
 
-## Writing Custom Graphics
+Most simulation development involves manipulating existing Graphic types (e.g., 3D models, primitive shapes, particle systems).  Sometimes simulation developers will need to create custom Graphic types that directly interface with THREE.js (e.g., ocean, orthographic camera, advanced particle system, custom animation, custom shaders).  
 
-Most simulation development involves manipulating existing entity types (e.g., 3D models, primitive shapes, particle systems).  Sometimes simulation developers will need to create custom graphic entity types that directly interface with THREE.js (e.g., an ocean, an orthographic camera, an advanced particle system, custom animation, custom shaders).  
-
-As an example of writing a custom graphic, let's make a custom sphere graphic.  
+At its core, writing a custom graphic type involves defining a node definition.  As an example of writing a custom graphic, consider making a custom sphere graphic type.
 
 Node definition
 
@@ -22,12 +20,17 @@ source: custom_sphere.js
 
 ```
 
-extends: ocean.vwf is the API interface (not implementation) for the node defining its properties and methods.
-source: ocean.js is a JavaScript file that implements the extends interface -- in this example,  object
+Where `extends: custom_sphere.vwf` is the engine's node interface (not implementation) defining its properties and methods.  `source: custom_sphere.js` is a JavaScript file that implements the interface.
 
-See tutorial...
+Learn more by going through the [Custom Graphic Tutorial]().
 
-## Server (System)
+# Architecture Overview
+
+The VW Sandbox is a system composed of a node.js server-side JavaScript application and a client-side JavaScript application providing collaborative authoring of cloud-based multiplayer and singleplayer simulations.  The Server-Side JavaScript manages user and simulation data, exchanges messages between simulation clients, and provides a web server and a Web Service API.  The client-side JavaScript provides an editor and an engine for single and multiplayer simulations made up of drivers.  The engine provides drivers for Scripting, Transforms, Graphics, Physics, User Interfaces, and Audio.  The Scripting driver provides the Scripting API enabling simulation developers to use the engine's drivers. 
+
+## Server-Side JavaScript
+
+The Server-Side JavaScript manages user and simulation data, exchanges messages between simulation clients, provides a web server and a Web Service API, and delivers the client-side JavaScript.  The 
 
 The VW Sandbox server is a Node.js application that makes heavy use of Express. It's composed of several sub systems:
 
@@ -92,7 +95,9 @@ We use Hogan and Mustache to template the view files. These render all the front
 
 
 
-## The Engine
+## Client-Side JavaScript
+
+The client-side JavaScript application provides an editor and an engine for single and multiplayer simulations made up of drivers.  The engine provides drivers for Scripting, Transforms, Graphics, Physics, User Interfaces, and Audio.  The Scripting driver provides the Scripting API enabling simulation developers to use the engine's drivers. 
 
 The Engine is the web application that the system sends to users web browsers.
 

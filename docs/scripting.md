@@ -3,7 +3,7 @@
 [TOC]
 
 
-# How to do scripting
+Teach how to do scripting.
 
 # Reference Guide
 
