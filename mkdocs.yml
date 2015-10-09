@@ -9,8 +9,23 @@ pages:
 - Home: index.md
 
 - User Guide: user-guide.md
+- Tutorials:
+  - Selecting Objects: tutorials/selecting-objects.md
+  - Build a Game: tutorials/build-a-game.md
+  - Lights and Materials: tutorials/Lights and Materials.md
+  - Working with Groups: tutorials/Working with Groups.md
+  - Working with Terrain: tutorials/working-with-terrain.md
+- Developer Guide: developer-guide.md
+- Reference Guide: 
+  - Client API: reference-guide/client-api.md
+  - Server API: reference-guide/server-api.md  
+  - Scripting: reference-guide/scripting.md
+- Contributing: contributing.md
+
+# Prior User Guide Pages
+#
 #  - Overview: user-guide/Overview.md
- # - For Users: user-guide/User-Guide.md
+#  - For Users: user-guide/User-Guide.md
 #  - Cameras:
 #    - Editor Camera: user-guide/cameras/editor-camera.md
 #    - Camera Modes: user-guide/cameras/camera-modes.md
@@ -34,16 +49,6 @@ pages:
  #  - Physics: user-guide/object-types/Physics.md
  #  - Particles: user-guide/object-types/Particles.md
 
-- Tutorials:
-  - Selecting Objects: user-guide/tutorials/selecting-objects.md
-  - Build a Game: user-guide/tutorials/build-a-game.md
-  - Lights and Materials: user-guide/tutorials/Lights and Materials.md
-  - Working with Groups: user-guide/tutorials/Working with Groups.md
-  - Working with Terrain: user-guide/tutorials/working-with-terrain.md
-
-- Reference Guide: reference-guide.md
-
-
 
 #  - Overview: reference-guide/Overview.md
 #  - Node API: reference-guide/NodeAPI.md
@@ -53,62 +58,62 @@ pages:
  # - Client API: reference-guide/ClientAPI.md
  # - Communications API: reference-guide/CommsAPI.md
 
-- Developer Guide:
-  - Overview: developer-guide/overview.md
-  - Installation: developer-guide/Installation.md
-  - Configuration: developer-guide/Configuration.md
-  - Configure 3DR: developer-guide/configure 3DR.md
-  - Architecture Overview: developer-guide/Architecture-Overview.md
-  - Data Organization: developer-guide/Data-Organization.md
-  - File Organization: developer-guide/File-Organization.md
-  - Development Plans: developer-guide/Development-Plans.md
-  - Sandbox API: developer-guide/SandboxAPI.md
-  - 3rd Party Libraries: developer-guide/_3rd-Party-Libraries.md
-  - Asset Pipeline: developer-guide/Assets.md
-  - Prim and Modifier Pipeline: developer-guide/Prims-and-Modifiers.md
-  - Asset and Server Integration: developer-guide/Asset-Server-Integration.md
-  - Development: developer-guide/Development.md
-  - Particle Systems: developer-guide/particleSystem.md
-  - Cluster Server: developer-guide/Cluster.md
-  - Avatars: developer-guide/Avatars.md
-  - Database: developer-guide/Database.md
-  - Major Features: developer-guide/MajorFeatures.md
-  - Picking and Tracing: developer-guide/PickingAndTracing.md
-  - Publish Settings: developer-guide/PublishSettings.md
-  - Scene Manager: developer-guide/SceneManager.md
-  - Synchronization: developer-guide/Synchronization.md
-  - VWF: developer-guide/VWF.md
-  - Primitives: developer-guide/Primitives.md
-  - Modifiers: developer-guide/Modifiers.md
-  - Drivers:
-    - Overview: developer-guide/drivers/Overview.md
-    - Three.js Model: developer-guide/drivers/Threejsmodel.md
-    - Three.js View Driver: developer-guide/drivers/Threejs-view.md
-    - Asset SubDriver: developer-guide/drivers/Asset SubDriver.md
-    - MaterialDef SubDriver: developer-guide/drivers/MaterialDef SubDriver.md
-    - Modifier SubDriver: developer-guide/drivers/Modifier SubDriver.md
-    - Particle System SubDriver: developer-guide/drivers/ParticleSystem SubDriver.md
-    - Prim SubDriver: developer-guide/drivers/Prim SubDriver.md
-    - Spline SubDriver: developer-guide/drivers/Spline SubDriver.md
-    - Transformable SubDriver: developer-guide/drivers/Transformable SubDriver.md
-  - Editors:
-    - Inventory Manager: developer-guide/editors/InventoryManager.md
-    - Primitive Editor: developer-guide/editors/PrimitiveEditor.md
-    - Object Flags: developer-guide/editors/Object Flags.md
-    - Transform Property: developer-guide/editors/Transform Property.md
-    - Publisher: developer-guide/editors/Publisher.md
-    - Script Editor: developer-guide/editors/ScriptEditor.md
-    - Selection Editor: developer-guide/editors/SelectionEditor.md
-    - Undo Manager: developer-guide/editors/UndoManager.md
-    - Material Editor: developer-guide/editors/MaterialEditor.md
-    - Map Browser: developer-guide/editors/Mapbrowser.md
-    - User Manager: developer-guide/editors/UserManager.md
-    - Contributing: contributing.md
-  - Extending:
-    - Extending: developer-guide/Extending.md
-    - Add a New Camera Mode: developer-guide/extending/Add-a-new-camera-mode.md
-    - Add a New Menu Item: developer-guide/extending/Add-a-new-menu-item.md
-    - Main Toolbar Button: developer-guide/extending/Main-toolbar-buttons.md
+#- Developer Guide:
+#  - Overview: developer-guide/overview.md
+#  - Installation: developer-guide/Installation.md
+#  - Configuration: developer-guide/Configuration.md
+#  - Configure 3DR: developer-guide/configure 3DR.md
+#  - Architecture Overview: developer-guide/Architecture-Overview.md
+#  - Data Organization: developer-guide/Data-Organization.md
+#  - File Organization: developer-guide/File-Organization.md
+#  - Development Plans: developer-guide/Development-Plans.md
+#  - Sandbox API: developer-guide/SandboxAPI.md
+#  - 3rd Party Libraries: developer-guide/_3rd-Party-Libraries.md
+#  - Asset Pipeline: developer-guide/Assets.md
+#  - Prim and Modifier Pipeline: developer-guide/Prims-and-Modifiers.md
+#  - Asset and Server Integration: developer-guide/Asset-Server-Integration.md
+#  - Development: developer-guide/Development.md
+#  - Particle Systems: developer-guide/particleSystem.md
+#  - Cluster Server: developer-guide/Cluster.md
+#  - Avatars: developer-guide/Avatars.md
+#  - Database: developer-guide/Database.md
+#  - Major Features: developer-guide/MajorFeatures.md
+#  - Picking and Tracing: developer-guide/PickingAndTracing.md
+#  - Publish Settings: developer-guide/PublishSettings.md
+#  - Scene Manager: developer-guide/SceneManager.md
+#  - Synchronization: developer-guide/Synchronization.md
+#  - VWF: developer-guide/VWF.md
+#  - Primitives: developer-guide/Primitives.md
+#  - Modifiers: developer-guide/Modifiers.md
+#  - Drivers:
+#    - Overview: developer-guide/drivers/Overview.md
+#    - Three.js Model: developer-guide/drivers/Threejsmodel.md
+#    - Three.js View Driver: developer-guide/drivers/Threejs-view.md
+#    - Asset SubDriver: developer-guide/drivers/Asset SubDriver.md
+#    - MaterialDef SubDriver: developer-guide/drivers/MaterialDef SubDriver.md
+#    - Modifier SubDriver: developer-guide/drivers/Modifier SubDriver.md
+#    - Particle System SubDriver: developer-guide/drivers/ParticleSystem SubDriver.md
+#    - Prim SubDriver: developer-guide/drivers/Prim SubDriver.md
+#    - Spline SubDriver: developer-guide/drivers/Spline SubDriver.md
+#    - Transformable SubDriver: developer-guide/drivers/Transformable SubDriver.md
+#  - Editors:
+#    - Inventory Manager: developer-guide/editors/InventoryManager.md
+#    - Primitive Editor: developer-guide/editors/PrimitiveEditor.md
+#    - Object Flags: developer-guide/editors/Object Flags.md
+#    - Transform Property: developer-guide/editors/Transform Property.md
+#    - Publisher: developer-guide/editors/Publisher.md
+#    - Script Editor: developer-guide/editors/ScriptEditor.md
+#    - Selection Editor: developer-guide/editors/SelectionEditor.md
+#    - Undo Manager: developer-guide/editors/UndoManager.md
+#    - Material Editor: developer-guide/editors/MaterialEditor.md
+#    - Map Browser: developer-guide/editors/Mapbrowser.md
+#    - User Manager: developer-guide/editors/UserManager.md
+#    - Contributing: contributing.md
+#  - Extending:
+#    - Extending: developer-guide/Extending.md
+#    - Add a New Camera Mode: developer-guide/extending/Add-a-new-camera-mode.md
+#    - Add a New Menu Item: developer-guide/extending/Add-a-new-menu-item.md
+#    - Main Toolbar Button: developer-guide/extending/Main-toolbar-buttons.md
 
 # Recommend Removal
 #
