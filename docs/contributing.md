@@ -2,6 +2,8 @@
 
 [TOC]
 
+We encourage contribution to the VW Sandbox.  Below are some possible different ways to contribute.  We are always interested in featuring better demonstration content creating using the VW Sandbox.
+
 # Contribute to Documentation
 
 Please contribute to the documentation.  The following style guide should help ensure a consistent reading experience.
@@ -34,6 +36,14 @@ Use `<h2>` HTML header tags for the title of document table of contents.  Use th
 [TOC]
 ```
 
+## Embedded comments
+
+If you want o provide a comment in the manual to guide further development of the manual (e.g, add information about XYZ here), then create a markdown comment using:
+
+```
+[comment]: <> (add information about XYZ here)
+```
+
 # Contribute 3D Models
 
 Contact `sandbox@adlnet.gov` to find the easiest way to share game ready openly licensed 3D models with the community.
@@ -45,6 +55,10 @@ Contact `sandbox@adlnet.gov` to find the easist way to share your well construct
 # Contribute to Core Development
 
 Please send pull requests through [https://github.com/adlnet/Sandbox](https://github.com/adlnet/Sandbox).
+
+Most development takes place on a development branch and is periodically merged with master and released.  Release numbers are based on the type of changes in accordance with [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html).  Releases should include tagging the master branch with the release number, providing release notes, and updating the ADL hosted instance.
+
+Planning and tracking is done using a [public PivotalTracker](https://www.pivotaltracker.com/n/projects/892864).  If you're interested in possible ideas for development contributions, we keep an icebox of stories in PivotalTracker.
 
 # Contribute Issues
 

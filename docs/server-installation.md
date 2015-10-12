@@ -2,7 +2,7 @@
 
 [TOC]
 
-# Server Installation
+# Basic Installation
 
 The VW Sandbox server runs under [Node.js](https://nodejs.org/en/) ([v0.12.x](http://nodejs.org/dist/latest-v0.12.x/)), an open-source, cross-platform JavaScript runtime for developing server-side web applications.
 
@@ -32,7 +32,7 @@ The VW Sandbox server runs under [Node.js](https://nodejs.org/en/) ([v0.12.x](ht
 
 The server can be configured using either command line switches listed below and/or a json configuration file (see the [Configuration](#configuration) section).
 
-## Command Line Switches
+# Command Line Switches
 
 Switches and values should be seperated by spaces, and surrounded by quotes when the value contains a space.
 
@@ -70,7 +70,7 @@ So, possible production settings are as follows:
 node app.js -p 80 -minify -compile -v
 ```
 
-## JSON Config File
+# JSON Config File
 
 The server side application can also be configured by editing the `config.json` file in the root directory of the application. 
 
@@ -138,7 +138,7 @@ You should find a sample configuration file in the app directory that contains s
 ```
 
 
-## Configure 3D Repository Integration
+# Configure 3D Repository Integration
 
 The VW Sandbox allows users to load 3D assets from an ADL 3D Repository instance. Out of the box (and on the hosted copy at [https://sandbox.adlnet.gov/](https://sandbox.adlnet.gov/), the server is configured to connect to a 3D Repository instance hosted by ADL at [http://3dr.adlnet.gov](http://3dr.adlnet.gov). However, as of version 0.4.11, this can be configured to use any 3DR installation. The VW Sandbox server now proxies traffic to and from the connected 3DR instance, so you don’t even necessarily need to make your 3DR publicly visible, so long as the VW Sandbox server can connect to it.  The 3DR integration features are implemented in `/support/server/3dr_proxy.js`.
 
@@ -165,7 +165,7 @@ The settings for connecting to the 3DR server are stored in the `config.json` fi
 	The VW Sandbox Editor currently prevents users from loading models that do not have public access, even though, if requested, the server would actually be able to load them.
 
 
-## Configure Asset Server Integration
+# Configure Asset Server Integration
 
 The VW Sandbox includes the [Sandbox Asset Server](https://github.com/adlnet/SandboxAssetServer/), which provides a set of CRUD services to manage VW Sandbox assets.  The Sandbox Asset Server runs by default as a VW Sandbox node module where assets are hosted locally.  However, the Sandbox Asset Server can be run as a standalone server and where VW Sandbox assets are hosted remotely.  Remote hosting of assets is helpful when a team is working together on a collection of assets.
 
@@ -175,6 +175,259 @@ The settings for configuring the VW Sandbox asset server node module are stored 
     "remoteAssetServerURL": null, 	// remote URL where the asset server is hosted if assets are not hosted locally
     "sessionSecret": null 			// enter a good random string here for security of sessions
 
-## Production Hosting
+# Production Hosting
 
-Our thoughts clustering and load balancing.
+A production hosting setup will likely require consideration for clustering multiple servers and load balancing.  
+
+### Clustering Language Reference
+
+Code to support clustering is provided in [sandboxCluster.js.](https://github.com/adlnet/Sandbox/blob/development/support/server/sandboxCluster.js "sandboxCluster.js").
+
+sandboxCluster.js allows a client to host and serve multiple users.  Below is a reference for the code:
+
+
+#### Properties
+
+
+##### http
+
+Type: `function`
+
+require('http') 
+[comment]: <> (Brief description goes here.)
+
+
+##### httpProxy
+
+Type: `function`
+
+require('http-proxy') Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### async
+
+Type: `function`
+
+require('async') Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### fork
+
+Type: `function`
+
+require('child_process').fork Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### request
+
+Type: `function`
+
+require('request') Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### fs
+
+Type: `function`
+
+require('fs') Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### libpath
+
+Type: `function`
+
+require('path') Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### url
+
+Type: `function`
+
+require('url') Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### port
+
+Type: `number`
+
+Constant value of the port for hosting (3000). Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### count
+
+Type: `number`
+
+Tracks the number of ... Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### server
+
+Type: `function`
+
+Function to be assigned later. Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### proxies
+
+Type: `Array`
+
+Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### DB
+
+Type: `function`
+
+Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### appPath
+
+Type: `String`
+
+Constant String value "/adl/sandbox". Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### spdy
+
+Type: `function`
+
+require('spdy') Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### datapath
+
+Type: `String`
+
+Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### maxSockets
+
+Type: `number`
+
+Constant value of 100 for the http global agent maximum number of sockets. Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### states
+
+Type: `Object`
+
+Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+##### compile
+
+Type: `Boolean`
+
+Be as specific as possible on the type.  Include ranges or other limitations if possible. And still be brief.
+
+
+#### Methods
+
+
+##### readConfigFile(cb)
+
+Reads and saves the configuration into the global scope so other modules can use. Brief description of method.
+
+**Arguments:**
+
+`cb` (`function`)  
+Callback function. Brief description of argument. (I have also found it useful to add two spaces at the end of the name and type row, or else the description stays on the same line.  I don't understand why, but it does seem to work.) Or if there are no arguments:
+
+**Returns:**
+
+*(Nothing)*
+
+
+##### readCommandLine(cb)
+
+Reads and parses flags from the command line. Brief description of method.
+
+Flags:
+
+- `-p` Specify a specific port.
+- `-c` Specify a cluster count.
+- `-d` Specify a datapath.
+- `-ap` Set the default URL for the site.
+- `-build`, `-compile` Start the compilation process.
+
+**Arguments:**
+
+`cb` (`function`)
+Callback function. Brief description of argument. (I have also found it useful to add two spaces at the end of the name and type row, or else the description stays on the same line.  I don't understand why, but it does seem to work.) Or if there are no arguments:
+
+**Returns:**
+
+*(Nothing)*
+
+
+##### buildIfRequired(cb)
+
+Brief description of method.
+
+**Arguments:**
+
+`cb` (`function`)
+Callback function. Brief description of argument. (I have also found it useful to add two spaces at the end of the name and type row, or else the description stays on the same line.  I don't understand why, but it does seem to work.) Or if there are no arguments:
+
+**Returns:**
+
+*(Nothing)*
+
+
+##### startupDB(cb)
+
+Brief description of method.
+
+**Arguments:**
+
+`cb` (`function`)
+Callback function. Brief description of argument. (I have also found it useful to add two spaces at the end of the name and type row, or else the description stays on the same line.  I don't understand why, but it does seem to work.) Or if there are no arguments:
+
+**Returns:**
+
+*(Nothing)*
+
+
+##### forkChildren(cb)
+
+Brief description of method.
+
+**Arguments:**
+
+`cb` (`function`)
+Callback function. Brief description of argument. (I have also found it useful to add two spaces at the end of the name and type row, or else the description stays on the same line.  I don't understand why, but it does seem to work.) Or if there are no arguments:
+
+**Returns:**
+
+*(Nothing)*
+
+
+##### hookUpMessaging(cb)
+
+Brief description of method.
+
+**Arguments:**
+
+`cb` (`fucntion`)
+Callback function. Brief description of argument. (I have also found it useful to add two spaces at the end of the name and type row, or else the description stays on the same line.  I don't understand why, but it does seem to work.) Or if there are no arguments:
+
+**Returns:**
+
+*(Nothing)*
+
+
+##### startProxyServer(cb)
+
+Create your custom server and just call `proxy.web()` to proxy a web request to the target passed in the options also you can use `proxy.ws()` to proxy a websockets requestBrief description of method.
+
+**Arguments:**
+
+`cb` (`function`)
+Callback function. Brief description of argument. (I have also found it useful to add two spaces at the end of the name and type row, or else the description stays on the same line.  I don't understand why, but it does seem to work.) Or if there are no arguments:
+
+**Returns:**
+
+*(Nothing)*
+

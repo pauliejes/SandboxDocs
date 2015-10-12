@@ -1,4 +1,4 @@
-<h1>Writing a Custom Graphic Type</h1>
+<h1>Custom Graphic Tutorial</h1>
 
 <h2>Contents</h2>
 [TOC]
@@ -78,7 +78,7 @@ In the `this.initialize()` function, let's create a new [THREE.js sphere](http:/
     	}   
 ```
 
-The Engine will call the constructor, initialize the new object type, and return the new object type in the Engine.  To make get the Engine to create the object type, open an example blank world and open the console.  Clear the console.  You should see something like the following:
+The Engine will call the constructor, initialize the new object type, and return the new object type in the Engine.  To make get the Engine to create the object type, create a new world with persisting state changes.  Then open and clear the console.  You should see something like the following:
 
 ![](images/writing-custom-graphic-type/2015-10-09_16-17-04.png)
 

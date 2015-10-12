@@ -1,4 +1,4 @@
-# Creating Cameras
+# Create a Camera
 
 There are two major things to understand about cameras in the VWF. First, the camera you are looking through by default in the Editor is a special camera that is not shared with other users. Each user has his or her own viewpoint when editing that is not shared between users. There is a function for temporarily broadcasting the position of your camera to other users; see the [Camera Modes](camera-modes.md "Camera Modes") section for more information. 
 
