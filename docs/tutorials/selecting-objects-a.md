@@ -17,30 +17,30 @@ You’ll know that you’ve entered the `Select by Picking` mode because the ico
 
 You can also select the option off the drop down menu. Choose `Pick` below.
 
-![](./images/selecting-objects/selections.html_Image2.png)
+![](images/selecting-objects/selections.html_Image2.png)
 
 You’ll know the object is selected because a white outline will appear around the selected object.
 
-![](./images/selecting-objects/selections.html_Image3.png)
+![](images/selecting-objects/selections.html_Image3.png)
 
 You can click and drag with the left mouse button to select a region. This will create a rectangle on the screen that will resize when you drag the mouse. The selection will be computed when you let go of the left mouse button. Any object that is within the rectangle on the screen will become selected. Like the normal click, this new selection will unselect all other objects
 
-![](./images/selecting-objects/selections.html_Image4.png)
+![](images/selecting-objects/selections.html_Image4.png)
 
 In the above example, the selection will become the selection shown below.
 
-![](./images/selecting-objects/selections.html_Image5.png)
+![](images/selecting-objects/selections.html_Image5.png)
 
 Notice how the objects that were either completely within the rectangle or which intersect the edge of the rectangle become selected, and the other objects which are completely outside of the rectangle are not selected.
 
-![](./images/selecting-objects/selections.html_Image6.png)
+![](images/selecting-objects/selections.html_Image6.png)
 
 !!! note:
 	The algorithm for selecting objects checks the vertices of the bounding box, and the vertices of the object. Notice the selection rectangle above. None of the vertices intersect the rectangle, so the object is not selected. 
 
 Even when you are not in select by picking mode, you can still select an object with the mouse. Right click on the object to open the context menu. This menu has a `Select` option.
 
-![](./images/selecting-objects/selections.html_Image7.png)
+![](images/selecting-objects/selections.html_Image7.png)
 
 When you choose this `Select` option, the object will be selected, even if you are not in `Select by Picking` mode.
 
@@ -54,11 +54,11 @@ The `ALT` and `CTRL` keys on the keyboard allow you to either add or subtract fr
 
 Here, I’m holding the `ALT` key. You will see the mouse cursor change to ![](./images/selecting-objects/selections.html_Image8.png)
 
-![](./images/selecting-objects/selections.html_Image9.png)
+![](images/selecting-objects/selections.html_Image9.png)
 
 So, the objects in the rectangle are removed from the selection, and the new selection is shown below.
 
-![](./images/selecting-objects/selections.html_Image10.png)
+![](images/selecting-objects/selections.html_Image10.png)
 
 !!! note:
 	Sometimes, you might leave the browser window while the `ALT` or `CTRL` key is depressed. In this case, the editor can become ‘stuck’ in the add or subtract mode. Just press and release the `ALT` and `CTRL` keys back in the browser window should this happen. 
@@ -71,11 +71,11 @@ Some objects create a tiny icon called a `Selection Glyph`. Clicking the Glyph w
 
 This is the Glyph for the Scene.
 
-![](./images/selecting-objects/selections.html_Image11.png)
+![](images/selecting-objects/selections.html_Image11.png)
 
 This is the Glyph for a Light object.
 
-![](./images/selecting-objects/selections.html_Image12.png)
+![](images/selecting-objects/selections.html_Image12.png)
 
 For the particle systems:
 
@@ -83,11 +83,11 @@ For the particle systems:
 
 For a Group:
 
-![](./images/selecting-objects/selections.html_Image14.png)
+![](images/selecting-objects/selections.html_Image14.png)
 
 Often, you will want to select the Scene object. The drop down menu provides a shortcut to get to the scene object. Click on `Select Scene` from the menu shown below.
 
-![](./images/selecting-objects/selections.html_Image15.png)
+![](images/selecting-objects/selections.html_Image15.png)
 
 !!! note:
 	The `Select By Name` tool is currently in development. When finished, this tool will provide a powerful visual tool to see the scene and all the objects, and modify which objects are selected by clicking on their names. 
@@ -98,15 +98,15 @@ Use this button ![](./images/selecting-objects/selections.html_Image16.png) to s
 
 To select the children of an object, or to explore the scene and find an object by name, you can open the `Hierarchy View`. This tool shows you all the objects that are children of the current object, the object’s parent.
 
-![](./images/selecting-objects/selections.html_Image17.png)
+![](images/selecting-objects/selections.html_Image17.png)
 
 Above, you can see that the currently selected object has four children, and its parent is `index-vwf`. When you click a child’s name, that child will be previewed, but not selected.
 
-![](./images/selecting-objects/selections.html_Image18.png)
+![](images/selecting-objects/selections.html_Image18.png)
 
 You’ll see a green box around the child to show you which object it is. At this point, it’s not really selected. Double click the child’s name (shown in blue above) to actually select that child. The GUI will update to show the children of this new selection. You can also double click `Parent` to select the current object’s parent.
 
-![](./images/selecting-objects/selections.html_Image19.png)
+![](images/selecting-objects/selections.html_Image19.png)
 
 
 !!! Remember:
@@ -116,13 +116,13 @@ You’ll see a green box around the child to show you which object it is. At thi
 
 The VW Sandbox will display to you the selection of other users. This is just for convenience – their selection set is separate from yours, and does not effect any of your tools. When a peer connected to the same world selects an object, you will see it surrounded by an orange box. In the example below, some other user of the system has selected my avatar.
 
-![](./images/selecting-objects/selections.html_Image20.png)
+![](images/selecting-objects/selections.html_Image20.png)
 
 # Clearing the selection and exiting Select by Picking mode
 
 You can clear the current selection by clicking on nothing in the 3D view while in `Pick` mode, but this will not exit the `Select by Picking` mode, and the next click will select the next object. To exit the `Select By Picking` mode completely, use this toolbar button:
 
-![](./images/selecting-objects/selections.html_Image21.png)
+![](images/selecting-objects/selections.html_Image21.png)
 
 This will clear the selection and exit the picking mode. Or choose the `Select None` option from the `Edit` menu.
 
