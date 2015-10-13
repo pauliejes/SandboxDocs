@@ -176,25 +176,138 @@ These are some hotkeys that are helpful to remember when using the VW Sandbox Ed
 
 ## Editing and Playing
 
-### View Performance (FPS)
+You'll typically go through these steps to create and share a simulation.
 
-`Rendering` > `Toggle Stats` will place an overlay window in the top left corner showing the Frames per Second (FPS) of the simulation.  
+1. Create the simulation
+1. Edit the simulation
+1. Test the simulation
+1. Publish the simulation
+
+### Edit
+
+When you're in **edit** mode, you see and can use the Editor tools and interact with the world. The edit mode is the default mode for a world -- when you create a new simulation, you'll be in the edit mode.
+
+!!! note:
+
+	When you are in edit mode, the server will keep backups of the world every few minutes.
+
+### Play, Pause, and Stop
+
+You can **play** the simulation by clicking the play button in the lower left side of the Editor.  When the Editor is in play mode, the Editor tools are disabled.  You can a**pause** the simulation, which is sometimes helpful to activate the tools to for example change camera angles or inspect items without stopping the simulation.  When you click **stop** the simulation will reset and you will again be able to use the Editor tools.
+
+### View Performance
+
+Performance of a simulation is usually based on the interaction of CPU and GPU resources and simulation complexity.  As you work on your simulation, you can check the Frames Per Second (FPS) of the user experience on the current machine by navigating to the `Rendering` > `Toggle Stats` menu item, which will toggle an overlay window in the top left corner showing the Frames per Second (FPS) of the simulation on and off.
+
+![Toggle Stats](images/toggle_stats.png)
+
+Toggling the Stats on will result in an overlay window in the upper left hand corner of the simulation that shows the current FPS, the range of observed FPS values, and a graph showing the observed FPS values over time.
+
+![60 FPS Overlay Window](images/60_fps.png)
+
+### Publish
+
+**Publishing** a simulation involves changing the `Settings` on the simulated world's landing page.  Settings such as whether the Editor tools should be shown or what camera users should be in upon login are commonly set to "publish" a world.  See the [Change Simulation Settings](#change-simulation-settings) section for other options that can be set when the owner of a world is ready to make it ready for other users.
+
+### Test
+
+Typically, **testing** is done in the simulated world using the play, pause, and stop controls.  However, it can sometimes be difficult to iteratively change the settings of a world for publish, determining that something needs to be changed, and then changing the settings again to edit, and returning to edit.  
+
+To mitigate this difficulty, a **Test Publish** mode is available.  While in **edit** mode, you should see an option under the `File` menu called `World Settings`.  In `World Settings`, you have the same options as are available on the world settings page. Fill these out as you would when publishing the world. You can use the "Test Publish" mode to get a real time view of exactly how the published world will behave. This feature will create a clone of your world on the server, set the publish settings, and launch it in a child window. The main window will be disabled. When the child window closes, the temporary world is delete off the server, and the main window is re-enabled.
+
+Again, usually the play/pause feature of the editor should be enough to test, but you can use the above workflow to test aspects of your scene that play/pause cannot simulate -- for instance, you might want to test code that responds to a users log in action.
+
+### Management
+
+You can manage a simulated world you create by going to the landing page for the world.  The landing page contains the Launch button.
+
+![World Management Buttons](images/world-management.png)
+
+In addition to the Launch button, are other world management buttons.  World management options include restoring past versions, deleting the world, duplicating it, and embedding it as an IFrame on other websites.
 
 ### Change Simulation Settings
 
-## Importing Assets
+The Settings page provides options to control the configuration of the simulated world to allow it to serve as a virtual world that persists state changes or a game that resets when closed.
 
-### FBX Import and Entity Library
+![World Settings Buttons](images/world-settings.png)
+
+!!! note "Note:"
+    World Settings are only provided to owners of simulated worlds.
+
+If you would like the world to function as a virtual world, select options to persist world state on close and create an avatar for each user.
+
+If you would like the world to function as a simulation or game, deselect options to persist world state and avatar creation.  You may also want to select the option to limit the simulation to single player if you want to limit multiplayer behavior.
+
+Independent of the kind of simulation, choices for who can access the simulation and what users will see when they login are provided.  Anonymous users can be allowed or not allowed to join.  Owners can make simulations into more published forms by not showing the editor tools and choosing a specific camera for users (e.g., a chase camera).
+
+!!! note "Note:"
+    If you want to choose a camera other than the default Editor Camera for users to use, you must create the camera.  See the  [Creating Cameras](graphics.md#creating-cameras) section for more information.
+
+## Importing 3D Models and Textures
+
+You can import 3D models and textures using the asset server, which is accessible via the `Assets` menu item.  
+
+Uploading your 3D models as COLLADA is the easiest approach. If you have the COLLADA model hosted remotely, you can simply go to `Asset` > `Load Mesh by URL` and choose `Collada`. 
+
+!!! note:
+
+	The server that hosts the file must implement CORS and have no authentication requirements.
+
+ Alternatively, you can upload the COLLADA model to the asset server and then load it into the Editor.  Assuming you are logged in, below are the steps:
+
+1.  `Asset` > `Create New Asset` > `From File`
+1.  Give the asset a name
+1.  Click `Create Asset` to upload the .dae
+1.  Click `Upload`
+1.  Drag and drop the model from the `Content Libraries` > `My Models`
+
+!!! note:
+
+	We also support uploading glTF models, but while this is a better performance route, it is also more complicated.  For more information on using glTF models, see [Using glTF 3D Models](graphics.md#using-gltf-3d-models) in the Graphics section.
+
+You can add a **texture** to an object by selecting the object and viewing the Material Editor.  Expand the Texture Layer and click on the image to choose a new image.
+
+See [Audio](audio.md) for information about uploading audio assets.
 
 ## Simulation Authoring
 
+All objects in the world can be assigned a friendly name. These names appear in the GUI for all action, but need not be unique - they are just for your convenience. To name an object, select the object and open the Object Properties window. Under the 'Flags' heading, find the 'name' field. Type the name here. 
+
+![Property Name](../images/properties-name.png)
+
+When you copy, duplicate, or paste an object, the name will be incremented automatically if it ends with a number.
+
+The name is stored in the `DisplayName` property of an object. From script, all objects are indexed by name under `this.children_by_name`.
+
 ### Script Editor
+
+![Script Editor](images/script_editor.png)
+
+Code you write with the ScriptEditor is immediately injected into the multiplayer engine as new properties, methods, and events for the selected object.  You can see which selected object the ScriptEditor is focused on in the blue title window at the top and in the status bar at the bottom.  In the screenshot, the ScriptEditor is focused on `sphere1`.
+
+The ScriptEditor has three tabs across the top: `Methods`, `Events`, and `Properties`.  Depending on which tab is selected, the list of items will be displayed vertically on the left and the code for the given selected item is in the main content window on the right.  In the screen shot above, the `Methods` tab is selected and the `tick` method is selected.
+
+!!! note:
+
+	The editor uses js_beautify on all input code before displaying it. On some systems, the JavaScript engine may insert "use strict."  This is normal and not a problem. 
+
+The two up and down arrow buttons in the upper right hand corner of the script editor expand the ScriptEditor window (up) and minimize/hide the ScriptEditor window (down).
+
+![ScriptEditor Window Size Controls](images/script_editor_window_size_buttons.png)
 
 ### The Tick Heartbeat
 
-### Moving Objects using the Transfrom API
+The `tick()` function is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
+
+### Moving Objects using Transforms
+
+Every simulation object has a Scripting API accessible to it via the `this` object.  To move an object, you can add logic to the `tick` method to change the current position of the object.  You will want to use `this.transformAPI.setPosition(x,y,z)` to move the object.
 
 ### Lights, Camera, Action!
+
+To create a new light, go to `Create` > `Lights` and choose the desired type of light (Point, Spot, or Directional).  See [Lighting](graphics.md#lighting) for more information or the tutorial on [Lighting and Materials](tutorials/lighting-and-materials.md).
+
+To create a new camera, go to `Create` > `Camara` > `Perspective`.  See [Creating Cameras](graphics.md#creating-cameras).
 
 ### Working with a Team
 

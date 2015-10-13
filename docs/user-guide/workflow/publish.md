@@ -1,3 +1,0 @@
-# Publish 
-
-There is no actual VW Sandbox state for a "published" world.  Published usually means changing the World Settings of the simulated world when editing is complete.  See the [World Settings](world-settings.md) section for the complete options that can be set when the owner of a world is done editing and ready to publish the world.  The [Test Publish](test-publish.md) mode is available to mitigate challenges with the workflow involved with changing world settings and testing.

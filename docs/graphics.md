@@ -6,6 +6,81 @@
 
 # Cameras
 
+## Camera Modes
+
+This documentation refers to the various interaction modes for the Editor Camera. This information is not relevant to cameras with are entities within a scene.
+
+!!! note "Note:"
+    The current camera controls assume you have a standard three button mouse.
+
+!!! note "Note:"
+	These camera controls apply to the default Editor Camera only. Selecting one will activate the default camera.
+
+
+### Orbit
+
+This is the default mode. The camera orbits around an imaginary point in space. The camera can swing around this point while facing it, or move toward or away from the point. The point itself can be translated to different locations in the scene.
+
+* right click and drag to orbit
+* middle click and drag to pan (move the focus point)
+* mouse wheel to zoom in or out
+* hold shift and move the mouse to orbit
+* use the arrow keys to orbit
+* hold shift and use the up and down keys to zoom
+* hold space and use the arrow keys to pan
+* touch and drag on a touchscreen to orbit
+* pinch a touchscreen to zomm
+* Two-finger touch and drag to pan
+
+### First/Third Person
+
+This mode is only available when the scene is generating avatars for users. The camera can transition between first and third person modes by rolling the mousewheel. When this mode is active, certain mouse motions will control the avatar. 
+
+**Third Person mode**
+
+* right click and drag to orbit around the avatar
+* roll the mouse wheel to zoom. When you are close enough, you will enter First Person mode
+* use the arrow keys or WASD to move the avatar
+
+**First Person mode**
+
+* right click and drag to turn your viewpoint
+* roll the mousewheel to exit back to Third Person mode
+* use the arrow keys or WASD to contol the character
+
+### Navigate Mode
+
+This mode allows you to zoom to a very specifc point in space easily. It is related to Orbit mode in that it exposes the same functionality, with some additional features. 
+
+* all the same interactivity from the Orbit mode, plus:
+* middle click and drag to zoom in or out from the point of interest
+* middle click to animate the center point to a location in the scene. This uses a polygon accurate mouse intersection test
+* tap space to set the center point (same as middle click)
+
+### Free Mode
+
+This mode is a first person style controller, but not tied to the avatar. 
+
+* right click and drag to turn the viewpoint
+* roll the mouse wheel to move forward. You can move forward forever
+* middle click and drag to pan
+* use the arrow keys to turn the viewpoint
+* use space and the arrow keys to pan
+* use ctrl and the up or down button to move forward or back
+
+### Device Orientation
+
+This mode will attempt to use the sensors in your phone or tablet to position the viewpoint. This will have no effect on a desktop computer
+
+* physically move your tablet around space to change the viewpoint.
+
+### Fly
+
+A first person control mode that is always moving forward.
+
+* right click and drag to turn
+* roll the mouse wheel to accelerate or decelerate
+
 ## Creating Cameras
 
 There are two major things to understand about cameras in the VWF. First, the camera you are looking through by default in the Editor is a special camera that is not shared with other users. Each user has his or her own viewpoint when editing that is not shared between users. There is a function for temporarily broadcasting the position of your camera to other users; see the [Camera Modes](camera-modes.md "Camera Modes") section for more information. 
@@ -25,6 +100,20 @@ When a camera is selected, you may edit some of it's properties in the Propertie
 `Near` - the near clip plane. Objects nearer than this will not be shown. Clip planes are used primarily to focus the depth buffer resolution around the area of interest in a scene. A full discussion of this topic is out of scope for this article. Just please note that you may see some visual artifacts if the near is set too low, or the far too high.
 
 `Far` - the far clip plane. Objects farther than this will not be shown.
+
+## Sharing the Camera View
+
+Sometimes, it may be useful to allow other users to see the same view that you see, even if you are in the default Editor Camera. Normally, the Editor Camera is independent, and not replicated by the system to other users. This allow each user to work in a different part of the scene. 
+
+When you share your camera view, other users will have their Editor Camera updated to see exactly the view you see. 
+
+To share your camera view, use the drop down menu. Choose `Cameras` > `Share Camera View`. Click OK at the prompt. Each user in the world will be asked if they would like to receive the camera view, and also must accept. 
+
+To disable the camera sharing, click the same menu item (`Cameras` > `Share Camera View`) again. Click OK at the prompt. 
+
+!!! note:
+	Both users must activate the default camera. Other cameras are always synchronized. 
+
 
 # Primitives
 
@@ -326,462 +415,61 @@ To cut, shape, or otherwise treat on a machine for use in working wood, metal, e
 
 # Particle Systems
 
-You can create basic, spray, suspended, and atmospheric particle systems.
+You can create basic, spray, suspended, and atmospheric particle systems.  To create a particle system, use the `Create` > `Particles` and choose the desired particle system.
 
-## Language Reference
+![Particle System](images/particle_system.png)
 
-### CreateParticleSystem(nodeID, childID, childName) class
-
-[comment]: <> (More technical and specific description of what the particle system does.)
-
-**Arguments:**
-
-`nodeID` (`String`)  
-Unique identifier corresponding to a particular node.
-
-`childID` (`String`)  
-Unique identifier corresponding to the child node. 
-
-`childName` (`String`)
-Name of the child node.
-
-**Returns:**
-
-`particleSystem` (`THREE.Vector3`)  
-A system of particles...
-
-
-#### Constructor
-
-new THREE.PointCloud(particles, shaderMaterial_default)
-
-Brief description of constructor.
-
-**Arguments:**
-
-`particles` (`THREE.Geometry`)  
-Brief insight into argument. If the argument is optional add that in parentheses at the end.
-
-`shaderMaterial_default` (`THREE.ShaderMaterial`)  
-If there are no arguments explicitly state and italicize. In such a case there is no need for a description.
-
-
-#### Properties
-
-
-##### particles
-
-Type: `THREE.Geometry`
-
-Create the particle variables.
-
-
-##### vertShader_default
-
-Type: `Object`
-
-Default material expects all computation done cpu side, this just renders. **Note:** since the color, size, spin, and orientation are just linear interpolations, they can be done in the shader.
-
-
-##### fragShader_default
-
-Type: `Object`
-
-Default material expects all computation done cpu side, this just renders. **Note:** since the color, size, spin, and orientation are just linear interpolations, they can be done in the shader.
-
-
-##### attributes_default
-
-Type: `Object`
-
-The default shader, the one used by the analytic solver, just has some simple stuff. Includes: `size`, `vertexColor`, and `random`.
-
-
-##### uniforms_default
-
-Type: `Object`
-
-The default shader, the one used by the analytic solver, just has some simple stuff. Includes: `amplitude`, `texture`, `pCount`, `maxRate`, `useTexture`, `maxSpin`, `minSpin`, `screenSize`, `maxOrientation`, `minOrientation`, `time`, `fractime`, `sizeRange`, `textureTiles`, `colorRange`, `startColor`, `endColor`, `startSize`, `endSize`, and `alphaTest`.
-
-
-##### shaderMaterial_default
-
-Type: `THREE.ShaderMaterial`
-
-Materials to be shaded.	Includes: `uniforms`, `attributes`, `vertexShader`, and `fragmentShader`.
-
-
-##### vertShader_interpolate
-
-Type: `Object`
-
-The interpolate shader blends from one simulation step to the next on the shader. This allows for a complex simulation to run at a low framerate, but still have smooth motion.  This is very efficient, as it only requires sending data up to the gpu on each sim tick. reuse the frag shader from the normal material.
-
-
-##### attributes_interpolate
-
-Type: `Object`
-
-The interpolation does need to remember that previous position. Includes: `random`, `previousPosition`, `age`, and `lifespan`.
-
-
-##### shaderMaterial_interpolate
-
-Type: `THREE.ShaderMaterial`
-
-Enter useful inforamtion here. Includes: `uniforms`, `attributes`, `vertexShader`, and `fragmentShader`.
-
-
-##### vertShader_analytic
-
-Type: `Object`
-
-Analytic shader does entire simulation on GPU. It cannot account for drag, gravity, nor can it generate new randomness. Each particle has it's randomness assigned and it just repeats the same motion over and over. Also, the other solvers can hold a particle until it can be reused based on the emitRate. This cannot, as the entire life of the particle must be computed from an equation given just time t. It does offsett them in time to avoid all the particles being generated at once. also, it does not account for emitter motion. The upside is it is very very efficient, no CPU intervention required.
-
-
-##### fragShader_analytic
-
-Type: `Object`
-
-Divides into 4 or 9 "virtual" textures to be able to have different images on particles. Gets the color from the texture and blends with the vertexColor.
-
-
-##### attributes_analytic
-
-Type: `Object`
-
-Describe attributes analytic here. Includes: `acceleration`, `velocity`, `previousPosition`, `age`, `lifespan`, `random`, `vertexColor`, and `size`.
-
-
-##### shaderMaterial_analytic
-
-Type: `THREE.ShaderMaterial`
-
-describe shader material analytic here. Includes: `uniforms`, `attributes`, `vertexShader`, and `fragmentShader`.
-
-
-#### Methods
-
-
-##### createParticle(i)
-
-Creates a new particle. Creates and stores all the values for vertex attributes in each shader.
-
-**Arguments:**
-
-`i` (`number`)  
-The number of the new particle.
-
-**Returns:**
-
-`particle` (`THREE.Vector3`)  
-Brief description of returned value. Or if there is no returned value:
-
-
-##### generatePoint()
-
-Generate a new point in space based on the emitter type and size.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-`point` (`THREE.Vector3`)  
-A new point in space.
-
-
-##### rebuildParticles()
-
-Setup the particles with new values.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### setupParticle(particle, mat, inv)
-
-Set the particle initial values. Used when creating and reusing particles.
-
-**Arguments:**
-
-`particle` (`THREE.Vector3`)  
-Brief description of argument. 
-
-`mat` (`matrix`)
-Array of numbers relating to the particle's placement in space.
-
-`inv` (`number`)
-I don't know.  Inventory, Inverse?
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### updateAnalyticShader(time)
-
-When updating in `AnalyticShader` mode, the process is very simple just inform the shader of the new time.
-
-**Arguments:**
-
-`time` (`number`)  
-Add to the old time and calculate using the combined time to update.
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### updateAnalytic(time)
-
-In `Analytic` mode, run the equation for the position, and update each particle.
-
-**Arguments:**
-
-`time` (`number`)  
-Add to the old time and calculate using the combined time to update.
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### updateEuler(time)
-
-Timesliced Euler integrator which can do more complex sim.  It ticks 10 times a second, and blends tick with previous via a shader.
-
-**Arguments:**
-
-`time` (`number`)  
-Add to the old time and calculate using the combined time to update.
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### updateParticleAnalytic(particle, mat, inv, delta_time)
-
-Update a particle from the Analytic solver.
-
-**Arguments:**
-
-`particle` (`THREE.Vector3`)  
-Brief description of argument. 
-
-`mat` (`matrix`)
-Array of numbers relating to the particle's placement in space.
-
-`inv` (`number`)
-I don't know.  Inventory, Inverse?
-
-`delta_time` (`number`)  
-The change in time since last update.    
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### updateParticleEuler(particle, mat, inv, step_dist)
-
-Update a particle with the Euler solver.
-
-**Arguments:**
-
-`particle` (`THREE.Vector3`)  
-Brief description of argument. 
-
-`mat` (`matrix`)
-Array of numbers relating to the particle's placement in space.
-
-`inv` (`number`)
-I don't know.  Inventory, Inverse?
-
-`step_dist` (`number`)  
-The amount between the previous and the current, the  step distance.
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### update(time)
-
-Update the particle system.
-
-**Arguments:**
-
-`time` (`number`)  
-The current time in millisecond from the system.
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### setSolverType(type)
-
-Change the solver type for the system.
-
-**Arguments:**
-
-`type` (`String`)  
-String indicating the type of solver to be used.
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### updateTransform(newtransform)
-
-If you move the system, all the particles need to be recomputed to look like they stick in world space. Not that we don't do this for the `AnalyticShader`.  We could, but that solver is meant to be very high performance, so we don't.
-
-**Arguments:**
-
-`newtransform` (`number`)  
-Get the current transform, and invert the new one.
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### setParticleCount(newcount)
-
-Change the system count. **Note:** this must be set before the first frame renders, it cannot be changed at runtime.
-
-**Arguments:**
-
-`newcount` (`number`)  
-The new number of particles to be a part of the system.
-
-**Returns:**
-
-*(Nothing)*
-
-### particleSystem class
-
-Description  
-
-#### Constructor
-
-##### new particleSystem(childID, childSource, childName)
-
-Brief description.
-
-**Arguments:**
-
-`childID` (`String`)
-Unique identifier representing the child.
-
-`childSource` (`String`)
-Unique identifier representing the parent.
-
-`childName` (`String`)
-The name of the child.
-
-
-#### Properties
-
-`ps` (`particleSystem`)  
-Instance of a particle system.
-
-
-#### Methods
-
-
-##### settingProperty(propertyName, propertyValue)
-
-Sets a property of the particle system to the given value and rebuilds the particles.
-
-**Arguments:**
-
-`propertyName` (`String`)  
-String matching the name of a particular particle system property.
-
-`propertyValue` (`String`)  
-String of a value corresponding to the particular property.
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### initializingNode()
-
-Starts up a node.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-##### gettingProperty(propertyName)
-
-Provides the value of the given property.
-
-**Arguments:**
-
-`propertyName` (`String`)  
-String corresponding to a particle system property.
-
-**Returns:**
-
-`propertyValue` (`String`)  
-String conveying the value of the specified property.
-
-
-##### callingMethod(name, args)
-
-Describe what this function does.
-
-**Arguments:**
-
-`name` (`String`)  
-The name of the calling method.
-
-`args` (`Array of Strings`)
-The corresponding arguments.
-
-**Returns:**
-
-*(Nothing)*
-
-##### getRoot()
-
-Gets the root of the node.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-`rootnode` (`Node`)  
-The root of the node.
-
+The properties for the particle system can be modified using the property editor.  
 
 # Terrain
 
+![Picture from Terrain System](images/terrain_overview_pic.png)
+
+The VW Sandbox provides a powerful terrain system in a web browser.  The system is described in detail in the [Working with Terrain](tutorials/working-with-terrain.md) tutorial.  You can create terrain using the `Create` > `Terrain` > `Terrain` menu items.  A random set of hills is produced by default.  You can change the terrain settings using the property editor.
+
+Typicallly, you will want to use a height map to shape the terrain.  With the terrain object selected, expand the `Terrain: terrain1` properties.  Change the `Terrain Generator` to `Height Map` and choose a HeightMap data source.
+
+![Terrain Properties](images/terrain_properties.png)
 
 # Optimizing Performance
 
-Player Settings
-Lightweight Art
+## View Performance
 
+Performance of a simulation is usually based on the interaction of CPU and GPU resources and simulation complexity.  As you work on your simulation, you can check the Frames Per Second (FPS) of the user experience on the current machine by navigating to the `Rendering` > `Toggle Stats` menu item, which will toggle an overlay window in the top left corner showing the Frames per Second (FPS) of the simulation on and off.
+
+![Toggle Stats](images/toggle_stats.png)
+
+Toggling the Stats on will result in an overlay window in the upper left hand corner of the simulation that shows the current FPS, the range of observed FPS values, and a graph showing the observed FPS values over time.
+
+![60 FPS Overlay Window](images/60_fps.png)
+
+## Using glTF 3D Models
+
+While COLLADA 3D models are the easiest to import, glTF 3D models provide the best performance, but have a more complicated set of import steps.  Recall that glTF is a two-file format. There is a JSON file and a binary file. Below are the steps to import glTF 3D models into the VW Sandbox:
+
+1. Upload the binary blob as a new asset, and note its ID.
+1. Open the JSON file in a text editor, and make the following edit:
+	1. Under `buffers`, find the buffer that corresponds to the binary file. It's usually the only buffer. Under that, change the `path` field to the asset ID string of the binary blob.
+1. Save the JSON file
+1. Upload the JSON file as a new asset. During uploading, in the mime type dropdown, select `model/vnd.gltf+json` as the type.
+Add the model to your scene by using either the content library, or by loading the model by URL and giving it the URL to the JSON asset.
+
+## Simplifying Player Settings
+
+You can change the settings the VW Sandbox uses to play a simulation.  These settings can be used to simplify the simulation by disabling shadows or using simple materials.  These settings then apply to all simulations viewed through that web browser.  To access the player settings:
+
+1. Go to the VW Sandbox home page
+1. Click on `Worlds`
+1. Click on `Tools` (upper-right corner)
+1. Click on `Player Settings`
+
+The player settings should appear:
+
+![Player Settings](images/player_settings.png)
+
+## Lightweight Art
+
+Given the VW Sandbox is a web application and all simulation content is web content, a good way to increase performance and enhance user experience is to create lightweight artwork.  Using less polygons, better textures, and small file sizes all contribute to fast downloads and fast computation.
 
 # Custom Graphics
 

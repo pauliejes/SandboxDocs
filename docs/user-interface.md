@@ -18,6 +18,10 @@ When in edit mode, while the simulation is stopped, you can select a GUI Node by
 
 ![](images/gui_elements_blue_border.png)
 
+## Setting Styles
+
+For any GUI object, you can define a property called "style" that can contain CSS as a value.  The engine will apply that style to the GUI Object.  The style property value should be a JSON object where the keys are CSS attributes and the JSON object values are the cooresponding CSS values.
+
 # Positioning GUI Nodes
 
 Double clicking will allow you to drag and place it, and single clicking will stop dragging.  When a GUI Node is created, it becomes a child of the selected entity. However, since it is not part of the 3D scene, properties like the parent transform or visible will not effect it. 
