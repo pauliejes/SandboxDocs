@@ -1,11 +1,12 @@
-# VW Sandbox
+<h1>VW Sandbox Manual</h1>
 
-Create & Deploy Simulations & Games Freely!
+Create and Deploy Simulations and Games Freely!
 
-The Virtual World (VW) Sandbox provides cloud-based multiplayer simulation and collaborative authoring. The [open source software](https://github.com/adlnet/sandbox/) runs in native JavaScript, so no plugins or installs are required. You can visit our hosted instance at [https://sandbox.adlnet.gov](https://sandbox.adlnet.gov/ "VW Sandbox").
+The VW Sandbox manual provides you with information to use the VW Sandbox.  The manual seeks to balance being comprehensive and representative of the topics you need information about.  Join our [Google Group](https://groups.google.com/a/adlnet.gov/forum/?hl=en#!forum/sandbox) to send us your thoughts and questions.
 
-If you're interested in learning more about using the VW Sandbox editor, please read the [User Guide](user-guide/Overview.md).  
+The VW Sandbox provides collaborative authoring and a multiplayer simulation engine written entirely in JavaScript.  It runs in a web browser with no plugins, which means there is no client installation required!  
 
-If you're interested in installing the VW Sandbox, developing content for it, or extending the VW Sandbox engine, please read the [Developer Guide]() and the [Reference Guide]().
+The engine is entirely [open source](http://github.com/adlnet/Sandbox) using a permissive [Apache2 license](https://github.com/adlnet/Sandbox/blob/master/LICENSE).  We promote open content licensing using Creative Commons for Government created assets.
 
-If you have questions, please see our [FAQ](FAQ.md) or join our [Google Group](https://groups.google.com/a/adlnet.gov/forum/?hl=en#!forum/sandbox).
+We are a small team supporting the Advanced Distributed Learning Initiative and we're passionate about creating and using cloud-based simulations without the hassle of installation.
+

@@ -1,4 +1,6 @@
-# Overview
+# Reference Guide
+
+.. contents::
 
 The VW Sandbox provides multiple APIs that are accessible through the Script Editor to define and manipulate simulation logic.
 
