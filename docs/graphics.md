@@ -83,7 +83,7 @@ A first person control mode that is always moving forward.
 
 ## Creating Cameras
 
-There are two major things to understand about cameras in the VWF. First, the camera you are looking through by default in the Editor is a special camera that is not shared with other users. Each user has his or her own viewpoint when editing that is not shared between users. There is a function for temporarily broadcasting the position of your camera to other users; see the [Camera Modes](camera-modes.md "Camera Modes") section for more information. 
+There are two major things to understand about cameras in the VWF. First, the camera you are looking through by default in the Editor is a special camera that is not shared with other users. Each user has his or her own viewpoint when editing that is not shared between users. There is a function for temporarily broadcasting the position of your camera to other users; see the [Camera Modes](#camera-modes "Camera Modes") section for more information. 
 
 Second, you can also create camera objects within the scene. These cameras are full VWF entities, and can be scripted, copied, or deleted. They can even have behaviors applied, just as any other object. 
 
@@ -487,4 +487,4 @@ source: custom_sphere.js
 
 Where `extends: custom_sphere.vwf` is the engine's simulation object interface (not implementation) where properties and methods of the simulation object are defined.  `source: custom_sphere.js` is a JavaScript file that implements the interface.
 
-Learn more by going through the [Custom Graphic Tutorial](tutorials/writing-custom-graphic-type.md), which walks through creating a custom sphere.
+Learn more by going through the [Custom Graphic Tutorial](tutorials/custom-graphic-tutorial.md), which walks through creating a custom sphere.

@@ -38,7 +38,7 @@ By default, simulations are launched for editing in the Editor Camera.  The Edit
 
 !!! note
 
-	To learn more about navigating using using different modes of the Editor Camera, take a look at [Camera Modes](camera-modes.md).
+	To learn more about navigating using using different modes of the Editor Camera, take a look at [Camera Modes](graphics.md#camera-modes).
 
 #### Selection
 
@@ -50,7 +50,7 @@ Click the left mouse button again on a specific part of an already selected obje
 
 ![Tank Selection](images/turret_selection.png)
 
-To learn more about selecting objects in more advanced ways, check out the [Selecting Objects](../tutorials/Selecting-Objects.md) tutorial.
+To learn more about selecting objects in more advanced ways, check out the [Selecting Objects](tutorials/selecting-objects.md) tutorial.
 
 #### Moving Objects
 
@@ -305,7 +305,7 @@ Every simulation object has a Scripting API accessible to it via the `this` obje
 
 ### Lights, Camera, Action!
 
-To create a new light, go to `Create` > `Lights` and choose the desired type of light (Point, Spot, or Directional).  See [Lighting](graphics.md#lighting) for more information or the tutorial on [Lighting and Materials](tutorials/lighting-and-materials.md).
+To create a new light, go to `Create` > `Lights` and choose the desired type of light (Point, Spot, or Directional).  See [Lighting](graphics.md#lighting) for more information or the tutorial on [Lights and Materials](tutorials/lights-and-materials.md).
 
 To create a new camera, go to `Create` > `Camara` > `Perspective`.  See [Creating Cameras](graphics.md#creating-cameras).
 
