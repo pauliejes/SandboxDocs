@@ -10,9 +10,9 @@ A guide to create simulations using the VW Sandbox.
 
 ### Editor Overview
 
-The VW Sandbox Editor provides a collaborative authoring experience in a web browser.  
+The VW Sandbox Editor provides a collaborative authoring experience in a web browser.  You can access the Editor by going to an instance of the VW Sandbox and clicking `Try it!`.  ADL hosts an instance of the VW Sandbox at [http://sandbox.adlnet.gov](http://sandbox.adlnet.gov).  If you want to host your own instance, see the [Basic Installation](server-installation.md#basic-installation) guide.
 
-![](images/editor-interface.png)
+![Editor Interface](images/editor-interface.png)
 
 At the bottom left of the screen is a play-pause-stop control panel that controls the state of the simulation.  By default, simulations load in the Editor in the stopped state.
 
@@ -24,23 +24,20 @@ The scene itself is in the center of the screen.  A grid provides perspective wi
 
 On the right side of the screen is an `Editors` tab providing access to multiple editors that provide information about objects in the scene and commands to manipulate the objects and the scene itself.
 
-When an object is selected, the Script Editor can be loaded at the bottom of the screen from the toolbar menu (Windows > Script Editor) or from the toolbar icons (![](images/script-editor-icon.png)) located three icons in from the right.
+When an object is selected, the Script Editor can be loaded at the bottom of the screen from the toolbar menu (`Windows` > `Script Editor`) or from the toolbar icons (![Script Editor Toolbar Icon](images/script-editor-icon.png)) located three icons in from the right.
 
 ### Navigation, Selecting, and Moving Objects
 
 By default, simulations are launched for editing in the Editor Camera.  The Editor Camera allows you to see and navigate the whole scene.  To navigate and manipulate objects using the Editor Camera, please review the keyboard and mouse commands below.
 
-#### Navigation
-
-* Hold the right mouse button and move your mouse to look around the scene.  
+* Hold the **right mouse** button and move your mouse to look around the scene.  
 * Scroll the mouse wheel forward to zoom in and backward to zoom out.
 * Hold the mouse wheel down to pan the view around.
+* Use the `Focus` toolbar button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png)) to focus the camera on the selected object.
 
 !!! note
 
 	To learn more about navigating using using different modes of the Editor Camera, take a look at [Camera Modes](graphics.md#camera-modes).
-
-#### Selection
 
 Click the left mouse button to select an object.  Go ahead and create an object to try it out.  Expand the `Library` tab on the left side of the screen.  Open the `Demo Entities` tab and drag the T90 Tank into the scene.  Select the tank by moving the cursor over the tank and clicking your left mouse button.  The tank should highlight in blue.
 
@@ -54,9 +51,16 @@ To learn more about selecting objects in more advanced ways, check out the [Sele
 
 #### Moving Objects
 
-[comment]: <> (embed a video demonstration follow by a try it now option.)
+To move an object in the Editor, select the object, and a gizmo will appear.  The default mode for the gizmo tool is the move mode.  The red arrow points in the X direction, the green arrow points in the Y direction, and the blue arrow points in the Z direction.  Simply click on the arrow for the direction you want to move.
 
+![Gizmo Move Tool](images/gizmo_move.png)
 
+The gizmo will also show three colored squares when in the move mode.  Click and drag the yellow square to move in the X and Y directions at the same time, holding Z constant.  Click and drag the purple square to move in the X and Z directions at the same time, holding Y constant.  Finally, click and drag the blue square to move in the Y and Z directions at the same time, holding X constant.
+
+You can select multiple objects by holding the `CTRL` button and clicking a second object.  You can then move multiple objects at the same time.
+
+!!! note: 
+	By default, when moving objects they are **snapped** to fixed incremental positions.  However, if you want to move objects very precisely (smaller increments than the fixed snap increments), you can turn snaps off by using the `Edit` > `Transform` > `Snaps` > `Off` menu item.
 
 #### Toolbar and Hotkeys
 
@@ -74,41 +78,53 @@ Activate the move tool. This will place a 'gizmo' over the selected object. Clic
 ![Rotate Icon](images/toolbar_icons/rotate.png) Rotate (`Edit` > `Transform` > `Rotate`) 
 Activate the rotate tool. This will place a 'gizmo' over the selected object. Click the gizmo axis you want to rotate on and drag in a straight horizontal line in one direction to rotate one way and then in a straight horizontal line in the other direction to rotate away.
 
-![rotate animation](videos/rotate.gif)
+![rotate animation](videos/optimized_rotate.gif)
+
+Try selecting the turret of the tank as show in the selection section and use the rotate tool to move the turret around.
 
 ![Scale Icon](images/toolbar_icons/rotate.png) Scale (`Edit` > `Transform` > `Scale`)
-Activate the Scale tool. This will place a 'gizmo' over the selected object. Click and drag the center box to scale uniformly on all axis. Click and drag on one of the colored boxes to scale only in the direction of the selected box. TIP: scaling always happens in local space - you cannot rotate an object, then scale in worldspace to produce a skew.
+Activate the Scale tool. This will place a 'gizmo' over the selected object. Click and drag the center box to scale uniformly on all axis. Click and drag on one of the colored boxes to scale only in the direction of the selected box.
+
+!!! note:
+
+	You can use keyboard shortcuts to quickly change between move (w), rotate (e), and scale (r) modes.
 
 ![World Coordinates Icon](images/toolbar_icons/world_coordinates.png) World Coordinates (`Edit` > `Transform` > `World Coords`)
-Align the selected tool's gizmo with the world coordinate system. Thus, the X handle of the move gizmo will point toward the absolute X of the world, and Z will always be 'up', toward the sky. TIP: coordinate space selections currently do not work properly for objects that are children of other objects.
+Align the selected tool's gizmo with the world coordinate system. Thus, the X handle of the move gizmo will point toward the absolute X of the world, and Z will always be 'up', toward the sky.
 
 !!! note:
 
 	The blue background highlight indicates the editor is actively using world coordinates.
 
 ![Local Coordinates Icon](images/toolbar_icons/local_coordinates.png) Local Coordinates (`Edit` > `Transform` > `Local Coords`)
-Align the selected tool's gizmo with the selected object. Use this if you want to move an object toward its own 'front', even if that 'front' does not point strait along a world axis line because the object has been rotated. TIP: coordinate space selections currently do not work properly for objects that are children of other objects.
+Align the selected tool's gizmo with the selected object. Use this if you want to move an object toward its own 'front', even if that 'front' does not point straight along a world axis line because the object has been rotated.
 
 ![Select by Clicking Icon](images/toolbar_icons/select_by_clicking.png) Select by Clicking (`Edit` > `Select` > `Pick`)
-When this mode is activated, clicking on an object will select it for editing. The object selection is used by all tools and windows to display properties. This button will light up blue when in `Select` mode. TIP: if you find that you are clicking and not selecting the object you wish, check the status bar at the bottom of the screen. If you see 'Pick: None' in the 4th box, you are not in select mode. 
+When this mode is activated, clicking on an object will select it for editing. The object selection is used by all tools and windows to display properties. This button will light up blue when in `Select` mode. 
 
 ![Select None Icon](images/toolbar_icons/select_none.png) Select None (`Edit` > `Select` > `Select None`)
 Unselect the selected object, and exit select mode. Note that clicking the button will change the select mode to none, and you will have to click the 'Select By Clicking' button to enter selection mode again.
 
-![Select Parent Icon](images/toolbar_icons/select_parent.png) Select Parent (Hierarchy->Select Parent)
-When a node is selected, clicking this button will select the node's parent, if the node has one.
+![Select Parent Icon](images/toolbar_icons/select_parent.png) Select Parent (`Hierarchy` > `Select Parent`)
+When an object is selected, clicking this button will select the object's parent, if the object has one.
 
-![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png) Focus (Camera->Focus Selected)
-Move the camera such that it frames the selected object in the view. This will reset the camera mode to 'Orbit'. TODO: make sure the Orbit icon lights as selected when this is clicked.
+![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png) Focus (`Camera` > `Focus Selected`)
+Move the camera such that it frames the selected object in the view. This will reset the camera mode to 'Orbit'.
 
-![Copy Icon](images/toolbar_icons/copy.png) Copy (Edit->Copy)
-Copy the selected node to be pasted later. You must have a node selected for this operation. When copying, the entire hierarchy of the selected object will be copied as well. If the bounding box that marks the selection is red, you have selected a node that controls a part of a model that was loaded by and asset file (most likely from the 3DR). These objects cannot be copied.
+!!! note:
+	The focus to camera toolbar button is very helpful for navigating.  Simply select the object you want to focus on (either through the hierarchy or by clicking the object directly) and then hit the Focus Camera button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png))
 
-![Paste Icon](images/toolbar_icons/paste.png) Paste (Edit->Paste)
-Paste the copied node into the scene. This will make a new node with all the properties of the copied node. You will be assigned as the new nodes owner. This new node will be placed at the center of your view, at z=0. Note that when looking at the world at very shallow angles, this may place the object farther away then you expect.
+![Copy Icon](images/toolbar_icons/copy.png) Copy (`Edit` > `Copy`)
+Copy the selected object to be pasted later. You must have an object selected for this operation. When copying, the entire hierarchy of the selected object will be copied as well. If the bounding box that marks the selection is red, you have selected an object that controls a part of a model that was loaded by an asset file (most likely from the 3D Repository). These objects cannot be copied.
 
-![Duplicate Icon](images/toolbar_icons/duplicate.png) Duplicate (Edit->Duplicate)
-A shortcut for copy, then paste. The only notable difference is that the new node will be placed exactly on top of the original.
+![Paste Icon](images/toolbar_icons/paste.png) Paste (`Edit` > `Paste`)
+Paste the copied object into the scene. This will make a new object with all the properties of the copied object. You will be assigned as the new object's owner. This new object will be placed at the center of your view, at z=0. Note that when looking at the world at very shallow angles, this may place the object farther away then you expect.
+
+![Duplicate Icon](images/toolbar_icons/duplicate.png) Duplicate (`Edit` > `Duplicate`)
+A shortcut for copy, then paste. 
+
+!!! note:
+	The new (duplicated) object will be placed *exactly* on top of the original.
 
 ![Delete](images/toolbar_icons/delete.png) Delete (`Edit` > `Delete`)
 Deletes the currently selected object.
@@ -172,7 +188,26 @@ These are some hotkeys that are helpful to remember when using the VW Sandbox Ed
 
 ### Organizing, Accessing, and Relating Objects
 
+The hierarchy editor is a great way to organize access, and relate objects together.
 
+![Hierarchy Editor](images/hierarchy_editor.png)
+
+In the hierarchy above, two spheres are in the scene.  Objects can be organized by grouping them together.  With multiple objects selected, click on the `Hierachy` > `Grouping` > `Group` menu item.  Grouping is a helpful way to move multiple objects at the same time.  The hierachy editor will update to reflect the new grouping.
+
+![Hierarchy Editor](images/hierarchy_editor_grouping.png)
+
+Another way to relate objects together is to **link** them together in a parent > child relationship.  The big difference between a group and a link relationship is the role of the parent.  In the group, two children have a common parent -- the group object, which is an empty object.  In the parent > child relationship one object becomes the parent of the other object.   To create the parent > child relationship:
+
+1. Select the object you want to become the child
+1. Click the `Link` toolbar icon (![Link Icon](images/toolbar_icons/link.png))
+1. Click the object you want to become the parent
+
+!!! note:
+	You can select the parent object by either clicking on the object directly or by clicking on the object in the hiearchy editor.
+
+![Hierarchy Editor](images/hierarchy_editor_linked.png)
+
+You can use the Select Parent toolbar icon (![Select Parent Icon](images/toolbar_icons/select_parent.png)) to select the parent of an object.  The Scene is the root level object and has no parent. 
 
 ## Editing and Playing
 
@@ -281,6 +316,8 @@ The name is stored in the `DisplayName` property of an object. From script, all 
 
 ### Script Editor
 
+The ScriptEditor is used to write scripts for simulation logic.  All scripts are written in JavaScript.
+
 ![Script Editor](images/script_editor.png)
 
 Code you write with the ScriptEditor is immediately injected into the multiplayer engine as new properties, methods, and events for the selected object.  You can see which selected object the ScriptEditor is focused on in the blue title window at the top and in the status bar at the bottom.  In the screenshot, the ScriptEditor is focused on `sphere1`.
@@ -295,13 +332,125 @@ The two up and down arrow buttons in the upper right hand corner of the script e
 
 ![ScriptEditor Window Size Controls](images/script_editor_window_size_buttons.png)
 
+### Finding Objects through Script
+
+There are multiple ways to find and access objects through scripts.  The easiest and most intuitive way to find and access an object is to use the `children_by_name` object based on the `Scene`.
+
+```
+var sphere = this.Scene.children_by_name["sphere1"];
+```
+
+If sphere1 is the parent of sphere2, then we could find and access sphere2 continuing this method:
+
+```
+var sphere2 = this.Scene.children_by_name["sphere1"].children_by_name["sphere2"];
+```
+
+You don't have to go through the `Scene` to access objects.  You can refer directly to the children of the selected object.  Assuming we are selected on sphere1 (the parent of sphere2), we could do the following:
+
+```
+var sphere2 = this.children_by_name["sphere2"];
+```
+
+Objects ar runtime are given an ID that uniquely identifies them across the multiplayer network.  If you know this ID, you can use this to access the object through script using the findNodeByID(ID) method.
+
+```
+var sphere2 = this.Scene.findNodeByID("sphere2-vwf-Nec9b207d");
+```
+
+!!! note:
+	You can find the ID of any object by selecting the object and using the `Tools` > `Show ID` menu item.
+
 ### The Tick Heartbeat
 
-The `tick()` function is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
+The `tick()` method is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
 
 ### Moving Objects using Transforms
 
-Every simulation object has a Scripting API accessible to it via the `this` object.  To move an object, you can add logic to the `tick` method to change the current position of the object.  You will want to use `this.transformAPI.setPosition(x,y,z)` to move the object.
+Every simulation object has a Scripting API accessible to it via the `this` object.  To move an object, you can add logic to the `tick` method to change the current position or rotation of an object.  Every 1/20th of a second, the engine will call the tick() method.  Let's add the following line to the tick method of an object to move it .1 units along its X axis:
+
+```
+this.tranformAPI.move(.1, 0, 0);
+```
+
+![ScriptEditor Move](images/script_editor_move.png)
+
+By default, the `move` method uses the Global coordinate system.  If the object we had selected had been rotated, we could have the object move along the X axis of its Local coordinate system, by specifying the coordinate system for the movement.
+
+```
+function tick()
+{
+	this.transformAPI.move(.1, 0, 0, this.transformAPI.COORDINATES.LOCAL);
+}
+```
+
+### Responding to User Input
+
+To allow a player to control an object using traditional WASD keyboard controls, we'll want to use the `keyDown` and `keyUp` events the engine fires when keys are pressed and released, respectively.  We'll want to register these events with local handlers in the `ready()` method, which the engine calls on every object that defines it when the Scene is completely loaded.  The `ready()` method is also called each time a new client joins a multiplayer simulation. 
+
+This ready code is boilerplate code for binding and unbinding handler methods for keyUp and keyDown events.  It uses intermediate functions _ku and _kd to ensure multiple handlers are not bound redundantly.
+
+```
+function ready()
+{
+	this.Scene.unbind("keyDown", this._kd);
+    this.Scene.unbind("keyUp", this._ku);
+
+    var self = this;
+    
+    this._kd = function(e, d)
+    {
+        self._keyDown(e, d)
+    };
+    
+    this._ku = function(e, d)
+    {
+        self._keyUp(e, d)
+    };
+
+    this.Scene.bind("keyDown", this._kd);
+    this.Scene.bind("keyUp", this._ku);
+}
+```
+
+The ready method first unbinds the intermediate functions if they are defined to ensure they are reset appropriately.  It then binds the `keyUp` and `keyDown` events to the intermediate functions, which bind the actual event handler code `_keyDown` and `_keyUp`.  Therefore, with this ready function in place, we need to define _keyDown and `_keyUp` methods.  Click `New Method` to define the _keyDown and _keyUp methods.
+
+The `_keyDown` method is where we can write code to process the keys being pressed.  Note that an array is defined as a local property because multiple keys can be down at the same time.  So, switch tabs to the Properties tab and define a new property to serve as the array called `_keysDown` with value `[]` (the empty array).  
+
+```
+function _keyDown(e, d)
+{
+	// if the key being pressed is not in the array
+
+    if (this._keysDown.indexOf(e.key.char) == -1)
+    {
+    	// add the key to the array
+
+        this._keysDown.push(e.key.char); 
+    }
+}
+```
+
+The `_keyUp` method is where we can write code to process the keys being released.
+
+```
+function _keyUp(e, d)
+{
+	// if the key being released is in the array
+
+    if (this._keysDown.indexOf(e.key.char) !== -1)
+    {
+    	// then remove (splice) the key being released from the array
+
+        this._keysDown.splice(this._keysDown.indexOf(e.key.char), 1);
+    }
+}
+```
+
+Now that the key handlers are bound and defined, we can write logic based on the keys the user is pressing.
+
+
+
 
 ### Lights, Camera, Action!
 
@@ -309,15 +458,31 @@ To create a new light, go to `Create` > `Lights` and choose the desired type of 
 
 To create a new camera, go to `Create` > `Camara` > `Perspective`.  See [Creating Cameras](graphics.md#creating-cameras).
 
-### Working with a Team
+### Smart Objects
 
-## Searching for Objects
+You can make one of your objects 
+Editor Data exposing properties
+
+###  Manage and Organize Smart Objects
+
+Asset Server discussion
+
+Other ways you can store and manage things
+
+Manual creation of a content library (see creating a new content library)
+
+### Searching for Objects
 
 ### Asset Server Filtering
 
-### Finding Nodes through Script
+### Working with a Team
 
-## User Input
+Asset Server refreshing assets
+Continues base class
 
-### Key Up, Key Down, and Mouse Movement
+Alternatively, you can manage the files on disc: yml, json.  Version controlling.
+
+
+
+
 
