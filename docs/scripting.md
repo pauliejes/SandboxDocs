@@ -54,4 +54,4 @@ this.Scene.traceAPI.rayCast(origin, direction, options)
 
 # Reference Guide
 
-See the [Scripting API](reference_guide/scripting-api.md) for complete reference information.
+See the [Scripting API](reference-guide/scripting-api.md) for complete reference information.
