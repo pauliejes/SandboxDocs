@@ -51,9 +51,11 @@ To learn more about selecting objects in more advanced ways, check out the [Sele
 
 #### Moving Objects
 
-To move an object in the Editor, select the object, and a gizmo will appear.  The default mode for the gizmo tool is the move mode.  The red arrow points in the X direction, the green arrow points in the Y direction, and the blue arrow points in the Z direction.  Simply click on the arrow for the direction you want to move.
+To move an object in the Editor, select the object, and a gizmo will appear (see image below).  The default mode for the gizmo tool is the move mode.  The red arrow points in the X direction, the green arrow points in the Y direction, and the blue arrow points in the Z direction.  
 
-![Gizmo Move Tool](images/gizmo_move.png)
+Simply click on the arrow for the direction you want to move and drag in that direction.
+
+![Gizmo Move Tool](images/gizmo_move.png "Gizmo Move Tool")
 
 The gizmo will also show three colored squares when in the move mode.  Click and drag the yellow square to move in the X and Y directions at the same time, holding Z constant.  Click and drag the purple square to move in the X and Z directions at the same time, holding Y constant.  Finally, click and drag the blue square to move in the Y and Z directions at the same time, holding X constant.
 
@@ -64,116 +66,143 @@ You can select multiple objects by holding the `CTRL` button and clicking a seco
 
 #### Toolbar and Hotkeys
 
-![Logout Icon](images/toolbar_icons/leave_world.png) Logout (`File` > `Logout`)
+![Logout Icon](images/toolbar_icons/leave_world.png) &nbsp;&nbsp;&nbsp;  **Logout** 
 
-Leave the current simulation.
+Leave the current simulation. Also available from the `File` > `Logout` menu item.
 
-![Move Icon](images/toolbar_icons/move.png) Move (`Edit` > `Transform` > `Move`)
-Activate the move tool. This will place a 'gizmo' over the selected object. Click and drag on the colored lines to move the object in the direction of that line. Hold your mouse between lines to select the plane made from those two lines. Clicking and dragging while a plane handle is selected will move the object along the selected plane.
+![Move Icon](images/toolbar_icons/move.png) &nbsp;&nbsp;&nbsp; **Move** 
+
+Activate the move tool. This will place a gizmo over the selected object. Click and drag on the colored lines to move the object in the direction of that line. Hold your mouse between lines to select the plane made from those two lines. Clicking and dragging while a plane handle is selected will move the object along the selected plane.  Also available from the `Edit` > `Transform` > `Move` menu item.
 
 !!! note:
 
 	The blue background highlight indicates the move tool is currently active.
 
-![Rotate Icon](images/toolbar_icons/rotate.png) Rotate (`Edit` > `Transform` > `Rotate`) 
-Activate the rotate tool. This will place a 'gizmo' over the selected object. Click the gizmo axis you want to rotate on and drag in a straight horizontal line in one direction to rotate one way and then in a straight horizontal line in the other direction to rotate away.
+![Rotate Icon](images/toolbar_icons/rotate.png) &nbsp;&nbsp;&nbsp; **Rotate** 
+
+Activate the rotate tool. Also available from the `Edit` > `Transform` > `Rotate` menu item. This will place a gizmo over the selected object. Click the gizmo axis you want to rotate on and drag in a straight horizontal line in one direction to rotate one way and then in a straight horizontal line in the other direction to rotate away.
 
 ![rotate animation](videos/optimized_rotate.gif)
 
 Try selecting the turret of the tank as show in the selection section and use the rotate tool to move the turret around.
 
-![Scale Icon](images/toolbar_icons/rotate.png) Scale (`Edit` > `Transform` > `Scale`)
-Activate the Scale tool. This will place a 'gizmo' over the selected object. Click and drag the center box to scale uniformly on all axis. Click and drag on one of the colored boxes to scale only in the direction of the selected box.
+![Scale Icon](images/toolbar_icons/rotate.png) &nbsp;&nbsp;&nbsp; **Scale** 
+
+Activate the Scale tool. This will place a gizmo over the selected object. Click and drag the center box to scale uniformly on all axis. Click and drag on one of the colored boxes to scale only in the direction of the selected box. Also available from the `Edit` > `Transform` > `Scale` menu item.
 
 !!! note:
 
 	You can use keyboard shortcuts to quickly change between move (w), rotate (e), and scale (r) modes.
 
-![World Coordinates Icon](images/toolbar_icons/world_coordinates.png) World Coordinates (`Edit` > `Transform` > `World Coords`)
-Align the selected tool's gizmo with the world coordinate system. Thus, the X handle of the move gizmo will point toward the absolute X of the world, and Z will always be 'up', toward the sky.
+![World Coordinates Icon](images/toolbar_icons/world_coordinates.png) &nbsp;&nbsp;&nbsp; **World Coordinates** 
+
+Align the selected tool's gizmo with the world coordinate system. Thus, the X handle of the move gizmo will point toward the absolute X of the world, and Z will always be 'up', toward the sky. Also available from the `Edit` > `Transform` > `World Coords` menu item.
 
 !!! note:
 
 	The blue background highlight indicates the editor is actively using world coordinates.
 
-![Local Coordinates Icon](images/toolbar_icons/local_coordinates.png) Local Coordinates (`Edit` > `Transform` > `Local Coords`)
-Align the selected tool's gizmo with the selected object. Use this if you want to move an object toward its own 'front', even if that 'front' does not point straight along a world axis line because the object has been rotated.
+![Local Coordinates Icon](images/toolbar_icons/local_coordinates.png) &nbsp;&nbsp;&nbsp; **Local Coordinates** 
 
-![Select by Clicking Icon](images/toolbar_icons/select_by_clicking.png) Select by Clicking (`Edit` > `Select` > `Pick`)
-When this mode is activated, clicking on an object will select it for editing. The object selection is used by all tools and windows to display properties. This button will light up blue when in `Select` mode. 
+Align the selected tool's gizmo with the selected object. Use this if you want to move an object toward its own 'front', even if that 'front' does not point straight along a world axis line because the object has been rotated. Also available from the `Edit` > `Transform` > `Local Coords` menu item.
 
-![Select None Icon](images/toolbar_icons/select_none.png) Select None (`Edit` > `Select` > `Select None`)
-Unselect the selected object, and exit select mode. Note that clicking the button will change the select mode to none, and you will have to click the 'Select By Clicking' button to enter selection mode again.
+![Select by Clicking Icon](images/toolbar_icons/select_by_clicking.png) &nbsp;&nbsp;&nbsp; **Select by Clicking** 
 
-![Select Parent Icon](images/toolbar_icons/select_parent.png) Select Parent (`Hierarchy` > `Select Parent`)
-When an object is selected, clicking this button will select the object's parent, if the object has one.
+When this mode is activated, clicking on an object will select it for editing. The object selection is used by all tools and windows to display properties. This button will light up blue when in `Select` mode. Also available from the `Edit` > `Select` > `Pick` menu item.
 
-![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png) Focus (`Camera` > `Focus Selected`)
-Move the camera such that it frames the selected object in the view. This will reset the camera mode to 'Orbit'.
+![Select None Icon](images/toolbar_icons/select_none.png) &nbsp;&nbsp;&nbsp; **Select None**
+
+Unselect the selected object, and exit select mode. Note that clicking the button will change the select mode to none, and you will have to click the 'Select By Clicking' button to enter selection mode again. Also available from the `Edit` > `Select` > `Select None` menu item.
+
+![Select Parent Icon](images/toolbar_icons/select_parent.png) &nbsp;&nbsp;&nbsp; **Select Parent**
+
+When an object is selected, clicking this button will select the object's parent, if the object has one. Also available from the `Hierarchy` > `Select Parent` menu item.
+
+![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png) &nbsp;&nbsp;&nbsp; **Focus**
+
+Move the camera such that it frames the selected object in the view. This will also reset the camera mode to orbit mode if it is not already in orbit mode.  Also available from the `Camera` > `Focus Selected` menu item.
 
 !!! note:
-	The focus to camera toolbar button is very helpful for navigating.  Simply select the object you want to focus on (either through the hierarchy or by clicking the object directly) and then hit the Focus Camera button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png))
+	The focus to camera toolbar button is very helpful for navigating.  Simply select the object you want to focus on (either through the hierarchy or by clicking the object directly) and then click the Focus Camera button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png)).
 
-![Copy Icon](images/toolbar_icons/copy.png) Copy (`Edit` > `Copy`)
-Copy the selected object to be pasted later. You must have an object selected for this operation. When copying, the entire hierarchy of the selected object will be copied as well. If the bounding box that marks the selection is red, you have selected an object that controls a part of a model that was loaded by an asset file (most likely from the 3D Repository). These objects cannot be copied.
+![Copy Icon](images/toolbar_icons/copy.png) &nbsp;&nbsp;&nbsp; **Copy**
 
-![Paste Icon](images/toolbar_icons/paste.png) Paste (`Edit` > `Paste`)
-Paste the copied object into the scene. This will make a new object with all the properties of the copied object. You will be assigned as the new object's owner. This new object will be placed at the center of your view, at z=0. Note that when looking at the world at very shallow angles, this may place the object farther away then you expect.
+Copy the selected object to be pasted later. You must have an object selected for this operation. When copying, the entire hierarchy of the selected object will be copied as well. If the bounding box that marks the selection is red, you have selected an object that controls a part of a model that was loaded by an asset file (most likely from the 3D Repository). These objects cannot be copied. Also available from the `Edit` > `Copy` menu item.
 
-![Duplicate Icon](images/toolbar_icons/duplicate.png) Duplicate (`Edit` > `Duplicate`)
-A shortcut for copy, then paste. 
+![Paste Icon](images/toolbar_icons/paste.png) &nbsp;&nbsp;&nbsp; **Paste** 
+
+Paste the copied object into the scene. This will make a new object with all the properties of the copied object. You will be assigned as the new object's owner. This new object will be placed at the center of your view, at z=0. Note that when looking at the world at very shallow angles, this may place the object farther away then you expect. Also available from the `Edit` > `Paste` menu item.
+
+![Duplicate Icon](images/toolbar_icons/duplicate.png) &nbsp;&nbsp;&nbsp; **Duplicate**
+
+A shortcut for copy, then paste. Also available from the `Edit` > `Duplicate` menu item.
 
 !!! note:
 	The new (duplicated) object will be placed *exactly* on top of the original.
 
-![Delete](images/toolbar_icons/delete.png) Delete (`Edit` > `Delete`)
-Deletes the currently selected object.
+![Delete](images/toolbar_icons/delete.png) &nbsp;&nbsp;&nbsp; **Delete**
 
-![Link Icon](images/toolbar_icons/link.png) Link (`Hierarchy` > `Link`)
-This tool allows you to make one object a child of another. You must be the owner of both objects to complete this operation. You must first select an object before clicking this tool. When activated, the cursor will change to a cross hair, and allow you to pick a second object. When you choose the second object, the selected object will be added as a child of the object you pick.
+Deletes the currently selected object. Also available from the `Edit` > `Delete` menu item.
 
-![Unlink Icon](images/toolbar_icons/unlink.png) Unlink (`Hierarchy` > `Unlink`)
-This button will unlink the selected object from its parent. The selected object must be a child of another object in the scene.
+![Link Icon](images/toolbar_icons/link.png) &nbsp;&nbsp;&nbsp; **Link**
 
-![Orbit Camera Icon](images/toolbar_icons/orbit_camera.png) Orbit Camera (`Camera` > `Default Cameras` > `Orbit`)
-Activate 'Camera Orbit' mode. See the Camera Modes section for details on how the camera controls work.
+This tool allows you to make one object a child of another. You must be the owner of both objects to complete this operation. You must first select an object before clicking this tool. When activated, the cursor will change to a cross hair, and allow you to pick a second object. When you choose the second object, the selected object will be added as a child of the object you pick. Also available from the `Hierarchy` > `Link` menu item.
+
+![Unlink Icon](images/toolbar_icons/unlink.png) &nbsp;&nbsp;&nbsp; **Unlink**
+
+This button will unlink the selected object from its parent. The selected object must be a child of another object in the scene. Also available from the `Hierarchy` > `Unlink` menu item.
+
+![Orbit Camera Icon](images/toolbar_icons/orbit_camera.png) &nbsp;&nbsp;&nbsp; **Orbit Camera**
+
+Activate the editor camera's orbit mode. See the [Camera Modes](graphics.md#camera-modes) section for details on how the camera controls work. Also available from the `Camera` > `Default Cameras` > `Orbit` menu item.
 
 !!! note:
 
 	The blue background highlight indicates the editor is actively using the `Orbit` camera mode, which is the default camera mode for the editor.
 
-![First Person Camera Icon](images/toolbar_icons/first_person_camera.png) First Person Camera (`Camera` > `Default Cameras` > `Avatar View`)
-Activate 'First Person' mode. See the Camera Modes section for details on how the camera controls work.
+![First Person Camera Icon](images/toolbar_icons/first_person_camera.png) &nbsp;&nbsp;&nbsp; **First Person Camera**
 
-![Navigate Camera Icon](images/toolbar_icons/navigation_camera.png) Navigate Camera (`Camera` > `Default Cameras` > `Navigate`)
-Activate 'Navigate' mode. See the Camera Modes section for details on how the camera controls work.
+Activate the editor camera's first person mode. See the [Camera Modes](graphics.md#camera-modes) section for details on how the camera controls work. Also available from the `Camera` > `Default Cameras` > `Avatar View` menu item.
 
-![Fly Camera Icon](images/toolbar_icons/free_camera.png) Free Camera (`Camera` > `Default Cameras` > `Fly`)
-Activate 'Free Camera' mode. See the Camera Modes section for details on how the camera controls work.
+![Navigate Camera Icon](images/toolbar_icons/navigation_camera.png) &nbsp;&nbsp;&nbsp; **Navigate Camera**
 
-![Create Sphere Icon](images/toolbar_icons/sphere.png) Create Sphere (`Create` > `Primitives` > `Sphere`)
-Create a new sphere object at the center of the view. See the Primitive Objects sections for information on the object settings.
+Activate the editor camera's navigate mode. See the [Camera Modes](graphics.md#camera-modes) section for details on how the camera controls work. Also available from the `Camera` > `Default Cameras` > `Navigate` menu item.
 
-![Create Box Icon](images/toolbar_icons/box.png) Create Box (`Create` > `Primitives` > `Box`)
-Create a new box object at the center of the view. See the Primitive Objects sections for information on the object settings.
+![Fly Camera Icon](images/toolbar_icons/free_camera.png) &nbsp;&nbsp;&nbsp; **Free Camera**
 
-![Create Cylinder Icon](images/toolbar_icons/cylinder.png) Create Cylinder (`Create` > `Primitives` > `Cylinder`)
-Create a new Cylinder object at the center of the view. See the Primitive Objects sections for information on the object settings.
+Activate the editor camera's free camera mode. See the [Camera Modes](graphics.md#camera-modes) section for details on how the camera controls work. Also available from the `Camera` > `Default Cameras` > `Fly` menu item.
 
-![Create Cone Icon](images/toolbar_icons/cone.png) Create Cone (`Create` > `Primitives` > `Cone`)
-Create a new cone object at the center of the view. See the Primitive Objects sections for information on the object settings.
+![Create Sphere Icon](images/toolbar_icons/sphere.png) &nbsp;&nbsp;&nbsp; **Create Sphere**
 
-![Create Plane Icon](images/toolbar_icons/plane.png) Create Plane (`Create` > `Primitives` > `Plane`)
-Create a new plane object at the center of the view. See the Primitive Objects sections for information on the object settings.
+Create a new sphere object at the center of the view. See the [Primitives](graphics.md#primitives) section for information on the object settings. Also available from the `Create` > `Primitives` > `Sphere` menu item.
 
-![Script Editor Icon](images/toolbar_icons/script_editor.png) Script Editor Window (`Windows` > `Script Editor`)
-Show the Script Editor window. You should have an object selected when opening this window. See Tool Windows for more information.
+![Create Box Icon](images/toolbar_icons/box.png) &nbsp;&nbsp;&nbsp; **Create Box**
 
-![Chat Icon](images/toolbar_icons/chat.png) Chat Window (`Windows` > `Chat`)
-Show the Chat window. See Tool Windows for more information.
+Create a new box object at the center of the view. See the [Primitives](graphics.md#primitives) section for information on the object settings. Also available from the `Create` > `Primitives` > `Box` menu item.
 
-![Asset Library Icon](images/toolbar_icons/model_library.png) Asset Library Window (`Windows` > `Models`)
-Show the Asset Library window. See Tool Windows for more information.
+![Create Cylinder Icon](images/toolbar_icons/cylinder.png) &nbsp;&nbsp;&nbsp; **Create Cylinder**
+
+Create a new Cylinder object at the center of the view. See the [Primitives](graphics.md#primitives) section for information on the object settings. Also available from the `Create` > `Primitives` > `Cylinder` menu item.
+
+![Create Cone Icon](images/toolbar_icons/cone.png) &nbsp;&nbsp;&nbsp; **Create Cone**
+
+Create a new cone object at the center of the view. See the [Primitives](graphics.md#primitives) section for information on the object settings. Also available from the `Create` > `Primitives` > `Cone` menu item.
+
+![Create Plane Icon](images/toolbar_icons/plane.png) &nbsp;&nbsp;&nbsp; **Create Plane**
+
+Create a new plane object at the center of the view. See the [Primitives](graphics.md#primitives) section for information on the object settings. Also available from the `Create` > `Primitives` > `Plane` menu item.
+
+![Script Editor Icon](images/toolbar_icons/script_editor.png) &nbsp;&nbsp;&nbsp; **Script Editor Window**
+
+Show the ScriptEditor window. You should have an object selected when opening this window. Also available from the `Windows` > `Script Editor` menu item.
+
+![Chat Icon](images/toolbar_icons/chat.png) &nbsp;&nbsp;&nbsp; **Chat Window**
+
+Show the Chat window. Also available from the `Windows` > `Chat` menu item.
+
+![Asset Library Icon](images/toolbar_icons/model_library.png) &nbsp;&nbsp;&nbsp; **Asset Library Window**
+
+Show the Asset Library window. Also available from the `Windows` > `Models` menu item.
 
 **Hotkeys**
 
@@ -332,27 +361,68 @@ The two up and down arrow buttons in the upper right hand corner of the script e
 
 ![ScriptEditor Window Size Controls](images/script_editor_window_size_buttons.png)
 
+### The Tick Heartbeat
+
+The `tick()` method is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
+
 ### Finding Objects through Script
 
-There are multiple ways to find and access objects through scripts.  The easiest and most intuitive way to find and access an object is to use the `children_by_name` object based on the `Scene`.
+When finding objects through scripts, it is helpful to remember the hierarchy view of objects.  The hierarchy root is the `Scene` object.  You can access the `Scene` by simply calling `this.Scene` on any object.  Thinking about the hierarchy and knowing how to access the Scene, we can use different methods to find and access objects through scripts:
+
+1. [children_by_name](#children_by_name)
+1. [findNode](#findnode)
+1. [children](#children)
+1. [findNodeByID](#findnodebyid)
+
+The first two methods find objects based on the object's `DisplayName` property, which can be set through the Property editor.  The second two methods finds all children anonymously or by ID.
+
+!!! note:
+	In the examples below, we'll be writing code to find and access objects in the `tick()` method of objects.
+
+#### children_by_name
+
+The easiest and most intuitive way to find and access an object is to use the `children_by_name` object based on the `Scene`.  Assume `sphere1` is a child of the `Scene`:
 
 ```
 var sphere = this.Scene.children_by_name["sphere1"];
 ```
 
-If sphere1 is the parent of sphere2, then we could find and access sphere2 continuing this method:
+If `sphere2` is a child of `sphere1`, then we could find and access `sphere2` continuing this method:
 
 ```
 var sphere2 = this.Scene.children_by_name["sphere1"].children_by_name["sphere2"];
 ```
 
-You don't have to go through the `Scene` to access objects.  You can refer directly to the children of the selected object.  Assuming we are selected on sphere1 (the parent of sphere2), we could do the following:
+You don't have to go through the `Scene` to access objects.  You can refer directly to the children of the selected object.  Assuming we are selected on `sphere1` (the parent of `sphere2`), we could do the following:
 
 ```
 var sphere2 = this.children_by_name["sphere2"];
 ```
 
-Objects ar runtime are given an ID that uniquely identifies them across the multiplayer network.  If you know this ID, you can use this to access the object through script using the findNodeByID(ID) method.
+#### findNode
+
+The `Scene` provides a `findNode` method we can use to find any object in the `Scene`.  This allows us to find `sphere2` from *any* object without knowing the hierarchy.
+
+```
+var sphere2 = this.Scene.findNode("sphere2");
+```
+#### children
+
+If you want to iterate through all children of an object, you'll want to use the `children` JavaScript object.
+
+```
+for (i = 0; i < this.children.length; i++)
+{
+    console.log(this.children[i].DisplayName);
+}
+```
+
+!!! note:
+	The JavaScript `console.log()` method is a powerful way to display data by writing it to the browser console.  Knowing how to use the browser's debug tools and specifically the browser console are key simulation development skills.  See [w3schools JavaScript Debugging](http://www.w3schools.com/js/js_debugging.asp) page for more information.
+
+#### findNodeByID
+
+Objects ar runtime are given an ID that uniquely identifies them across the multiplayer network.  If you know this ID, the `Scene` provides the `findNodeByID` method that we can use to access the object.
 
 ```
 var sphere2 = this.Scene.findNodeByID("sphere2-vwf-Nec9b207d");
@@ -360,10 +430,6 @@ var sphere2 = this.Scene.findNodeByID("sphere2-vwf-Nec9b207d");
 
 !!! note:
 	You can find the ID of any object by selecting the object and using the `Tools` > `Show ID` menu item.
-
-### The Tick Heartbeat
-
-The `tick()` method is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
 
 ### Moving Objects using Transforms
 
