@@ -65,11 +65,7 @@ The simulation object matching the provided ID or null if no matching object is 
 
 # Simulation Object
 
-Each [Simulation Object](#simulation-object) provides properties and methods to manipulate the simulation object.  The properties and methods of a simulation object are accessible through the Script Editor by selecting an object and typing `this.`, which will result in an autocomplete list of available properties and methods. 
-
-![Autocomplete](images/autocomplete.png)
-
-The autocomplete list should include any properties and methods the object defines as well as access to the Transforms, Physics, and Audio properties and methods.
+Each [Simulation Object](#simulation-object) provides properties and methods to manipulate the simulation object.  
 
 ## Properties
 
@@ -91,7 +87,7 @@ Any method that the node has defined will be available.  In addition, some stand
 
 ### AudioAPI
 
-Returns the simulation object's [Audio](#audio) endpoint.
+Returns the simulation object's [AudioAPI](#audioapi) endpoint.
 
 **Arguments:**
 
@@ -99,9 +95,9 @@ Returns the simulation object's [Audio](#audio) endpoint.
 
 **Returns:**
 
-`audio` (object)
+`audioAPI` (object)
 
-The [Audio](#audio) endpoint.
+The [AudioAPI](#audioapi) endpoint.
 
 ### Bind
 
@@ -119,7 +115,7 @@ Your socket identifier (GUID).
 
 ### PhysicsAPI
 
-Returns the simulation object's [Physics](#physics) endpoint.
+Returns the simulation object's [PhysicsAPI](#physicsapi) endpoint.
 
 **Arguments:**
 
@@ -127,13 +123,13 @@ Returns the simulation object's [Physics](#physics) endpoint.
 
 **Returns:**
 
-`physics` (`object`)
+`physicsAPI` (`object`)
 
-The [Physics](#physics) endpoint.
+The [PhysicsAPI](#physics) endpoint.
 
 ### TransformAPI
 
-Returns the simulation object's [Transforms](#transforms) endpoint.
+Returns the simulation object's [TransformAPI](#transformAPI) endpoint.
 
 **Arguments:**
 
@@ -143,7 +139,7 @@ Returns the simulation object's [Transforms](#transforms) endpoint.
 
 `transforms` (`object`)
 
-The [Transforms](#transforms) endpoint.
+The [TransformAPI](#transformAPI) endpoint.
 
 ### Random
 

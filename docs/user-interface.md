@@ -1,4 +1,4 @@
-<h1>User Interface</h1>
+<h1>User Interfaces</h1>
 
 Create User Interfaces to provide users with start screens, preference selections, and more.
 

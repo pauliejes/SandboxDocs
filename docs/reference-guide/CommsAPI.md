@@ -1,14 +1,10 @@
 # Comms API
 
-This is where the Comms is.
 
-A few words about that.
-
-<a id='Methods'></a>
 ## Methods
 
-<a id='PM'></a>
-### PM(from\_client\_id, to\_client\_id)
+
+### PM(from_client_id, to_client_id)
 
 Yeah, I don't know what that is. Private Messaging??
 
@@ -24,7 +20,7 @@ Receiving client's identification string.
 
 *(Nothing)*
 
-<a id='Chat'></a>
+
 ### Chat()
 
 Opens a chat window.
@@ -37,8 +33,8 @@ Opens a chat window.
 
 *(Nothing)*
 
-<a id='VideoCall'></a>
-### VideoCall(from\_client\_id, to\_client\_id)
+
+### VideoCall(from_client_id, to_client_id)
 
 Establishes video call between two users.
 
@@ -54,8 +50,8 @@ Receiving client's identification string.
 
 *(Nothing)*
 
-<a id='VoiceCall'></a>
-### VoiceCall(from\_client\_id, to\_client\_id)
+
+### VoiceCall(from_client_id, to_client_id)
 
 Establishes voice call between two users.
 

@@ -572,12 +572,14 @@ To create a new camera, go to `Create` > `Camara` > `Perspective`.  See [Creatin
 
 ### Smart Objects
 
-You can make one of your objects 
-Editor Data exposing properties
+You can make one of your objects as a Smart Object by exposing its properties to the Editor for user manipulation.  This requires using the Editor Data properties of a simulation object.
 
 ###  Manage and Organize Smart Objects
 
-Asset Server discussion
+Simulation objects can be managed and shared through the asset server by selecting the object and clicking the `Assets` >  `Create New Asset` > `From Sel. Entity` menu item.
+
+!!! note:
+	The asset server does not allow anonymous uploads, so you will have to login to share your asset.
 
 Other ways you can store and manage things
 
