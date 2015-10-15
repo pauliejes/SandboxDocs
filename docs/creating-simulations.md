@@ -335,6 +335,29 @@ See [Audio](audio.md) for information about uploading audio assets.
 
 ## Simulation Authoring
 
+Once you are comfortable with the [Editor](#using-the-editor) and know how to create objects, it is time to create logic that brings the simulation to life.  The basics of simulation authoring include:
+
+1. [Naming Objects](#naming-objects) so we can access them easily
+1. Using the [ScriptEditor](#scripteditor) to write simulation logic
+1. Responding to [The Tick Heartbeat](#the-tick-heartbeat)
+1. [Finding Objects through Script](#finding-objects-through-script)
+1. [Moving Objects using Transforms](#moving-objects-using-transforms)
+1. [Responding to User Input](#responding-to-user-input)
+1. And finally, it's [Lights, Camera, Action!](#lights-camera-action)
+
+So if you're comfortable with some JavaScript basics, let's get started.
+
+In the examples below, we usually need a relationship between objects, so consider a simple `Scene` that contains two spheres: `sphere1` and `sphere2`.  Also consider that `sphere2` is a child of `sphere1`.
+
+!!! note:
+	For more information about making these relationships between objects see [Organizing, Accessing, and Relating Objects](#organizing-accessing-and-relating-objects)
+
+Here is a picture of such a `Scene` with two spheres:
+
+![Scene with two spheres](images/two_spheres.png)
+
+### Naming Objects
+
 All objects in the world can be assigned a friendly name. These names appear in the GUI for all action, but need not be unique -- they are just for your convenience. To name an object, select the object and open the Properties window. Under the `Flags` heading, find the `Name` field and type the name. 
 
 ![Property Name](images/properties-name.png)
@@ -343,9 +366,9 @@ When you copy, duplicate, or paste an object, the name will be incremented autom
 
 The name is stored in the `DisplayName` property of an object. From script, all objects are indexed by name under `this.children_by_name`.
 
-### Script Editor
+### ScriptEditor
 
-The ScriptEditor is used to write scripts for simulation logic.  All scripts are written in JavaScript.
+The ScriptEditor is used to write scripts for simulation logic.  All scripts are written in JavaScript.  To launch the ScriptEditor, select a simulation object, and click the ScriptEditor toolbar icon (![Script Editor Icon](images/toolbar_icons/script_editor.png)) or use the `Windows` > `Script Editor` menu item.
 
 ![Script Editor](images/script_editor.png)
 
@@ -434,7 +457,11 @@ var sphere2 = this.Scene.findNodeByID("sphere2-vwf-Nec9b207d");
 
 #### parent
 
+You can quickly and easily reference the parent object using `.parent`.  From the tick() method of a child, `sphere2` in this example, we can access the parent (`sphere1`):
 
+```
+var sphere1 = this.parent;
+```
 
 ### Moving Objects using Transforms
 
@@ -454,6 +481,18 @@ function tick()
 	this.transformAPI.move(.1, 0, 0, this.transformAPI.COORDINATES.LOCAL);
 }
 ```
+
+The TransformAPI also provies the rotate(x,y,z,coordinates) method, which will rotate the object around the given axis.  If we wanted to rotate a sphere around the Z axis like a disco ball, we could write the following in the sphere's tick method:
+
+```
+function tick()
+{
+	this.transformAPI.rotate(0,0,1);
+}
+```
+Every tick, the sphere rotates 1 unit around the Z axis using the world coordinate system where Z is the blue arrow of the gizmo move tool that points up.
+
+The TransformAPI provides many other methods to get and set position and rotation as well as to convert between different coordinate systems.  For more information, see the [TransformAPI](reference-guide/scripting-api.md#transformapi) section of the Reference Guide.
 
 ### Responding to User Input
 
@@ -484,7 +523,9 @@ function ready()
 }
 ```
 
-The ready method first unbinds the intermediate functions if they are defined to ensure they are reset appropriately.  It then binds the `keyUp` and `keyDown` events to the intermediate functions, which bind the actual event handler code `_keyDown` and `_keyUp`.  Therefore, with this ready function in place, we need to define _keyDown and `_keyUp` methods.  Click `New Method` to define the _keyDown and _keyUp methods.
+The ready method first unbinds the intermediate functions if they are defined to ensure they are reset appropriately.  It then binds the `keyUp` and `keyDown` events to the intermediate functions, which bind the actual event handler code `_keyDown` and `_keyUp`.  Therefore, with this ready function in place, we need to define _keyDown and `_keyUp` methods.  Click `New Method` to define the `_keyDown` and `_keyUp` methods.
+
+[comment]: <> (must call Deinitialize to release handlers.)
 
 The `_keyDown` method is where we can write code to process the keys being pressed.  Note that an array is defined as a local property because multiple keys can be down at the same time.  So, switch tabs to the Properties tab and define a new property to serve as the array called `_keysDown` with value `[]` (the empty array).  
 
@@ -521,13 +562,13 @@ function _keyUp(e, d)
 Now that the key handlers are bound and defined, we can write logic based on the keys the user is pressing.
 
 
-
-
 ### Lights, Camera, Action!
 
 To create a new light, go to `Create` > `Lights` and choose the desired type of light (Point, Spot, or Directional).  See [Lighting](graphics.md#lighting) for more information or the tutorial on [Lights and Materials](tutorials/lights-and-materials.md).
 
 To create a new camera, go to `Create` > `Camara` > `Perspective`.  See [Creating Cameras](graphics.md#creating-cameras).
+
+## Managing Objects and Simulations
 
 ### Smart Objects
 
