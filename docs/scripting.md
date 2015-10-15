@@ -22,7 +22,9 @@ The two up and down arrow buttons in the upper right hand corner of the script e
 
 # Tick Function
 
-# Node
+The `tick()` method is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
+
+# Simulation Object
 
 # Transforms
 
@@ -36,9 +38,20 @@ The two up and down arrow buttons in the upper right hand corner of the script e
 
 # Broadcast
 
+Broadcast data to simulation objects that are within the given range and have the function_target defined.
+
+```
+this.broadcast(function_target, data, range);
+```
+
 # Raycasts
+
+```
+this.Scene.traceAPI.rayCast(origin, direction, options)
+```
 
 # Vector Functions
 
 # Reference Guide
 
+See the [Scripting API](reference_guide/scripting-api.md) for complete reference information.

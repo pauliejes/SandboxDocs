@@ -1,7 +1,9 @@
 <h1>Scripting API</h1>
 
 !!! Warning:
-	Your simulation logic should use the Scripting API and doing simple logic to decide which Scripting API calls to make.  Don't do any asynchronous JavaScript -- no callbacks.  You should not be talking to a server (AJAX), manipulating the DOM, spawning WebWorkers.  If you find yourself needing to do these kinds of code in the simulation, you might be ready to author your own engine driver.  See [Architecture](../architecture.md).
+	Your simulation logic should be limited to the use of the Scripting API and simple logic for its use.
+
+	You should not write any asynchronous JavaScript in the ScriptEditor -- no callbacks.  You should not be talking to an external server (e.g., AJAX), manipulating the DOM, or spawning WebWorkers.  If you find yourself needing to do these things in your simulation, you might be ready to author your own engine driver.  See the [Architecture](../architecture.md) section and how to extend it.
 
 [TOC]
 
@@ -9,23 +11,13 @@
 
 The VW Sandbox provides the Scripting API, which is accessible through the ScriptEditor and is attached to each simulation object to define and manipulate simulation logic.
 
-The [Scene](#scene) provides properties and methods to manage the scene.
-
-Each [Simulation Object](#simulation-object) provides properties and methods to manipulate the simulation object.  The properties and methods of a simulation object are accessible through the Script Editor by selecting an object and typing `this.`, which will result in an autocomplete list of available properties and methods.  
-
-![Autocomplete](images/autocomplete.png)
-
-The autocomplete list should include any properties and methods the simulation object defines as well as access to Transforms, Physics, and Audio properties and methods.
-
-[Client](#client) properties and methods provide information about clients of the multiplayer network.
-
-[Transforms](#transforms) properties and methods are used to manipulate the properties of simulation objects such as their position and rotation and convert between different coordinate systems.
-
-[Physics](#physics) methods apply forces and velocities to simulatoin objects.
-
-[Audio](#audio) properties and methods control sound logic.
-
-[Communications](#communications)
+* The [Scene](#scene) provides properties and methods to manage the scene.
+* Each [Simulation Object](#simulation-object) provides properties and methods to manipulate the simulation object.
+* The [ClientAPI](#clientAPI) properties and methods provide information about clients of the multiplayer network.
+* The [TransformsAPI](#transformapi) properties and methods are used to manipulate the properties of simulation objects such as their position and rotation and convert between different coordinate systems.
+* The [PhysicsAPI](#physicsapi) methods apply forces and velocities to simulatoin objects.
+* The [AudioAPI](#audioapi) properties and methods control sound logic.
+* The [CommsAPI](#commsapi) properties and methods provide services for text and voice communications.
 
 # Scene
 
@@ -39,14 +31,23 @@ Returns the number of ticks that have been processed.
 
 ### traceAPI
 
-Has three methods
-frustCast()
-rayCast()
-sphereCast()
+Returns the Scene's [traceAPI](#traceAPI) endpoint.
 
 ## Methods
 
-### findNode
+### findNode(displayName)
+
+Search the `Scene` for the provided simulation object displayName
+
+**Arguments:**
+
+displayName: the DisplayName of the simulation object to be found
+
+**Returns:**
+
+`foundObject` (`object`)
+
+The simulation object matching the provided displayName or null if no matching object is found.
 
 ### findNodeByID
 
@@ -54,7 +55,7 @@ Search the `Scene` for the provided simulation object ID.
 
 **Arguments:**
 
-ID: the ID of simulation object to be found
+ID: the ID of the simulation object to be found
 
 **Returns:**
 
@@ -75,6 +76,8 @@ The autocomplete list should include any properties and methods the object defin
 Any property that the node has defined will be availble.  In addition, some standard properties are provided.
 
 ### children
+
+### children_by_name
 
 ### DisplayName
 
@@ -160,9 +163,9 @@ The generated random number between 0 and 1.
 
 Returns the current simulation time stamp.  Duration since the server started the simulation.
 
-# Client API
 
 
+# ClientAPI
 
 ## Methods
 
@@ -262,10 +265,55 @@ The first person camera for the user.
 
 # traceAPI
 
-Has three methods
-frustCast()
-rayCast()
-sphereCast()
+## Methods
+
+### frustCast(origin, direction, options)
+
+**Arguments:**
+
+`origin` (``)  
+
+
+`direction` (``)  
+
+
+`options` (``)  
+
+**Returns:**
+
+*()*
+
+### rayCast(origin, direction, options)
+
+**Arguments:**
+
+`origin` (``)  
+
+
+`direction` (``)  
+
+
+`options` (``)  
+
+**Returns:**
+
+*()*
+
+### sphereCast(origin, direction, options)
+
+**Arguments:**
+
+`origin` (``)  
+
+
+`direction` (``)  
+
+
+`options` (``)  
+
+**Returns:**
+
+*()*
 
 # TransformAPI
 
