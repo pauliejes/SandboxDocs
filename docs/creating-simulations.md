@@ -373,6 +373,7 @@ When finding objects through scripts, it is helpful to remember the hierarchy vi
 1. [findNode](#findnode)
 1. [children](#children)
 1. [findNodeByID](#findnodebyid)
+1. [parent](#parent)
 
 The first two methods find objects based on the object's `DisplayName` property, which can be set through the Property editor.  The second two methods finds all children anonymously or by ID.
 
@@ -430,6 +431,10 @@ var sphere2 = this.Scene.findNodeByID("sphere2-vwf-Nec9b207d");
 
 !!! note:
 	You can find the ID of any object by selecting the object and using the `Tools` > `Show ID` menu item.
+
+#### parent
+
+
 
 ### Moving Objects using Transforms
 

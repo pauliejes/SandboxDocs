@@ -26,7 +26,17 @@ pages:
   - Lights and Materials: tutorials/lights-and-materials.md
   - Working with Groups: tutorials/working-with-groups.md
   - Working with Terrain: tutorials/working-with-terrain.md
-  - Custom Graphic Tutorial: tutorials/custom-graphic-tutorial.md
+  - Writing a Custom Graphic: tutorials/custom-graphic-tutorial.md
+- Reference Guide:
+  - Scripting API: reference-guide/scripting-api.md
+  - Web Service API: reference-guide/web-service-api.md
+
+#  - Node API: reference-guide/NodeAPI.md
+#  - Transform API: reference-guide/TransformAPI.md
+#  - Physics API: reference-guide/PhysicsAPI.md
+#  - Audio API: reference-guide/AudioAPI.md
+#  - Client API: reference-guide/ClientAPI.md
+#  - Communications API: reference-guide/CommsAPI.md
 
 #- Home: index.md
 #- User Guide: user-guide.md
@@ -69,15 +79,6 @@ pages:
 #    - Phong Material: user-guide/object-types/Phong-Material.md
  #  - Physics: user-guide/object-types/Physics.md
  #  - Particles: user-guide/object-types/Particles.md
-
-
-#  - Overview: reference-guide/Overview.md
-#  - Node API: reference-guide/NodeAPI.md
-#  - Transform API: reference-guide/TransformAPI.md
-#  - Physics API: reference-guide/PhysicsAPI.md
-#  - Audio API: reference-guide/AudioAPI.md
- # - Client API: reference-guide/ClientAPI.md
- # - Communications API: reference-guide/CommsAPI.md
 
 #- Developer Guide:
 #  - Overview: developer-guide/overview.md
