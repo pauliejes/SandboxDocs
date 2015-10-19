@@ -30,6 +30,7 @@ When an object is selected, the Script Editor can be loaded at the bottom of the
 
 By default, simulations are launched for editing in the Editor Camera.  The Editor Camera allows you to see and navigate the whole scene.  To navigate and manipulate objects using the Editor Camera, please review the keyboard and mouse commands below.
 
+* Click the left mouse button to select an object.
 * Hold the **right mouse** button and move your mouse to look around the scene.  
 * Scroll the mouse wheel forward to zoom in and backward to zoom out.
 * Hold the mouse wheel down to pan the view around.
@@ -39,7 +40,7 @@ By default, simulations are launched for editing in the Editor Camera.  The Edit
 
 	To learn more about navigating using using different modes of the Editor Camera, take a look at [Camera Modes](graphics.md#camera-modes).
 
-Click the left mouse button to select an object.  Go ahead and create an object to try it out.  Expand the `Library` tab on the left side of the screen.  Open the `Demo Entities` tab and drag the T90 Tank into the scene.  Select the tank by moving the cursor over the tank and clicking your left mouse button.  The tank should highlight in blue.
+Go ahead and create an object to try it out.  Expand the `Library` tab on the left side of the screen.  Open the `Demo Entities` tab and drag the T90 Tank into the scene.  Select the tank by moving the cursor over the tank and clicking your left mouse button.  The tank should highlight in blue.
 
 ![Tank Selection](images/tank_selection.png)
 
@@ -70,6 +71,14 @@ You can select multiple objects by holding the `CTRL` button and clicking a seco
 
 Leave the current simulation. Also available from the `File` > `Logout` menu item.
 
+![Undo Icon](images/toolbar_icons/undo.png) &nbsp;&nbsp;&nbsp;  **Undo**
+
+Discards the last change made. Also available from the `Edit` > `Undo` menu item.
+
+![Redo Icon](images/toolbar_icons/redo.png) &nbsp;&nbsp;&nbsp;  **Redo**
+
+Applies the last discarded change made. Also available from the `Edit` > `Red` menu item.  
+
 ![Move Icon](images/toolbar_icons/move.png) &nbsp;&nbsp;&nbsp; **Move** 
 
 Activate the move tool. This will place a gizmo over the selected object. Click and drag on the colored lines to move the object in the direction of that line. Hold your mouse between lines to select the plane made from those two lines. Clicking and dragging while a plane handle is selected will move the object along the selected plane.  Also available from the `Edit` > `Transform` > `Move` menu item.
@@ -86,7 +95,7 @@ Activate the rotate tool. Also available from the `Edit` > `Transform` > `Rotate
 
 Try selecting the turret of the tank as show in the selection section and use the rotate tool to move the turret around.
 
-![Scale Icon](images/toolbar_icons/rotate.png) &nbsp;&nbsp;&nbsp; **Scale** 
+![Scale Icon](images/toolbar_icons/scale.png) &nbsp;&nbsp;&nbsp; **Scale** 
 
 Activate the Scale tool. This will place a gizmo over the selected object. Click and drag the center box to scale uniformly on all axis. Click and drag on one of the colored boxes to scale only in the direction of the selected box. Also available from the `Edit` > `Transform` > `Scale` menu item.
 
@@ -105,6 +114,12 @@ Align the selected tool's gizmo with the world coordinate system. Thus, the X ha
 ![Local Coordinates Icon](images/toolbar_icons/local_coordinates.png) &nbsp;&nbsp;&nbsp; **Local Coordinates** 
 
 Align the selected tool's gizmo with the selected object. Use this if you want to move an object toward its own 'front', even if that 'front' does not point straight along a world axis line because the object has been rotated. Also available from the `Edit` > `Transform` > `Local Coords` menu item.
+
+![Object Centers Icon](images/toolbar_icons/object_centers.png) &nbsp;&nbsp;&nbsp; **Object Centers**
+
+!!! note:
+
+	The blue background highlight indicates the editor is actively using object centers.
 
 ![Select by Clicking Icon](images/toolbar_icons/select_by_clicking.png) &nbsp;&nbsp;&nbsp; **Select by Clicking** 
 
@@ -374,7 +389,7 @@ The ScriptEditor is used to write scripts for simulation logic.  All scripts are
 
 Code you write with the ScriptEditor is immediately injected into the multiplayer engine as new properties, methods, and events for the selected object.  You can see which selected object the ScriptEditor is focused on in the blue title window at the top and in the status bar at the bottom.  In the screenshot, the ScriptEditor is focused on `sphere1`.
 
-The ScriptEditor has three tabs across the top: `Methods`, `Events`, and `Properties`.  Depending on which tab is selected, the list of items will be displayed vertically on the left and the code for the given selected item is in the main content window on the right.  In the screen shot above, the `Methods` tab is selected and the `tick` method is selected.
+The ScriptEditor has four tabs across the top: `Methods`, `Events`, `Properties`, and `Options`.  Depending on which tab is selected, the list of items will be displayed vertically on the left and the code for the given selected item is in the main content window on the right.  In the screen shot above, the `Methods` tab is selected and the `tick` method is selected.
 
 !!! note:
 

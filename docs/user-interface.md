@@ -10,40 +10,88 @@ Create User Interfaces to provide users with start screens, preference selection
 
 # Creating User Interfaces
 
-The VW Sandbox contains a set of entities that can be used to add graphical user interfaces to a simulation. These interfaces are actual simulation objects, and as such can have scripts and properties, persist to the database, can be saved to inventory, and otherwise be treated exactly as a 3D asset. We currently support buttons, panels, sliders, labels, checkboxes, and dialogs. You can create a GUI element from the top level `Create` > `GUI Elements` menu item.
+The VW Sandbox contains a set of entities that can be used to add graphical user interfaces (GUIs) to a simulation. These GUIs are actual simulation objects, and as such can have scripts, can have properties, be persisted to the database, be saved to the inventory, and be treated exactly as a 3D asset. The GUI elements that are currently supported are; dialogs, buttons, labels, sliders, checkboxes, panels, and images.
 
-![](images/gui_elements.png) 
-
-When in edit mode, while the simulation is stopped, you can select a GUI Node by clicking on it. You should see a dark blue border around it.  In the screenshot below, a Label was created from `Create` > `GUI Elements` > `Label`.
-
-![](images/gui_elements_blue_border.png)
-
-## Setting Styles
-
-For any GUI object, you can define a property called "style" that can contain CSS as a value.  The engine will apply that style to the GUI Object.  The style property value should be a JSON object where the keys are CSS attributes and the JSON object values are the cooresponding CSS values.
-
-# Positioning GUI Nodes
-
-Double clicking will allow you to drag and place it, and single clicking will stop dragging.  When a GUI Node is created, it becomes a child of the selected entity. However, since it is not part of the 3D scene, properties like the parent transform or visible will not effect it. 
+You can create a GUI Element by clicking the Element from the top level `Create` > `GUI Elements` menu item.
 
 !!! note:
 
-	GUI Nodes can have child GUI Nodes - this will work just as nested HTML Document Object Model (DOM) elements do and allow you to create rich user interaces.
+	Creating a GUI Element this way does not select the element automatically.
 
-GUI Nodes can be positioned using the transform property, just like 3D nodes. However, this value is interpereted differently. Only the translation portion of the transform matrix is used. The X and Y components are used as percent offsets from the Node's parent div - either the root of the page or the parent GUI Node. Scale and rotation are ignored. Most GUI nodes have a length and width property - these are abolute pixel sizes.
+![](images/gui_elements.png) 
 
-# GUI Nodes Reference
+When in edit mode, while the simulation is stopped, you can select a GUI Element by clicking on it. You should see a dark blue border around it.  In the screenshoot below, a Label was created from `Create` > `GUI Elements` > `Label`, and then clicked on it to select it.
+
+!!! note:
+
+	Another way to select a GUI Element is by clicking it on the Hierarchy tree shown in the Editors panel.
+
+
+![](images/gui_elements_blue_border.png)
+
+## Styling GUI Elements
+
+You can apply styles to any GUI Element by creating a property called "style" in the Properties tab of the Script Editor.  This property can contain any legal CSS code as a value.  The CSS code has to be formatted as a JSON object where the keys are CSS attributes and the JSON object values are the corresponding CSS values.  The engine will apply that style to the GUI Element selected.
+
+!!! note:
+
+	If you are cutting and pasting from an existing CSS file into the ScriptEditor, you need to remove the semicolons that appear at the end of the CSS statements.
+
+The following is an example of using a style property to modify the border and background of a GUI Element.
+
+```
+{
+    "background": "linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%)",
+    "border": "outset grey 3px",
+    "border-style": "outset"
+}
+  
+```
+
+# Positioning GUI Elements
+
+To position a GUI Element you need to double click the Element you want to move, this will allow you to drag and place it anywhere you want.  Then with a single click you stop dragging and set the GUI element in that position.
+Another way to position GUI Elements is by using the transform property, just like 3D nodes.  However, this value is interpreted differently.  Only the translation portion of the transform matrix is used. The X and Y components are used as percent offsets from the Element's parent div (either the root of the page or the parent GUI Element). Scale and rotation are ignored. Most GUI Elements have a length and width property and these are represented as absolute pixel sizes.
+
+# GUI Elements Hierarchy
+
+When a GUI Element is created, it becomes a child of the currently selected simulation object, more likely the Scene Object.  However, GUI Elements can have children GUI Elements too.  So, when a GUI Element is created, it becomes a child of the currently selected GUI Element. But since a GUI Element is not part of the 3D scene, properties like the parent transform or visible will not effect it. 
+
+!!! note:
+
+	A GUI Elements Hierarchy will work just as nested HTML Document Object Model (DOM) elements do and allow you to create rich user interaces.
+
+# User Interaction
+
+Some GUI Elements like a button can respond to a User input.  When the User clicks it, an action is normally initiated.  The mechanism to implement this actions or to trigger them is through the GUI Element's Events.
+
+!!! note:
+
+	Events can be enabled and implemented by selecting a GUI Element and then opening the ScriptEditor.
+
+The code below shows the implementation of a button mouse click event.  The code broadcasts that "MyCommand" function is to be executed. 
+
+```
+
+function pointerClick(eventData, nodeData)
+{
+    this.broadcast("MyCommand", ["My Command Text"], 0);    
+}
+  
+``` 
+
+# GUI Elements Reference
 
 ### Dialog
 
-A dialog with a close button. Note that closing the dialog sets its `visible` property to false - the object still exists in the scene. The dialog can be resized or moved at run-time. The properties will be updated accordingly.
+A dialog with a close button. Note that closing the dialog sets its `visible` property to false - the object still exists in the scene. The dialog can be re-sized or moved at run-time. The properties will be updated accordingly.
 
 Properties
 
 * `title` - the title of the dialog
 * `visible` - whether or not the dialog is closed
-* `height` - the height in real pixels of the dialog inner content
-* `width` - the width of the inner content in real pixels
+* `height` - the height in real pixels of the inner content
+* `width` - the width in real pixels of the inner content
 
 Events
 
@@ -56,8 +104,8 @@ A button. Importantly, this node fires the `pointerClick` event when the user cl
 Properties
 
 * `text` - the text on the button
-* `height` - the height in real pixels of the dialog inner content
-* `width` - the width of the inner content in real pixels
+* `height` - the height in real pixels of the inner content
+* `width` - the width in real pixels of the inner content
 
 Events
 
@@ -70,8 +118,8 @@ A slider. The user can set a value by dragging a handle along a track. The slide
 Properties
 
 * `value` - the currently selected value of the slider
-* `height` - the height in real pixels of the dialog inner content
-* `width` - the width of the inner content in real pixels
+* `height` - the height in real pixels of the inner content
+* `width` - the width in real pixels of the inner content
 * `max` - the value at the maximum extent
 * `min` - the value at the minimum extent
 * `step` - the size of each movement of the handle
@@ -88,7 +136,7 @@ Properties
 
 * `text` - the text of the label
 * `height` - the height in real pixels of the inner content
-* `width` - the width of the inner content in real pixels
+* `width` - the width in real pixels of the inner content
 * `fontColor` - the color of the font
 * `fontSize` - the size in pixels of the font
 * `textAlign` - center, left or right align the text
@@ -104,7 +152,7 @@ A simple checkbox. The box will extend to fill the size of the node specified by
 Properties
 
 * `height` - the height in real pixels of the inner content
-* `width` - the width of the inner content in real pixels
+* `width` - the width in real pixels of the inner content
 * `isChecked` - whether or not the box is checked
 
 Events
@@ -120,7 +168,7 @@ Properties
 
 * `src` - the url of the image to load
 * `height` - the height in real pixels of the inner content
-* `width` - the width of the inner content in real pixels
+* `width` - the width in real pixels of the inner content
 
 Events
 
@@ -128,12 +176,18 @@ Events
 
 ### Panel
 
-The panel is intended to function as a group for other GUI Nodes. It can have a background color and a border. It fires no events.
+The panel is intended to function as a group or container for other GUI Elements. It can have a background color and a border. It fires no events.
+
+Properties
 
 * `height` - the height in real pixels of the inner content
-* `width` - the width of the inner content in real pixels
+* `width` - the width in real pixels of the inner content
 * `backgroundColor` - the color of the background
 * `backgroundVisible` - whether or not the background is drawn
 * `borderColor` - the color of the border
 * `borderRadius` - the rounding of the panel edges
 * `borderWidth` - the width in pixels of the border
+
+Events
+
+* none
