@@ -1,5 +1,7 @@
 <h1>Custom Graphic Tutorial</h1>
 
+![](images/writing-custom-graphic-type/custom-graphic-introduction.png)
+
 <h2>Contents</h2>
 [TOC]
 
@@ -8,9 +10,12 @@ One powerful way to extend the VW Sandbox without knowing too much about or chan
 
 At its core, writing a custom graphic type involves defining a node definition.  Let's create a custom sphere to illustrate the process of writing a custom graphic type.  You'll want to have a local server installation for this tutorial.
 
-# Part 1: Node definition
+!!! note:
+    See the [Server Installation](../server-installation.md) guide to setup your local server.
 
-The first step is to create a new node definition, which has two parts: 1) an interface written in YAML and 2) an implementation written in JavaScript.
+# Part 1: Simulation Object Definition
+
+The first step is to create a new object definition, which has two parts: 1) an interface written in YAML and 2) an implementation written in JavaScript.
 
 ```
 extends: customSphere.vwf
@@ -18,7 +23,7 @@ source: customSphere.js
 
 ```
 
-Where `extends: customSphere.vwf` is the engine's node interface (not implementation) defining its properties and methods and `source: custom_sphere.js` is a JavaScript file that implements the interface.
+Where `extends: customSphere.vwf` is the engine's object interface (not implementation) defining its properties and methods and `source: custom_sphere.js` is a JavaScript file that implements the interface.
 
 For this demo, we'll keep the two files in a directory in `Sandbox` > `public` > `adl` > `sandbox`.  We'll call the directory `customObjectDemo`.  Placing the files here will make them easy for us to reference later.
 
@@ -32,7 +37,7 @@ Now create another file called `customSphere.js` in the `customObjectDemo` direc
 
 # Part 2: Boilerplate Files
 
-  Put the following boilerplate code in the file:
+  Put the following boilerplate code in the JavaScript `customSphere.js` file:
 
 ```
 "use strict";
@@ -66,23 +71,117 @@ Now create another file called `customSphere.js` in the `customObjectDemo` direc
 })();
 ```
 
-In the `this.initialize()` function, let's create a new [THREE.js sphere](http://threejs.org/docs/#Reference/Extras.Geometries/SphereGeometry).
+# Part 2: Creating the Custom Graphic
+
+Our custom graphic will be a slice of a standard sphere.  In the `this.initialize()` function of `customObject.js`, let's create a new  [THREE.js sphere](http://threejs.org/docs/#Reference/Extras.Geometries/SphereGeometry).
 
 ```
     	this.initialize = function()
     	{
 			this.sphere = new THREE.SphereGeometry(1,10,10,3,1.6,0,3.1);
 			this.material = new THREE.MeshPhongMaterial("#FFFFFF");
+            this.material.side = 2;
 			this.mesh = new THREE.Mesh(this.sphere,this.material);	
 			this.getRoot().add(this.mesh);
     	}   
 ```
 
-The Engine will call the constructor, initialize the new object type, and return the new object type in the Engine.  To make get the Engine to create the object type, create a new world with persisting state changes.  Then open and clear the console.  You should see something like the following:
+The Engine will call the constructor, initialize the new object type, and return the new object type in the Engine.  To make the Engine create the object type, create a new simulation.  Make sure the new simulation settings have the `Persist world state on close` setting checked.  We can also uncheck `Create Avatar for Each User`.  Then open and clear the console.  You should see something like the following:
 
 ![](images/writing-custom-graphic-type/2015-10-09_16-17-04.png)
 
-In the console, let's define the node definition.  Type:
+In the console, let's define the object.  Type:
 
 ```
-var def = {extends:"./damonsCustomObject/customSphere.vwf", source: "./damonsCustomObject/customSphere.js", type: "subDriver/three.js"}
+var def = {extends:"./customObjectDemo/customSphere.vwf", source: "./customObjectDemo/customSphere.js", type: "subDriver/threejs"}
+```
+
+Next, let's send a command to the engine to create an instance of the object:
+
+```
+vwf_view.kernel.createChild(vwf.application(), GUID(), def);
+```
+
+You should see a slice of a sphere appear in your editor.
+
+![](images/writing-custom-graphic-type/sphere-created.png)
+
+# Part 3: Making the Custom Graphic Reusable
+
+Now that we have a custom graphic defined that the Engine is capable of creating, let's store it in the asset server, so it can be created on demand.
+
+Select the custom graphic and click `Assets` > `Create New Asset` > `From Sel. Entity`.  Give the the asset a name and click `Upload` to save it.
+
+![](images/writing-custom-graphic-type/create-new-asset.png)
+
+You will notice that the new asset appears in the `My Entities` Content Library.  You should also notice the asset is given an ID.  You can now drag multiple instances of the custom graphic into the Editor from the Content Library.
+
+![](images/writing-custom-graphic-type/multiple-objects.png)
+
+# Part 4: Making a Custom Property
+
+Let's now make a custom property `phi`, which is the horizontal length of the slice.
+
+First add the property to the object definition in `customObject.vwf.yaml`.  Also add the EditorData so the property can be modified through the Editor using a slider control:
+
+```
+---
+extends: prim2.vwf
+properties:
+  phi: 1.6
+  materialDef:
+  EditorData:
+    customProp:
+      displayname: "Slice width"
+      type: "slider"
+      min: 0
+      max: 6.2
+      step: 0.1
+      property: "phi"  
+```
+
+Then add the `phi` property to customObject.js:
+
+```
+this.phi = 1.6;
+```
+
+Add a method to the `customSphere` object so the Engine can get this property:
+
+```
+this.gettingProperty = function(name,val)
+{
+    if(name == 'phi')
+    {
+        return this.phi;
+    }   
+} 
+```
+
+And add a method so the Engine can set this property:
+
+```
+this.settingProperty = function(name,val)
+{
+    if(name == 'phi')
+    {
+        this.phi = val;
+        this.root.remove(this.mesh)
+        this.sphere = new THREE.SphereGeometry(1,10,10,3,val,0,3.1);
+        this.mesh = new THREE.Mesh(this.sphere,this.material);
+        this.getRoot().add(this.mesh);
+    }
+}
+```
+
+Refresh your browser.  You should then be able to select one of the custom objects and view its Properties.  You should see a new property for `Slice width` that you can set to make something like a Pac Man.
+
+![](images/writing-custom-graphic-type/phi-property.png)
+
+# Conclusion
+
+This tutorial showed you how to make a custom graphic using the underlying three.js graphic library.  Using the steps above, the custom graphic can be used in a multiplayer simulations.  By using the EditorData, we are able to allow the Editor to set custom properties of the custom graphic.
+
+
+
+
