@@ -71,7 +71,7 @@ Now create another file called `customSphere.js` in the `customObjectDemo` direc
 })();
 ```
 
-# Part 2: Creating the Custom Graphic
+# Part 3: Creating the Custom Graphic
 
 Our custom graphic will be a slice of a standard sphere.  In the `this.initialize()` function of `customObject.js`, let's create a new  [THREE.js sphere](http://threejs.org/docs/#Reference/Extras.Geometries/SphereGeometry).
 
@@ -106,7 +106,7 @@ You should see a slice of a sphere appear in your editor.
 
 ![](images/writing-custom-graphic-type/sphere-created.png)
 
-# Part 3: Making the Custom Graphic Reusable
+# Part 4: Making the Custom Graphic Reusable
 
 Now that we have a custom graphic defined that the Engine is capable of creating, let's store it in the asset server, so it can be created on demand.
 
@@ -118,7 +118,7 @@ You will notice that the new asset appears in the `My Entities` Content Library.
 
 ![](images/writing-custom-graphic-type/multiple-objects.png)
 
-# Part 4: Making a Custom Property
+# Part 5: Making a Custom Property
 
 Let's now make a custom property `phi`, which is the horizontal length of the slice.
 
