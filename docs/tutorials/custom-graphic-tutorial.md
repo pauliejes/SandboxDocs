@@ -6,9 +6,15 @@
 [TOC]
 
 # Overview
-One powerful way to extend the VW Sandbox without knowing too much about or changing the VW Sandbox architecture is to write custom graphics.  Most simulation development involves manipulating existing Graphic types (e.g., 3D models, primitive shapes, particle systems).  Sometimes you will want to create custom Graphic types that directly interface with THREE.js -- the JavaScript 3D library used by the Graphics driver.  For example, custom graphics you might want to create include an ocean, orthographic camera, advanced particle system, custom animation, or custom shader.  
+One powerful way to extend the VW Sandbox without knowing too much about or changing the VW Sandbox architecture is to write custom graphics.  Most simulation development involves manipulating existing Graphic types (e.g., 3D models, primitive shapes, particle systems).  Sometimes you will want to create custom Graphic types that directly interface with THREE.js -- the JavaScript 3D library used by the Graphics driver.  For example, custom graphics you might want to create include:
 
-At its core, writing a custom graphic type involves defining a node definition.  Let's create a custom sphere to illustrate the process of writing a custom graphic type.  You'll want to have a local server installation for this tutorial.
+* ocean
+* orthographic camera
+* advanced particle system
+* custom animation
+* custom shader
+
+At its core, writing a custom graphic type involves defining a simulation object definition.  Let's create a custom sphere to illustrate the process of writing a custom graphic type.  You'll want to have a local server installation for this tutorial.
 
 !!! note:
     See the [Server Installation](../server-installation.md) guide to setup your local server.
@@ -37,7 +43,7 @@ Now create another file called `customSphere.js` in the `customObjectDemo` direc
 
 # Part 2: Boilerplate Files
 
-  Put the following boilerplate code in the JavaScript `customSphere.js` file:
+Put the following boilerplate code in the JavaScript `customSphere.js` file:
 
 ```
 "use strict";
@@ -99,7 +105,7 @@ var def = {extends:"./customObjectDemo/customSphere.vwf", source: "./customObjec
 Next, let's send a command to the engine to create an instance of the object:
 
 ```
-vwf_view.kernel.createChild(vwf.application(), GUID(), def);
+Engine.emit.createChild(vwf.application(), GUID(), def);
 ```
 
 You should see a slice of a sphere appear in your editor.
