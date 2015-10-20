@@ -296,32 +296,6 @@ To mitigate this difficulty, a **Test Publish** mode is available.  While in **e
 
 Again, usually the play/pause feature of the editor should be enough to test, but you can use the above workflow to test aspects of your scene that play/pause cannot simulate -- for instance, you might want to test code that responds to a users log in action.
 
-### Management
-
-You can manage a simulated world you create by going to the landing page for the world.  The landing page contains the Launch button.
-
-![World Management Buttons](images/world-management.png)
-
-In addition to the Launch button, are other world management buttons.  World management options include restoring past versions, deleting the world, duplicating it, and embedding it as an IFrame on other websites.
-
-### Change Simulation Settings
-
-The Settings page provides options to control the configuration of the simulated world to allow it to serve as a virtual world that persists state changes or a game that resets when closed.
-
-![World Settings Buttons](images/world-settings.png)
-
-!!! note "Note:"
-    World Settings are only provided to owners of simulated worlds.
-
-If you would like the world to function as a virtual world, select options to persist world state on close and create an avatar for each user.
-
-If you would like the world to function as a simulation or game, deselect options to persist world state and avatar creation.  You may also want to select the option to limit the simulation to single player if you want to limit multiplayer behavior.
-
-Independent of the kind of simulation, choices for who can access the simulation and what users will see when they login are provided.  Anonymous users can be allowed or not allowed to join.  Owners can make simulations into more published forms by not showing the editor tools and choosing a specific camera for users (e.g., a chase camera).
-
-!!! note "Note:"
-    If you want to choose a camera other than the default Editor Camera for users to use, you must create the camera.  See the  [Creating Cameras](graphics.md#creating-cameras) section for more information.
-
 ## Importing 3D Models and Textures
 
 You can import 3D models and textures using the asset server, which is accessible via the `Assets` menu item.  
@@ -399,10 +373,6 @@ The two up and down arrow buttons in the upper right hand corner of the script e
 
 ![ScriptEditor Window Size Controls](images/script_editor_window_size_buttons.png)
 
-### The Tick Heartbeat
-
-The `tick()` method is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
-
 ### Finding Objects through Script
 
 When finding objects through scripts, it is helpful to remember the hierarchy view of objects.  The hierarchy root is the `Scene` object.  You can access the `Scene` by simply calling `this.Scene` on any object.  Thinking about the hierarchy and knowing how to access the Scene, we can use different methods to find and access objects through scripts:
@@ -477,6 +447,12 @@ You can quickly and easily reference the parent object using `.parent`.  From th
 ```
 var sphere1 = this.parent;
 ```
+
+
+### The Tick Heartbeat
+
+The `tick()` method is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
+
 
 ### Moving Objects using Transforms
 
@@ -584,6 +560,30 @@ To create a new light, go to `Create` > `Lights` and choose the desired type of 
 To create a new camera, go to `Create` > `Camara` > `Perspective`.  See [Creating Cameras](graphics.md#creating-cameras).
 
 ## Managing Objects and Simulations
+
+You can manage a simulated world you create by going to the landing page for the world.  The landing page contains the Launch button.
+
+![World Management Buttons](images/world-management.png)
+
+In addition to the Launch button, are other world management buttons.  World management options include restoring past versions, deleting the world, duplicating it, and embedding it as an IFrame on other websites.
+
+### Change Simulation Settings
+
+The Settings page provides options to control the configuration of the simulated world to allow it to serve as a virtual world that persists state changes or a game that resets when closed.
+
+![World Settings Buttons](images/world-settings.png)
+
+!!! note "Note:"
+    World Settings are only provided to owners of simulated worlds.
+
+If you would like the world to function as a virtual world, select options to persist world state on close and create an avatar for each user.
+
+If you would like the world to function as a simulation or game, deselect options to persist world state and avatar creation.  You may also want to select the option to limit the simulation to single player if you want to limit multiplayer behavior.
+
+Independent of the kind of simulation, choices for who can access the simulation and what users will see when they login are provided.  Anonymous users can be allowed or not allowed to join.  Owners can make simulations into more published forms by not showing the editor tools and choosing a specific camera for users (e.g., a chase camera).
+
+!!! note "Note:"
+    If you want to choose a camera other than the default Editor Camera for users to use, you must create the camera.  See the  [Creating Cameras](graphics.md#creating-cameras) section for more information.
 
 ### Smart Objects
 
