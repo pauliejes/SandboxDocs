@@ -33,6 +33,9 @@ Where `extends: customSphere.vwf` is the engine's object interface (not implemen
 
 For this demo, we'll keep the two files in a directory in `Sandbox` > `public` > `adl` > `sandbox`.  We'll call the directory `customObjectDemo`.  Placing the files here will make them easy for us to reference later.
 
+!!! note:
+    Here are links to download the complete files for your reference: [customSphere.vwf.yaml](customSphere.vwf.yaml) and [customSphere.js](customSphere.js)
+
 Create a new text file called `customSphere.vwf.yaml` in the `customObjectDemo` directory.  Put the following in the file:
 
 ```
