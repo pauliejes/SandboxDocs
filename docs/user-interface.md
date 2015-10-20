@@ -1,6 +1,6 @@
 <h1>User Interfaces</h1>
-
-Create User Interfaces to provide users with start screens, preference selections, and more.
+ 
+A guide to create Graphical User Interfaces (GUIs) to provide users with start screens, preference selections, interacting dialogs, and more.
 
 <h2>Contents</h2>
 
@@ -8,7 +8,9 @@ Create User Interfaces to provide users with start screens, preference selection
 
 ![](images/start_screen_example.png)
 
-# Creating User Interfaces
+# Creating Graphical User Interfaces
+
+## Creating and Selecting GUI Elements
 
 The VW Sandbox contains a set of entities that can be used to add graphical user interfaces (GUIs) to a simulation. These GUIs are actual simulation objects, and as such can have scripts, can have properties, be persisted to the database, be saved to the inventory, and be treated exactly as a 3D asset. The GUI elements that are currently supported are; dialogs, buttons, labels, sliders, checkboxes, panels, and images.
 
@@ -29,7 +31,14 @@ When in edit mode, while the simulation is stopped, you can select a GUI Element
 
 ![](images/gui_elements_blue_border.png)
 
-## Styling GUI Elements
+## Positioning, Styling and Organizing GUI Elements
+
+### Positioning GUI Elements
+
+To position a GUI Element you need to double click the Element you want to move, this will allow you to drag and place it anywhere you want.  Then with a single click you stop dragging and set the GUI element in that position.
+Another way to position GUI Elements is by using the transform property, just like 3D nodes.  However, this value is interpreted differently.  Only the translation portion of the transform matrix is used. The X and Y components are used as percent offsets from the Element's parent div (either the root of the page or the parent GUI Element). Scale and rotation are ignored. Most GUI Elements have a length and width property and these are represented as absolute pixel sizes.
+
+### Styling GUI Elements
 
 You can apply styles to any GUI Element by creating a property called "style" in the Properties tab of the Script Editor.  This property can contain any legal CSS code as a value.  The CSS code has to be formatted as a JSON object where the keys are CSS attributes and the JSON object values are the corresponding CSS values.  The engine will apply that style to the GUI Element selected.
 
@@ -48,20 +57,22 @@ The following is an example of using a style property to modify the border and b
   
 ```
 
-# Positioning GUI Elements
+### GUI Elements Hierarchical Organization
 
-To position a GUI Element you need to double click the Element you want to move, this will allow you to drag and place it anywhere you want.  Then with a single click you stop dragging and set the GUI element in that position.
-Another way to position GUI Elements is by using the transform property, just like 3D nodes.  However, this value is interpreted differently.  Only the translation portion of the transform matrix is used. The X and Y components are used as percent offsets from the Element's parent div (either the root of the page or the parent GUI Element). Scale and rotation are ignored. Most GUI Elements have a length and width property and these are represented as absolute pixel sizes.
-
-# GUI Elements Hierarchy
-
-When a GUI Element is created, it becomes a child of the currently selected simulation object, more likely the Scene Object.  However, GUI Elements can have children GUI Elements too.  So, when a GUI Element is created, it becomes a child of the currently selected GUI Element. But since a GUI Element is not part of the 3D scene, properties like the parent transform or visible will not effect it. 
+When a GUI Element is created, it becomes a child of the currently selected simulation object, more likely the Scene Object.  However, GUI Elements can have children GUI Elements too.  So, when a GUI Element is created, it becomes a child of the currently selected GUI Element.
 
 !!! note:
 
 	A GUI Elements Hierarchy will work just as nested HTML Document Object Model (DOM) elements do and allow you to create rich user interaces.
 
-# User Interaction
+A GUI Element that is a child of another GUI Element will react to property changes of the parent element.  If the parent's visible property is set to invisible, for example, the child element becomes also invisible.
+However, if the parent of the GUI Element is the 3D scene, properties like the parent transform or visible will not effect the child GUI Element.  The GUI Element will not react to changes of the 3D Scene properties.  If the visible property of the parent 3D Scene is set to invisible and the visible property of the child GUI Element is currently visible, the child element will remain visible.
+ 
+!!! note:
+
+	GUI Elements only respond to property changes of their parents if the parents are also GUI Elements.  Otherwise, parents' properties like transform and visible will not effect children GUI Elements.
+
+## Responding to User Input
 
 Some GUI Elements like a button can respond to a User input.  When the User clicks it, an action is normally initiated.  The mechanism to implement this actions or to trigger them is through the GUI Element's Events.
 
@@ -82,7 +93,7 @@ function pointerClick(eventData, nodeData)
 
 # GUI Elements Reference
 
-### Dialog
+## Dialog
 
 A dialog with a close button. Note that closing the dialog sets its `visible` property to false - the object still exists in the scene. The dialog can be re-sized or moved at run-time. The properties will be updated accordingly.
 
@@ -97,7 +108,7 @@ Events
 
 * none
 
-### Button
+## Button
 
 A button. Importantly, this node fires the `pointerClick` event when the user clicks it.
 
@@ -111,7 +122,7 @@ Events
 
 * `pointerClick` - fired when the user clicks on the button
 
-### Slider
+## Slider
 
 A slider. The user can set a value by dragging a handle along a track. The slider exposes a `change` event, and a `value` property.
 
@@ -128,7 +139,7 @@ Events
 
 * `change` - fired when the value has been changed. Value will change before the event fires.
 
-### Label
+## Label
 
 A simple text label. Can have several font properties set. The text will wrap at the end of the width, and will overflow if it cannot wrap.
 
@@ -145,7 +156,7 @@ Events
 
 * none
 
-### Checkbox
+## Checkbox
 
 A simple checkbox. The box will extend to fill the size of the node specified by `height` and `width`.
 
@@ -160,7 +171,7 @@ Events
 * `checked` - fired when `isChecked` transitioned from false to true
 * `unChecked` - fired when `isChecked` transitioned from true to false
 
-### Image
+## Image
 
 A simple image element. Can be set with the texture chooser, or by URL. 
 
@@ -174,7 +185,7 @@ Events
 
 * none
 
-### Panel
+## Panel
 
 The panel is intended to function as a group or container for other GUI Elements. It can have a background color and a border. It fires no events.
 
