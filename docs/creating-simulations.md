@@ -322,9 +322,9 @@ You can add a **texture** to an object by selecting the object and viewing the M
 
 See [Audio](audio.md) for information about uploading audio assets.
 
-## Simulation Authoring
+## Collaborative Simulation Authoring
 
-Once you are comfortable with the [Editor](#using-the-editor) and know how to create objects, it is time to create logic that brings the simulation to life.  The basics of simulation authoring include:
+Once you are comfortable with the [Editor](#using-the-editor) and know how to create objects, it is time to create logic that brings the simulation to life.  And the best part is you can do this collaboratively with colleagues or from any location with a Web browser!  The basics of authoring a simulation include:
 
 1. [Naming Objects](#naming-objects) so we can access them easily
 1. Using the [ScriptEditor](#scripteditor) to write simulation logic
