@@ -2,7 +2,7 @@
 
 The VW Sandbox engine provides physics based on ammo.js -- a port of the Bullet physics library.
 
-![](videos/physics-example.gif)
+![](videos/physics-example-gimp.gif)
 
 <h2>Contents</h2>
 [TOC]
