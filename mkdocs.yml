@@ -7,6 +7,9 @@ use_directory_urls: true
 markdown_extensions: 
   - smarty
   - admonition
+  - attr_list
+  - def_list
+  - codehilite(noclasses=True, css_class=redacted-pre, linenums=True)
 pages:
 - About: index.md
 - Creating Simulations: creating-simulations.md
