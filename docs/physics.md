@@ -31,21 +31,22 @@ Collisions between objects requires the objects to have physics enabled and have
 
 ### Collisions based on Primitive Object Shapes
 
-For the primitive objec types, the Engine already understands the appropriate collision shape. So, you won't see a collision type selector for a Sphere - the Engine assumes the collision type is also "Sphere".
+For the primitive objec types, the Engine already understands the appropriate collision shape. So, you won't see a collision type selector for a Sphere -- the Engine assumes the collision type is also Sphere.
 
 If you want the collision shape to be compound (made up of  multiple primitive shapes), you will want to create child objects that have the `Collision Enabled` checkbox under the Physics Editor checked as shown in the tank example above.
 
 
-
 ### Collisions based on 3D Model Meshes
 
-Simulation objects that are 3D models can also use the Mesh collision type.  However, using the mesh shape for collisions is more expensive computationally than collisions based on primitive shapes, so primitive shapes are recommended for collisions.  In the example below, a 3D model rock, which is a mesh, is selected in the Scene.
+Simulation objects that are 3D models can also use the Mesh collision type.  However, using the mesh shape for collisions is more expensive computationally than collisions based on primitive shapes, so primitive shapes are recommended for collisions.
 
-![](images/physics-mesh.png)
+<div style="position:relative; padding-bottom:90%; height: 0; overflow: hidden;">
+<iframe style="position:absolute; top: 0; left: 0; width: 100%; height: 100%;" width="640" height="480" src="http://sandbox.adlnet.gov/adl/sandbox/example_physicsmeshcollision/" frameborder="0" allowfullscreen=""></iframe>
+</div>
 
-In the image above, we can see that the rock is selected and the `Collision Type` is `None`.  Setting the `Collision Type` to `Mesh` results in the purple highlighting showing the collision shape based on the mesh geometry.
+&nbsp;
 
-![](images/physics-mesh-active.png)
+In the image above, we can see that the spheres fall around the furniture fitting the mesh very precisely.
 
 
 ## Forces
@@ -74,8 +75,77 @@ These forces (as described above) are applied to your object at every simulation
 
 ## Constraints
 
+The VW Sandbox provides different kinds of constraints you can make between objects in the Editor.  These can be classified into joints you can create and motion and rotation locks you can enforce on one or more axes.
+
 ### Joints
 
-### Motion-lock constraints for 2D side scrolling games.
+You can make point constaints and hinge constraints to create joints between two objects.  Use the `Create` > `Physics` > and choose the desired constraint type.  The VW Sandbox provides four types of joints:
+
+1. Point Constraints
+2. Hinge Constraints
+3. Slider Constraints
+4. Fixed Constraints
+
+When you create a constraint, you will see an entry in the Hierarchy and an icon for the constraint in the Editor based on the type of constraint.  For each constraint, you will need to choose the two objects on which the constraint operates (A and B).  Simply click `Choose Node` and click on each object either in the Scene or in the Hierarchy.  
+
+!!! note:
+	Both Object A and Object B must have `Physics Enabled` checked.
+
+http://bulletphysics.org/mediawiki-1.5.8/index.php/Main_Page
+
+#### Point Constraints
+
+The Point Constraint works like a ball and socket to allow two objects to rotate along multiple axes.  It functions similar to a hinge if there is no force pushing an object in one dimension.  It has a pink selector icon that must be moved and/or rotated to allow the two objects to move in the desired manner.
+
+#### Hinge Constraints
+
+The Hinge Constraint works like a hinge allowing two objects to rotate on an axis.  With the Hinge Constraint selected and the Physics Editor expanded, you will need to rotate and/or move the pink highlight selector using the gizmo tool so that the hinge operates along the desired axis.
+
+#### Slider Constraints
+
+The Slider Constraint allows two objects to move along and rotated around a shared piston.
+
+#### Fixed Constraints
+
+A fixed constraint works similar to linking two objects into a parent child relationship.  However, it is different from the linking relationship because it is much easier to break the relationship when needed.
+
+### Motion and Rotation Locks
+
+You can create motion and rotation locks using the Physics Editor.  Motion and rotation is by default enabled in the X, Y, and Z directions.  You can disable or lock motion or rotation in one or more directions by unchecking the appropriate directions.  Motion and rotation locks are useful when creating a 2D side scrolling platform game.
 
 # Scripting
+
+Scripts will typically apply torque and forces to influence object behavior.  For example, to guide the motion of a boat based on WASD user input, the script might apply a torque to turn and force to move forward.
+
+```
+function tick()
+{
+	if (this._keysDown.indexOf("W") !== -1)
+	{
+	    var force = this.transformAPI.localToGlobal(-10 * mass, 0, 0);
+	    this.physicsAPI.addForceAtCenter(force[0], force[1], force[2]);
+	}
+
+	var vel = this.physicsAPI.getLinearVelocity();
+	vel = this.transformAPI.globalToLocalRotation(vel);
+	var speedTorqueFactor = (Math.abs(vel[0]));
+
+	if (this._keysDown.indexOf("A") !== -1)
+	{
+	    this.physicsAPI.addTorque(0, 0, speedTorqueFactor * mass);
+	    var force = this.transformAPI.localToGlobal(speedTorqueFactor * mass, 0, 0);
+	    this.physicsAPI.addTorque(force);
+	}
+```
+
+Lines 3 and 13 are the conditional statements for the W and A keys.  Other keys would be done simliarly.  See [Responding to User Input](creating-simulations.md#responding-to-user-input) in Creating Simulations guide for more information on handling user key presses.
+
+The physicsAPI defaults methods to world coordinates.  Line 5, 10, and 16 translate coordinates between different coordinate systems.  Specifically, it translates local coordinates of the boat object to the world coordinate system.  See [Transforms](scripting.md#transforms) in the Scripting guide for more information on translating coordinates.
+
+Finally, lines 6, 9, 11, 15, and 17 use the physicsAPI to change the motion of the boat.  Line 6 applies a force to the center of the object to move it forward.  In this case, the force is equal to -10 times the object's mass in its X direction (the red arrow of the gizmo tool).  The boat 3D model was modeled with its forward direction being -X, so a negative force moves it forward.
+
+![Boat direction](images/boat-gizmo-direction.png)
+
+Line 9 gets the current linear velocity of the boat and line 11 divides the velocity by 3 to create a `speedTorqueFactor` -- so the turning torque will torque more when the boat is going faster.  Line 15 and 17 make the boat turn using torque forces.  Line 15 turns the boat left by applying the torque in the Z direction -- like a compass rotating around the blue arrow of the gizmo tool.  Line 17 makes the boat carve or dip into the turn by applying the torque to its X direction -- rotating around the red arrow of the gizmo tool.
+
+See the [Scripting](scripting.md) article for more discussion about scripting simulations and see the [PhysicsAPI Reference](reference-guide/scripting-api.md#physicsapi-reference) for a detailed list of classes, properties, and methods you can use.  
