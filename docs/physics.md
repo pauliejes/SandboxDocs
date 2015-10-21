@@ -15,7 +15,7 @@ The Editor provides a Physics Editor that can be used to inspect or set the phys
 
 ![](images/physics-editor.png)
 
-When the Physics Editor is selected, any physics settings are shown in purple highlighting on the simulation object.  In the image above, the tank has multiple physics collision shapes (e.g., cylinders and boxes) you can see in purple highlighting.  When physics are enabled using the `Physics Enabled` checkbox, collisions and gravity apply to the simulation object.
+When the Physics Editor is selected, any physics settings are shown in purple highlighting on the simulation object.  In the image above, the tank has a compound collision shape (made up of cylinders and boxes) you can see in purple highlighting.  When physics are enabled using the `Physics Enabled` checkbox, collisions and gravity apply to the simulation object.
 
 ## Collisions
 
@@ -31,9 +31,11 @@ Collisions between objects requires the objects to have physics enabled and have
 
 ### Collisions based on Primitive Object Shapes
 
-If one of the primitive object types are used (i.e., Box, Sphere, Cylinder, Cone, or Plane), then that primitive object used for collisions can also have a length, width, height, or radius as appropriate.
+For the primitive objec types, the Engine already understands the appropriate collision shape. So, you won't see a collision type selector for a Sphere - the Engine assumes the collision type is also "Sphere".
 
-If you want the collision shape to be a composition of multiple primitive shapes, you will want to create child objects that have the `Collision Enabled` checkbox under the Physics Editor checked as shown in the tank example above.
+If you want the collision shape to be compound (made up of  multiple primitive shapes), you will want to create child objects that have the `Collision Enabled` checkbox under the Physics Editor checked as shown in the tank example above.
+
+
 
 ### Collisions based on 3D Model Meshes
 
@@ -47,6 +49,8 @@ In the image above, we can see that the rock is selected and the `Collision Type
 
 
 ## Forces
+
+Forces and torques are usually applied by your scripts to control the object in space. While you can set the initial values for linear and angular velocity from the editor, this is not usually necessary. Setting the velocities from the editor will cause the objects to begin the simulation with a given velocity or rotation. See [Scripting](#scripting) for information on how to control forces and torques while the simulation is running.
 
 ### Gravity
 
@@ -63,6 +67,10 @@ Torque is the tendancy of a force to rotate an object about an axis, fulcrum, or
 ### Force
 
 Forces can be applied through the Editor as a constant force to change the motion of an object along a given axis.  If the mass of an object is 1, and it has a `Constant Force` set to 9.8 along the Z axis, it will hover.  Any force unopposed by another force will move an object in the direction of the force.
+
+### Constant Torque and Constant Force
+
+These forces (as described above) are applied to your object at every simulation tick. This is a bit like attaching a motor to the object, which is always pushing in a given direction. 
 
 ## Constraints
 
