@@ -19,7 +19,7 @@ The VW Sandbox provides the Scripting API, which is accessible through the Scrip
 * The [AudioAPI](#audioapi) properties and methods control sound logic.
 * The [CommsAPI](#commsapi) properties and methods provide services for text and voice communications.
 
-# Scene
+# Scene Reference
 
 The `Scene` provides properties and methods accessible to all simulation objects.
 
@@ -63,7 +63,7 @@ ID: the ID of the simulation object to be found
 
 The simulation object matching the provided ID or null if no matching object is found.
 
-# Simulation Object
+# Simulation Object Reference
 
 Each [Simulation Object](#simulation-object) provides properties and methods to manipulate the simulation object.  
 
@@ -161,7 +161,7 @@ Returns the current simulation time stamp.  Duration since the server started th
 
 
 
-# ClientAPI
+# ClientAPI Reference
 
 ## Methods
 
@@ -259,7 +259,7 @@ The first person camera for the user.
 
 
 
-# traceAPI
+# traceAPI Reference
 
 ## Methods
 
@@ -311,7 +311,7 @@ The first person camera for the user.
 
 *()*
 
-# TransformAPI
+# TransformAPI Reference
 
 Facilitates manipulation of objects by allowing manipulation of their properties such as position, and rotation.
 
@@ -710,7 +710,7 @@ Value of the offset of the node.
 *(Nothing)*
 
 
-# PhysicAPI
+# PhysicsAPI Reference
 
 The Physics API provides methods to apply forces and velocities to objects.
 
@@ -916,7 +916,7 @@ Returns the current internal Angular Velocity value.
 Current internal angular velocity value.
 
 
-# AudioAPI
+# AudioAPI Reference
 
 The Audio API provides properties and methods to control sound logic.
 
@@ -1146,7 +1146,7 @@ The String identifier of the node deleted.
 *(Nothing)*
 
 
-# CommsAPI
+# CommsAPI Reference
 
 The communications properties and methods are used to chat, call, etc.
 

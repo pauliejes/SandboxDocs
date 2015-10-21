@@ -2,11 +2,11 @@
  
 A guide to create Graphical User Interfaces (GUIs) to provide users with start screens, preference selections, interacting dialogs, and more.
 
+![](images/start_screen_example.png)
+
 <h2>Contents</h2>
 
 [TOC]
-
-![](images/start_screen_example.png)
 
 # Creating Graphical User Interfaces
 

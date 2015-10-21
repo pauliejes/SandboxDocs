@@ -4,19 +4,21 @@
 
 Whether taking a photo in real life or rendering a virtual scene, lighting has a big part in the aesthetics of the final image. In this tutorial, I will show you the basics of lighting and materials in the Virtual World Sandbox.
 
-This tutorial assumes that you know how to find, log into, and navigate the Sandbox website, and that you know the basic camera controls and navigation in-world. You do NOT need any knowledge of lighting techniques, that’s what this tutorial is for! ![:)](http://vwf.adlnet.gov/r/wp-includes/images/smilies/icon_smile.gif)
+This tutorial assumes that you know how to find, log into, and navigate the Sandbox website, and that you know the basic camera controls and navigation in-world. You do NOT need any knowledge of lighting techniques, that’s what this tutorial is for!
 
 First, a brief disclaimer. By default, new Sandbox scenes are very brightly illuminated. Since it is hard to be subtle at full brightness, I have turned all the scene lights way down for all the screenshots in this tutorial. See the [Scene lighting](#Scene-lighting) section for information on how to do this.
 
-## <span id="Lights">Lights</span>
+## Lights
 
 Lights in the VW Sandbox behave close to what you’d expect from a light in the real world: they illuminate the scene in specific ways, depending on the type of light. The specifics will be covered in the following sections, but all lights are created in the same way. From the _Create_ menu, select _Lights_, and choose the type of light you are looking for. It will spawn at the center of your screen.
 
 ![Creating Lights](./images/lighting-and-materials/add_light_menu.png)
 
-**Note:** Lighting nodes cannot be selected by the rubber band selector (drag-clicking). You must either click on the light bulb icon in the scene or select the light from the Hierarchy tab to select.
+!!! note:
+    Lighting nodes cannot be selected by the rubber band selector (drag-clicking). You must either click on the light bulb icon in the scene or select the light from the Hierarchy tab to select.
 
-**Note:** Currently only the sun will cast shadows, though this may change in the future.
+!!! note:
+    Currently only the sun will cast shadows, though this may change in the future.
 
 There are three types of lighting in the Sandbox: point lights, directional lights, and spot lights. There is also a special case: scene lights. I will cover this first.
 
