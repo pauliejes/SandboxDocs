@@ -309,10 +309,10 @@ Uploading your 3D models as COLLADA is the easiest approach. If you have the COL
  Alternatively, you can upload the COLLADA model to the asset server and then load it into the Editor.  Assuming you are logged in, below are the steps:
 
 1.  `Asset` > `Create New Asset` > `From File`
-1.  Give the asset a name
-1.  Click `Create Asset` to upload the .dae
-1.  Click `Upload`
-1.  Drag and drop the model from the `Content Libraries` > `My Models`
+2.  Click or drag a file to `Create Asset` to queue the upload.
+3.  Give the asset a name, if you desire. Will default to the upload file name.
+4.  Click `Upload` to save the model.
+5.  Drag and drop the model from the `Content Libraries` > `My Models`
 
 !!! note:
 
