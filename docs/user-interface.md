@@ -57,6 +57,20 @@ The following is an example of using a style property to modify the border and b
   
 ```
 
+### Restricting User Interfaces to Specific Cameras
+
+You can restrict a UI by ID.  You can also say if the UI object is a child of a camera.
+
+Then go to the UI object and select:
+"Restrict to Ancestor Camera"
+
+!!! note: 
+	Don't restrict a bunch of UI objects to a specific camera.  Instead, put all the UI objects into a UI panel object, that is restricted once to the specific camera.
+
+
+
+[comment]: <> (add information about ### How to Make a Video UI Object)
+
 ### GUI Elements Hierarchical Organization
 
 When a GUI Element is created, it becomes a child of the currently selected simulation object, more likely the Scene Object.  However, GUI Elements can have children GUI Elements too.  So, when a GUI Element is created, it becomes a child of the currently selected GUI Element.
