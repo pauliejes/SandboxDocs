@@ -40,7 +40,6 @@ function getQueryVariable(variable) {
 			
 		})
 
-
 	})
 
 
@@ -50,8 +49,7 @@ function getQueryVariable(variable) {
 </head>
 
 <body style = "margin:0px">
-	<div id="clicktoplay" style= "font-family:sans-serif;opacity:0;font-size:100px;line-height:405px;text-align:center;position:absolute;width:100%;height:100%;pointer-events:none" >Click to Play</div>
-    <img id="preview" style= "position:absolute;width:100%;height:100%" src="../images/physics-editor.png"></img>
+	<div id="clicktoplay" style= "position:absolute;font-family:sans-serif;opacity:0;font-size:100px;line-height:405px;text-align:center;width:100%;pointer-events:none" >Click to Play</div>
+    <img id="preview" width="701" height="422" style="" src="../images/physics-mesh.png" />
 </body>
-
 </html>
