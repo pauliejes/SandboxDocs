@@ -7,17 +7,397 @@
 
 [TOC]
 
-# Overview
+# AudioAPI Reference
 
-The VW Sandbox provides the Scripting API, which is accessible through the ScriptEditor and is attached to each simulation object to define and manipulate simulation logic.
+The Audio API provides properties and methods to control sound logic.
 
-* The [Scene](#scene) provides properties and methods to manage the scene.
-* Each [Simulation Object](#simulation-object) provides properties and methods to manipulate the simulation object.
-* The [ClientAPI](#clientAPI) properties and methods provide information about clients of the multiplayer network.
-* The [TransformsAPI](#transformapi) properties and methods are used to manipulate the properties of simulation objects such as their position and rotation and convert between different coordinate systems.
-* The [PhysicsAPI](#physicsapi) methods apply forces and velocities to simulatoin objects.
-* The [AudioAPI](#audioapi) properties and methods control sound logic.
-* The [CommsAPI](#commsapi) properties and methods provide services for text and voice communications.
+
+## Properties
+
+Property             		| Type        | Brief Description
+-------------------- 		| ----------- | ------------------------------
+[end range](#end-range)     | Number      | The end of the audio range.
+[id](#id)            		| String      | The name to identify the sound.
+[looping](#looping)         | String      | Indicates whether or not the sound is to loop/repeat.
+[playing](#playing)        	| Boolean     | Indicates whether or not the sound is currently in use. 
+[position](#position)      	| Number      | Where the sound can be found.
+[sound](#sound)            	| String      | The file of the sound.
+[start range](#start-range) | Number      | The start of the audio range.
+[volume](#volume)           | Number      | How loud the sound should play. 
+
+
+### end range
+Type: `Number`  
+some number for the end
+
+### id
+Type: `String`  
+The name to identify the sound
+
+### looping
+Type: `Boolean`  
+Indicates whether or not the sound is to loop/repeat
+
+### playing
+Type: `Boolean`  
+Indicates whether or not the sound is currently in use 
+
+### position
+Type: `Number`  
+Where the sound can be found
+
+### sound
+Type: `String` `filename`  
+The file of the sound
+
+### start range
+Type: `Number`  
+some number for the start
+
+### volume
+Type: `Number`  
+How loud 
+
+
+## Methods
+
+Method             									| Return Type | Brief Description
+---------------------------------------				| ----------- | ------------------------------
+[calledMethod(id, name, params)](#calledmethodid-name-params)| void	      | 
+[deletedNode(id)](#deletednodeid)      				| void	      | Deletes the specified sound source node.
+[Initialize()](#initialize)      					| void	      | Start it up.
+[loop()](#loop)      								| void	      | Sets the `boolean` looping variable.
+[pause()](#pause)      								| void	      | Halts playback of sound, holding position along track to resume where left off.
+[play()](#play)      								| void	      | Plays sound.
+[playSound(url, loop, volume)](#playsoundurl-loop-volume)		| void	      | Lets GUI elements play sounds.
+[stop()](#stop)      								| void	      | Ends playback of sound, resets position.
+[updateSourcePosition()](#updatesourceposition)		| void	      | Get the position of the source object. 
+[updateVolume(camerapos)](#updatevolumecamerapos)   | void	      | HTML can't actually play it louder, however we can make it 'carry' farther by using the inverse and adjusting the range parameters of the falloff curve.
+[unloop()](#unloop)      							| void	      | Sets the `boolean` looping variable.
+
+### calledMethod(id, name, params)
+
+This is a good place to explain.
+
+**Arguments:**
+
+`id` (`String`)  
+The identification String.
+
+`name` (`String`)  
+The name of the command:
+
+* `playSound`
+
+	If the scene played the sound, it has no position and just plays at full volume. Nodes that are not the scene use their position to adjust the volume.
+
+* `pauseSound`
+* `stopSound`
+* `deleteSound`
+
+!!! note:
+	Only delete sound if you are sure the sound will not play again any time soon
+
+`params` (`Array`)  
+Array of additional parameters
+
+**Returns**
+*(Nothing)*
+
+
+### deletedNode(id)
+Deletes the specified sound source node.
+
+**Arguments:**
+`id` (`String`)  
+The String identifier of the node deleted.
+
+**Returns:**
+*(Nothing)*
+
+
+### Initialize()
+start it up
+
+**Arguments:**
+*(None)*
+
+**Returns:**
+*(Nothing)*
+
+
+
+### loop()
+Sets the `boolean` looping variable.
+
+**Arguments:**
+*(None)*
+
+**Returns:**
+*(Nothing)*
+
+
+
+### pause()
+Halts playback of sound, holding position along track to resume where left off.
+
+**Arguments:**
+*(None)*
+
+**Returns:**
+*(Nothing)*
+
+
+### play()
+Plays sound.
+
+**Arguments:**
+*(None)*
+
+**Returns:**
+*(Nothing)*
+
+
+### playSound(url, loop, volume)
+
+Lets GUI elements play sounds.
+
+**Arguments:**
+
+`url` (`String`)  
+String specifying the URL.
+
+`loop` (`Boolean`)  
+Boolean indicating if the sound should be looped.
+
+`volume` (`number`)  
+How loud.
+
+**Returns:**
+
+*(Nothing)*
+
+### stop()
+Ends playback of sound, resets position.
+
+**Arguments:**
+*(None)*
+
+**Returns:**
+*(Nothing)*
+
+### unloop()
+Sets the `boolean` looping variable.
+
+**Arguments:**
+*(None)*
+
+**Returns:**
+*(Nothing)*
+
+### updateSourcePosition
+
+Get the position of the source object. 
+
+!!! note:
+	The 3D driver keeps track of the position.
+
+**Arguments:**
+*(None)*
+
+**Returns:**
+*(Nothing)*
+
+### updateVolume(camerapos)
+
+HTML can't actually play it louder, however we can make it 'carry' farther by using the inverse and adjusting the range parameters of the falloff curve.
+
+**Arguments**
+`camerapos` (`number`)  
+Location of camera.
+
+**Returns**
+*(Nothing)*
+
+
+
+
+### ticked()
+Update the sound volume based on the position of the camera and the position of the object
+
+**Arguments:**
+*(None)*
+
+**Returns:**
+*(Nothing)*
+
+
+# ClientAPI Reference
+
+## Methods
+
+
+### getUserNameForConnectionID(id)
+
+Talk more about that.
+
+**Arguments:**
+
+`id` (`String`)  
+String unique to each user.
+
+**Returns:**
+
+`name` (`String`)  
+The user's name.
+
+
+### getConnectionIDForUserName(name)
+
+Discuss the various ins and outs.
+
+**Arguments:**
+
+`name` (`String`)  
+The user's name.
+
+**Returns:**
+
+`id` (`String`)  
+String unique to each user.
+
+
+### getAvatarForUserName(name)
+
+What's in a name?
+
+**Arguments:**
+
+`name` (`String`)  
+The user's name.
+
+**Returns:**
+
+`avatar` (`node`)  
+The user's 3D avatar. 
+
+
+### focus(cid, nodeID)
+
+Focus.
+
+**Arguments:**
+
+`cid` (`String`)  
+The client's unique identification string.
+
+`nodeID` (`String`)  
+The node's unique identification string.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### getCameraIDForClient(id)
+
+Give me that thingamajig, so I can take a picture.
+
+**Arguments:**
+
+`id` (`String`)  
+The client's unique identification string.
+
+**Returns:**
+
+`cameraID` (`String`)  
+The camera's unique identification string.
+
+
+### getCameraForClient(id)
+
+Now that we've got the camera, we are out of here!
+
+**Arguments:**
+
+`id` (`String`)  
+The client's unique identification string.
+
+**Returns:**
+
+`camera` (`node`)  
+The first person camera for the user.
+
+
+# CommsAPI Reference
+
+The communications properties and methods are used to chat, call, etc.
+
+## Methods
+
+
+### PM(from_client_id, to_client_id)
+
+Yeah, I don't know what that is. Private Messaging??
+
+**Arguments:**
+
+`from_client_id` (`String`)  
+Sending client's identification string.
+
+`to_client_id` (`String`)  
+Receiving client's identification string.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### Chat()
+
+Opens a chat window.
+
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+*(Nothing)*
+
+
+### VideoCall(from_client_id, to_client_id)
+
+Establishes video call between two users.
+
+**Arguments:**
+
+`from_client_id` (`String`)  
+Sending client's identification string.
+
+`to_client_id` (`String`)  
+Receiving client's identification string.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### VoiceCall(from_client_id, to_client_id)
+
+Establishes voice call between two users.
+
+**Arguments:**
+
+`from_client_id` (`String`)  
+Sending client's identification string.
+
+`to_client_id` (`String`)  
+Receiving client's identification string.
+
+**Returns:**
+
+*(Nothing)*
 
 # Scene Reference
 
@@ -62,6 +442,214 @@ ID: the ID of the simulation object to be found
 `foundObject` (`object`)
 
 The simulation object matching the provided ID or null if no matching object is found.
+
+
+# PhysicsAPI Reference
+
+The Physics API provides methods to apply forces and velocities to objects.
+
+
+## Methods
+
+
+### addForceAtCenter(x, y, z, coords)
+
+Applies force at center of node. Accepts X, Y, Z, and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Force applied along x-axis.
+
+`y` (`number`)  
+Force applied along y-axis.
+
+`z` (`number`)  
+Force applied along z-axis.
+
+`coords` (`number`) (optional)  
+Coordinates where force is to be applied.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### addForceImpulse(x, y, z, coords)
+
+Accepts X, Y, Z, and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Force applied along x-axis.
+
+`y` (`number`)  
+Force applied along y-axis.
+
+`z` (`number`)  
+Force applied along z-axis.
+
+`coords` (`number`) (optional)  
+Coordinates where force is to be applied.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### addTorqueImpulse(x, y, z, coords)
+
+Accepts X, Y, Z, and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Torque applied along x-axis.
+
+`y` (`number`)  
+Torque applied along y-axis.
+
+`z` (`number`)  
+Torque applied along z-axis.
+
+`coords` (`number`) (optional)  
+Coordinates where torque is to be applied.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### addTorque(x, y, z, coords)
+
+Accepts X, Y, Z, and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Torque applied along x-axis.
+
+`y` (`number`)  
+Torque applied along y-axis.
+
+`z` (`number`)  
+Torque applied along z-axis.
+
+`coords` (`number`) (optional)  
+Coordinates where torque is to be applied.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### addForceOffset(x, y, z, x1, y1, z1, coords)
+
+Accepts X, Y, Z, X1, Y1, Z1 and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Force applied along x-axis.
+
+`y` (`number`)  
+Force applied along y-axis.
+
+`z` (`number`)  
+Force applied along z-axis.
+
+`x1` (`number`)  
+Force applied along second x-axis.
+
+`y1` (`number`)  
+Force applied along second y-axis.
+
+`z1` (`number`)  
+Force applied along second z-axis.
+
+`coords` (`number`) (optional)  
+Coordinates where force is to be applied.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### setLinearVelocity(x, y, z, coords)
+
+Sets the linear velocity. Accepts X, Y, Z, and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Velocity applied along x-axis.
+
+`y` (`number`)  
+Velocity applied along y-axis.
+
+`z` (`number`)  
+Velocity applied along z-axis.
+
+`coords` (`number`) (optional)  
+Origin coordinates of linear velocity.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### setAngularVelocity(x, y, z, coords)
+
+Sets the angular velocity. Accepts X, Y, Z, and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Velocity applied along x-axis.
+
+`y` (`number`)  
+Velocity applied along y-axis.
+
+`z` (`number`)  
+Velocity applied along z-axis.
+
+`coords` (`number`) (optional)  
+Coordinates where angular velocity is to be applied.
+
+**Returns:**
+
+*(Nothing)*
+
+
+### getLinearVelocity()
+
+Returns the current internal Linear Velocity value.
+
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+`linearVelocity` (`number`)  
+Current internal linear velocity value.
+
+
+### getAngularVelocity()
+
+Returns the current internal Angular Velocity value.
+
+**Arguments:**
+
+*(None)*  
+
+**Returns:**
+
+`angularVelocity` (`number`)  
+Current internal angular velocity value.
+
+
 
 # Simulation Object Reference
 
@@ -161,101 +749,6 @@ Returns the current simulation time stamp.  Duration since the server started th
 
 
 
-# ClientAPI Reference
-
-## Methods
-
-
-### getUserNameForConnectionID(id)
-
-Talk more about that.
-
-**Arguments:**
-
-`id` (`String`)  
-String unique to each user.
-
-**Returns:**
-
-`name` (`String`)  
-The user's name.
-
-
-### getConnectionIDForUserName(name)
-
-Discuss the various ins and outs.
-
-**Arguments:**
-
-`name` (`String`)  
-The user's name.
-
-**Returns:**
-
-`id` (`String`)  
-String unique to each user.
-
-
-### getAvatarForUserName(name)
-
-What's in a name?
-
-**Arguments:**
-
-`name` (`String`)  
-The user's name.
-
-**Returns:**
-
-`avatar` (`node`)  
-The user's 3D avatar. 
-
-
-### focus(cid, nodeID)
-
-Focus.
-
-**Arguments:**
-
-`cid` (`String`)  
-The client's unique identification string.
-
-`nodeID` (`String`)  
-The node's unique identification string.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### getCameraIDForClient(id)
-
-Give me that thingamajig, so I can take a picture.
-
-**Arguments:**
-
-`id` (`String`)  
-The client's unique identification string.
-
-**Returns:**
-
-`cameraID` (`String`)  
-The camera's unique identification string.
-
-
-### getCameraForClient(id)
-
-Now that we've got the camera, we are out of here!
-
-**Arguments:**
-
-`id` (`String`)  
-The client's unique identification string.
-
-**Returns:**
-
-`camera` (`node`)  
-The first person camera for the user.
 
 
 
@@ -704,513 +1197,6 @@ I'm really not sure.
 
 `fromOffset` (`number`)  
 Value of the offset of the node.
-
-**Returns:**
-
-*(Nothing)*
-
-
-# PhysicsAPI Reference
-
-The Physics API provides methods to apply forces and velocities to objects.
-
-
-## Methods
-
-
-### addForceAtCenter(x, y, z, coords)
-
-Applies force at center of node. Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Force applied along x-axis.
-
-`y` (`number`)  
-Force applied along y-axis.
-
-`z` (`number`)  
-Force applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where force is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### addForceImpulse(x, y, z, coords)
-
-Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Force applied along x-axis.
-
-`y` (`number`)  
-Force applied along y-axis.
-
-`z` (`number`)  
-Force applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where force is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### addTorqueImpulse(x, y, z, coords)
-
-Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Torque applied along x-axis.
-
-`y` (`number`)  
-Torque applied along y-axis.
-
-`z` (`number`)  
-Torque applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where torque is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### addTorque(x, y, z, coords)
-
-Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Torque applied along x-axis.
-
-`y` (`number`)  
-Torque applied along y-axis.
-
-`z` (`number`)  
-Torque applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where torque is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### addForceOffset(x, y, z, x1, y1, z1, coords)
-
-Accepts X, Y, Z, X1, Y1, Z1 and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Force applied along x-axis.
-
-`y` (`number`)  
-Force applied along y-axis.
-
-`z` (`number`)  
-Force applied along z-axis.
-
-`x1` (`number`)  
-Force applied along second x-axis.
-
-`y1` (`number`)  
-Force applied along second y-axis.
-
-`z1` (`number`)  
-Force applied along second z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where force is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### setLinearVelocity(x, y, z, coords)
-
-Sets the linear velocity. Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Velocity applied along x-axis.
-
-`y` (`number`)  
-Velocity applied along y-axis.
-
-`z` (`number`)  
-Velocity applied along z-axis.
-
-`coords` (`number`) (optional)  
-Origin coordinates of linear velocity.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### setAngularVelocity(x, y, z, coords)
-
-Sets the angular velocity. Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Velocity applied along x-axis.
-
-`y` (`number`)  
-Velocity applied along y-axis.
-
-`z` (`number`)  
-Velocity applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where angular velocity is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### getLinearVelocity()
-
-Returns the current internal Linear Velocity value.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-`linearVelocity` (`number`)  
-Current internal linear velocity value.
-
-
-### getAngularVelocity()
-
-Returns the current internal Angular Velocity value.
-
-**Arguments:**
-
-*(None)*  
-
-**Returns:**
-
-`angularVelocity` (`number`)  
-Current internal angular velocity value.
-
-
-# AudioAPI Reference
-
-The Audio API provides properties and methods to control sound logic.
-
-
-## Properties
-
-
-### id
-Type: `String`  
-The name to identify the sound
-
-
-### sound
-Type: `String` `filename`  
-The file of the sound
-
-
-### position
-Type: `number`  
-Where the sound can be found
-
-
-### volume
-Type: `number`  
-How loud
-
-
-### end range
-Type: `number`  
-some number for the end
-
-
-### start range
-Type: `number`  
-some number for the start
-
-
-### looping
-Type: `boolean`  
-Indicates whether or not the sound is to loop/repeat
-
-
-### playing
-Type: `boolean`  
-Indicates whether or not the sound is currently in use  
-
-
-## Methods
-
-
-### play()
-
-Plays sound.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-### pause()
-
-Halts playback of sound, holding position along track to resume where left off.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-### stop()
-
-Ends playback of sound, resets position.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-### loop()
-
-Sets the `boolean` looping variable.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-### unloop()
-
-Sets the `boolean` looping variable.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-### updateSourcePosition
-
-Get the position of the source object. **Note:** The 3D driver keeps track of the position.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-### updateVolume(camerapos)
-
-HTML can't actually play it louder, however we can make it 'carry' farther by using the inverse and adjusting the range parameters of the falloff curve.
-
-**Arguments**
-
-`camerapos` (`number`)  
-Location of camera.
-
-**Returns**
-
-*(Nothing)*
-
-
-### Initialize()
-
-start it up
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-### playSound(url, volume)
-
-Lets GUI elements play sounds.
-
-**Arguments:**
-
-`url` (`String`)  
-String specifying the URL.
-
-`volume` (`number`)  
-How loud.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### calledMethod(id, name, params)
-
-This is a good place to explain.
-
-**Arguments:**
-
-`id` (`String`)  
-The identification String.
-
-`name` (`String`)  
-The name of the command:
-
-* `playSound`
-
-	If the scene played the sound, it has no position and just plays at full volume. Nodes that are not the scene use their position to adjust the volume.
-
-* `pauseSound`
-
-* `stopSound`
-
-* `deleteSound`
-
-	**Note:** only delete sound if you are sure the sound will not play again any time soon
-
-`params` (`Array`)  
-Array of additional parameters
-
-**Returns**
-
-*(Nothing)*
-
-### ticked()
-
-Update the sound volume based on the position of the camera and the position of the object
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-### deletedNode(id)
-
-Deletes the specified sound source node.
-
-**Arguments:**
-
-`id` (`String`)  
-The String identifier of the node deleted.
-
-**Returns:**
-
-*(Nothing)*
-
-
-# CommsAPI Reference
-
-The communications properties and methods are used to chat, call, etc.
-
-## Methods
-
-
-### PM(from_client_id, to_client_id)
-
-Yeah, I don't know what that is. Private Messaging??
-
-**Arguments:**
-
-`from_client_id` (`String`)  
-Sending client's identification string.
-
-`to_client_id` (`String`)  
-Receiving client's identification string.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### Chat()
-
-Opens a chat window.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-*(Nothing)*
-
-
-### VideoCall(from_client_id, to_client_id)
-
-Establishes video call between two users.
-
-**Arguments:**
-
-`from_client_id` (`String`)  
-Sending client's identification string.
-
-`to_client_id` (`String`)  
-Receiving client's identification string.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### VoiceCall(from_client_id, to_client_id)
-
-Establishes voice call between two users.
-
-**Arguments:**
-
-`from_client_id` (`String`)  
-Sending client's identification string.
-
-`to_client_id` (`String`)  
-Receiving client's identification string.
 
 **Returns:**
 
