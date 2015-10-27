@@ -41,7 +41,7 @@ If you want the collision shape to be compound (made up of  multiple primitive s
 Simulation objects that are 3D models can also use the Mesh collision type.  However, using the mesh shape for collisions is more expensive computationally than collisions based on primitive shapes, so primitive shapes are recommended for collisions.
 
 <div>
-	<iframe width="705" height="430" frameBorder="0" src="../widgets/worldPreview?url=https%3A%2F%2Fsandbox.adlnet.gov%2F100%2Fadl%2Fsandbox%2Fexample_physicsmeshcollision%2F&img=..%2Fimages%2Fphysics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
+	<iframe width="705" height="430" frameBorder="0" src="../widgets/worldPreview.html?url=https%3A%2F%2Fsandbox.adlnet.gov%2F100%2Fadl%2Fsandbox%2Fexample_physicsmeshcollision%2F&img=..%2Fimages%2Fphysics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
 </div>
 
 [comment]:<>(http%3A%2F%2Flocalhost%3A3000%2Fadl%2Fsandbox%2Fexample_physicsmeshcollision%2F)
