@@ -41,9 +41,22 @@ If you want the collision shape to be compound (made up of  multiple primitive s
 Simulation objects that are 3D models can also use the Mesh collision type.  However, using the mesh shape for collisions is more expensive computationally than collisions based on primitive shapes, so primitive shapes are recommended for collisions.
 
 <div>
-	<iframe width="705" height="430" frameBorder="0" src="../widgets/worldPreview.html?url=https%3A%2F%2Fsandbox.adlnet.gov%2F100%2Fadl%2Fsandbox%2Fexample_physicsmeshcollision%2F&img=..%2Fimages%2Fphysics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
+	<iframe class="preview" width="705" height="430" frameBorder="0" src="" url="https://sandbox.adlnet.gov/100/adl/sandbox/example_physicsmeshcollision/" img="../images/physics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
 </div>
 
+
+<div>
+	<iframe class="preview" width="705" height="430" frameBorder="0" src="" url="https://sandbox.adlnet.gov/100/adl/sandbox/example_physicsmeshcollision/" img="../images/physics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
+</div>
+
+
+<div>
+	<iframe class="preview" width="705" height="430" frameBorder="0" src="" url="https://sandbox.adlnet.gov/100/adl/sandbox/example_physicsmeshcollision/" img="../images/physics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
+</div>
+
+
+
+<script type="text/javascript"> function setupFrames() {for (var i in $("iframe.preview")) {var imageurl = $($("iframe.preview")[i]).attr('img'); var previewsrc = $($("iframe.preview")[i]).attr('url'); (function(i, imageurl, previewsrc) {var frame = $("iframe.preview")[i]; frame.src = "about:blank"; frame.onload = function() {var doc = $("iframe.preview")[i].contentDocument; if (doc) {$(doc.body).css('overflow', "hidden"); var imgstr = '<img style="position:absolute; width:100%;height:100%" id="' + imageurl + '" src="' + window.location + imageurl + '"></img>'; var ClickToPlay = '<div style="font-family:sans-serif;font-size:100px;text-align:center;line-height:' + $(doc).height() + 'px;background:white;opacity: 0;position: absolute;width: 100%;height: 100%;z-index: 10;top: 0%;left: 0%;">Click To Play</div>'; var ClickToPlayDiv = $(ClickToPlay).appendTo(doc.body); var img = $(doc.body).append(imgstr); $(ClickToPlayDiv).mouseover(function() {$(ClickToPlayDiv).css('opacity', '0.75'); }); $(ClickToPlayDiv).mouseout(function() {$(ClickToPlayDiv).css('opacity', '0.0'); }); $(ClickToPlayDiv).click(function() {setupFrames(); frame.src = previewsrc; }); } } })(i, imageurl, previewsrc); } } setupFrames(); </script>
 [comment]:<>(http%3A%2F%2Flocalhost%3A3000%2Fadl%2Fsandbox%2Fexample_physicsmeshcollision%2F)
 
 &nbsp;
