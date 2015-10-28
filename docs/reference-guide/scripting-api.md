@@ -811,7 +811,7 @@ OneHitPerMesh 	| Boolean 	| Default is false.  If true, stop finding additional 
 
 ### sphereCast(origin, radius, options)
 
-Casts a ray from an origin in all directions to a given radius, returning an array of all intersections.  Used to see if an object is within the sphere's radius.  All parameters are world space.
+Used to find all polygons with an invisible sphere defined by radius, returning an array of all intersections.  All parameters are world space.
 
 **Parameters**
 
