@@ -765,8 +765,8 @@ Returns the current simulation time stamp.  Duration since the server started th
 
 Method  								| Return Type 	 | Description
 --------------------------------------- | -------------- | --------------------
-rayCast(origin, direction, options)		| [FaceIntersect](#faceintersect-reference)	| Casts a ray from an origin in a given direction, sorting all the intersections with simulation objects, and returning the nearest intersection.  All parameters are world space.
-sphereCast(origin, radius, options) 	| [FaceIntersect](#faceintersect-reference) | Casts a ray from an origin in all directions to a given radius, returning an array of all intersections.  Used to see if an object is within the sphere's radius.  All parameters are world space.
+[rayCast(origin, direction, options)](#raycastorigin-direction-options)		| [FaceIntersect](#faceintersect-reference)	| Casts a ray from an origin in a given direction, sorting all the intersections with simulation objects, and returning the nearest intersection.  All parameters are world space.
+[sphereCast(origin, radius, options)](#spherecastorigin-radius-options) 	| [FaceIntersect](#faceintersect-reference) | Casts a ray from an origin in all directions to a given radius, returning an array of all intersections.  Used to see if an object is within the sphere's radius.  All parameters are world space.
 
 
 
