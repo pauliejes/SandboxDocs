@@ -399,6 +399,206 @@ Receiving client's identification string.
 
 *(Nothing)*
 
+# Face Reference
+
+In a [FaceIntersect](#faceintersect-reference), the face is an object representing the polygon of the mesh that was intersected.
+
+Name 		| Type 			| Description
+----------- | --------- 	| --------------------
+area		| Number 		| The face area
+norm 		| Array[3] 		| The face normal
+v0 			| Array[3]		| A vert
+v1 			| Array[3] 		| A vert
+v2 			| Array[3] 		| A vert
+
+See [FaceIntersect](#faceintersect-reference).
+
+# FaceIntersect Reference
+
+An object representing the intersection of a ray or sphere cast with a simulation object.
+
+Name 		| Type 				| Description
+----------- | --------- 		| --------------------
+distance	| Number 			| Distance in meters between the intersection and the origin of the cast.
+face 		| [Face](#face-reference) | An object representing the intersecting mesh polygon.
+node 		| [Simulation Object](#simulation-object-reference) | The Simulation Object that the ray intersected.
+norm 		| Array[3] 			| A vector (x, y, z) representing the normal of the intersection.
+object 		| THREE.Mesh 		| The three.js graphics object of the intersection. 
+point 		| Array[3] 			| The point of the intersection, in world space.
+
+See the [traceAPI's](#traceapi-reference) [rayCast(origin, direction, options)](#raycastorigin-direction-options) and [sphereCast(origin, radius, options)](#spherecastorigin-radius-options) methods, which return [FaceIntersect](#faceintersect-reference) objects.
+
+
+# PhysicsAPI Reference
+
+The Physics API provides methods to apply forces, torques, and velocities to objects.
+
+
+## Methods
+
+!!! note:
+	The VW Sandbox physics methods implement Bullet Physics.  Please refer to the Bullet Physics manual for more information.
+
+!!! note:
+	All methods that take a vector X, Y, Z as an argument, can take individual X, Y, Z values or an Array[3] as the first argument as a convenience.
+
+
+Method 																| Return Type 	| Brief Description
+------------------------------------------------------------------- | -------------	| -----------------
+[addForceAtCenter(x, y, z)](addforceatcenterx-y-z)					| void			| Applies a force at the center of mass of the object.
+[addForceImpulse(x, y, z)](addforceimpulsex-y-z)					| void			| Applies a given acceleration represented by x, y, z (in world coordinates) to the object regardless of its mass.
+[addForceOffset(x, y, z, x1, y1, z1)](addforceoffsetx-y-z-x1-y1-z1)	| void 			| Applies a force x, y, z at the position offset x1, y1, z1 from the object's center of mass in world coordinates.
+[addTorque(x, y, z)](addtorquex-y-z)								| void			| Apply a rotational force whose direction is represented by x, y, z to the center of mass of the object.
+[addTorqueImpulse(x, y, z)](addtorqueimpulsex-y-z) 					| void			| Applies a given angular acceleration represented by x, y, z (in world coordinates) to the object regardless of its mass.
+[getAngularVelocity()](getangularvelocity)							| Array[3]		| Returns the vector x, y, z representing the rate of rotation in world coordinates.
+[getLinearVelocity()](getlinearvelocity)							| Array[3]		| Returns the vector x, y, z representing the rate of change of its position in world coordinates.
+[setAngularVelocity(x, y, z)](setangularvelocityx-y-z-coords) 		| void			| Immediately set the object's rate of rotation to the vector x, y, z in world coordinates.
+[setLinearVelocity(x, y, z)](setlinearvelocityx-y-z-coords) 		| void			| Immediately set the object's rate of change of its position to the vector x, y, z in world coordinates.
+[wake()](#wake)														| void			| Make an object wake up from its sleeping state.
+
+
+### addForceAtCenter(x, y, z)
+
+Applies a force at the center of mass of the object.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | ----------------------
+x 			| Number 	| Force applied along X axis.
+y 			| Number 	| Force applied along Y axis.
+z 			| Number 	| Force applied along Z axis.
+
+
+### addForceImpulse(x, y, z, coords)
+
+Applies a given acceleration represented by x, y, z (in world coordinates) to the object regardless of its mass.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | ----------------------
+x 			| Number 	| Force applied along X axis.
+y 			| Number 	| Force applied along Y axis.
+z 			| Number 	| Force applied along Z axis.
+
+
+### addForceOffset(x, y, z, x1, y1, z1)
+
+Applies a force x, y, z at the position offset x1, y1, z1 from the object's center of mass in world coordinates.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | ----------------------
+x 			| Number 	| Force applied along X axis.
+y 			| Number 	| Force applied along Y axis.
+z 			| Number 	| Force applied along Z axis.
+x1 			| Number 	| X component of offset position.
+y1 			| Number 	| Y component of offset position.
+z1 			| Number 	| Z component of offset position.
+
+
+### addTorque(x, y, z)
+
+Apply a rotational force whose direction is represented by x, y, z to the center of mass of the object.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | ----------------------
+x 			| Number 	| Torque applied along X axis.
+y 			| Number 	| Torque applied along Y axis.
+z 			| Number 	| Torque applied along Z axis.
+
+
+### addTorqueImpulse(x, y, z)
+
+Applies a given angular acceleration represented by x, y, z (in world coordinates) to the object regardless of its mass.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | ----------------------
+x 			| Number 	| Torque applied along X axis.
+y 			| Number 	| Torque applied along Y axis.
+z 			| Number 	| Torque applied along Z axis.
+
+
+### getAngularVelocity()
+
+Returns the vector x, y, z representing the rate of rotation in world coordinates.
+
+**Return**
+
+`Array[3]` - the rate of rotation in world coordinates.
+
+
+### getLinearVelocity()
+
+Returns the vector x, y, z representing the rate of change of its position in world coordinates.
+
+**Arguments:**
+
+*(None)*
+
+**Returns:**
+
+`number` -   
+Current internal linear velocity value.
+
+
+
+
+
+
+### setAngularVelocity(x, y, z, coords)
+
+Sets the angular velocity. Accepts X, Y, Z, and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Velocity applied along x-axis.
+
+`y` (`number`)  
+Velocity applied along y-axis.
+
+`z` (`number`)  
+Velocity applied along z-axis.
+
+`coords` (`number`) (optional)  
+Coordinates where angular velocity is to be applied.
+
+**Returns:**
+
+*(Nothing)*
+
+
+
+### setLinearVelocity(x, y, z, coords)
+
+Sets the linear velocity. Accepts X, Y, Z, and Coordinates.
+
+**Arguments:**
+
+`x` (`number`)  
+Velocity applied along x-axis.
+
+`y` (`number`)  
+Velocity applied along y-axis.
+
+`z` (`number`)  
+Velocity applied along z-axis.
+
+`coords` (`number`) (optional)  
+Origin coordinates of linear velocity.
+
+**Returns:**
+
+*(Nothing)*
+
+
 # Scene Reference
 
 The `Scene` provides properties and methods accessible to all simulation objects.
@@ -444,212 +644,6 @@ ID: the ID of the simulation object to be found
 The simulation object matching the provided ID or null if no matching object is found.
 
 
-# PhysicsAPI Reference
-
-The Physics API provides methods to apply forces and velocities to objects.
-
-
-## Methods
-
-
-### addForceAtCenter(x, y, z, coords)
-
-Applies force at center of node. Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Force applied along x-axis.
-
-`y` (`number`)  
-Force applied along y-axis.
-
-`z` (`number`)  
-Force applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where force is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### addForceImpulse(x, y, z, coords)
-
-Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Force applied along x-axis.
-
-`y` (`number`)  
-Force applied along y-axis.
-
-`z` (`number`)  
-Force applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where force is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### addTorqueImpulse(x, y, z, coords)
-
-Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Torque applied along x-axis.
-
-`y` (`number`)  
-Torque applied along y-axis.
-
-`z` (`number`)  
-Torque applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where torque is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### addTorque(x, y, z, coords)
-
-Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Torque applied along x-axis.
-
-`y` (`number`)  
-Torque applied along y-axis.
-
-`z` (`number`)  
-Torque applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where torque is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### addForceOffset(x, y, z, x1, y1, z1, coords)
-
-Accepts X, Y, Z, X1, Y1, Z1 and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Force applied along x-axis.
-
-`y` (`number`)  
-Force applied along y-axis.
-
-`z` (`number`)  
-Force applied along z-axis.
-
-`x1` (`number`)  
-Force applied along second x-axis.
-
-`y1` (`number`)  
-Force applied along second y-axis.
-
-`z1` (`number`)  
-Force applied along second z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where force is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### setLinearVelocity(x, y, z, coords)
-
-Sets the linear velocity. Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Velocity applied along x-axis.
-
-`y` (`number`)  
-Velocity applied along y-axis.
-
-`z` (`number`)  
-Velocity applied along z-axis.
-
-`coords` (`number`) (optional)  
-Origin coordinates of linear velocity.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### setAngularVelocity(x, y, z, coords)
-
-Sets the angular velocity. Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Velocity applied along x-axis.
-
-`y` (`number`)  
-Velocity applied along y-axis.
-
-`z` (`number`)  
-Velocity applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where angular velocity is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### getLinearVelocity()
-
-Returns the current internal Linear Velocity value.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-`linearVelocity` (`number`)  
-Current internal linear velocity value.
-
-
-### getAngularVelocity()
-
-Returns the current internal Angular Velocity value.
-
-**Arguments:**
-
-*(None)*  
-
-**Returns:**
-
-`angularVelocity` (`number`)  
-Current internal angular velocity value.
-
-
 
 # Simulation Object Reference
 
@@ -689,7 +683,20 @@ The [AudioAPI](#audioapi) endpoint.
 
 ### Bind
 
-### Broadcast
+### broadcast(signal, data, range)
+
+Calls the `signal` method passing the `data` array to any objects within the given `range`. 
+
+**Arguments:**
+
+`signal` (`String`)  
+The method name to be called on listening objects.
+
+`data` (`Array`)  
+An array of data to be passed to listening objects.
+
+`range` (`number`)  
+The distance in meters within which listening objects will receive the broadcast message.
 
 ### Client
 
@@ -756,448 +763,361 @@ Returns the current simulation time stamp.  Duration since the server started th
 
 ## Methods
 
-### frustCast(origin, direction, options)
-
-**Arguments:**
-
-`origin` (``)  
-
-
-`direction` (``)  
+Method  								| Return Type 	 | Description
+--------------------------------------- | -------------- | --------------------
+rayCast(origin, direction, options)		| [FaceIntersect](#faceintersect-reference)	| Casts a ray from an origin in a given direction, sorting all the intersections with simulation objects, and returning the nearest intersection.  All parameters are world space.
+sphereCast(origin, radius, options) 	| [FaceIntersect](#faceintersect-reference) | Casts a ray from an origin in all directions to a given radius, returning an array of all intersections.  Used to see if an object is within the sphere's radius.  All parameters are world space.
 
 
-`options` (``)  
-
-**Returns:**
-
-*()*
 
 ### rayCast(origin, direction, options)
 
-**Arguments:**
+Casts a ray from an origin in a given direction, sorting all the intersections with simulation objects, and returning the nearest intersection.  All parameters are world space.
 
-`origin` (``)  
+```javascript
+		var offset = this.transformAPI.localToGlobalRotation(0, 0, 1);
+        var center = this.transformAPI.getPosition();
+        var hit = this.Scene.traceAPI.rayCast(center, offset,
+        {
+            ignore: [findviewnode(this.id)]
+        });
+        if (hit && hit.distance < 2)
+        {
+            this.explode();
+            return;
+        }
+```
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | --------------------
+origin 		| Array[3] 	| A point in world space representing the origin of the ray.
+direction  	| Array[3] 	| A direction the ray will travel in world space.
+options 	| Object 	| A javascript object representing options (see below)
+
+**options**
+
+Name 			| Type 		| Description
+--------------- | --------- | -------------------------
+filter 			| function 	| A function to programatically decide to ignore a given object during intersection testing.  The function takes a parameter representing a threejs object and must return true or false.
+ignore 			| Array 	| An array of object IDs to ignore.
+OneHitPerMesh 	| Boolean 	| Default is false.  If true, stop finding additional interesctions once an intersection is found with each mesh object.
+
+**Return**
+
+[FaceIntersect](#faceintersect-reference) - the nearest intersection of the ray cast. 
 
 
-`direction` (``)  
+### sphereCast(origin, radius, options)
+
+Casts a ray from an origin in all directions to a given radius, returning an array of all intersections.  Used to see if an object is within the sphere's radius.  All parameters are world space.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | --------------------
+origin 		| Array[3] 	| A point in world space representing the origin of the sphere.
+radius  	| Number 	| The radius of the sphere defining which intersecting simulation objects will be returned.
+options 	| Object 	| A javascript object representing options (see below)
+
+**options**
+
+Name 			| Type 		| Description
+--------------- | --------- | -------------------------
+filter 			| function 	| A function to programatically decide to ignore a given object during intersection testing.  The function takes a parameter representing a threejs object and must return true or false.
+ignore 			| Array 	| An array of object IDs to ignore.
+OneHitPerMesh 	| Boolean 	| Default is false.  If true, stop finding additional interesctions once an intersection is found with each mesh object.
+
+**Return**
+
+[FaceIntersect](#faceintersect-reference)[] - an Array of intersections. 
 
 
-`options` (``)  
-
-**Returns:**
-
-*()*
-
-### sphereCast(origin, direction, options)
-
-**Arguments:**
-
-`origin` (``)  
-
-
-`direction` (``)  
-
-
-`options` (``)  
-
-**Returns:**
-
-*()*
 
 # TransformAPI Reference
 
-Facilitates manipulation of objects by allowing manipulation of their properties such as position, and rotation.
-
-Facilitates movement, rotation, and more of simulation objects.
-
+The TransformAPI provides methods to access and change an object's position and rotation.  The TransformAPI also provides methods to translate vectors between coordinate systems.
 
 ## Methods
 
-### move(x, y, z, coordinateSystem)
-
-Moves a node
-
-**Arguments:**
-
-`x` (`number`)  
-Movement along the x-axis in meters.
-
-`y` (`number`)  
-Movement along the y-axis in meters.
-
-`z` (`number`)  
-Movement along the z-axis in meters.
-
-`coordinateSystem` (`String`)  
-Specify either 'global' or 'local' coordinate system.
-
-**Returns:**
-
-*(Nothing)*
+Methods | Return Type | Brief Description
+------- | ----------- | -----------------
+[getPosition()](#getposition) | Array[3] | Return an object's position relative to its parent.
+[getRotation()](#getrotation) | Array[3]  | Returns an object's rotation relative to its parent (in Euler XYZ format).
+[getScale()](#getscale) | Array[3]  | Return an object's scale relative to its parent.
+[getWorldPosition()](#getworldposition) | Array[3]  | Return an object's global position (relative to the Scene).
+[globalRotationToLocalRotation(x, y, z)](#globalrotationtolocalrotationx-y-z) | Array[3] | Converts a global rotation to a local rotation.
+[globalToLocal(x, y, z)](#globaltolocalx-y-z) | Array[3] | Moves a point from global space to local space.
+[globalToLocalRotation(x, y, z)](#globaltolocalrotationx-y-z) | Array[3] | Converts a global direction vector into the local coordinate system.
+[localToGlobal(x, y, z)](#localtoglobalx-y-z) | Array[3] | Moves a point from local space to global space.
+[localToGlobalRotation(x, y, z)](#localtoglobalrotationx-y-z) | Array[3] | Converts a local direction vector into the global coordinate system.
+[lookAt(t, clamp, axis, up, fromOffset)](#lookatt-clamp-axis-up-fromoffset) | void | Set the rotation of the object to align the `axis` parameter ('X', 'Y', '-Y', 'Z') to point at the `t` position (Array[3]).  The up value ('X', 'Y', or 'Z') defines the rotation around the lookAt vector.  `clamp` ('X', 'Y', or 'Z') can be used to force rotation on only one axis (defaults to null).  `fromOffset` (Array[3]) is a position added to the object's current position (defaults to null).
+[move(x, y, z, coordinateSystem)](#movex-y-z-coordinatesystem) | void | Moves an object by a given amount in meters.
+[rotate(x, y, z, coordinateSystem)](#rotatex-y-z-coordinatesystem) | void | Rotates the object by given amount (angles in degrees)
+[rotateX(angle, coordinateSystem)](#rotatexangle-coordinatesystem) | void | Rotates the object by the given angle (in degrees) around the (local or global) x-axis.
+[rotateY(angle, coordinateSystem)](#rotateyangle-coordinatesystem) | void | Rotates the object by the given angle (in degrees) around the (local or global) y-axis.
+[rotateZ(angle, coordinateSystem)](#rotatezangle-coordinatesystem) | void | Rotates the object around the z-axis.
+[rotateAroundAxis(angle, axis, coordinateSystem)](rotatearoundaxisangle-axis-coordinatesystem) | void | Rotates object around given axis by the given angle.
+[setPosition(x, y, z)](#setpositionx-y-z) | void | Set an object's position relative to its parent.
+[setRotation(x, y, z)](#setrotationx-y-z) | void | Set an object's rotation by the given angles (in degrees) (in Euler XYZ order) relative to its parent.
+[setScale(x, y, z)](#setscalex-y-z) | void | Set an object's scale relative to its parent.
 
 
 ### getPosition()
 
-Return a node's local position?
+Return an object's position relative to its parent.
 
-**Arguments:**
+**Return**
 
-*(None)*
-
-**Returns:**
-
-`localPosition` (`Array of numbers`)  
-Array containing local x, y, and z coordinates.
-
-
-### getWorldPosition()
-
-Return a node's global position.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-`globalPosition` (`Array of numbers`)  
-Array containing global x, y, and z coordinates.
-
-
-### localToGlobal(x, y, z)
-
-Exchanges local x, y, and z coordinates for global x, y, and z coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Movement along the x-axis in meters.
-
-`y` (`number`)  
-Movement along the y-axis in meters.
-
-`z` (`number`)  
-Movement along the z-axis in meters.
-
-**Returns:**
-
-`vector` (`Array of numbers`)  
-Array containing global x, y, and z coordinates.
-
-
-### localToGlobalRotation(x, y, z)
-
-Converts local values of rotation to global values of rotation.
-
-**Arguments:**
-
-`x` (`number`)  
-Movement around the x-axis in meters.
-
-`y` (`number`)  
-Movement around the y-axis in meters.
-
-`z` (`number`)  
-Movement around the z-axis in meters.
-
-**Returns:**
-
-`vector` (`Array of numbers`)  
-Array containing global x, y and z values of rotation.
-
-
-### globalToLocal(x, y, z)
-
-Exchanges global x, y, and z coordinates for local x, y, and z coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Position along the x-axis.
-
-`y` (`number`)  
-Position along the y-axis.
-
-`z` (`number`)  
-Position along the z-axis.
-
-**Returns:**
-
-`vector` (`Array[x coordinate, y coordinate, z coordinate]`)  
-Array containing local x, y, and z coordinates.
-
-
-### globalToLocalRotation(x, y, z)
-
-Converts local values of rotation to global values of rotation.
-
-**Arguments:**
-
-`x` (`number`)  
-Movement around the x-axis in meters.
-
-`y` (`number`)  
-Movement around the y-axis in meters.
-
-`z` (`number`)  
-Movement around the z-axis in meters.
-
-**Returns:**
-
-`vector` (`Array[x coordinate, y coordinate, z coordinate]`)  
-Array containing global x, y and z values of rotation.
-
-
-### globalRotationToLocalRotation(x, y, z)
-
-Converts global rotation values to local rotation values.
-
-`x` (`number`)  
-Movement around the x-axis in meters.
-
-`y` (`number`)  
-Movement around the y-axis in meters.
-
-`z` (`number`)  
-Movement around the z-axis in meters.
-
-**Returns:**
-
-`vector` (`Array[x coordinate, y coordinate, z coordinate]`)  
-Array containing local x, y and z values of rotation.
-
-
-### setPosition(x, y, z)
-
-Accepts X, Y, and Z coordinates to establish a new position.
-
-**Arguments:**
-
-`x` (`number`)  
-Position along the x-axis.
-
-`y` (`number`)  
-Position along the y-axis.
-
-`z` (`number`)  
-Position along the z-axis.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### rotate(x, y, z, coordinateSystem)
-
-Accepts X, Y, Z and Coordinate System and rotates.
-
-**Arguments:**
-
-`x` (`number`)  
-Angle of movement around the x-axis.
-
-`y` (`number`)  
-Angle of movement around the y-axis.
-
-`z` (`number`)  
-Angle of movement around the z-axis.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### rotateX(angle, coordinateSystem)
-
-Rotates the node around the x-axis.
-
-**Arguments:**
-
-`angle` (`number`)  
-Angle of movement around the x-axis.
-
-`coordinateSystem` (`String`)
-Designates whether local, global, or parent coordinates are given.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### rotateY(angle, coordinateSystem)
-
-Rotates the node around the y-axis.
-
-**Arguments:**
-
-`angle` (`number`)  
-Angle of movement around the y-axis.
-
-`coordinateSystem` (`String`)
-Designates whether local, global, or parent coordinates are given.
-
-**Returns:**
-
-*(Nothing)*
-
-
-### rotateZ(angle, coordinateSystem)
-
-Rotates the node around the z-axis.
-
-**Arguments:**
-
-`angle` (`number`)  
-Angle of movement around the z-axis.
-
-`coordinateSystem` (`String`)
-Designates whether local, global, or parent coordinates are given.
-
-**Returns:**
-
-*(Nothing)*
-
-
-Coordinates:
-	Local
-	Global
-	Parent
-
-
-
-### rotateAroundAxis(angle, axis, coordinateSystem)
-
-Accepts Angle, Axis, and Coordinate System and rotates node around given axis.
-
-**Arguments:**
-
-`angle` (`number`)  
-The angle for rotation.
-
-`axis` (`Array of numbers`)
-Designates which axis for rotation.
-
-`coordinateSystem` (`String`)
-Designates which coordinate system is given (Local, global, or parent).
-
-**Returns:**
-
-*(Nothing)*
+`Array[3]` - object position [x, y, z] relative to its parent.
 
 
 ### getRotation()
 
-By some form of magic, returns a number representing the rotation
+Returns an object's rotation relative to its parent (in Euler XYZ format).
 
-**Arguments:**
+**Return**
 
-*(None)*
-
-**Returns:**
-
-`euler` (`Array of numbers`)  
-Angles of rotation around x, y and z axes.
-
-
-### setRotation(x, y, z)
-
-Sets the rotation of a node given specified angles.
-
-**Arguments:**
-
-`x` (`number`)  
-Angle of rotation around the x-axis.
-
-`y` (`number`)  
-Angle of rotation around the y-axis.
-
-`z` (`number`)  
-Angle of rotation around the z-axis.
-
-**Returns:**
-
-*(Nothing)*
+`Array[3]` - angles (in degrees) of rotation [x, y, z] relative to its parent.
 
 
 ### getScale()
 
-Returns the magnitude of the node.
+Return an object's scale relative to its parent.
 
-**Arguments:**
+**Return**
 
-*(None)*
-
-**Returns:**
-
-`vector` (`Array of numbers`)  
-Array of x, y, and z vectors.
+`Array[3]` - object scale [x, y, z] relative to its parent.
 
 
-### setScale(x, y, z)
+### getWorldPosition()
 
-Accepts X, Y, and Z to set the scale of a node.
+Return an object's global position relative to the Scene.
 
-**Arguments:**
+**Return**
 
-`x` (`number`)  
-Scale of the x-axis.
-
-`y` (`number`)  
-Scale of the y-axis.
-
-`z` (`number`)  
-Scale of the z-axis.
-
-**Returns:**
-
-*(Nothing)*
+`Array[3]` - object's global position [x, y, z] relative to the Scene.
 
 
-### scaleMatrix(x, y, z, mat)
+### globalRotationToLocalRotation(x, y, z)
 
-Accepts X, Y, Z, and Matrix.
+Converts a global rotation to a local rotation.
 
-**Arguments:**
+**Parameters**
 
-`x` (`number`)  
-Scale of the x-axis.
+Name 	| Type 		| Description
+------- | ---------	| -----------
+x 		| Number 	| Movement around the X axis in meters.
+y 		| Number	| Movement around the Y axis in meters.
+z 		| Number	| Movement around the Z axis in meters.
 
-`y` (`number`)  
-Scale of the y-axis.
+**Return**
 
-`z` (`number`)  
-Scale of the z-axis.
+`Array[3]` - containing local x, y and z values of local rotation.
 
-`mat` (`Array of numbers`)  
-Current matrix of the node.
 
-**Returns:**
 
-`matrix` (`Array of numbers`)  
-Updated matrix of the node being scaled.
+### globalToLocal(x, y, z)
+
+Moves a point from global space to local space.
+
+**Parameters**
+
+Name 	| Type 		| Description
+------- | ---------	| -----------
+x 		| Number 	| Position along the X axis in global space.
+y 		| Number	| Position along the Y axis in global space.
+z 		| Number	| Position along the Z axis in global space.
+
+**Return**
+
+`Array[3]` - a point [x, y, z] in local space.
+
+
+### globalToLocalRotation(x, y, z)
+
+Converts a global direction vector into the local coordinate system.
+
+**Parameters**
+
+Name 	| Type 		| Description
+------- | ---------	| -----------
+x 		| Number 	| X component of global direction.
+y 		| Number	| Y component of global direction.
+z 		| Number	| Z component of global direction.
+
+
+**Return**
+
+`Array[3]` - A direction vector [x, y, z] in the local coordinate system.
+
+
+
+### localToGlobal(x, y, z)
+
+Moves a point from local space to global space.
+
+**Parameters**
+
+Name 	| Type 		| Description
+------- | ---------	| -----------
+x 		| Number 	| Position along the X axis in local space.
+y 		| Number	| Position along the Y axis in local space.
+z 		| Number	| Position along the Z axis in local space.
+
+**Return**
+
+`Array[3]` - a point [x, y, z] in global space.
+
+
+### localToGlobalRotation(x, y, z)
+
+Converts a local direction vector into the global coordinate system.
+
+**Parameters**
+
+Name 	| Type 		| Description
+------- | ---------	| -----------
+x 		| Number 	| X component of local direction.
+y 		| Number	| Y component of local direction.
+z 		| Number	| Z component of local direction.
+
+
+**Return**
+
+`Array[3]` - A direction vector [x, y, z] in the global coordinate system.
+
 
 
 ### lookAt(t, clamp, axis, up, fromOffset)
 
-Facilitates examination of a node.
+Set the rotation of the object to align the `axis` parameter ('X', 'Y', '-Y', 'Z') to point at the `t` position (Array[3]).  The up value ('X', 'Y', or 'Z') defines the rotation around the lookAt vector.  `clamp` ('X', 'Y', or 'Z') can be used to force rotation on only one axis (defaults to null).  `fromOffset` (Array[3]) is a position added to the object's current position (defaults to null).
 
-**Arguments:**
+**Parameters**
 
-`t` (`String`)  
-Identification string of the target being looked at.
+Name 		| Type 		| Description
+-----------	| ---------	| -----------
+t 			| Array[3] 	| The position to look at.
+clamp		| String	| Force rotation on only 'X', 'Y', or 'Z'.  Defaults to null.
+axis		| String	| The axis the object should align with 'X', 'Y', '-Y', or 'Z'.
+up 			| String 	| Defines the up axis of the lookAt vector 'X', 'Y', or 'Z'.
+fromOffset 	| Array[3]	| A position added to the object's current position.  Defaults to null.
 
-`clamp` (`String`)  
-Axis held steady while examining the node.
 
-`axis` (`String`)  
-Designates the axis. More needed. Default value is 'Y'.
 
-`up` (`String`)  
-I'm really not sure.
+### move(x, y, z, coordinateSystem)
 
-`fromOffset` (`number`)  
-Value of the offset of the node.
+Moves an object by a given amount in meters.
 
-**Returns:**
+**Parameters**
 
-*(Nothing)*
+Name 				| Type 		| Description
+------------------- | ---------	| -----------
+x 					| Number 	| Meters to move along the X axis.
+y 					| Number	| Meters to move along the Y axis.
+z 					| Number	| Meters to move along the Z axis.
+coordinateSystem 	| Number	| The coordinate system of the input ('global' or 'local').
+
+
+### rotate(x, y, z, coordinateSystem)
+
+Rotates the object by given amount (angles in degrees)
+
+**Parameters**
+
+Name 				| Type 		| Description
+------------------- | ---------	| -----------
+x 					| Number 	| Angle on the X axis to rotate in degrees.
+y 					| Number	| Angle on the Y axis to rotate in degrees.
+z 					| Number	| Angle on the Z axis to rotate in degrees.
+coordinateSystem 	| Number	| The coordinate system of the input ('global' or 'local').
+
+
+### rotateX(angle, coordinateSystem)
+
+Rotates the object by the given angle (in degrees) around the (local or global) X axis.
+
+**Parameters**
+
+Name 				| Type 		| Description
+------------------- | ---------	| -----------
+angle 				| Number 	| Angle on the X axis to rotate in degrees.
+coordinateSystem 	| Number	| The coordinate system of the input ('global' or 'local').
+
+
+### rotateY(angle, coordinateSystem)
+
+Rotates the object by the given angle (in degrees) around the (local or global) Y axis.
+
+**Parameters**
+
+Name 				| Type 		| Description
+------------------- | ---------	| -----------
+angle 				| Number 	| Angle on the Y axis to rotate in degrees.
+coordinateSystem 	| Number	| The coordinate system of the input ('global' or 'local').
+
+
+### rotateZ(angle, coordinateSystem)
+
+Rotates the object by the given angle (in degrees) around the (local or global) Y axis.
+
+**Parameters**
+
+Name 				| Type 		| Description
+------------------- | ---------	| -----------
+angle 				| Number 	| Angle on the Y axis to rotate in degrees.
+coordinateSystem 	| Number	| The coordinate system of the input ('global' or 'local').
+
+
+### rotateAroundAxis(angle, axis, coordinateSystem)
+
+Rotates object around given axis by the given angle.
+
+**Parameters**
+
+Name 				| Type 		| Description
+------------------- | ---------	| -----------
+angle 				| Number 	| Angle on the Y axis to rotate in degrees.
+axis				| String	| The axis of rotation 'X', 'Y', or 'Z'.		| 
+coordinateSystem 	| Number	| The coordinate system of the input ('global' or 'local').
+
+
+### setPosition(x, y, z)
+
+Set an object’s position relative to its parent.
+
+**Parameters**
+
+Name 	| Type 		| Description
+------- | ---------	| -----------
+x 		| Number 	| Position along the X axis relative to its parent.
+y 		| Number	| Position along the Y axis relative to its parent.
+z 		| Number	| Position along the Z axis relative to its parent.
+
+
+
+### setRotation(x, y, z)
+
+Set an object’s rotation by the given angles (in degrees) (in Euler XYZ order) relative to its parent.
+
+**Parameters**
+
+Name 	| Type 		| Description
+------- | ---------	| -----------
+x 		| Number 	| Angle (in degrees) of rotation around the X axis relative to its parent.
+y 		| Number	| Angle (in degrees) of rotation around the Y axis relative to its parent.
+z 		| Number	| Angle (in degrees) of rotation around the Z axis relative to its parent.
+
+
+### setScale(x, y, z)
+
+Set an object’s scale relative to its parent.
+
+**Parameters**
+
+Name 	| Type 		| Description
+------- | ---------	| -----------
+x 		| Number 	| Scale along the X axis relative to its parent.
+y 		| Number	| Scale along the Y axis relative to its parent.
+z 		| Number	| Scale along the Z axis relative to its parent.

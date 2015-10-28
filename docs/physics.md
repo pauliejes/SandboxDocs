@@ -9,9 +9,9 @@ The VW Sandbox engine provides physics based on ammo.js -- a port of the Bullet 
 
 # Creating Physics through the Editor
 
-The VW Sandbox provides physics that simulation objects can use to provide physics effects like collisions, gravity, torque, and forces.  These effects can be accessed through the Editor and through the [Scripting API](reference-guide/scripting-api.md#physicsapi-reference).
+The VW Sandbox provides physics that simulation objects can use to provide physics effects like collisions, gravity, torque, and forces.  These effects can be accessed through the editor and through the [Scripting API](reference-guide/scripting-api.md#physicsapi-reference).
 
-The Editor provides a Physics Editor that can be used to inspect or set the physics attributes of any simulation object.
+The editor provides a Physics Editor that can be used to inspect or set the physics attributes of any simulation object.
 
 ![](images/physics-editor.png)
 
@@ -29,78 +29,33 @@ Collisions between objects requires the objects to have physics enabled and have
 * Plane
 * Mesh
 
-### Collisions based on Primitive Object Shapes
+### Collisions Based on Primitive Object Shapes
 
-For the primitive objec types, the Engine already understands the appropriate collision shape. So, you won't see a collision type selector for a Sphere -- the Engine assumes the collision type is also Sphere.
+For the primitive object types, the engine already understands the appropriate collision shape. So, you won't see a collision type selector for a `Sphere` -- the engine assumes the collision type is also `Sphere`.
 
 If you want the collision shape to be compound (made up of  multiple primitive shapes), you will want to create child objects that have the `Collision Enabled` checkbox under the Physics Editor checked as shown in the tank example above.
 
 
-### Collisions based on 3D Model Meshes
+### Collisions Based on 3D Model Meshes
 
-Simulation objects that are 3D models can also use the Mesh collision type.  However, using the mesh shape for collisions is more expensive computationally than collisions based on primitive shapes, so primitive shapes are recommended for collisions.
+Simulation objects that are 3D models can also use the `Mesh` collision type.  However, using the mesh shape for collisions is more expensive computationally than collisions based on primitive shapes, so primitive shapes are recommended for collisions unless a mesh shape is required.
 
-<div>
-	<iframe class="preview" width="705" height="430" frameBorder="0" src="" url="https://sandbox.adlnet.gov/100/adl/sandbox/example_physicsmeshcollision/" img="../images/physics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
-</div>
+!!! note:
+	The current embedded simulation below loads the mesh example in the Edit mode, so the Editor tools are shown.  The Editor Camera is located at 0, 0, 0 in the Scene.  To play the simulation:  
 
+	1. Click the image to Play
+	2. Select the furniture item (the object on the left)
+	3. Click on the Focus toolbar button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png)) to focus the Editor Camera on the furniture.  
+	4. Click the Select None toolbar button (![Select None Icon](images/toolbar_icons/select_none.png))
+	5. Click the Play button to start the simulation.
 
-<div>
-	<iframe class="preview" width="705" height="430" frameBorder="0" src="" url="https://sandbox.adlnet.gov/100/adl/sandbox/example_physicsmeshcollision/" img="../images/physics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
-</div>
+<iframe class="preview" width="705" height="430" frameBorder="0" src="" url="http://sandbox.adlnet.gov/adl/sandbox/example_physicsmeshcollision/" img="../images/physics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
 
-
-<div>
-	<iframe class="preview" width="705" height="430" frameBorder="0" src="" url="https://sandbox.adlnet.gov/100/adl/sandbox/example_physicsmeshcollision/" img="../images/physics-mesh.png">This embedded simulation requires your Web browser support iframes.  It appears it is unable to do so.</iframe>
-</div>
-
-
-
-<script type = "text/javascript" > 
-function setupFrames(){
-	for (var i in $("iframe.preview"))
-	{
-		var imageurl = $($("iframe.preview")[i]).attr('img');
-		var previewsrc = $($("iframe.preview")[i]).attr('url');
-		(function(i, imageurl, previewsrc)
-		{
-			var frame = $("iframe.preview")[i];
-			frame.src = "about:blank";
-			frame.onload = function()
-			{
-				var doc = $("iframe.preview")[i].contentDocument;
-				if (doc)
-				{
-					$(doc.body).css('overflow', "hidden");
-					var imgstr = '<img style="position:absolute; width:100%;height:100%" id="' + imageurl + '" src="' + window.location + imageurl + '"></img>';
-					var ClickToPlay = '<div style="font-family:sans-serif;font-size:100px;text-align:center;line-height:' + $(doc).height() + 'px;background:white;opacity: 0;position: absolute;width: 100%;height: 100%;z-index: 10;top: 0%;left: 0%;">Click To Play</div>';
-					var ClickToPlayDiv = $(ClickToPlay).appendTo(doc.body);
-					var img = $(doc.body).append(imgstr);
-					$(ClickToPlayDiv).mouseover(function()
-					{
-						$(ClickToPlayDiv).css('opacity', '0.75');
-					});
-					$(ClickToPlayDiv).mouseout(function()
-					{
-						$(ClickToPlayDiv).css('opacity', '0.0');
-					});
-					$(ClickToPlayDiv).click(function()
-					{
-						setupFrames();
-						frame.src = previewsrc;
-					});
-				}
-			}
-		})(i, imageurl, previewsrc);
-	}
-}
-setupFrames(); 
-</script>
-[comment]:<>(http%3A%2F%2Flocalhost%3A3000%2Fadl%2Fsandbox%2Fexample_physicsmeshcollision%2F)
+[comment]:<>(http://localhost:3000/adl/sandbox/example_physicsmeshcollision/)
 
 &nbsp;
 
-In the image above, we can see that the spheres fall around the furniture fitting the mesh very precisely.
+In the simulation above, we can see that the spheres fall around the furniture fitting the mesh very precisely.  When this precise behavior is required, mesh shapes are helpful.  Just remember the computational cost of this precision.
 
 
 ## Forces
@@ -140,12 +95,13 @@ You can make point constaints and hinge constraints to create joints between two
 3. Slider Constraints
 4. Fixed Constraints
 
+!!! note:
+	The VW Sandbox constraints implement the Bullet Physics constraints.  You can learn more about these constraints from the [Bullet Physics wiki](http://bulletphysics.org/mediawiki-1.5.8/index.php/Main_Page).
+
 When you create a constraint, you will see an entry in the Hierarchy and an icon for the constraint in the Editor based on the type of constraint.  For each constraint, you will need to choose the two objects on which the constraint operates (A and B).  Simply click `Choose Node` and click on each object either in the Scene or in the Hierarchy.  
 
 !!! note:
 	Both Object A and Object B must have `Physics Enabled` checked.
-
-http://bulletphysics.org/mediawiki-1.5.8/index.php/Main_Page
 
 #### Point Constraints
 
@@ -171,7 +127,7 @@ You can create motion and rotation locks using the Physics Editor.  Motion and r
 
 Scripts will typically apply torque and forces to influence object behavior.  For example, to guide the motion of a boat based on WASD user input, the script might apply a torque to turn and force to move forward.
 
-```
+```javascript
 function tick()
 {
 	if (this._keysDown.indexOf("W") !== -1)
@@ -202,4 +158,6 @@ Finally, lines 6, 9, 11, 15, and 17 use the physicsAPI to change the motion of t
 
 Line 9 gets the current linear velocity of the boat and line 11 divides the velocity by 3 to create a `speedTorqueFactor` -- so the turning torque will torque more when the boat is going faster.  Line 15 and 17 make the boat turn using torque forces.  Line 15 turns the boat left by applying the torque in the Z direction -- like a compass rotating around the blue arrow of the gizmo tool.  Line 17 makes the boat carve or dip into the turn by applying the torque to its X direction -- rotating around the red arrow of the gizmo tool.
 
-See the [Scripting](scripting.md) article for more discussion about scripting simulations and see the [PhysicsAPI Reference](reference-guide/scripting-api.md#physicsapi-reference) for a detailed list of classes, properties, and methods you can use.  
+See the [Scripting](scripting.md) article for more discussion about scripting simulations and see the [PhysicsAPI Reference](reference-guide/scripting-api.md#physicsapi-reference) for a detailed list of methods you can use.  
+
+<script type = "text/javascript" > function setupFrames(){for (var i in $("iframe.preview")) {var imageurl = $($("iframe.preview")[i]).attr('img'); var previewsrc = $($("iframe.preview")[i]).attr('url'); (function(i, imageurl, previewsrc) {var frame = $("iframe.preview")[i]; frame.src = "about:blank"; frame.onload = function() {var doc = $("iframe.preview")[i].contentDocument; if (doc) {$(doc.body).css('overflow', "hidden"); var imgstr = '<img style="position:absolute; width:100%;height:100%" id="' + imageurl + '" src="' + window.location + imageurl + '"></img>'; var ClickToPlay = '<div style="font-family:sans-serif;font-size:100px;text-align:center;line-height:' + $(doc).height() + 'px;background:white;opacity: 0;position: absolute;width: 100%;height: 100%;z-index: 10;top: 0%;left: 0%;">Click To Play</div>'; var ClickToPlayDiv = $(ClickToPlay).appendTo(doc.body); var img = $(doc.body).append(imgstr); $(ClickToPlayDiv).mouseover(function() {$(ClickToPlayDiv).css('opacity', '0.75'); }); $(ClickToPlayDiv).mouseout(function() {$(ClickToPlayDiv).css('opacity', '0.0'); }); $(ClickToPlayDiv).click(function() {setupFrames(); frame.src = previewsrc; }); } } })(i, imageurl, previewsrc); } } setupFrames(); </script>

@@ -138,7 +138,7 @@ When an object is selected, clicking this button will select the object's parent
 Move the camera such that it frames the selected object in the view. This will also reset the camera mode to orbit mode if it is not already in orbit mode.  Also available from the `Camera` > `Focus Selected` menu item.
 
 !!! note:
-	The focus to camera toolbar button is very helpful for navigating.  Simply select the object you want to focus on (either through the hierarchy or by clicking the object directly) and then click the Focus Camera button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png)).
+	The focus to selected object toolbar button is very helpful for navigating.  Simply select the object you want to focus on (either through the hierarchy or by clicking the object directly) and then click the Focus Camera button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png)).
 
 ![Copy Icon](images/toolbar_icons/copy.png) &nbsp;&nbsp;&nbsp; **Copy**
 
@@ -392,19 +392,19 @@ The first two methods find objects based on the object's `DisplayName` property,
 
 The easiest and most intuitive way to find and access an object is to use the `children_by_name` object based on the `Scene`.  Assume `sphere1` is a child of the `Scene`:
 
-```
+```javascript
 var sphere = this.Scene.children_by_name["sphere1"];
 ```
 
 If `sphere2` is a child of `sphere1`, then we could find and access `sphere2` continuing this method:
 
-```
+```javascript
 var sphere2 = this.Scene.children_by_name["sphere1"].children_by_name["sphere2"];
 ```
 
 You don't have to go through the `Scene` to access objects.  You can refer directly to the children of the selected object.  Assuming we are selected on `sphere1` (the parent of `sphere2`), we could do the following:
 
-```
+```javascript
 var sphere2 = this.children_by_name["sphere2"];
 ```
 
@@ -412,14 +412,14 @@ var sphere2 = this.children_by_name["sphere2"];
 
 The `Scene` provides a `findNode` method we can use to find any object in the `Scene`.  This allows us to find `sphere2` from *any* object without knowing the hierarchy.
 
-```
+```javascript
 var sphere2 = this.Scene.findNode("sphere2");
 ```
 ### children
 
 If you want to iterate through all children of an object, you'll want to use the `children` JavaScript object.
 
-```
+```javascript
 for (i = 0; i < this.children.length; i++)
 {
     console.log(this.children[i].DisplayName);
@@ -433,7 +433,7 @@ for (i = 0; i < this.children.length; i++)
 
 Objects ar runtime are given an ID that uniquely identifies them across the multiplayer network.  If you know this ID, the `Scene` provides the `findNodeByID` method that we can use to access the object.
 
-```
+```javascript
 var sphere2 = this.Scene.findNodeByID("sphere2-vwf-Nec9b207d");
 ```
 
@@ -444,7 +444,7 @@ var sphere2 = this.Scene.findNodeByID("sphere2-vwf-Nec9b207d");
 
 You can quickly and easily reference the parent object using `.parent`.  From the tick() method of a child, `sphere2` in this example, we can access the parent (`sphere1`):
 
-```
+```javascript
 var sphere1 = this.parent;
 ```
 
@@ -458,7 +458,7 @@ The `tick()` method is called by the engine 20 times every second.  It is the he
 
 Every simulation object has a Scripting API accessible to it via the `this` object.  To move an object, you can add logic to the `tick` method to change the current position or rotation of an object.  Every 1/20th of a second, the engine will call the tick() method.  Let's add the following line to the tick method of an object to move it .1 units along its X axis:
 
-```
+```javascript
 this.tranformAPI.move(.1, 0, 0);
 ```
 
@@ -466,7 +466,7 @@ this.tranformAPI.move(.1, 0, 0);
 
 By default, the `move` method uses the Global coordinate system.  If the object we had selected had been rotated, we could have the object move along the X axis of its Local coordinate system, by specifying the coordinate system for the movement.
 
-```
+```javascript
 function tick()
 {
 	this.transformAPI.move(.1, 0, 0, this.transformAPI.COORDINATES.LOCAL);
@@ -475,7 +475,7 @@ function tick()
 
 The TransformAPI also provies the rotate(x,y,z,coordinates) method, which will rotate the object around the given axis.  If we wanted to rotate a sphere around the Z axis like a disco ball, we could write the following in the sphere's tick method:
 
-```
+```javascript
 function tick()
 {
 	this.transformAPI.rotate(0,0,1);
@@ -491,7 +491,7 @@ To allow a player to control an object using traditional WASD keyboard controls,
 
 This ready code is boilerplate code for binding and unbinding handler methods for keyUp and keyDown events.  It uses intermediate functions _ku and _kd to ensure multiple handlers are not bound redundantly.
 
-```
+```javascript
 function ready()
 {
 	this.Scene.unbind("keyDown", this._kd);
@@ -520,7 +520,7 @@ The ready method first unbinds the intermediate functions if they are defined to
 
 The `_keyDown` method is where we can write code to process the keys being pressed.  Note that an array is defined as a local property because multiple keys can be down at the same time.  So, switch tabs to the Properties tab and define a new property to serve as the array called `_keysDown` with value `[]` (the empty array).  
 
-```
+```javascript
 function _keyDown(e, d)
 {
 	// if the key being pressed is not in the array
@@ -536,7 +536,7 @@ function _keyDown(e, d)
 
 The `_keyUp` method is where we can write code to process the keys being released.
 
-```
+```javascript
 function _keyUp(e, d)
 {
 	// if the key being released is in the array
