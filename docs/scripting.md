@@ -157,7 +157,7 @@ See the [broadcast() method](reference-guide/scripting-api.md#broadcastsignal-da
 
 ## Raycasting to find Simulation Object Intersections
 
-There are many situations where you will want to cast an invisible ray from an origin in a given direction of a Scene to find the nearest intersecting simulation object.  The [rayCast()](#reference-guide\scripting-api.md#raycastorigin-direction-options) method of the [traceAPI](#reference-guide\scripting-api.md#traceapi-reference) provides the means to do this.  See the example below where raycast is used to see if a shot fired from a gun's barrel hits another simulation object in the Scene.
+There are many situations where you will want to cast an invisible ray from an origin in a given direction of a Scene to find the nearest intersecting simulation object.  The [rayCast()](reference-guide\scripting-api.md#raycastorigin-direction-options) method of the [traceAPI](reference-guide\scripting-api.md#traceapi-reference) provides the means to do this.  See the example below where raycast is used to see if a shot fired from a gun's barrel hits another simulation object in the Scene.
 
 ```javascript
 var origin = this.children_by_name["Barrel"].transformAPI.getWorldPosition();
