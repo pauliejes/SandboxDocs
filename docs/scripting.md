@@ -186,7 +186,7 @@ Line 5 calls the raycast, which you can see is a part of the traceAPI that the S
 
 Line 10 then tests to see if an intersection was found.  If an intersection was found, represented by the hit variable, then we want to do something about the hit.  Line 12 checks to ensure we can find the object that was hit (hit.node) and if that object has a `hit` method defined.  If the object that was hit exists and has a `hit` method, then line 14 calls that object's hit method passing as a parameter an Array containing the intersection point in world space and the number 5 which is used by the object's hit method.
 
-See the [traceAPI](#reference-guide\scripting-api.md#traceapi-reference) for more information.
+See the [traceAPI](reference-guide/scripting-api.md#traceapi-reference) for more information.
 
 ## Vector Functions
 
