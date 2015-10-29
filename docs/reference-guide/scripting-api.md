@@ -9,227 +9,68 @@
 
 # AudioAPI Reference
 
-The Audio API provides properties and methods to control sound logic.
-
-
-## Properties
-
-Property             		| Type        | Brief Description
--------------------- 		| ----------- | ------------------------------
-[end range](#end-range)     | Number      | The end of the audio range.
-[id](#id)            		| String      | The name to identify the sound.
-[looping](#looping)         | String      | Indicates whether or not the sound is to loop/repeat.
-[playing](#playing)        	| Boolean     | Indicates whether or not the sound is currently in use. 
-[position](#position)      	| Number      | Where the sound can be found.
-[sound](#sound)            	| String      | The file of the sound.
-[start range](#start-range) | Number      | The start of the audio range.
-[volume](#volume)           | Number      | How loud the sound should play. 
-
-
-### end range
-Type: `Number`  
-some number for the end
-
-### id
-Type: `String`  
-The name to identify the sound
-
-### looping
-Type: `Boolean`  
-Indicates whether or not the sound is to loop/repeat
-
-### playing
-Type: `Boolean`  
-Indicates whether or not the sound is currently in use 
-
-### position
-Type: `Number`  
-Where the sound can be found
-
-### sound
-Type: `String` `filename`  
-The file of the sound
-
-### start range
-Type: `Number`  
-some number for the start
-
-### volume
-Type: `Number`  
-How loud 
+The Audio API provides methods to control sound logic.
 
 
 ## Methods
 
-Method             									| Return Type | Brief Description
----------------------------------------				| ----------- | ------------------------------
-[calledMethod(id, name, params)](#calledmethodid-name-params)| void	      | 
-[deletedNode(id)](#deletednodeid)      				| void	      | Deletes the specified sound source node.
-[Initialize()](#initialize)      					| void	      | Start it up.
-[loop()](#loop)      								| void	      | Sets the `boolean` looping variable.
-[pause()](#pause)      								| void	      | Halts playback of sound, holding position along track to resume where left off.
-[play()](#play)      								| void	      | Plays sound.
-[playSound(url, loop, volume)](#playsoundurl-loop-volume)		| void	      | Lets GUI elements play sounds.
-[stop()](#stop)      								| void	      | Ends playback of sound, resets position.
-[updateSourcePosition()](#updatesourceposition)		| void	      | Get the position of the source object. 
-[updateVolume(camerapos)](#updatevolumecamerapos)   | void	      | HTML can't actually play it louder, however we can make it 'carry' farther by using the inverse and adjusting the range parameters of the falloff curve.
-[unloop()](#unloop)      							| void	      | Sets the `boolean` looping variable.
-
-### calledMethod(id, name, params)
-
-This is a good place to explain.
-
-**Arguments:**
-
-`id` (`String`)  
-The identification String.
-
-`name` (`String`)  
-The name of the command:
-
-* `playSound`
-
-	If the scene played the sound, it has no position and just plays at full volume. Nodes that are not the scene use their position to adjust the volume.
-
-* `pauseSound`
-* `stopSound`
-* `deleteSound`
-
-!!! note:
-	Only delete sound if you are sure the sound will not play again any time soon
-
-`params` (`Array`)  
-Array of additional parameters
-
-**Returns**
-*(Nothing)*
+Method             							| Return Type 	| Brief Description
+-------------------------------------------	| -------------	| --------------------------
+[deleteSound(url)](#deletesoundurl) 		| void 			| Delete the sound at the given URL completely. Only use this if you sure the sound will not play again anytime soon.
+[pauseSound(url)](#pausesoundurl)			| void			| Pause the sound at the given URL.
+[playSound(url, loop, volume)](#playsound)	| void 			| Play the sound at the given URL.
+[stopSound(url)](#stopsoundurl) 			| void 			| Stop the sound at the given URL.
 
 
-### deletedNode(id)
-Deletes the specified sound source node.
+### deleteSound(url)
 
-**Arguments:**
-`id` (`String`)  
-The String identifier of the node deleted.
+Delete the sound at the given URL completely. 
 
-**Returns:**
-*(Nothing)*
+!!! warning:
+	Only use this if you sure the sound will not play again anytime soon.
 
+**Parameters**
 
-### Initialize()
-start it up
-
-**Arguments:**
-*(None)*
-
-**Returns:**
-*(Nothing)*
+Name 	| Type 	 | Description
+------- | ------ | -------------------
+url 	| String | The URL of the sound file.
 
 
+### pauseSound(url)
 
-### loop()
-Sets the `boolean` looping variable.
+Pause the sound at the given URL. 
 
-**Arguments:**
-*(None)*
+**Parameters**
 
-**Returns:**
-*(Nothing)*
-
-
-
-### pause()
-Halts playback of sound, holding position along track to resume where left off.
-
-**Arguments:**
-*(None)*
-
-**Returns:**
-*(Nothing)*
-
-
-### play()
-Plays sound.
-
-**Arguments:**
-*(None)*
-
-**Returns:**
-*(Nothing)*
-
+Name 	| Type 	 | Description
+------- | ------ | -------------------
+url 	| String | The URL of the sound file.
 
 ### playSound(url, loop, volume)
 
-Lets GUI elements play sounds.
+Play the sound at the given URL.
 
-**Arguments:**
+**Parameters**
 
-`url` (`String`)  
-String specifying the URL.
-
-`loop` (`Boolean`)  
-Boolean indicating if the sound should be looped.
-
-`volume` (`number`)  
-How loud.
-
-**Returns:**
-
-*(Nothing)*
-
-### stop()
-Ends playback of sound, resets position.
-
-**Arguments:**
-*(None)*
-
-**Returns:**
-*(Nothing)*
-
-### unloop()
-Sets the `boolean` looping variable.
-
-**Arguments:**
-*(None)*
-
-**Returns:**
-*(Nothing)*
-
-### updateSourcePosition
-
-Get the position of the source object. 
+Name 	| Type 	 	| Description
+------- | --------- | -------------------
+url 	| String 	| The URL of the sound file.
+loop 	| Boolean	| Indicates if the sound should be looped.
+volume 	| Number 	| How loud the sound should be played.  See note below.
 
 !!! note:
-	The 3D driver keeps track of the position.
-
-**Arguments:**
-*(None)*
-
-**Returns:**
-*(Nothing)*
-
-### updateVolume(camerapos)
-
-HTML can't actually play it louder, however we can make it 'carry' farther by using the inverse and adjusting the range parameters of the falloff curve.
-
-**Arguments**
-`camerapos` (`number`)  
-Location of camera.
-
-**Returns**
-*(Nothing)*
+	If the Scene played the sound, then the volume is not used.  If an object played the sound, the object's position is used to adjust the volume.
 
 
+### stopSound(url)
 
+Stop the sound at the given URL. 
 
-### ticked()
-Update the sound volume based on the position of the camera and the position of the object
+**Parameters**
 
-**Arguments:**
-*(None)*
-
-**Returns:**
-*(Nothing)*
+Name 	| Type 	 | Description
+------- | ------ | -------------------
+url 	| String | The URL of the sound file.
 
 
 # ClientAPI Reference
@@ -429,6 +270,143 @@ point 		| Array[3] 			| The point of the intersection, in world space.
 See the [traceAPI's](#traceapi-reference) [rayCast(origin, direction, options)](#raycastorigin-direction-options) and [sphereCast(origin, radius, options)](#spherecastorigin-radius-options) methods, which return [FaceIntersect](#faceintersect-reference) objects.
 
 
+# MATH Reference
+
+A global MATH object provides commonly used vector manipulation functions.
+
+## Methods
+
+Method 			| Return Type 	| Brief Description
+--------------- | ------------- | ------------------------------
+[crossVec3(a, b)](#crossvec3a-b) | Array[3] | Returns the cross product between vector a and vector b.
+[distanceVec3(a, b)](#distancevec3a-b) | Number | Returns the distance between vector a and vector b.
+[dotVec3(a, b)](#dotvec3a-b) | Array[3] | Returns the dot product between vector a and vector b.
+[lengthVec3(a)](#lengthvec3vector) | Number | Returns the length of vector a.
+[subVec3(a, b)](#subvec3a-b) | Array[3] | Returns the result of subtracting vector a from vector b.
+[toUnitVec3(a)](#tounitvec3a) | Array[3] | Returns a unitized version of the input vector a.
+ 
+
+### crossVec3(a, b)
+
+Returns the cross product between vector a and vector b.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | -----------------
+a 			| Array[3] 	| The first input vector.
+b 			| Array[3] 	| The second input vector.
+
+**Return**
+
+`Array[3]` - the cross product.
+
+
+### distanceVec3(a, b)
+
+Returns the distance between vector a and vector b.
+
+```javascript
+    var distance = MATH.distanceVec3(position1, position2);
+
+    if (distance < safe_distance)
+    { 
+    	// ...
+    }
+```
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | -----------------
+a 			| Array[3] 	| The first input vector.
+b 			| Array[3] 	| The second input vector.
+
+**Return**
+
+`Number` - the distance between the two given vectors.
+
+
+### dotVec3(a)
+
+Returns the dot product between vector a and vector b.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | -----------------
+a 			| Array[3] 	| The first input vector to dot.
+b 			| Array[3] 	| The second input vector to dot.
+
+**Return**
+
+`Array[3]` - the resulting dot product.
+
+
+### lengthVec3(a)
+
+Returns the length of vector a.
+
+```javascript
+	var attackRange = 300;
+    var target = this.Scene.findNodeByID(this.aiTargetID);
+    var targetPos;
+    if (target)
+    {
+        targetPos = target.transformAPI.getWorldPosition();
+        targetPos = this.transformAPI.globalToLocal(targetPos);
+        if (MATH.lengthVec3(targetPos) < attackRange)
+        {
+            if (targetPos[0] < 0)
+                this.doTurn('right')
+            else
+                this.doTurn('left');
+        }
+        else
+        {
+            this.aiActiveState = 'attack';
+        }
+    }
+```
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | -----------------
+vector 		| Array[3] 	| The vector (x, y, z) whose length is requested.
+
+**Return**
+
+`Number` - the length of the vector.
+
+
+### subVec3(a, b)
+
+Returns the result of subtracting vector a from vector b.
+
+```javascript
+var direction = MATH.subVec3(position1, position2);
+```
+
+**Return**
+
+`Array[3]` - the result of subtracting vector a from vector b.
+
+
+### toUnitVec3(a)
+
+Returns a unitized version of the input vector a.
+
+```javascript
+var norm_direction = MATH.toUnitVec3(direction);
+```
+
+**Return**
+
+`Array[3]` - a unitized version of the input vector a.
+
+
+
 # PhysicsAPI Reference
 
 The Physics API provides methods to apply forces, torques, and velocities to objects.
@@ -470,7 +448,7 @@ y 			| Number 	| Force applied along Y axis.
 z 			| Number 	| Force applied along Z axis.
 
 
-### addForceImpulse(x, y, z, coords)
+### addForceImpulse(x, y, z)
 
 Applies a given acceleration represented by x, y, z (in world coordinates) to the object regardless of its mass.
 
@@ -536,68 +514,42 @@ Returns the vector x, y, z representing the rate of rotation in world coordinate
 
 ### getLinearVelocity()
 
-Returns the vector x, y, z representing the rate of change of its position in world coordinates.
-
-**Arguments:**
-
-*(None)*
+Returns the vector x, y, z representing the rate of change of the object's position in world coordinates.
 
 **Returns:**
 
-`number` -   
-Current internal linear velocity value.
+`Array[3]` - the rate of change of the object's position in world coordinates.
 
 
+### setAngularVelocity(x, y, z)
+
+Immediately set the object's rate of rotation to the vector x, y, z in world coordinates.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | ----------------------
+x 			| Number 	| Rate of rotation around the X axis.
+y 			| Number 	| Rate of rotation around the Y axis.
+z 			| Number 	| Rate of rotation around the Z axis.
 
 
+### setLinearVelocity(x, y, z)
+
+Immediately set the object's rate of change in position to the vector x, y, z in world coordinates.
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | ----------------------
+x 			| Number 	| Rate of change in position along the X axis.
+y 			| Number 	| Rate of change in position along the Y axis.
+z 			| Number 	| Rate of change in position along the Z axis.
 
 
-### setAngularVelocity(x, y, z, coords)
+### wake()
 
-Sets the angular velocity. Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Velocity applied along x-axis.
-
-`y` (`number`)  
-Velocity applied along y-axis.
-
-`z` (`number`)  
-Velocity applied along z-axis.
-
-`coords` (`number`) (optional)  
-Coordinates where angular velocity is to be applied.
-
-**Returns:**
-
-*(Nothing)*
-
-
-
-### setLinearVelocity(x, y, z, coords)
-
-Sets the linear velocity. Accepts X, Y, Z, and Coordinates.
-
-**Arguments:**
-
-`x` (`number`)  
-Velocity applied along x-axis.
-
-`y` (`number`)  
-Velocity applied along y-axis.
-
-`z` (`number`)  
-Velocity applied along z-axis.
-
-`coords` (`number`) (optional)  
-Origin coordinates of linear velocity.
-
-**Returns:**
-
-*(Nothing)*
-
+Make an object wake up from its sleeping state.
 
 # Scene Reference
 
@@ -651,111 +603,193 @@ Each [Simulation Object](#simulation-object) provides properties and methods to 
 
 ## Properties
 
-Any property that the node has defined will be availble.  In addition, some standard properties are provided.
+Any property that the object has defined will be availble.  In addition, some standard properties are provided.
+
+Property 					| Return Type 		| Brief Description
+--------------------------- | ----------------- | --------------------------------
+[audioAPI](#audioapi) 		| [AudioAPI](#audioapi-reference) | Read-only. The simulation object's AudioAPI endpoint.
+[children](#children) 		| Array 			| Read-only. An Array of child objects.
+[children_by_name](#children_by_name) | Object 	| Read-only. An Object containing child objects.
+[client](#client) 			| String			| Read-only. The socket identifier (GUID) of the person who sent the message that is being processed.  On tick() it is null.  A button's onClick() this.client is the person who clicked the button.
+[DisplayName](#displayname) | String 			| The name of the object that appears in the Properties panel in the Editor.
+[EditorData](#editordata)	| Object 			| A JSON object that defines which properties should be exposed through the Property Editor and which user interface controls should be provided.
+[moniker](#moniker)			| String 			| Read-only.  The client's socket identifier (GUID).
+[physicsAPI](#physicsapi) 	| [PhysicsAPI](#physicsapi-reference) | Read-only. The simulation object's PhysicsAPI endpoint.
+[time](#time) 				| Number 			| Read-only. The current simulation time stamp.  Duration since the server started the simulation.
+[transformAPI](#transformapi) | [TransformAPI](#transformapi-reference) | Read-only. The simulation object's TransformAPI endpoint.
+
+
+### audioAPI
+
+Read-only. [AudioAPI](#audioapi-reference) - The simulation object's AudioAPI endpoint.
+
 
 ### children
 
+Read-only.  `Array` - An Array of child objects.
+
+```javascript
+for (i = 0; i < this.children.length; i++)
+{
+    console.log(this.children[i].DisplayName);
+}
+```
+
+
 ### children_by_name
+
+Read-only.  `Object` - An Object containing child objects.
+
+```javascript
+var sphere2 = this.Scene.children_by_name["sphere1"].children_by_name["sphere2"];
+```
+
+
+### client
+
+Read-only.  `String` - The socket identifier (GUID) of the person who sent the message that is being processed.  On tick() it is null.  A button's onClick() this.client is the person who clicked the button.  
+
+```javascript
+function verifyCamera()
+{
+    if (!this.controllingCamera)
+        return true;
+    var cam = this.Scene.clientAPI.getCameraForClient(this.client);
+
+    if (!cam || cam.id != this.controllingCamera) return false;
+    return true;
+}
+```
+
+See also the [clientAPI](#clientapi-reference).  The [clientAPI](#clientapi-reference) can be used to resolve the name of a client's user.
+
 
 ### DisplayName
 
-The name of the object that appears in the Properties panel in the Editor.
+`String` - The name of the object that appears in the Properties panel in the Editor.
+
 
 ### EditorData
 
+`Object` - A JSON object that defines which properties should be exposed through the Property Editor and which user interface controls should be provided.
+
+```json
+{
+    "aiTargetID": {
+        "displayname": "Target Object",
+        "property": "aiTargetID",
+        "type": "nodeid"
+    },
+    "fuel": {
+        "displayname": "Fuel",
+        "max": 1000,
+        "min": 1,
+        "property": "fuel",
+        "type": "slider"
+    },
+    "hostile": {
+        "displayname": "Hostile",
+        "property": "hostile",
+        "type": "check"
+    }
+}
+```
+
+### moniker
+
+Read-only.  `String` - The client's socket identifier (GUID).
+
+See also the [client](#client) property of a simulation object.
+
+
+### physicsAPI
+
+Read-only. [PhysicsAPI](#physicsapi-reference) - The simulation object's PhysicsAPI endpoint.
+
+
+### time
+
+Read-only. `Number` - The current simulation time stamp.  Duration since the server started the simulation.
+
+
+### transformAPI
+
+Read-only.  [TransformAPI](#transformapi-reference) - The simulation object's TransformAPI endpoint.
+
+
+
 ## Methods
 
-Any method that the node has defined will be available.  In addition, some standard methods are provided.
+Any method that the object has defined will be available.  In addition, some standard methods are provided.
 
-### AudioAPI
+Method 						| Return Type 		| Brief Description
+--------------------------- | ----------------- | --------------------------------
+[bind(eventName, value)](#bindeventname-value) 	| void 		| Binds an event to a function definition.
+[broadcast(signal, data, range)](#broadcastsignal-data-range)| void | Calls the `signal` method passing the `data` array to any objects within the given `range`. 
+[random()](#random) 		| Number 			| Return, preserving replicated computation, a random number between 0 (inclusive) and 1 (exclusive).  Similar to JavaScript's `Math.random()`, but is safe for replicated computation.
 
-Returns the simulation object's [AudioAPI](#audioapi) endpoint.
 
-**Arguments:**
+### bind(eventName, value)
 
-*(None)*
+Binds an event to a function definition.
 
-**Returns:**
+```javascript
+function ready()
+{
+    this.Scene.unbind("keyDown", this._kd);
+    this.Scene.unbind("keyUp", this._ku);
 
-`audioAPI` (object)
+    var self = this;
 
-The [AudioAPI](#audioapi) endpoint.
+    this._kd = function(e, d)
+    {
+        self._keyDown(e, d)
+    };
 
-### Bind
+    this._ku = function(e, d)
+    {
+        self._keyUp(e, d)
+    };
+
+    this.Scene.bind("keyDown", this._kd);
+    this.Scene.bind("keyUp", this._ku);
+}
+```
+
+**Parameters**
+
+Name 		| Type 		| Description
+----------- | --------- | ----------------------
+eventName	| String 	| The event to be bound.
+value		| Function 	| Function definition
+
 
 ### broadcast(signal, data, range)
 
 Calls the `signal` method passing the `data` array to any objects within the given `range`. 
 
-**Arguments:**
+```javascript
+var leader_projection = this.transformAPI.localToGlobal(-150, 0, 0);
 
-`signal` (`String`)  
-The method name to be called on listening objects.
+this.broadcast("facLeaderInput", [leader_projection], 500);
+```
 
-`data` (`Array`)  
-An array of data to be passed to listening objects.
+**Parameters**
 
-`range` (`number`)  
-The distance in meters within which listening objects will receive the broadcast message.
+Name 		| Type 		| Description
+----------- | --------- | ---------------------------
+`signal`	| `String`  | The method name to be called on listening objects.
+`data` 		| `Array`	| An array of data to be passed to listening objects.
+`range`		| `Number`	| The distance in meters within which listening objects will receive the broadcast message.
 
-### Client
 
-Returns the socket identifier (GUID) of the person who sent the message that is being processed.  On tick() it is null.  A button's onClick() this.client is the person who clicked the button.
-
-Related to the ClientAPI.  ClientAPI can resolve name of user of client given socket id.
-
-### Moniker
-
-Your socket identifier (GUID).
-
-### PhysicsAPI
-
-Returns the simulation object's [PhysicsAPI](#physicsapi) endpoint.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-`physicsAPI` (`object`)
-
-The [PhysicsAPI](#physics) endpoint.
-
-### TransformAPI
-
-Returns the simulation object's [TransformAPI](#transformAPI) endpoint.
-
-**Arguments:**
-
-*(None)*
-
-**Returns:**
-
-`transforms` (`object`)
-
-The [TransformAPI](#transformAPI) endpoint.
-
-### Random
+### random()
 
 Return, preserving replicated computation, a random number between 0 (inclusive) and 1 (exclusive).  Similar to JavaScript's `Math.random()`, but is safe for replicated computation.
 
-**Arguments:**
+**Return**
 
-*(None)*
-
-**Returns:**
-
-`randomNumber` (`Number`)
-
-The generated random number between 0 and 1.
-
-### Time
-
-Returns the current simulation time stamp.  Duration since the server started the simulation.
-
-
-
+`Number` - The generated random number between 0 and 1.
 
 
 

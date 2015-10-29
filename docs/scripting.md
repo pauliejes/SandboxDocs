@@ -40,13 +40,15 @@ See the [Simulation Object Reference](reference-guide/scripting-api.md#simulatio
 
 You can write your own event handlers for events that the engine fires.  Events the engine fires include:
 
-* `pointerClick` - When mouse buttons are pressed and released.
-* `pointerDown` - When mouse buttons are pressed.
-* `pointerMove` - Each movement of a mouse over an object.
-* `pointerOut` - When mouse moves off of an object.
-* `pointerOver` - When mouse moves over an object.
-* `pointerUp` - When mouse buttons are released.
-* `pointerWheel` - When the mouse wheel is turned.
+* `keyDown` 		- When a keyboard key is pressed down.
+* `keyUp` 			- When a keyboard key is released.
+* `pointerClick` 	- When mouse buttons are pressed and released.
+* `pointerDown` 	- When mouse buttons are pressed.
+* `pointerMove` 	- Each movement of a mouse over an object.
+* `pointerOut` 		- When mouse moves off of an object.
+* `pointerOver` 	- When mouse moves over an object.
+* `pointerUp` 		- When mouse buttons are released.
+* `pointerWheel` 	- When the mouse wheel is turned.
 
 ## Properties and Methods
 
