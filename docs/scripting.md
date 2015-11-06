@@ -194,6 +194,8 @@ See the [traceAPI](reference-guide/scripting-api.md#traceapi-reference) for more
 
 The engine provides common vector functions that are necessary to calculate distances or directions.  The `MATH` library attached to each simulation object provides helpful vector functions.
 
+See the [MATH Reference](reference-guide/scripting-api.md#math-reference) for the list of functions available to manipulate vectors.
+
 # Reference Guide
 
 See the [Scripting API](reference-guide/scripting-api.md) for complete reference information.

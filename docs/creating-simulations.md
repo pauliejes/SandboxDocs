@@ -587,7 +587,15 @@ Independent of the kind of simulation, choices for who can access the simulation
 
 ## Smart Objects
 
-You can make one of your objects as a Smart Object by exposing its properties to the Editor for user manipulation.  This requires using the Editor Data properties of a simulation object.
+You can make one of your objects as a Smart Object by exposing its properties to the Editor for user manipulation.  The properties appear in the property editor using the appropriate user interface controls that are specified for the exposed property.  In the example below the `5InGun` simulation object has multiple properties exposed (`Accuracy`, `AI Behavior`, `Ammo`, and `Fuse`) that a user can manipulate using the Property Editor.
+
+![EditorData User Interface](images/editor-data-ui.png)
+
+These properties are exposed using the `EditorData` property.  By defining the `EditorData` property with a JSON document that conforms with the [Editor Data Reference](reference-guide/editor-data.md), the Editor knows how to expose the properties to the user.
+
+![EditorData in the ScriptEditor](images/editor-data.png)
+
+See the [Editor Data Reference](reference-guide/editor-data.md) to learn more about the common properties and types used to expose editor data.
 
 ###  Manage and Organize Smart Objects
 
@@ -596,6 +604,7 @@ Simulation objects can be managed and shared through the asset server by selecti
 !!! note:
 	The asset server does not allow anonymous uploads, so you will have to login to share your asset.
 
+<!--
 Other ways you can store and manage things
 
 Manual creation of a content library (see creating a new content library)
@@ -610,7 +619,7 @@ Asset Server refreshing assets
 Continues base class
 
 Alternatively, you can manage the files on disc: yml, json.  Version controlling.
-
+-->
 
 
 
