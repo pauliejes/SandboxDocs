@@ -17,9 +17,9 @@ pages:
 - Physics: physics.md
 - Scripting: scripting.md
 - User Interfaces: user-interface.md
-- Multiplayer: multiplayer.md
-- Audio: audio.md
-- Animation: animation.md
+#- Multiplayer: multiplayer.md
+#- Audio: audio.md
+#- Animation: animation.md
 - Server Installation: server-installation.md
 - Architecture: architecture.md
 - Contributing: contributing.md
