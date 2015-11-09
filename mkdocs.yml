@@ -32,5 +32,6 @@ pages:
   - Writing a Custom Graphic: tutorials/custom-graphic-tutorial.md
 - Reference Guide:
   - Editor Data: reference-guide/editor-data.md
+  - GUI Elements: reference-guide/gui-elements.md
   - Scripting API: reference-guide/scripting-api.md
   - Web Service API: reference-guide/web-service-api.md
