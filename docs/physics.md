@@ -148,15 +148,23 @@ function tick()
 	}
 ```
 
+## User Input Example
+
 Lines 3 and 13 are the conditional statements for the W and A keys.  Other keys would be done simliarly.  See [Responding to User Input](creating-simulations.md#responding-to-user-input) in Creating Simulations guide for more information on handling user key presses.
 
+## Transforms Example
+
 The physicsAPI defaults methods to world coordinates.  Line 5, 10, and 16 translate coordinates between different coordinate systems.  Specifically, it translates local coordinates of the boat object to the world coordinate system.  See [Transforms](scripting.md#transforms) in the Scripting guide for more information on translating coordinates.
+
+## Velocity, Force, and Torque Example
 
 Finally, lines 6, 9, 11, 15, and 17 use the physicsAPI to change the motion of the boat.  Line 6 applies a force to the center of the object to move it forward.  In this case, the force is equal to -10 times the object's mass in its X direction (the red arrow of the gizmo tool).  The boat 3D model was modeled with its forward direction being -X, so a negative force moves it forward.
 
 ![Boat direction](images/boat-gizmo-direction.png)
 
 Line 9 gets the current linear velocity of the boat and line 11 divides the velocity by 3 to create a `speedTorqueFactor` -- so the turning torque will torque more when the boat is going faster.  Line 15 and 17 make the boat turn using torque forces.  Line 15 turns the boat left by applying the torque in the Z direction -- like a compass rotating around the blue arrow of the gizmo tool.  Line 17 makes the boat carve or dip into the turn by applying the torque to its X direction -- rotating around the red arrow of the gizmo tool.
+
+# Reference Guide
 
 See the [Scripting](scripting.md) article for more discussion about scripting simulations and see the [PhysicsAPI Reference](reference-guide/scripting-api.md#physicsapi-reference) for a detailed list of methods you can use.  
 
