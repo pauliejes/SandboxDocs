@@ -138,7 +138,7 @@ When an object is selected, clicking this button will select the object's parent
 Move the camera such that it frames the selected object in the view. This will also reset the camera mode to orbit mode if it is not already in orbit mode.  Also available from the `Camera` > `Focus Selected` menu item.
 
 !!! note:
-	The focus to camera toolbar button is very helpful for navigating.  Simply select the object you want to focus on (either through the hierarchy or by clicking the object directly) and then click the Focus Camera button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png)).
+	The focus to selected object toolbar button is very helpful for navigating.  Simply select the object you want to focus on (either through the hierarchy or by clicking the object directly) and then click the Focus Camera button (![Focus Camera Icon](images/toolbar_icons/focus_to_selected_object.png)).
 
 ![Copy Icon](images/toolbar_icons/copy.png) &nbsp;&nbsp;&nbsp; **Copy**
 
@@ -322,7 +322,7 @@ You can add a **texture** to an object by selecting the object and viewing the M
 
 See [Audio](audio.md) for information about uploading audio assets.
 
-## Collaborative Simulation Authoring
+# Collaborative Simulation Authoring
 
 Once you are comfortable with the [Editor](#using-the-editor) and know how to create objects, it is time to create logic that brings the simulation to life.  And the best part is you can do this collaboratively with colleagues or from any location with a Web browser!  The basics of authoring a simulation include:
 
@@ -345,7 +345,7 @@ Here is a picture of such a `Scene` with two spheres:
 
 ![Scene with two spheres](images/two_spheres.png)
 
-### Naming Objects
+## Naming Objects
 
 All objects in the world can be assigned a friendly name. These names appear in the GUI for all action, but need not be unique -- they are just for your convenience. To name an object, select the object and open the Properties window. Under the `Flags` heading, find the `Name` field and type the name. 
 
@@ -355,7 +355,7 @@ When you copy, duplicate, or paste an object, the name will be incremented autom
 
 The name is stored in the `DisplayName` property of an object. From script, all objects are indexed by name under `this.children_by_name`.
 
-### ScriptEditor
+## The Script Editor
 
 The ScriptEditor is used to write scripts for simulation logic.  All scripts are written in JavaScript.  To launch the ScriptEditor, select a simulation object, and click the ScriptEditor toolbar icon (![Script Editor Icon](images/toolbar_icons/script_editor.png)) or use the `Windows` > `Script Editor` menu item.
 
@@ -373,7 +373,7 @@ The two up and down arrow buttons in the upper right hand corner of the script e
 
 ![ScriptEditor Window Size Controls](images/script_editor_window_size_buttons.png)
 
-### Finding Objects through Script
+## Finding Objects through Script
 
 When finding objects through scripts, it is helpful to remember the hierarchy view of objects.  The hierarchy root is the `Scene` object.  You can access the `Scene` by simply calling `this.Scene` on any object.  Thinking about the hierarchy and knowing how to access the Scene, we can use different methods to find and access objects through scripts:
 
@@ -388,38 +388,38 @@ The first two methods find objects based on the object's `DisplayName` property,
 !!! note:
 	In the examples below, we'll be writing code to find and access objects in the `tick()` method of objects.
 
-#### children_by_name
+### children_by_name
 
 The easiest and most intuitive way to find and access an object is to use the `children_by_name` object based on the `Scene`.  Assume `sphere1` is a child of the `Scene`:
 
-```
+```javascript
 var sphere = this.Scene.children_by_name["sphere1"];
 ```
 
 If `sphere2` is a child of `sphere1`, then we could find and access `sphere2` continuing this method:
 
-```
+```javascript
 var sphere2 = this.Scene.children_by_name["sphere1"].children_by_name["sphere2"];
 ```
 
 You don't have to go through the `Scene` to access objects.  You can refer directly to the children of the selected object.  Assuming we are selected on `sphere1` (the parent of `sphere2`), we could do the following:
 
-```
+```javascript
 var sphere2 = this.children_by_name["sphere2"];
 ```
 
-#### findNode
+### findNode
 
 The `Scene` provides a `findNode` method we can use to find any object in the `Scene`.  This allows us to find `sphere2` from *any* object without knowing the hierarchy.
 
-```
+```javascript
 var sphere2 = this.Scene.findNode("sphere2");
 ```
-#### children
+### children
 
 If you want to iterate through all children of an object, you'll want to use the `children` JavaScript object.
 
-```
+```javascript
 for (i = 0; i < this.children.length; i++)
 {
     console.log(this.children[i].DisplayName);
@@ -429,36 +429,36 @@ for (i = 0; i < this.children.length; i++)
 !!! note:
 	The JavaScript `console.log()` method is a powerful way to display data by writing it to the browser console.  Knowing how to use the browser's debug tools and specifically the browser console are key simulation development skills.  See [w3schools JavaScript Debugging](http://www.w3schools.com/js/js_debugging.asp) page for more information.
 
-#### findNodeByID
+### findNodeByID
 
 Objects ar runtime are given an ID that uniquely identifies them across the multiplayer network.  If you know this ID, the `Scene` provides the `findNodeByID` method that we can use to access the object.
 
-```
+```javascript
 var sphere2 = this.Scene.findNodeByID("sphere2-vwf-Nec9b207d");
 ```
 
 !!! note:
 	You can find the ID of any object by selecting the object and using the `Tools` > `Show ID` menu item.
 
-#### parent
+### parent
 
 You can quickly and easily reference the parent object using `.parent`.  From the tick() method of a child, `sphere2` in this example, we can access the parent (`sphere1`):
 
-```
+```javascript
 var sphere1 = this.parent;
 ```
 
 
-### The Tick Heartbeat
+## The Tick Heartbeat
 
 The `tick()` method is called by the engine 20 times every second.  It is the heartbeat of the multiplayer simulation.  Each simulation object can define the `tick` method and this is typically where simulation logic originates.
 
 
-### Moving Objects using Transforms
+## Moving Objects using Transforms
 
 Every simulation object has a Scripting API accessible to it via the `this` object.  To move an object, you can add logic to the `tick` method to change the current position or rotation of an object.  Every 1/20th of a second, the engine will call the tick() method.  Let's add the following line to the tick method of an object to move it .1 units along its X axis:
 
-```
+```javascript
 this.tranformAPI.move(.1, 0, 0);
 ```
 
@@ -466,7 +466,7 @@ this.tranformAPI.move(.1, 0, 0);
 
 By default, the `move` method uses the Global coordinate system.  If the object we had selected had been rotated, we could have the object move along the X axis of its Local coordinate system, by specifying the coordinate system for the movement.
 
-```
+```javascript
 function tick()
 {
 	this.transformAPI.move(.1, 0, 0, this.transformAPI.COORDINATES.LOCAL);
@@ -475,7 +475,7 @@ function tick()
 
 The TransformAPI also provies the rotate(x,y,z,coordinates) method, which will rotate the object around the given axis.  If we wanted to rotate a sphere around the Z axis like a disco ball, we could write the following in the sphere's tick method:
 
-```
+```javascript
 function tick()
 {
 	this.transformAPI.rotate(0,0,1);
@@ -485,13 +485,13 @@ Every tick, the sphere rotates 1 unit around the Z axis using the world coordina
 
 The TransformAPI provides many other methods to get and set position and rotation as well as to convert between different coordinate systems.  For more information, see the [TransformAPI](reference-guide/scripting-api.md#transformapi) section of the Reference Guide.
 
-### Responding to User Input
+## Responding to User Input
 
 To allow a player to control an object using traditional WASD keyboard controls, we'll want to use the `keyDown` and `keyUp` events the engine fires when keys are pressed and released, respectively.  We'll want to register these events with local handlers in the `ready()` method, which the engine calls on every object that defines it when the Scene is completely loaded.  The `ready()` method is also called each time a new client joins a multiplayer simulation. 
 
 This ready code is boilerplate code for binding and unbinding handler methods for keyUp and keyDown events.  It uses intermediate functions _ku and _kd to ensure multiple handlers are not bound redundantly.
 
-```
+```javascript
 function ready()
 {
 	this.Scene.unbind("keyDown", this._kd);
@@ -520,7 +520,7 @@ The ready method first unbinds the intermediate functions if they are defined to
 
 The `_keyDown` method is where we can write code to process the keys being pressed.  Note that an array is defined as a local property because multiple keys can be down at the same time.  So, switch tabs to the Properties tab and define a new property to serve as the array called `_keysDown` with value `[]` (the empty array).  
 
-```
+```javascript
 function _keyDown(e, d)
 {
 	// if the key being pressed is not in the array
@@ -536,7 +536,7 @@ function _keyDown(e, d)
 
 The `_keyUp` method is where we can write code to process the keys being released.
 
-```
+```javascript
 function _keyUp(e, d)
 {
 	// if the key being released is in the array
@@ -553,13 +553,13 @@ function _keyUp(e, d)
 Now that the key handlers are bound and defined, we can write logic based on the keys the user is pressing.
 
 
-### Lights, Camera, Action!
+## Lights, Camera, Action!
 
 To create a new light, go to `Create` > `Lights` and choose the desired type of light (Point, Spot, or Directional).  See [Lighting](graphics.md#lighting) for more information or the tutorial on [Lights and Materials](tutorials/lights-and-materials.md).
 
 To create a new camera, go to `Create` > `Camara` > `Perspective`.  See [Creating Cameras](graphics.md#creating-cameras).
 
-## Managing Objects and Simulations
+# Managing Objects and Simulations
 
 You can manage a simulated world you create by going to the landing page for the world.  The landing page contains the Launch button.
 
@@ -567,7 +567,7 @@ You can manage a simulated world you create by going to the landing page for the
 
 In addition to the Launch button, are other world management buttons.  World management options include restoring past versions, deleting the world, duplicating it, and embedding it as an IFrame on other websites.
 
-### Change Simulation Settings
+## Change Simulation Settings
 
 The Settings page provides options to control the configuration of the simulated world to allow it to serve as a virtual world that persists state changes or a game that resets when closed.
 
@@ -585,9 +585,17 @@ Independent of the kind of simulation, choices for who can access the simulation
 !!! note "Note:"
     If you want to choose a camera other than the default Editor Camera for users to use, you must create the camera.  See the  [Creating Cameras](graphics.md#creating-cameras) section for more information.
 
-### Smart Objects
+## Smart Objects
 
-You can make one of your objects as a Smart Object by exposing its properties to the Editor for user manipulation.  This requires using the Editor Data properties of a simulation object.
+You can make one of your objects as a Smart Object by exposing its properties to the Editor for user manipulation.  The properties appear in the property editor using the appropriate user interface controls that are specified for the exposed property.  In the example below the `5InGun` simulation object has multiple properties exposed (`Accuracy`, `AI Behavior`, `Ammo`, and `Fuse`) that a user can manipulate using the Property Editor.
+
+![EditorData User Interface](images/editor-data-ui.png)
+
+These properties are exposed using the `EditorData` property.  By defining the `EditorData` property with a JSON document that conforms with the [Editor Data Reference](reference-guide/editor-data.md), the Editor knows how to expose the properties to the user.
+
+![EditorData in the ScriptEditor](images/editor-data.png)
+
+See the [Editor Data Reference](reference-guide/editor-data.md) to learn more about the common properties and types used to expose editor data.
 
 ###  Manage and Organize Smart Objects
 
@@ -596,6 +604,7 @@ Simulation objects can be managed and shared through the asset server by selecti
 !!! note:
 	The asset server does not allow anonymous uploads, so you will have to login to share your asset.
 
+<!--
 Other ways you can store and manage things
 
 Manual creation of a content library (see creating a new content library)
@@ -604,13 +613,13 @@ Manual creation of a content library (see creating a new content library)
 
 ### Asset Server Filtering
 
-### Working with a Team
+## Working with a Team
 
 Asset Server refreshing assets
 Continues base class
 
 Alternatively, you can manage the files on disc: yml, json.  Version controlling.
-
+-->
 
 
 

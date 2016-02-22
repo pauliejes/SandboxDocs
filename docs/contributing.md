@@ -25,7 +25,23 @@ The mkdocs serve command will generate the documentation and host it at [http://
 
 Use the name "VW Sandbox" when refering to the software.
 
+
+## Capitalize Headers
+
+Capitalize header titles with five or more letters.
+
+You can use the [http://titlecapitalization.com/](http://titlecapitalization.com/) tool to automatically capitalize your title using the above rules.
+
+
+## Capitalize System Component Keywords
+
+Capitalize, but don't highlight, keywords for commonly referred to system components like the Engine, Scene, Editor, Editors (e.g., Physics Editor, Heirarchy Editor), or Content Libraries.
+
+
+## Highlighted Words 
+
 Highlight menu items (e.g., `File` > `Save`), tools (e.g., `Painter`), windows (e.g., `Map Browser`), keyboard buttons (e.g., `ALT`), and single lines of code (e.g., `var = foo;`) using backtick quotes(`).
+
 
 ## Linking
 

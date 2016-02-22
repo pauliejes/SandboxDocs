@@ -1,0 +1,55 @@
+<html>
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+    console.log('Query variable %s not found', variable);
+}
+
+	$(document).ready(function(){
+
+		
+		$('#preview').attr('src',decodeURIComponent(getQueryVariable('img')));
+		$('#preview').mouseover(function()
+		{
+			
+			$(this).css('opacity','.5');
+			$('#clicktoplay').css('opacity','1');
+
+
+		})
+		$('#preview').mouseout(function()
+		{
+			$(this).css('opacity','1');
+			$('#clicktoplay').css('opacity','0');
+			
+		})
+		$('#preview').click(function()
+		{
+
+			window.location = decodeURIComponent(getQueryVariable('url'))
+			
+		})
+
+	})
+
+
+</script>
+<head>
+
+</head>
+
+<body style = "margin:0px">
+	<div id="clicktoplay" style= "position:absolute;font-family:sans-serif;opacity:0;font-size:100px;line-height:405px;text-align:center;width:100%;pointer-events:none" >Click to Play</div>
+    <img id="preview" width="701" height="422" style="" src="../images/physics-mesh.png" />
+</body>
+</html>
