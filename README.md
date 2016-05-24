@@ -2,12 +2,6 @@
 
 This is the repository for the VW Sandbox Manual.  The manual provides users with information to use the VW Sandbox. 
 
-# Contribute to Documentation
-
-Please contribute to the documentation.  
-
-The documentation is written in [Markdown Syntax](https://daringfireball.net/projects/markdown/syntax) and generated using [MkDocs](http://www.mkdocs.org/).  It is version controlled in this GitHub repository.  Commits to the master branch are automatically built and published to the [documentation website](http://sandboxdocs.readthedocs.org/) hosted by [Read the Docs](https://readthedocs.org/).  The following style guide should help ensure a consistent reading experience.
-
 ## Building the documentation
  
 1. Install [MkDocs](http://www.mkdocs.org/#installation)
@@ -87,3 +81,10 @@ If you want o provide a comment in the manual to guide further development of th
 [comment]: <> (add information about XYZ here)
 ```
 
+# Contribute to Documentation
+
+Please contribute to the documentation.  
+
+The documentation is written in [Markdown Syntax](https://daringfireball.net/projects/markdown/syntax) and generated using [MkDocs](http://www.mkdocs.org/).  It is version controlled in this GitHub repository.  Commits to the master branch are automatically built and published to the [documentation website](http://sandboxdocs.readthedocs.org/) hosted by [Read the Docs](https://readthedocs.org/).  The following style guide should help ensure a consistent reading experience.
+
+For more information on contributing to the project, view the full  [documentation](https://github.com/adlnet/SandboxDocs/blob/master/docs/contributing.md) for contributing.
