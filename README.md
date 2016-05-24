@@ -2,12 +2,6 @@
 
 This is the repository for the VW Sandbox Manual.  The manual provides users with information to use the VW Sandbox. 
 
-# Contribute to Documentation
-
-Please contribute to the documentation.  
-
-The documentation is written in [Markdown Syntax](https://daringfireball.net/projects/markdown/syntax) and generated using [MkDocs](http://www.mkdocs.org/).  It is version controlled in this GitHub repository.  Commits to the master branch are automatically built and published to the [documentation website](http://sandboxdocs.readthedocs.org/) hosted by [Read the Docs](https://readthedocs.org/).  The following style guide should help ensure a consistent reading experience.
-
 ## Building the documentation
  
 1. Install [MkDocs](http://www.mkdocs.org/#installation)
@@ -87,3 +81,23 @@ If you want o provide a comment in the manual to guide further development of th
 [comment]: <> (add information about XYZ here)
 ```
 
+# Contribute to Documentation
+
+Please contribute to the documentation.  
+
+The documentation is written in [Markdown Syntax](https://daringfireball.net/projects/markdown/syntax) and generated using [MkDocs](http://www.mkdocs.org/).  It is version controlled in this GitHub repository.  Commits to the master branch are automatically built and published to the [documentation website](http://sandboxdocs.readthedocs.org/) hosted by [Read the Docs](https://readthedocs.org/).  The following style guide should help ensure a consistent reading experience.
+
+## License
+   Copyright &copy;2016 Advanced Distributed Learning
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
